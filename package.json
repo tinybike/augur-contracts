@@ -1,0 +1,16 @@
+{
+  "name": "augur-contracts",
+  "version": "0.1.0",
+  "description": "Augur contract addresses",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AugurProject/augur-contracts.git"
+  },
+  "author": "Jack Peterson <jack@tinybike.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AugurProject/augur-contracts/issues"
+  },
+  "homepage": "https://github.com/AugurProject/augur-contracts#readme"
+}
