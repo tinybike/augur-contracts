@@ -1,5 +1,5 @@
 {
-    "testnet": {
+    "0": {
         "namereg": "0xc6d9d2cd449a754c494264e1809c50e34d64562b",
         "checkQuorum": "0xe26c5a52d23d259f452eba1855123cf08e388095",
         "buyAndSellShares": "0x4382ef4d06f089ced6ed376be3a501c8c7cea30a",
@@ -38,7 +38,7 @@
         "redeem_resolve": "0x88ba7d757f80eb1edfd0eb11dca3b1c835fb040a",
         "redeem_payout": "0xcded3f69a0e82c3be134159b20c4596660755236"
     },
-    "privatechain": {
+    "7": {
         "namereg": "0xc6d9d2cd449a754c494264e1809c50e34d64562b",
         "buyAndSellShares": "0xcb41186d3fa3eae83aa828eb776a913ffe94bcb7",
         "checkQuorum": "0x7ad6e15cedf2a82651b5b407d1e98cbdf7c9e0e4",
@@ -77,7 +77,7 @@
         "score": "0xe7fd9f29b2fbd3623574f303bee4355ca4645d62",
         "statistics": "0xb44c5dffcb5092c06e8240b1d300b3287b0ca279"
     },
-    "testchain": {
+    "10101": {
         "namereg": "0xc6d9d2cd449a754c494264e1809c50e34d64562b",
         "buyAndSellShares": "0xc1c4e2f32e4b84a60b8b7983b6356af4269aab79",
         "checkQuorum": "0x6c4c9fa11d6d8ed2c7a08ddcf4d4654c85194f68",

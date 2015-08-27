@@ -1,6 +1,6 @@
 {
   "name": "augur-contracts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Augur contract addresses",
   "main": "index.js",
   "repository": {
