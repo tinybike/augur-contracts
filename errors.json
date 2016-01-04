@@ -153,6 +153,10 @@
         "error": 506,
         "message": "files could not be added to IPFS"
     },
+    "IPFS_GET_FAILURE": {
+        "error": 507,
+        "message": "could not retrieve file from IPFS"
+    },
     "RPC_TIMEOUT": {
         "error": 599,
         "message": "timed out while waiting for Ethereum network response"
