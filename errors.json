@@ -30,6 +30,10 @@
         "0": "incorrect hash",
         "-2": "incorrect reporter ID"
     },
+    "createSubbranch": {
+        "-1": "bad input or parent doesn't exist",
+        "-2": "no money for creation fee or branch already exists"
+    },
     "createEvent": {
         "0": "not enough money to pay fees or event already exists",
         "-1": "we're either already past that date, branch doesn't exist, or description is bad"
