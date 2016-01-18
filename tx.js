@@ -833,7 +833,7 @@ module.exports = function (network) {
             to: contracts.createBranch,
             method: "createSubbranch",
             signature: "siii",
-            returns: "number",
+            returns: "hash",
             send: true
         },
 
