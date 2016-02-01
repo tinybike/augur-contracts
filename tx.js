@@ -173,6 +173,12 @@ module.exports = function (network) {
         },
 
         // branches.se
+        initDefaultBranch: {
+            to: contracts.branches,
+            method: "initDefaultBranch",
+            returns: "number",
+            send: true
+        },
         getBranches: {
             to: contracts.branches,
             method: "getBranches",
@@ -605,18 +611,6 @@ module.exports = function (network) {
         },
 
         // markets.se
-        getSimulatedBuy: {
-            to: contracts.markets,
-            method: "getSimulatedBuy",
-            signature: "iii",
-            returns: "unfix[]"
-        },
-        getSimulatedSell: {
-            to: contracts.markets,
-            method: "getSimulatedSell",
-            signature: "iii",
-            returns: "unfix[]"
-        },
         lsLmsr: {
             to: contracts.markets,
             method: "lsLmsr",
@@ -679,17 +673,23 @@ module.exports = function (network) {
             signature: "ii",
             returns: "unfix"
         },
+        getForkSelection: {
+            to: contracts.markets,
+            method: "getForkSelection",
+            signature: "i",
+            returns: "hash"
+        },
+        getVolume: {
+            to: contracts.markets,
+            method: "getVolume",
+            signature: "i",
+            returns: "unfix"
+        },
         getWinningOutcomes: {
             to: contracts.markets,
             method: "getWinningOutcomes",
             signature: "i",
             returns: "number[]"
-        },
-        price: {
-            to: contracts.markets,
-            method: "price",
-            signature: "ii",
-            returns: "unfix"
         },
         getParticipantNumber: {
             to: contracts.markets,
