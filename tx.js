@@ -239,9 +239,9 @@ module.exports = function (network) {
             signature: "i",
             send: true
         },
-        getNumMarkets: {
+        getNumMarketsBranch: {
             to: contracts.branches,
-            method: "getNumMarkets",
+            method: "getNumMarketsBranch",
             signature: "i",
             returns: "number"
         },
