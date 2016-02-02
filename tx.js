@@ -30,6 +30,13 @@ module.exports = function (network) {
         },
 
         // cash.se
+        initiateOwner: {
+            to: contracts.cash,
+            method: "initiateOwner",
+            signature: "i",
+            send: true,
+            returns: "number"
+        },
         getCashBalance: {
             to: contracts.cash,
             method: "balance",
@@ -184,9 +191,9 @@ module.exports = function (network) {
             method: "getBranches",
             returns: "hash[]"
         },
-        getMarkets: {
+        getMarketsInBranch: {
             to: contracts.branches,
-            method: "getMarkets",
+            method: "getMarketsInBranch",
             signature: "i",
             returns: "hash[]"
         },
@@ -270,6 +277,12 @@ module.exports = function (network) {
         },
 
         // events.se
+        getReportingThreshold: {
+            to: contracts.events,
+            method: "getReportingThreshold",
+            signature: "i",
+            returns: "unfix"
+        },
         getEventInfo: {
             to: contracts.events,
             method: "getEventInfo",
@@ -314,6 +327,12 @@ module.exports = function (network) {
         },
 
         // expiringEvents.se
+        getEventIndex: {
+            to: contracts.expiringEvents,
+            method: "getEventIndex",
+            signature: "ii",
+            returns: "number"
+        },
         getEvents: {
             to: contracts.expiringEvents,
             method: "getEvents",
@@ -611,6 +630,12 @@ module.exports = function (network) {
         },
 
         // markets.se
+        price: {
+            to: contracts.markets,
+            method: "price",
+            signature: "ii",
+            returns: "unfix"
+        },
         lsLmsr: {
             to: contracts.markets,
             method: "lsLmsr",
@@ -832,7 +857,7 @@ module.exports = function (network) {
         createSubbranch: {
             to: contracts.createBranch,
             method: "createSubbranch",
-            signature: "siii",
+            signature: "siiii",
             returns: "hash",
             send: true
         },
@@ -847,6 +872,12 @@ module.exports = function (network) {
         },
 
         // makeReports.se
+        makeHash: {
+            to: contracts.makeReports,
+            method: "makeHash",
+            signature: "iii",
+            returns: "hash"
+        },
         report: {
             to: contracts.makeReports,
             method: "report",
@@ -854,10 +885,16 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
+        calculateReportingThreshold: {
+            to: contracts.makeReports,
+            method: "calculateReportingThreshold",
+            signature: "iii",
+            returns: "hash"
+        },
         submitReportHash: {
             to: contracts.makeReports,
             method: "submitReportHash",
-            signature: "iii",
+            signature: "iiiii",
             returns: "number",
             send: true
         },
@@ -887,7 +924,7 @@ module.exports = function (network) {
         createMarket: {
             to: contracts.createMarket,
             method: "createMarket",
-            signature: "isiiia",
+            signature: "isiiiai",
             send: true
         },
 

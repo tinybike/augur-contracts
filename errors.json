@@ -19,8 +19,11 @@
     },
     "submitReportHash": {
         "0": "could not set report hash",
-        "-1": "reporter doesn't exist, voting period is over, or voting period hasn't started yet",
-        "-2": "not in hash submitting timeframe"
+        "-1": "reporter (you) doesn't (don't) exist, or voting period over or hasn't started yet",
+        "-2": "not in hash submitting timeframe or event doesn't exist / not a valid event expiring then",
+        "-4": "already resolved",
+        "-5": ".99 market",
+        "-6": "no markets"
     },
     "checkReportValidity": {
         "-1": "report isn't long enough",
@@ -64,6 +67,10 @@
     "WHISPER_POST_FAILED": {
         "error": 65,
         "message": "could not post message to whisper"
+    },
+    "DB_DELETE_FAILED": {
+        "error": 97,
+        "message": "database delete failed"
     },
     "DB_WRITE_FAILED": {
         "error": 98,
