@@ -829,32 +829,25 @@ module.exports = function (network) {
             signature: "ai"
         },
 
-        // checkQuorum.se
-        checkQuorum: {
-            to: contracts.checkQuorum,
-            method: "checkQuorum",
-            signature: "i",
-            returns: "number"
-        },
-
         // buy&sellShares.se
-        getNonce: {
+        commitTrade: {
             to: contracts.buyAndSellShares,
-            method: "getNonce",
-            signature: "i",
-            returns: "number"
+            method: "commitTrade",
+            signature: "ii",
+            returns: "number",
+            send: true
         },
         buyShares: {
             to: contracts.buyAndSellShares,
             method: "buyShares",
-            signature: "iiiiii",
+            signature: "iiiii",
             returns: "unfix",
             send: true
         },
         sellShares: {
             to: contracts.buyAndSellShares,
             method: "sellShares",
-            signature: "iiiiii",
+            signature: "iiiii",
             returns: "unfix",
             send: true
         },
