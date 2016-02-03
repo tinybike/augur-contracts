@@ -752,6 +752,12 @@ module.exports = function (network) {
             signature: "i",
             returns: "unfix"
         },
+        initialLiquidityAmount: {
+            to: contracts.markets,
+            method: "initialLiquidityAmount",
+            signature: "ii",
+            returns: "unfix"
+        },
         initialLiquiditySetup: {
             to: contracts.markets,
             method: "initialLiquiditySetup",
