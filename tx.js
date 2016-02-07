@@ -841,14 +841,14 @@ module.exports = function (network) {
             to: contracts.buyAndSellShares,
             method: "buyShares",
             signature: "iiiii",
-            returns: "unfix",
+            returns: "number",
             send: true
         },
         sellShares: {
             to: contracts.buyAndSellShares,
             method: "sellShares",
             signature: "iiiii",
-            returns: "unfix",
+            returns: "number",
             send: true
         },
 
