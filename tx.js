@@ -935,6 +935,13 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
+        claimProceeds: {
+            to: contracts.closeMarket,
+            method: "claimProceeds",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
 
         // dispatch.se
         dispatch: {
