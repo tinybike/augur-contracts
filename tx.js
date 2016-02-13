@@ -887,6 +887,13 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
+        submitReport: {
+            to: contracts.makeReports,
+            method: "submitReport",
+            signature: "iiiiii",
+            returns: "number",
+            send: true
+        },
         checkReportValidity: {
             to: contracts.makeReports,
             method: "checkReportValidity",
