@@ -890,7 +890,7 @@ module.exports = function (network) {
         submitReport: {
             to: contracts.makeReports,
             method: "submitReport",
-            signature: "iiiiii",
+            signature: "iiiiiii",
             returns: "number",
             send: true
         },
