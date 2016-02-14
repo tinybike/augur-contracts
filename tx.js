@@ -315,6 +315,13 @@ module.exports = function (network) {
             signature: "i",
             returns: "number"
         },
+        setOutcome: {
+            to: contracts.events,
+            method: "setOutcome",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
 
         // expiringEvents.se
         getEventIndex: {
