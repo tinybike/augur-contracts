@@ -267,6 +267,12 @@ module.exports = function (network) {
         },
 
         // events.se
+        getMarkets: {
+            to: contracts.events,
+            method: "getMarkets",
+            signature: "i",
+            returns: "hash[]"
+        },
         getReportingThreshold: {
             to: contracts.events,
             method: "getReportingThreshold",
