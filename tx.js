@@ -26,6 +26,20 @@ module.exports = function (network) {
         },
 
         // cash.se
+        addCash: {
+            to: contracts.cash,
+            method: "addCash",
+            signature: "ii",
+            send: true,
+            returns: "number"
+        },
+        setCash: {
+            to: contracts.cash,
+            method: "setCash",
+            signature: "ii",
+            send: true,
+            returns: "number"
+        },
         initiateOwner: {
             to: contracts.cash,
             method: "initiateOwner",
