@@ -18,6 +18,12 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
+        cashFaucet: {
+            to: contracts.faucets,
+            method: "cashFaucet",
+            returns: "number",
+            send: true
+        },
 
         // cash.se
         initiateOwner: {
@@ -238,7 +244,6 @@ module.exports = function (network) {
         },
 
         // consensus.se
-
         incrementPeriodAfterReporting: {
             to: contracts.consensus,
             method: "incrementPeriodAfterReporting",
