@@ -24,6 +24,22 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
+        fundNewAccount: {
+            to: contracts.faucets,
+            method: "fundNewAccount",
+            signature: "i",
+            returns: "address",
+            send: true
+        },
+
+        // createSingleEventMarket.se
+        createSingleEventMarket: {
+            to: contracts.createSingleEventMarket,
+            method: "createSingleEventMarket",
+            signature: "isiiiiiiii",
+            returns: "hash",
+            send: true
+        },
 
         // cash.se
         addCash: {
