@@ -28,7 +28,7 @@ module.exports = function (network) {
             to: contracts.faucets,
             method: "fundNewAccount",
             signature: "i",
-            returns: "address",
+            returns: "number",
             send: true
         },
 
