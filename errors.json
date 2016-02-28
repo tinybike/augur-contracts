@@ -208,5 +208,9 @@
     "ROOT_NOT_FOUND": {
         "error": 700,
         "message": "no LS-LMSR objectve function solution found"
+    },
+    "CHECK_ORDER_BOOK_FAILED": {
+        "error": 710,
+        "message": "could not check order book using current prices"
     }
 }
