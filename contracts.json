@@ -38,6 +38,7 @@
         "createBranch": "0xb005839c49a328850bb22359bb66f9ba1a0f9994",
         "createEvent": "0x0c532debb932ddb5d07eb957bf8ff5975e932ca3",
         "createMarket": "0x26ff0f6452673ff11dd8497491b271a18c76990e",
+        "createSingleEventMarket": "0x6f5452dca9bbfe8ac9151dd0e67c8dde8b1c6572",
         "eventResolution": "0xd399af9820be7ddda37c7d85e701bf8ee2337739",
         "faucets": "0x94bab6be74df76e996b20329dff2ec39d3013dc3",
         "makeReports": "0x0b7c36b76208e2c968b04dce0658c03c27bfdc00",
