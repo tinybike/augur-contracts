@@ -281,6 +281,41 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
+        penalizeNotEnoughReports: {
+            to: contracts.consensus,
+            method: "penalizeNotEnoughReports",
+            signature: "i",
+            returns: "number",
+            send: true
+        },
+        collectFees: {
+            to: contracts.consensus,
+            method: "collectFees",
+            signature: "i",
+            returns: "number",
+            send: true
+        },
+        penalizeWrong: {
+            to: contracts.consensus,
+            method: "penalizeWrong",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
+        penalizationCatchup: {
+            to: contracts.consensus,
+            method: "penalizationCatchup",
+            signature: "i",
+            returns: "number",
+            send: true
+        },
+        slashRep: {
+            to: contracts.consensus,
+            method: "slashRep",
+            signature: "iiiii",
+            returns: "number",
+            send: true
+        },
 
         // events.se
         getMarkets: {
@@ -928,13 +963,6 @@ module.exports = function (network) {
             method: "checkReportValidity",
             signature: "iai",
             returns: "number"
-        },
-        slashRep: {
-            to: contracts.makeReports,
-            method: "slashRep",
-            signature: "iiiai",
-            returns: "number",
-            send: true
         },
 
         // createEvent.se
