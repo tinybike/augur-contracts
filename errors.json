@@ -47,9 +47,21 @@
         "-1": "report isn't long enough",
         "-2": "reporter doesn't exist, voting period is over, or voting period hasn't started yet"
     },
+    "penalizeNotEnoughReports": {
+        "-1": "already done",
+        "-2": "hasn't reported this period"
+    },
+    "penalizeWrong": {
+        "-1": "pushed back event already resolved, so can't redistribute rep based off of its original expected expiration period",
+        "-2": "already past first half of new period and needed to penalize before then",
+        "-3": "need to do not enough reports penalization [or lackthereof]"
+    },
+    "collectFees": {
+        "-2": "needs to be second half of reporting period to claim rep [1st half is when redistribution is done]"
+    },
     "slashRep": {
-        "0": "incorrect hash",
-        "-2": "incorrect reporter ID"
+        "0": "not a valid claim",
+        "-2": "reporter doesn't exist"
     },
     "createSubbranch": {
         "-1": "bad input or parent doesn't exist",

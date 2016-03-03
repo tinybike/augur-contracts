@@ -56,32 +56,31 @@
         "reporting": "0x9d358fee98edb880e6a4549e21f4ab66dfcadfa7"
     },
     "10101": {
-        "buyAndSellShares": "0xd15a6cfc462ae76b9ec590cab8b34bfa8e1302d7",
-        "closeMarket": "0x35152caa07026203a1add680771afb690d872d7d",
-        "closeMarketEight": "0x9fe69262bbaa47f013b7dbd6ca5f01e17446c645",
-        "closeMarketFour": "0xabe47f122a496a732d6c4b38b3ca376d597d75dd",
-        "closeMarketOne": "0x8caf2c0ce7cdc2e81b58f74322cefdef440b3f8d",
-        "closeMarketTwo": "0x81a7621e9a286d061b3dea040888a51c96693b1c",
-        "consensus": "0x6c4c9fa11d6d8ed2c7a08ddcf4d4654c85194f68",
-        "createBranch": "0x8c19616de17acdfbc933b99d9f529a689d22098f",
-        "createEvent": "0x5069d883e31429c6dd1325d961f443007747c7a2",
-        "createMarket": "0x3f3276849a878a176b2f02dd48a483e8182a49e4",
-        "createSingleEventMarket": "0xc1c4e2f32e4b84a60b8b7983b6356af4269aab79",
-        "eventResolution": "0x52ccb0490bc81a2ae363fccbb2b367bca546cec7",
-        "faucets": "0x4a61f3db785f1e2a23ffefeafaceeef2df551667",
-        "makeReports": "0x60cb05deb51f92ee25ce99f67181ecaeb0b743ea",
-        "orderBook": "0x8a4e2993a9972ee035453bb5674816fc3a698718",
-        "ramble": "0xa34c9f6fc047cea795f69b34a063d32e6cb6288c",
-        "sendReputation": "0x5f67ab9ff79be97b27ac8f26ef9f4b429b82e2df",
-        "transferShares": "0xe5b327630cfa7f4b2324f9066c897dceecfd88a3",
-        "branches": "0x0fbddb6bfb81c8d0965a894567cf4061446072c2",
-        "cash": "0x8f2c2267687cb0f047b28a1b6f945da6e101a0d7",
-        "events": "0xbd19195b9e8a2d8ed14fc3a2823856b5c16f7f55",
-        "expiringEvents": "0x482c57abdce592b39434e3f619ffc3db62ab6d01",
-        "fxpFunctions": "0x708fdfe18bf28afe861a69e95419d183ace003eb",
-        "info": "0x77c424f86a1b80f1e303d1c2651acd6aba653cb6",
-        "markets": "0xc21cfa6688dbfd2eca2548d894aa55fd0bbf1c7e",
-        "reporting": "0xe4714fcbdcdba49629bc408183ef40d120700b8d"
+        "buyAndSellShares": "0x1305fd4a21ab8623f306e885e3ac76337340a9f3",
+        "closeMarket": "0x6cc483868480b14130982467f17ca562390b87d0",
+        "closeMarketEight": "0x86085657a1b70b0da1be8c010ee5aefb240deffd",
+        "closeMarketFour": "0x0c0544c1d9d31df46599e972ae2fc0ad985d98b6",
+        "closeMarketOne": "0x529c2141b536eb6f760979aa69f3fe2efd94b637",
+        "closeMarketTwo": "0xf6163ea76d6944f17ef209c63adaf087e4f7094e",
+        "consensus": "0xe5ada709b8aea7a456fcfb5bed68b8f4442c9d00",
+        "createBranch": "0x7fc7a904c3895bb62c007eb3e5be8461cf7f17f8",
+        "createEvent": "0xa657d97ab6b5956b2a906769cff0daa550db47f8",
+        "createMarket": "0x275ea6bfded0e1a06fb6310e941d2ef9e6c08edc",
+        "createSingleEventMarket": "0x27263db4a2e8f03a72529f3f844ccf546bf57743",
+        "eventResolution": "0x9bc5ece0a4e249f7ba3f0e5874916c62f434241b",
+        "faucets": "0x6f478e5116aab344be7e7a06bb40f5122191d843",
+        "makeReports": "0x1c98a64b4af0c2324c28110b4b6836ad4070d6f8",
+        "ramble": "0x05fda9770e66b781b269151fd68f4c6c3acc0ec7",
+        "sendReputation": "0x8ed904172ba9491352960a7e64a6eace97e78079",
+        "transferShares": "0x273daa6c386d68474bf2aafa271a77450fdea14f",
+        "branches": "0xf812d4ce3508afadc16cfbc089fc3d34bb9bd5cf",
+        "cash": "0x0025a1cb2e3380388d30aa36dc7a4139226abb7a",
+        "events": "0x46b93d798bf5001e6e57a1d1ad671d71db61a12d",
+        "expiringEvents": "0x1aab6f6e25576c802f4053f1f2907a22b4f48034",
+        "fxpFunctions": "0xa0a0fc3eec1036e40eae32ddb6b7682e312f62ac",
+        "info": "0xeb711aa4783bd343fcc359eba369f2ae7c44450b",
+        "markets": "0x38b333b05ef75eeda5648defdb0d17959361d961",
+        "reporting": "0xe2e219679e3763e4e9f98480f860a846efa7e30d"
     },
     "errors": {
         "0x": "no response or bad input",
@@ -132,9 +131,21 @@
             "-1": "report isn't long enough",
             "-2": "reporter doesn't exist, voting period is over, or voting period hasn't started yet"
         },
+        "penalizeNotEnoughReports": {
+            "-1": "already done",
+            "-2": "hasn't reported this period"
+        },
+        "penalizeWrong": {
+            "-1": "pushed back event already resolved, so can't redistribute rep based off of its original expected expiration period",
+            "-2": "already past first half of new period and needed to penalize before then",
+            "-3": "need to do not enough reports penalization [or lackthereof]"
+        },
+        "collectFees": {
+            "-2": "needs to be second half of reporting period to claim rep [1st half is when redistribution is done]"
+        },
         "slashRep": {
-            "0": "incorrect hash",
-            "-2": "incorrect reporter ID"
+            "0": "not a valid claim",
+            "-2": "reporter doesn't exist"
         },
         "createSubbranch": {
             "-1": "bad input or parent doesn't exist",
