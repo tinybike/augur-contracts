@@ -426,7 +426,7 @@ module.exports = function (network) {
         getReportHash: {
             to: contracts.expiringEvents,
             method: "getReportHash",
-            signature: "iii",
+            signature: "iiii",
             returns: "hash"
         },
         getVSize: {
