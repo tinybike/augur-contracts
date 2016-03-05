@@ -142,69 +142,6 @@ module.exports = function (network) {
             signature: "iiiii"
         },
 
-        // center.se
-        center: {
-            to: contracts.center,
-            method: "center",
-            signature: "aaaaaii"
-        },
-
-        // redeem_center.se
-        redeem_center: {
-            to: contracts.redeem_center,
-            method: "center",
-            signature: "iiiii",
-            returns: "number"
-        },
-        redeem_covariance: {
-            to: contracts.redeem_center,
-            method: "covariance",
-            signature: "iiiii"
-        },
-
-        // redeem_score.se
-        redeem_blank: {
-            to: contracts.redeem_score,
-            method: "blank",
-            signature: "iiiii"
-        },
-        redeem_loadings: {
-            to: contracts.redeem_score,
-            method: "loadings",
-            signature: "iiiii",
-            returns: "number"
-        },
-
-        // score.se
-        blank: {
-            to: contracts.score,
-            method: "blank",
-            signature: "iii",
-            returns: "number[]"
-        },
-        loadings: {
-            to: contracts.score,
-            method: "loadings",
-            signature: "aaaii",
-            returns: "number[]"
-        },
-
-        // resolve.se
-        resolve: {
-            to: contracts.resolve,
-            method: "resolve",
-            signature: "aaaaaii",
-            returns: "number[]"
-        },
-
-        // redeem_resolve.se
-        redeem_resolve: {
-            to: contracts.redeem_resolve,
-            method: "resolve",
-            signature: "iiiii",
-            returns: "number"
-        },
-
         // branches.se
         initDefaultBranch: {
             to: contracts.branches,
@@ -411,131 +348,11 @@ module.exports = function (network) {
             signature: "ii",
             returns: "number"
         },
-        getReporterBallot: {
-            to: contracts.expiringEvents,
-            method: "getReporterBallot",
-            signature: "iii",
-            returns: "unfix[]"
-        },
-        getReport: {
-            to: contracts.expiringEvents,
-            method: "getReport",
-            signature: "iiii",
-            returns: "unfix"
-        },
         getReportHash: {
             to: contracts.expiringEvents,
             method: "getReportHash",
             signature: "iiii",
             returns: "hash"
-        },
-        getVSize: {
-            to: contracts.expiringEvents,
-            method: "getVSize",
-            signature: "ii",
-            returns: "number"
-        },
-        getReportsFilled: {
-            to: contracts.expiringEvents,
-            method: "getReportsFilled",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getReportsMask: {
-            to: contracts.expiringEvents,
-            method: "getReportsMask",
-            signature: "ii",
-            returns: "number[]"
-        },
-        getWeightedCenteredData: {
-            to: contracts.expiringEvents,
-            method: "getWeightedCenteredData",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getCovarianceMatrixRow: {
-            to: contracts.expiringEvents,
-            method: "getCovarianceMatrixRow",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getDeflated: {
-            to: contracts.expiringEvents,
-            method: "getDeflated",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getLoadingVector: {
-            to: contracts.expiringEvents,
-            method: "getLoadingVector",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getLatent: {
-            to: contracts.expiringEvents,
-            method: "getLatent",
-            signature: "ii",
-            returns: "unfix"
-        },
-        getScores: {
-            to: contracts.expiringEvents,
-            method: "getScores",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getSetOne: {
-            to: contracts.expiringEvents,
-            method: "getSetOne",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getSetTwo: {
-            to: contracts.expiringEvents,
-            method: "getSetTwo",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        returnOld: {
-            to: contracts.expiringEvents,
-            method: "returnOld",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getNewOne: {
-            to: contracts.expiringEvents,
-            method: "getNewOne",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getNewTwo: {
-            to: contracts.expiringEvents,
-            method: "getNewTwo",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getAdjPrinComp: {
-            to: contracts.expiringEvents,
-            method: "getAdjPrinComp",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getSmoothRep: {
-            to: contracts.expiringEvents,
-            method: "getSmoothRep",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getOutcomesFinal: {
-            to: contracts.expiringEvents,
-            method: "getOutcomesFinal",
-            signature: "ii",
-            returns: "unfix[]"
-        },
-        getReporterPayouts: {
-            to: contracts.expiringEvents,
-            method: "getReporterPayouts",
-            signature: "ii",
-            returns: "unfix[]"
         },
         moveEventsToCurrentPeriod: {
             to: contracts.expiringEvents,
@@ -562,108 +379,6 @@ module.exports = function (network) {
             send: true,
             returns: "number"
         },
-        setVSize: {
-            to: contracts.expiringEvents,
-            method: "setVSize",
-            signature: "iii",
-            send: true
-        },
-        setReportsFilled: {
-            to: contracts.expiringEvents,
-            method: "setReportsFilled",
-            signature: "iia",
-            send: true
-        },
-        setReportsMask: {
-            to: contracts.expiringEvents,
-            method: "setReportsMask",
-            signature: "iia",
-            send: true
-        },
-        setWeightedCenteredData: {
-            to: contracts.expiringEvents,
-            method: "setWeightedCenteredData",
-            signature: "iia",
-            send: true
-        },
-        setCovarianceMatrixRow: {
-            to: contracts.expiringEvents,
-            method: "setCovarianceMatrixRow",
-            signature: "iia",
-            send: true
-        },
-        setDeflated: {
-            to: contracts.expiringEvents,
-            method: "setDeflated",
-            signature: "iia",
-            send: true
-        },
-        setLoadingVector: {
-            to: contracts.expiringEvents,
-            method: "setLoadingVector",
-            signature: "iia",
-            send: true
-        },
-        setScores: {
-            to: contracts.expiringEvents,
-            method: "setScores",
-            signature: "iia",
-            send: true
-        },
-        setSetOne: {
-            to: contracts.expiringEvents,
-            method: "setSetOne",
-            signature: "iia",
-            send: true
-        },
-        setSetTwo: {
-            to: contracts.expiringEvents,
-            method: "setSetTwo",
-            signature: "iia",
-            send: true
-        },
-        setOld: {
-            to: contracts.expiringEvents,
-            method: "setOld",
-            signature: "iia",
-            send: true
-        },
-        setNewOne: {
-            to: contracts.expiringEvents,
-            method: "setNewOne",
-            signature: "iia",
-            send: true
-        },
-        setNewTwo: {
-            to: contracts.expiringEvents,
-            method: "setNewTwo",
-            signature: "iia",
-            send: true
-        },
-        setAdjPrinComp: {
-            to: contracts.expiringEvents,
-            method: "setAdjPrinComp",
-            signature: "iia",
-            send: true
-        },
-        setSmoothRep: {
-            to: contracts.expiringEvents,
-            method: "setSmoothRep",
-            signature: "iia",
-            send: true
-        },
-        setOutcomesFinal: {
-            to: contracts.expiringEvents,
-            method: "setOutcomesFinal",
-            signature: "iia",
-            send: true
-        },
-        setReportHash: {
-            to: contracts.expiringEvents,
-            method: "setReportHash",
-            signature: "iii",
-            send: true
-        },
         getTotalReputation: {
             to: contracts.expiringEvents,
             method: "getTotalReputation",
@@ -675,12 +390,6 @@ module.exports = function (network) {
             method: "setTotalReputation",
             signature: "iii",
             returns: "number"
-        },
-        makeBallot: {
-            to: contracts.expiringEvents,
-            method: "makeBallot",
-            signature: "ii",
-            returns: "hash[]"
         },
 
         // markets.se
@@ -925,6 +634,65 @@ module.exports = function (network) {
         },
 
         // makeReports.se
+        getReportedPeriod: {
+            to: contracts.makeReports,
+            method: "getReportedPeriod",
+            signature: "iii",
+            returns: "number"
+        },
+        getReportable: {
+            to: contracts.makeReports,
+            method: "getReportable",
+            signature: "ii",
+            returns: "number"
+        },
+        getNumReportsActual: {
+            to: contracts.makeReports,
+            method: "getNumReportsActual",
+            signature: "ii",
+            returns: "number"
+        },
+        getSubmittedHash: {
+            to: contracts.makeReports,
+            method: "getSubmittedHash",
+            signature: "iii",
+            returns: "hash"
+        },
+        getBeforeRep: {
+            to: contracts.makeReports,
+            method: "getBeforeRep",
+            signature: "ii",
+            returns: "unfix"
+        },
+        getAfterRep: {
+            to: contracts.makeReports,
+            method: "getAfterRep",
+            signature: "ii",
+            returns: "unfix"
+        },
+        getReport: {
+            to: contracts.makeReports,
+            method: "getReport",
+            signature: "iii",
+            returns: "hash"
+        },
+        getRRUpToDate: {
+            to: contracts.makeReports,
+            method: "getRRUpToDate",
+            returns: "number"
+        },
+        getNumReportsExpectedEvent: {
+            to: contracts.makeReports,
+            method: "getNumReportsExpectedEvent",
+            signature: "iii",
+            returns: "hash"
+        },
+        getNumReportsEvent: {
+            to: contracts.makeReports,
+            method: "getNumReportsEvent",
+            signature: "iii",
+            returns: "hash"
+        },
         makeHash: {
             to: contracts.makeReports,
             method: "makeHash",
