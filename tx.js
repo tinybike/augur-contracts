@@ -634,6 +634,12 @@ module.exports = function (network) {
         },
 
         // makeReports.se
+        getNumEventsToReport: {
+            to: contracts.makeReports,
+            method: "getNumEventsToReport",
+            signature: "ii",
+            returns: "number"
+        },
         getReportedPeriod: {
             to: contracts.makeReports,
             method: "getReportedPeriod",
