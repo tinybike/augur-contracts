@@ -680,7 +680,7 @@ module.exports = function (network) {
             to: contracts.makeReports,
             method: "getReport",
             signature: "iii",
-            returns: "hash"
+            returns: "unfix"
         },
         getRRUpToDate: {
             to: contracts.makeReports,
