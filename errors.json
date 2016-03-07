@@ -52,7 +52,6 @@
         "-2": "hasn't reported this period"
     },
     "penalizationCatchup": {
-        "0": "already caught up on this branch",
         "-2": "can only be called during the first half of the reporting period"
     },
     "penalizeWrong": {

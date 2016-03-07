@@ -136,6 +136,10 @@
             "-1": "already done",
             "-2": "hasn't reported this period"
         },
+        "penalizationCatchup": {
+            "0": "already caught up on this branch",
+            "-2": "can only be called during the first half of the reporting period"
+        },
         "penalizeWrong": {
             "-1": "pushed back event already resolved, so can't redistribute rep based off of its original expected expiration period",
             "-2": "already past first half of new period and needed to penalize before then",
