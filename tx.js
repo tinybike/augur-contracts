@@ -211,6 +211,12 @@ module.exports = function (network) {
         },
 
         // consensus.se
+        proportionCorrect: {
+            to: contracts.consensus,
+            method: "proportionCorrect",
+            signature: "iii",
+            returns: "unfix"
+        },
         incrementPeriodAfterReporting: {
             to: contracts.consensus,
             method: "incrementPeriodAfterReporting",
@@ -255,6 +261,18 @@ module.exports = function (network) {
         },
 
         // events.se
+        getmode: {
+            to: contracts.events,
+            method: "getmode",
+            signature: "i",
+            returns: "unfix"
+        },
+        getUncaughtOutcome: {
+            to: contracts.events,
+            method: "getUncaughtOutcome",
+            signature: "i",
+            returns: "unfix"
+        },
         getMarkets: {
             to: contracts.events,
             method: "getMarkets",
