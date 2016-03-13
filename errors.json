@@ -84,6 +84,15 @@
         "-6": "duplicate events",
         "-7": "event already expired"
     },
+    "createSingleEventMarket": {
+        "-1": "bad input or parent doesn't exist",
+        "-2": "too many events",
+        "-3": "too many outcomes",
+        "-4": "not enough money or market already exists",
+        "-5": "fee too low",
+        "-6": "duplicate events",
+        "-7": "event already expired"
+    },
     "sendReputation": {
         "0": "not enough reputation",
         "-1": "Your reputation account was just created! Earn some reputation before you can send to others",
