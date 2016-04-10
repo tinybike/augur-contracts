@@ -10,6 +10,43 @@ module.exports = function (network) {
 
     return {
 
+        // comments.se
+        hash: {
+            to: contracts.comments,
+            method: "hash",
+            signature: "iiis",
+            returns: "hash"
+        },
+        speak: {
+            to: contracts.comments,
+            method: "speak",
+            signature: "iis",
+            returns: "number",
+            send: true
+        },
+        reply: {
+            to: contracts.comments,
+            method: "reply",
+            signature: "iiis",
+            returns: "number",
+            send: true
+        },
+
+        // metadata.se
+        setMetadata: {
+            to: contracts.metadata,
+            method: "setMetadata",
+            signature: "iiiisssss",
+            returns: "number",
+            send: true
+        },
+        getMetadata: {
+            to: contracts.metadata,
+            method: "getMetadata",
+            signature: "i",
+            returns: "hash[]"
+        },
+
         // faucets.se
         reputationFaucet: {
             to: contracts.faucets,
@@ -128,18 +165,6 @@ module.exports = function (network) {
             signature: "isii",
             returns: "number",
             send: true
-        },
-
-        // redeem_interpolate.se
-        redeem_interpolate: {
-            to: contracts.redeem_interpolate,
-            method: "interpolate",
-            signature: "iiiii"
-        },
-        read_ballots: {
-            to: contracts.redeem_interpolate,
-            method: "read_ballots",
-            signature: "iiiii"
         },
 
         // branches.se
@@ -428,14 +453,14 @@ module.exports = function (network) {
             method: "getMarketInfo",
             signature: "i",
             returns: "hash[]",
-            gas: 9999999999999
+            gas: "0x9184e729fff"
         },
         getMarketsInfo: {
             to: contracts.markets,
             method: "getMarketsInfo",
             signature: "iii",
             returns: "hash[]",
-            gas: 9999999999999
+            gas: "0x9184e729fff"
         },
         getMarketEvents: {
             to: contracts.markets,
@@ -723,13 +748,6 @@ module.exports = function (network) {
             signature: "iii",
             returns: "hash"
         },
-        report: {
-            to: contracts.makeReports,
-            method: "report",
-            signature: "iaii",
-            returns: "number",
-            send: true
-        },
         calculateReportingThreshold: {
             to: contracts.makeReports,
             method: "calculateReportingThreshold",
@@ -753,7 +771,7 @@ module.exports = function (network) {
         checkReportValidity: {
             to: contracts.makeReports,
             method: "checkReportValidity",
-            signature: "iai",
+            signature: "iii",
             returns: "number"
         },
 
