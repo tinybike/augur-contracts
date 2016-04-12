@@ -10,28 +10,6 @@ module.exports = function (network) {
 
     return {
 
-        // comments.se
-        hash: {
-            to: contracts.comments,
-            method: "hash",
-            signature: "iiis",
-            returns: "hash"
-        },
-        speak: {
-            to: contracts.comments,
-            method: "speak",
-            signature: "iis",
-            returns: "number",
-            send: true
-        },
-        reply: {
-            to: contracts.comments,
-            method: "reply",
-            signature: "iiis",
-            returns: "number",
-            send: true
-        },
-
         // metadata.se
         setMetadata: {
             to: contracts.metadata,
