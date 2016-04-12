@@ -36,7 +36,7 @@ module.exports = function (network) {
         setMetadata: {
             to: contracts.metadata,
             method: "setMetadata",
-            signature: "iiiisssss",
+            signature: "iiiiss",
             returns: "number",
             send: true
         },
