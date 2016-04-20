@@ -607,11 +607,6 @@ module.exports = function (network) {
             signature: "i",
             returns: "unfix"
         },
-        hashReport: {
-            to: contracts.reporting,
-            method: "hashReport",
-            signature: "ai"
-        },
 
         // buy&sellShares.se
         commitTrade: {
