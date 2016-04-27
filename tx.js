@@ -175,6 +175,18 @@ module.exports = function (network) {
             signature: "i",
             returns: "number"
         },
+        getReportPeriod: {
+            to: contracts.branches,
+            method: "getVotePeriod",
+            signature: "i",
+            returns: "number"
+        },
+        getNumMarkets: {
+            to: contracts.branches,
+            method: "getNumMarketsBranch",
+            signature: "i",
+            returns: "number"
+        },
         getNumMarketsBranch: {
             to: contracts.branches,
             method: "getNumMarketsBranch",
