@@ -405,13 +405,6 @@ module.exports = function (network) {
             signature: "iii",
             send: true
         },
-        setReporterBallot: {
-            to: contracts.expiringEvents,
-            method: "setReporterBallot",
-            signature: "iiiai",
-            send: true,
-            returns: "number"
-        },
         getTotalReputation: {
             to: contracts.expiringEvents,
             method: "getTotalReputation",
