@@ -6,24 +6,9 @@
 
 module.exports = function (network) {
 
-    var contracts = require("./contracts")[network];
+    var contracts = require("./contracts")[network || "2"];
 
     return {
-
-        // metadata.se
-        setMetadata: {
-            to: contracts.metadata,
-            method: "setMetadata",
-            signature: "iiiiss",
-            returns: "number",
-            send: true
-        },
-        getMetadata: {
-            to: contracts.metadata,
-            method: "getMetadata",
-            signature: "i",
-            returns: "hash[]"
-        },
 
         // faucets.se
         reputationFaucet: {
@@ -404,18 +389,6 @@ module.exports = function (network) {
             method: "setTotalRepReported",
             signature: "iii",
             send: true
-        },
-        getTotalReputation: {
-            to: contracts.expiringEvents,
-            method: "getTotalReputation",
-            signature: "ii",
-            returns: "unfix"
-        },
-        setTotalReputation: {
-            to: contracts.expiringEvents,
-            method: "setTotalReputation",
-            signature: "iii",
-            returns: "number"
         },
 
         // markets.se
