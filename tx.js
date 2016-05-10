@@ -32,15 +32,6 @@ module.exports = function (network) {
             send: true
         },
 
-        // createSingleEventMarket.se
-        createSingleEventMarket: {
-            to: contracts.createSingleEventMarket,
-            method: "createSingleEventMarket",
-            signature: "isiiiisiiiiis",
-            returns: "hash",
-            send: true
-        },
-
         // cash.se
         addCash: {
             to: contracts.cash,
@@ -1047,19 +1038,24 @@ module.exports = function (network) {
             returns: "number"
         },
 
-        // createEvent.se
+        // createMarket.se
         createEvent: {
-            to: contracts.createEvent,
+            to: contracts.createMarket,
             method: "createEvent",
             signature: "isiiiis",
             send: true
         },
-
-        // createMarket.se
         createMarket: {
             to: contracts.createMarket,
             method: "createMarket",
             signature: "isiaiiiis",
+            send: true
+        },
+        createSingleEventMarket: {
+            to: contracts.createMarket,
+            method: "createSingleEventMarket",
+            signature: "isiiiisiiiiis",
+            returns: "hash",
             send: true
         },
 
