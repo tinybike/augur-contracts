@@ -36,7 +36,7 @@ module.exports = function (network) {
         createSingleEventMarket: {
             to: contracts.createSingleEventMarket,
             method: "createSingleEventMarket",
-            signature: "isiiiiiiii",
+            signature: "isiiiisiiiiis",
             returns: "hash",
             send: true
         },
@@ -211,6 +211,51 @@ module.exports = function (network) {
         },
 
         // consensus.se
+        // def getFeesCollected(branch, address, period):
+        getFeesCollected: {
+            to: contracts.consensus,
+            method: "getFeesCollected",
+            signature: "iii",
+            returns: "number"
+        },
+        // def setFeesCollected(branch, address, period):
+        setFeesCollected: {
+            to: contracts.consensus,
+            method: "setFeesCollected",
+            signature: "iii",
+            returns: "number",
+            send: true
+        },
+        // def setNotEnoughPenalized(branch, address, period):
+        setNotEnoughPenalized: {
+            to: contracts.consensus,
+            method: "setNotEnoughPenalized",
+            signature: "iii",
+            returns: "number",
+            send: true
+        },            
+        // def getNotEnoughPenalized(branch, address, period):
+        getNotEnoughPenalized: {
+            to: contracts.consensus,
+            method: "getNotEnoughPenalized",
+            signature: "iii",
+            returns: "number"
+        },
+        // def getBaseReportersLastPeriod(branch):
+        getBaseReportersLastPeriod: {
+            to: contracts.consensus,
+            method: "getBaseReportersLastPeriod",
+            signature: "i",
+            returns: "number"
+        },
+        // def initialPenalizedSetting(branch, reporter, upto):
+        initialPenalizedSetting: {
+            to: contracts.consensus,
+            method: "initialPenalizedSetting",
+            signature: "iii",
+            returns: "number",
+            send: true
+        },
         proportionCorrect: {
             to: contracts.consensus,
             method: "proportionCorrect",
@@ -224,16 +269,9 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        penalizeNotEnoughReports: {
+        penalizationCatchup: {
             to: contracts.consensus,
-            method: "penalizeNotEnoughReports",
-            signature: "i",
-            returns: "number",
-            send: true
-        },
-        collectFees: {
-            to: contracts.consensus,
-            method: "collectFees",
+            method: "penalizationCatchup",
             signature: "i",
             returns: "number",
             send: true
@@ -245,15 +283,29 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        penalizationCatchup: {
-            to: contracts.consensus,
-            method: "penalizationCatchup",
+
+        // penalizeNotEnoughReports.se
+        penalizeNotEnoughReports: {
+            to: contracts.penalizeNotEnoughReports,
+            method: "penalizeNotEnoughReports",
             signature: "i",
             returns: "number",
             send: true
         },
+
+        // collectFees.se
+        collectFees: {
+            to: contracts.collectFees,
+            method: "collectFees",
+            signature: "i",
+            returns: "number",
+            send: true
+        },
+
+        // slashRep.se
+        // def slashRep(branch, salt, report, reporter, eventID):
         slashRep: {
-            to: contracts.consensus,
+            to: contracts.slashRep,
             method: "slashRep",
             signature: "iiiii",
             returns: "number",
@@ -336,6 +388,12 @@ module.exports = function (network) {
         },
 
         // expiringEvents.se
+        getReportedPeriod: {
+            to: contracts.expiringEvents,
+            method: "getReportedPeriod",
+            signature: "iii",
+            returns: "number"
+        },
         getEventIndex: {
             to: contracts.expiringEvents,
             method: "getEventIndex",
@@ -466,6 +524,12 @@ module.exports = function (network) {
             signature: "i",
             returns: "hash"
         },
+        getCreationBlock: {
+            to: contracts.markets,
+            method: "getCreationBlock",
+            signature: "i",
+            returns: "number"
+        },
         getVolume: {
             to: contracts.markets,
             method: "getVolume",
@@ -543,68 +607,337 @@ module.exports = function (network) {
         },
 
         // reporting.se
-        getRepBalance: {
+        // def checkWhitelist(address):
+        checkWhitelist: {
             to: contracts.reporting,
-            method: "getRepBalance",
-            signature: "ii",
+            method: "checkWhitelist",
+            signature: "i"
+        },
+        // def getActiveRep(branch):
+        getActiveRep: {
+            to: contracts.reporting,
+            method: "getActiveRep",
+            signature: "i",
             returns: "unfix"
         },
+        // def adjustActiveRep(branch, amount):
+        adjustActiveRep: {
+            to: contracts.reporting,
+            method: "adjustActiveRep",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
+        // def setFork(branch):
+        setFork: {
+            to: contracts.reporting,
+            method: "setFork",
+            signature: "i",
+            returns: "number",
+            send: true
+        },
+        // def getFork(branch):
+        getFork: {
+            to: contracts.reporting,
+            method: "getFork",
+            signature: "i",
+            returns: "number"
+        },
+        // def checkContractWhitelist(contract, address):
+        checkContractWhitelist: {
+            to: contracts.reporting,
+            method: "checkContractWhitelist",
+            signature: "ii"
+        },
+        // def setWhitelist(contract, addresses:arr):
+        setWhitelist: {
+            to: contracts.reporting,
+            method: "setWhitelist",
+            signature: "ia",
+            returns: "string",
+            send: true
+        },
+        // def getRepByIndex(branch, repIndex):
         getRepByIndex: {
             to: contracts.reporting,
             method: "getRepByIndex",
             signature: "ii",
             returns: "unfix"
         },
+        // def getRepBalance(branch, address):
+        getRepBalance: {
+            to: contracts.reporting,
+            method: "getRepBalance",
+            signature: "ii",
+            returns: "unfix"
+        },
+        // def getDormantRepByIndex(branch, repIndex):
+        getDormantRepByIndex: {
+            to: contracts.reporting,
+            method: "getDormantRepByIndex",
+            signature: "ii",
+            returns: "unfix"
+        },
+        // def balanceOf(branch, address):
+        balanceOf: {
+            to: contracts.reporting,
+            method: "balanceOf",
+            signature: "ii",
+            returns: "unfix"
+        },
+        // def totalSupply(branch):
+        totalSupply: {
+            to: contracts.reporting,
+            method: "totalSupply",
+            signature: "i",
+            returns: "unfix"
+        },
+        // def getReporterID(branch, index):
         getReporterID: {
             to: contracts.reporting,
             method: "getReporterID",
             signature: "ii",
             returns: "address"
         },
-        getReputation: {
-            to: contracts.reporting,
-            method: "getReputation",
-            signature: "i",
-            returns: "number[]"
-        },
-        getNumberReporters: {
-            to: contracts.reporting,
-            method: "getNumberReporters",
-            signature: "i",
-            returns: "number"
-        },
-        repIDToIndex: {
-            to: contracts.reporting,
-            method: "repIDToIndex",
-            signature: "ii",
-            returns: "number"
-        },
+        // def getTotalRep(branch):
         getTotalRep: {
             to: contracts.reporting,
             method: "getTotalRep",
             signature: "i",
             returns: "unfix"
         },
-
-        // buy&sellShares.se
-        commitTrade: {
-            to: contracts.buyAndSellShares,
-            method: "commitTrade",
+        // def getReputation(address):
+        getReputation: {
+            to: contracts.reporting,
+            method: "getReputation",
+            signature: "i",
+            returns: "hash[]"
+        },
+        // def getNumberReporters(branch):
+        getNumberReporters: {
+            to: contracts.reporting,
+            method: "getNumberReporters",
+            signature: "i",
+            returns: "number"
+        },
+        // def repIDToIndex(branch, repID):
+        repIDToIndex: {
+            to: contracts.reporting,
+            method: "repIDToIndex",
+            signature: "ii",
+            returns: "number"
+        },
+        // def hashReport(report: arr, salt):
+        hashReport: {
+            to: contracts.reporting,
+            method: "hashReport",
+            signature: "ai"
+        },
+        // def setInitialReporters(parent, branchID):
+        setInitialReporters: {
+            to: contracts.reporting,
+            method: "setInitialReporters",
             signature: "ii",
             returns: "number",
             send: true
         },
-        buyShares: {
-            to: contracts.buyAndSellShares,
-            method: "buyShares",
-            signature: "iiiii",
+        // def addReporter(branch, sender):
+        addReporter: {
+            to: contracts.reporting,
+            method: "addReporter",
+            signature: "ii",
             returns: "number",
             send: true
         },
-        sellShares: {
+        // def addRep(branch, index, value):
+        addRep: {
+            to: contracts.reporting,
+            method: "addRep",
+            signature: "iii",
+            returns: "number",
+            send: true
+        },
+        // def subtractRep(branch, index, value):
+        subtractRep: {
+            to: contracts.reporting,
+            method: "subtractRep",
+            signature: "iii",
+            returns: "number",
+            send: true
+        },
+        // def setRep(branch, index, newRep):
+        setRep: {
+            to: contracts.reporting,
+            method: "setRep",
+            signature: "iii",
+            returns: "number",
+            send: true
+        },
+        // def addDormantRep(branch, index, value):
+        addDormantRep: {
+            to: contracts.reporting,
+            method: "addDormantRep",
+            signature: "iii",
+            returns: "number",
+            send: true
+        },
+        // def subtractDormantRep(branch, index, value):
+        subtractDormantRep: {
+            to: contracts.reporting,
+            method: "subtractDormantRep",
+            signature: "iii",
+            returns: "number",
+            send: true
+        },
+        // def setSaleDistribution(addresses: arr, balances: arr, branchID):
+        setSaleDistribution: {
+            to: contracts.reporting,
+            method: "setSaleDistribution",
+            signature: "aai",
+            returns: "number",
+            send: true
+        },
+
+        // trades.se
+        makeTradeHash: {
+            to: contracts.trades,
+            method: "makeTradeHash",
+            signature: "iia",
+            returns: "hash"
+        },
+        commitTrade: {
+            to: contracts.trades,
+            method: "commitTrade",
+            signature: "i",
+            returns: "number",
+            send: true
+        },
+        setInitialTrade: {
+            to: contracts.trades,
+            method: "setInitialTrade",
+            signature: "i",
+            returns: "number",
+            send: true
+        },  
+        getInitialTrade: {
+            to: contracts.trades,
+            method: "getInitialTrade",
+            signature: "i",
+            returns: "hash"
+        },            
+        zeroHash: {
+            to: contracts.trades,
+            method: "zeroHash",
+            returns: "number",
+            send: true
+        },
+        checkHash: {
+            to: contracts.trades,
+            method: "checkHash",
+            signature: "i",
+            returns: "number"
+        },
+        getID: {
+            to: contracts.trades,
+            method: "getID",
+            signature: "i",
+            returns: "hash"
+        },            
+        saveTrade: {
+            to: contracts.trades,
+            method: "saveTrade",
+            signature: "iiiiiii",
+            returns: "number",
+            send: true
+        },
+        get_trade: {
+            to: contracts.trades,
+            method: "get_trade",
+            signature: "i",
+            returns: "hash[]"
+        },
+        get_amount: {
+            to: contracts.trades,
+            method: "get_amount",
+            signature: "i",
+            returns: "unfix"
+        },
+        get_price: {
+            to: contracts.trades,
+            method: "get_price",
+            signature: "i",
+            returns: "unfix"
+        },
+        update_trade: {
+            to: contracts.trades,
+            method: "update_trade",
+            signature: "ii",
+            send: true
+        },
+        remove_trade: {
+            to: contracts.trades,
+            method: "remove_trade",
+            signature: "i",
+            returns: "number",
+            send: true
+        },
+        fill_trade: {
+            to: contracts.trades,
+            method: "fill_trade",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
+
+        // buy&sellShares.se
+        cancel: {
             to: contracts.buyAndSellShares,
-            method: "sellShares",
-            signature: "iiiii",
+            method: "cancel",
+            signature: "i",
+            returns: "number",
+            send: true
+        },
+        buy: {
+            to: contracts.buyAndSellShares,
+            method: "buy",
+            signature: "iiii",
+            returns: "number",
+            send: true
+        },
+        sell: {
+            to: contracts.buyAndSellShares,
+            method: "sell",
+            signature: "iiii",
+            returns: "number",
+            send: true
+        },
+        short_sell: {
+            to: contracts.buyAndSellShares,
+            method: "short_sell",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
+        trade: {
+            to: contracts.buyAndSellShares,
+            method: "trade",
+            signature: "iia",
+            returns: "number",
+            send: true
+        },
+
+        // completeSets.se
+        buyCompleteSets: {
+            to: contracts.completeSets,
+            method: "buyCompleteSets",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
+        sellCompleteSets: {
+            to: contracts.completeSets,
+            method: "sellCompleteSets",
+            signature: "ii",
             returns: "number",
             send: true
         },
@@ -631,18 +964,6 @@ module.exports = function (network) {
         getNumEventsToReport: {
             to: contracts.makeReports,
             method: "getNumEventsToReport",
-            signature: "ii",
-            returns: "number"
-        },
-        getReportedPeriod: {
-            to: contracts.makeReports,
-            method: "getReportedPeriod",
-            signature: "iii",
-            returns: "number"
-        },
-        getReportable: {
-            to: contracts.makeReports,
-            method: "getReportable",
             signature: "ii",
             returns: "number"
         },
@@ -730,7 +1051,7 @@ module.exports = function (network) {
         createEvent: {
             to: contracts.createEvent,
             method: "createEvent",
-            signature: "isiiii",
+            signature: "isiiiis",
             send: true
         },
 
@@ -738,7 +1059,7 @@ module.exports = function (network) {
         createMarket: {
             to: contracts.createMarket,
             method: "createMarket",
-            signature: "isiiiai",
+            signature: "isiaiiiis",
             send: true
         },
 
@@ -758,13 +1079,120 @@ module.exports = function (network) {
             send: true
         },
 
-        // dispatch.se
-        dispatch: {
-            to: contracts.dispatch,
-            method: "dispatch",
+        // roundTwo.se
+        // def roundTwoPostBond(branch, event, eventIndex, votePeriod):
+        roundTwoPostBond: {
+            to: contracts.roundTwo,
+            method: "roundTwoPostBond",
+            signature: "iiii",
+            returns: "number",
+            send: true
+        },
+        // def roundTwoResolve(branch, event, eventIndex, votePeriod):
+        roundTwoResolve: {
+            to: contracts.roundTwo,
+            method: "roundTwoResolve",
+            signature: "iiii",
+            returns: "number",
+            send: true
+        },
+        // def resolve(branch, event, sender):
+        resolve: {
+            to: contracts.roundTwo,
+            method: "resolve",
+            signature: "iii",
+            returns: "number",
+            send: true
+        },
+
+        // backstops.se
+        // def getRoundTwo(event):
+        getRoundTwo: {
+            to: contracts.backstops,
+            method: "getRoundTwo",
+            signature: "i"
+        },
+        // def setRoundTwo(event, roundTwo):
+        setRoundTwo: {
+            to: contracts.backstops,
+            method: "setRoundTwo",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
+        // def getBondPoster(event):
+        getBondPoster: {
+            to: contracts.backstops,
+            method: "getBondPoster",
+            signature: "i",
+            returns: "address"
+        },  
+        // def setBondPoster(event, bondPoster):
+        setBondPoster: {
+            to: contracts.backstops,
+            method: "setBondPoster",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
+        // def getFinal(event):
+        getFinal: {
+            to: contracts.backstops,
+            method: "getFinal",
+            signature: "i"
+        },
+        // def setFinal(event):
+        setFinal: {
+            to: contracts.backstops,
+            method: "setFinal",
+            signature: "i",
+            returns: "number",
+            send: true
+        },
+        // def getOriginalOutcome(event):
+        getOriginalOutcome: {
+            to: contracts.backstops,
+            method: "getOriginalOutcome",
+            signature: "i"
+        },
+        // def setOriginalOutcome(event, originalOutcome):
+        setOriginalOutcome: {
+            to: contracts.backstops,
+            method: "setOriginalOutcome",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
+        // def getOriginalEthicality(event):
+        getOriginalEthicality: {
+            to: contracts.backstops,
+            method: "getOriginalEthicality",
+            signature: "i"
+        },
+        // def setOriginalEthicality(event, ethicality):
+        setOriginalEthicality: {
+            to: contracts.backstops,
+            method: "setOriginalEthicality",
+            signature: "ii",
+            returns: "number",
+            send: true
+        },
+        // def getOriginalVotePeriod(event):
+        getOriginalVotePeriod: {
+            to: contracts.backstops,
+            method: "getOriginalVotePeriod",
             signature: "i",
             returns: "number"
+        },
+        // def setOriginalVotePeriod(event, period):
+        setOriginalVotePeriod: {
+            to: contracts.backstops,
+            method: "setOriginalVotePeriod",
+            signature: "ii",
+            returns: "number",
+            send: true
         }
+
     };
 
 };
