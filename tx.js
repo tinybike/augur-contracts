@@ -814,7 +814,7 @@ module.exports = function (network) {
         checkHash: {
             to: contracts.trades,
             method: "checkHash",
-            signature: "i",
+            signature: "ii",
             returns: "number"
         },
         getID: {
@@ -898,8 +898,10 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
+
+        // trade.se
         trade: {
-            to: contracts.buyAndSellShares,
+            to: contracts.trade,
             method: "trade",
             signature: "iia",
             returns: "number",
