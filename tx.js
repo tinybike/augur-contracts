@@ -180,9 +180,9 @@ module.exports = function (network) {
             method: "getNumBranches",
             returns: "number"
         },
-        getBranch: {
+        getBranchByNum: {
             to: contracts.branches,
-            method: "getBranch",
+            method: "getBranchByNum",
             signature: "i",
             returns: "hash"
         },
@@ -441,17 +441,12 @@ module.exports = function (network) {
         },
 
         // markets.se
-        price: {
+        get_trade_ids: {
             to: contracts.markets,
-            method: "price",
-            signature: "ii",
-            returns: "unfix"
-        },
-        lsLmsr: {
-            to: contracts.markets,
-            method: "lsLmsr",
+            method: "get_trade_ids",
             signature: "i",
-            returns: "unfix"
+            returns: "hash[]",
+            gas: "0x9184e729fff"
         },
         getMarketInfo: {
             to: contracts.markets,
@@ -544,12 +539,6 @@ module.exports = function (network) {
             method: "getParticipantID",
             signature: "ii",
             returns: "address"
-        },
-        getAlpha: {
-            to: contracts.markets,
-            method: "getAlpha",
-            signature: "i",
-            returns: "unfix"
         },
         getCumScale: {
             to: contracts.markets,
