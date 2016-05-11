@@ -73,10 +73,6 @@
             "-6": "bonded pushed forward market not ready to be resolved",
             "-7": "event not reportable >.99"
         },
-        "claimProceeds": {
-            "0": "reporting not done",
-            "-1": "trader doesn't exist"
-        },
         "submitReportHash": {
             "0": "could not set report hash",
             "-1": "reporter (you) doesn't (don't) exist, or voting period over or hasn't started yet",
@@ -147,9 +143,22 @@
             "-1": "Your reputation account was just created! Earn some reputation before you can send to others",
             "-2": "Receiving address doesn't exist"
         },
-        "WHISPER_POST_FAILED": {
-            "error": 65,
-            "message": "could not post message to whisper"
+        "buy": {
+            "-1": "amount/price bad or no market",
+            "-2": "oracle-only branch",
+            "-4": "not enough money or shares"
+        },
+        "sell": {
+            "-1": "amount/price bad or no market",
+            "-2": "oracle only branch",
+            "-4": "not enough money or shares"
+        },
+        "trade": {
+            "-1": "oracle only branch",
+            "-2": "bad trade hash",
+            "-3": "trader doesn't exist / own shares in this market",
+            "-4": "must buy at least .00000001 in value",
+            "10": "insufficient balance"
         },
         "DB_DELETE_FAILED": {
             "error": 97,
@@ -258,10 +267,6 @@
         "ROOT_NOT_FOUND": {
             "error": 700,
             "message": "no LS-LMSR objectve function solution found"
-        },
-        "CHECK_ORDER_BOOK_FAILED": {
-            "error": 710,
-            "message": "could not check order book using current prices"
         }
     }
 }
