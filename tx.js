@@ -881,14 +881,14 @@ module.exports = function (network) {
             to: contracts.buyAndSellShares,
             method: "buy",
             signature: "iiii",
-            returns: "number",
+            returns: "hash",
             send: true
         },
         sell: {
             to: contracts.buyAndSellShares,
             method: "sell",
             signature: "iiii",
-            returns: "number",
+            returns: "hash",
             send: true
         },
         short_sell: {
