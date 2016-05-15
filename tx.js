@@ -999,7 +999,7 @@ module.exports = function (network) {
         makeHash: {
             to: contracts.makeReports,
             method: "makeHash",
-            signature: "iii",
+            signature: "iiii",
             returns: "hash"
         },
         calculateReportingThreshold: {
