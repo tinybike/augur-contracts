@@ -144,14 +144,14 @@
             "-2": "Receiving address doesn't exist"
         },
         "buy": {
-            "-1": "amount/price bad or no market",
-            "-2": "oracle-only branch",
-            "-4": "not enough money or shares"
+            "-0x1": "amount/price bad or no market",
+            "-0x2": "oracle-only branch",
+            "-0x4": "not enough money or shares"
         },
         "sell": {
-            "-1": "amount/price bad or no market",
-            "-2": "oracle only branch",
-            "-4": "not enough money or shares"
+            "-0x1": "amount/price bad or no market",
+            "-0x2": "oracle only branch",
+            "-0x4": "not enough money or shares"
         },
         "trade": {
             "-1": "oracle only branch",
