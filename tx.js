@@ -441,6 +441,19 @@ module.exports = function (network) {
         },
 
         // markets.se
+        get_total_trades: {
+            to: contracts.markets,
+            method: "get_total_trades",
+            signature: "i",
+            returns: "number"
+        },
+        getOrderBook: {
+            to: contracts.markets,
+            method: "getOrderBook",
+            signature: "i",
+            returns: "hash[]",
+            gas: "0x9184e729fff"
+        },
         get_trade_ids: {
             to: contracts.markets,
             method: "get_trade_ids",
@@ -510,9 +523,9 @@ module.exports = function (network) {
             signature: "i",
             returns: "hash"
         },
-        getCreationBlock: {
+        getCreationTime: {
             to: contracts.markets,
-            method: "getCreationBlock",
+            method: "getCreationTime",
             signature: "i",
             returns: "number"
         },
@@ -904,7 +917,7 @@ module.exports = function (network) {
             to: contracts.trade,
             method: "trade",
             signature: "iia",
-            returns: "number",
+            returns: "hash[]",
             send: true
         },
 
