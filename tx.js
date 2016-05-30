@@ -440,38 +440,46 @@ module.exports = function (network) {
             send: true
         },
 
-        // markets.se
-        get_total_trades: {
-            to: contracts.markets,
-            method: "get_total_trades",
-            signature: "i",
-            returns: "number"
-        },
+        // compositeGetters.se
         getOrderBook: {
-            to: contracts.markets,
+            to: contracts.compositeGetters,
             method: "getOrderBook",
             signature: "i",
             returns: "hash[]",
             gas: "0x9184e729fff"
         },
-        get_trade_ids: {
-            to: contracts.markets,
-            method: "get_trade_ids",
-            signature: "i",
-            returns: "hash[]",
-            gas: "0x9184e729fff"
-        },
         getMarketInfo: {
-            to: contracts.markets,
+            to: contracts.compositeGetters,
             method: "getMarketInfo",
             signature: "i",
             returns: "hash[]",
             gas: "0x9184e729fff"
         },
         getMarketsInfo: {
-            to: contracts.markets,
+            to: contracts.compositeGetters,
             method: "getMarketsInfo",
             signature: "iii",
+            returns: "hash[]",
+            gas: "0x9184e729fff"
+        },
+
+        // markets.se
+        getMakerFees: {
+            to: contracts.markets,
+            method: "getMakerFees",
+            signature: "i",
+            returns: "unfix"
+        },
+        get_total_trades: {
+            to: contracts.markets,
+            method: "get_total_trades",
+            signature: "i",
+            returns: "number"
+        },
+        get_trade_ids: {
+            to: contracts.markets,
+            method: "get_trade_ids",
+            signature: "i",
             returns: "hash[]",
             gas: "0x9184e729fff"
         },
@@ -522,6 +530,18 @@ module.exports = function (network) {
             method: "getForkSelection",
             signature: "i",
             returns: "hash"
+        },
+        getLastExpDate: {
+            to: contracts.markets,
+            method: "getLastExpDate",
+            signature: "i",
+            returns: "number"
+        },
+        returnTags: {
+            to: contracts.markets,
+            method: "returnTags",
+            signature: "i",
+            returns: "hash[]"
         },
         getCreationTime: {
             to: contracts.markets,
@@ -577,13 +597,6 @@ module.exports = function (network) {
             signature: "ii",
             returns: "unfix"
         },
-        initialLiquiditySetup: {
-            to: contracts.markets,
-            method: "initialLiquiditySetup",
-            signature: "iiii",
-            returns: "number",
-            send: true
-        },
         modifyShares: {
             to: contracts.markets,
             method: "modifyShares",
@@ -591,29 +604,19 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        initializeMarket: {
-            to: contracts.markets,
-            method: "initializeMarket",
-            signature: "iaiii",
-            returns: "number",
-            send: true
-        },
 
         // reporting.se
-        // def checkWhitelist(address):
         checkWhitelist: {
             to: contracts.reporting,
             method: "checkWhitelist",
             signature: "i"
         },
-        // def getActiveRep(branch):
         getActiveRep: {
             to: contracts.reporting,
             method: "getActiveRep",
             signature: "i",
             returns: "unfix"
         },
-        // def adjustActiveRep(branch, amount):
         adjustActiveRep: {
             to: contracts.reporting,
             method: "adjustActiveRep",
@@ -621,7 +624,6 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        // def setFork(branch):
         setFork: {
             to: contracts.reporting,
             method: "setFork",
@@ -629,20 +631,17 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        // def getFork(branch):
         getFork: {
             to: contracts.reporting,
             method: "getFork",
             signature: "i",
             returns: "number"
         },
-        // def checkContractWhitelist(contract, address):
         checkContractWhitelist: {
             to: contracts.reporting,
             method: "checkContractWhitelist",
             signature: "ii"
         },
-        // def setWhitelist(contract, addresses:arr):
         setWhitelist: {
             to: contracts.reporting,
             method: "setWhitelist",
@@ -650,83 +649,71 @@ module.exports = function (network) {
             returns: "string",
             send: true
         },
-        // def getRepByIndex(branch, repIndex):
         getRepByIndex: {
             to: contracts.reporting,
             method: "getRepByIndex",
             signature: "ii",
             returns: "unfix"
         },
-        // def getRepBalance(branch, address):
         getRepBalance: {
             to: contracts.reporting,
             method: "getRepBalance",
             signature: "ii",
             returns: "unfix"
         },
-        // def getDormantRepByIndex(branch, repIndex):
         getDormantRepByIndex: {
             to: contracts.reporting,
             method: "getDormantRepByIndex",
             signature: "ii",
             returns: "unfix"
         },
-        // def balanceOf(branch, address):
         balanceOf: {
             to: contracts.reporting,
             method: "balanceOf",
             signature: "ii",
             returns: "unfix"
         },
-        // def totalSupply(branch):
         totalSupply: {
             to: contracts.reporting,
             method: "totalSupply",
             signature: "i",
             returns: "unfix"
         },
-        // def getReporterID(branch, index):
         getReporterID: {
             to: contracts.reporting,
             method: "getReporterID",
             signature: "ii",
             returns: "address"
         },
-        // def getTotalRep(branch):
         getTotalRep: {
             to: contracts.reporting,
             method: "getTotalRep",
             signature: "i",
             returns: "unfix"
         },
-        // def getReputation(address):
         getReputation: {
             to: contracts.reporting,
             method: "getReputation",
             signature: "i",
             returns: "hash[]"
         },
-        // def getNumberReporters(branch):
         getNumberReporters: {
             to: contracts.reporting,
             method: "getNumberReporters",
             signature: "i",
             returns: "number"
         },
-        // def repIDToIndex(branch, repID):
         repIDToIndex: {
             to: contracts.reporting,
             method: "repIDToIndex",
             signature: "ii",
             returns: "number"
         },
-        // def hashReport(report: arr, salt):
         hashReport: {
             to: contracts.reporting,
             method: "hashReport",
             signature: "ai"
         },
-        // def setInitialReporters(parent, branchID):
         setInitialReporters: {
             to: contracts.reporting,
             method: "setInitialReporters",
@@ -734,7 +721,6 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        // def addReporter(branch, sender):
         addReporter: {
             to: contracts.reporting,
             method: "addReporter",
@@ -742,7 +728,6 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        // def addRep(branch, index, value):
         addRep: {
             to: contracts.reporting,
             method: "addRep",
@@ -750,7 +735,6 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        // def subtractRep(branch, index, value):
         subtractRep: {
             to: contracts.reporting,
             method: "subtractRep",
@@ -758,7 +742,6 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        // def setRep(branch, index, newRep):
         setRep: {
             to: contracts.reporting,
             method: "setRep",
@@ -766,7 +749,6 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        // def addDormantRep(branch, index, value):
         addDormantRep: {
             to: contracts.reporting,
             method: "addDormantRep",
@@ -774,7 +756,6 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        // def subtractDormantRep(branch, index, value):
         subtractDormantRep: {
             to: contracts.reporting,
             method: "subtractDormantRep",
@@ -782,7 +763,6 @@ module.exports = function (network) {
             returns: "number",
             send: true
         },
-        // def setSaleDistribution(addresses: arr, balances: arr, branchID):
         setSaleDistribution: {
             to: contracts.reporting,
             method: "setSaleDistribution",
