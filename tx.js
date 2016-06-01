@@ -891,13 +891,6 @@ module.exports = function (network) {
             returns: "hash",
             send: true
         },
-        short_sell: {
-            to: contracts.buyAndSellShares,
-            method: "short_sell",
-            signature: "ii",
-            returns: "number",
-            send: true
-        },
 
         // trade.se
         trade: {
@@ -905,6 +898,13 @@ module.exports = function (network) {
             method: "trade",
             signature: "iia",
             returns: "hash[]",
+            send: true
+        },
+        short_sell: {
+            to: contracts.trade,
+            method: "short_sell",
+            signature: "ii",
+            returns: "number",
             send: true
         },
 

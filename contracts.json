@@ -1,6 +1,6 @@
 {
     "2": {
-        "buyAndSellShares": "0x47be35dcdd588ffcd30d6aaee5ed95630fecf918",
+        "buyAndSellShares": "0x6738507f217ffd6decf639793f7d0a57216c5ace",
         "closeMarket": "0xb50a2e85c68c0d4fe04759e4dc3f1f119e765707",
         "closeMarketEight": "0xf1b39ec03b64b7c839f551413c0e68c72bdc0131",
         "closeMarketFour": "0x9489d1c57cbe9d305540f7c40922b8283f9be089",
@@ -23,7 +23,7 @@
         "roundTwoPenalize": "0xc9a545fafdd2c6849c2186bab01aa2a5e27e7c70",
         "sendReputation": "0x7d82274b758b015867fc12325ff3629302c4187b",
         "slashRep": "0xb02033249eddd36a8b86a1cdaa8a18414f97e7a9",
-        "trade": "0x5827c3f05226f0934e67050b3b89f8e22f03f8f4",
+        "trade": "0x53e758fd531a82410ecdde4b69f8fdc52bac9810",
         "backstops": "0xc7da2eafd342f597d4434673b14f14ae3f41d942",
         "branches": "0x9678efb1b05634a3968c0c1d642eef4635ef371e",
         "cash": "0xaf9c171a9e906d3231d8cf1b765fd774bfb1d3c9",
