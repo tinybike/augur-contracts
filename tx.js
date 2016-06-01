@@ -455,6 +455,13 @@ module.exports = function (network) {
             returns: "hash[]",
             gas: "0x9184e729fff"
         },
+        batchGetMarketInfo: {
+            to: contracts.compositeGetters,
+            method: "batchGetMarketInfo",
+            signature: "a",
+            returns: "hash[]",
+            gas: "0x9184e729fff"
+        },
         getMarketsInfo: {
             to: contracts.compositeGetters,
             method: "getMarketsInfo",
