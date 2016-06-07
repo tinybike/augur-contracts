@@ -904,7 +904,7 @@ module.exports = function (network) {
             to: contracts.trade,
             method: "short_sell",
             signature: "ii",
-            returns: "number",
+            returns: "hash[]",
             send: true
         },
 
@@ -1042,8 +1042,10 @@ module.exports = function (network) {
             signature: "isiaiiiis",
             send: true
         },
+
+        // createSingleEventMarket.se
         createSingleEventMarket: {
-            to: contracts.createMarket,
+            to: contracts.createSingleEventMarket,
             method: "createSingleEventMarket",
             signature: "isiiiisiiiiis",
             returns: "hash",

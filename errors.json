@@ -1,11 +1,5 @@
 {
     "0x": "no response or bad input",
-    "getSimulatedBuy": {
-        "-2": "cost updating error (did you enter a valid quantity?)"
-    },
-    "getSimulatedSell": {
-        "-2": "cost updating error (did you enter a valid quantity?)"
-    },
     "closeMarket": {
         "0": "fail/trading not over yet/event not expired or closed already",
         "-1": "Market has no cash anyway / already closed",
@@ -13,16 +7,6 @@
         "-4": "Outcome .5 once, pushback and retry",
         "-6": "bonded pushed forward market not ready to be resolved",
         "-7": "event not reportable >.99"
-    },
-    "claimProceeds": {
-        "0": "reporting not done",
-        "-1": "trader doesn't exist"
-    },
-    "report": {
-        "0": "could not set reporter ballot",
-        "-1": "report length does not match number of expiring events",
-        "-2": "voting period expired",
-        "-3": "incorrect hash"
     },
     "submitReportHash": {
         "0": "could not set report hash",
@@ -43,9 +27,9 @@
         "-9": "already resolved",
         "-10": "<24 hr left in period, too late to report, able to put up readj. bonds though"
     },
-    "checkReportValidity": {
-        "-1": "report isn't long enough",
-        "-2": "reporter doesn't exist, voting period is over, or voting period hasn't started yet"
+    "claimProceeds": {
+        "0": "reporting not done",
+        "-1": "trader doesn't exist"
     },
     "penalizeNotEnoughReports": {
         "-1": "already done",
@@ -71,8 +55,8 @@
         "-2": "no money for creation fee or branch already exists"
     },
     "createEvent": {
-        "-1": "we're either already past that date, branch doesn't exist, or description is bad",
         "0": "not enough money to pay fees or event already exists",
+        "-1": "we're either already past that date, branch doesn't exist, or description is bad",
         "-2": "max value < min value"
     },
     "createMarket": {
@@ -85,37 +69,38 @@
         "-7": "event already expired"
     },
     "createSingleEventMarket": {
-        "-1": "bad input or parent doesn't exist",
-        "-2": "too many events",
+        "0": "not enough money to pay fees or event already exists",
+        "-1": "we're either already past that date, branch doesn't exist, or description is bad, or bad input or parent doesn't exist",
+        "-2": "max value < min value",
         "-3": "too many outcomes",
-        "-4": "not enough money or market already exists",
+        "-4": "not enough money",
         "-5": "fee too low",
         "-6": "duplicate events",
-        "-7": "event already expired"
+        "-7": "event already expired",
+        "-8": "market already exists",
+        "-9": "would expire during non-reporting fork period"
     },
     "sendReputation": {
         "0": "not enough reputation",
         "-1": "Your reputation account was just created! Earn some reputation before you can send to others",
         "-2": "Receiving address doesn't exist"
     },
-    "buyShares": {
-        "-1": "invalid outcome or trading closed",
-        "-2": "entered a -amt of shares",
-        "-3": "not enough money / limit order too low",
-        "-4": "invalid outcome",
-        "-5": "bad commitment or no commitment",
-        "-6": "oracle only branch, no trading"
+    "buy": {
+        "-1": "amount/price bad or no market",
+        "-2": "oracle-only branch",
+        "-4": "not enough money or shares"
     },
-    "sellShares": {
-        "-1": "invalid outcome, trading closed, or you haven't traded in this market",
-        "-2": "entered a -amt of shares",
-        "-3": "you own no shares / limit price too high",
-        "-5": "bad commitment or no commitment",
-        "-6": "oracle only branch, no trading"
+    "sell": {
+        "-1": "amount/price bad or no market",
+        "-2": "oracle only branch",
+        "-4": "not enough money or shares"
     },
-    "WHISPER_POST_FAILED": {
-        "error": 65,
-        "message": "could not post message to whisper"
+    "trade": {
+        "-1": "oracle only branch",
+        "-2": "bad trade hash",
+        "-3": "trader doesn't exist / own shares in this market",
+        "-4": "must buy at least .00000001 in value",
+        "10": "insufficient balance"
     },
     "DB_DELETE_FAILED": {
         "error": 97,
@@ -208,14 +193,6 @@
     "NO_MARKET_INFO": {
         "error": 505,
         "message": "could not retrieve market data"
-    },
-    "IPFS_ADD_FAILURE": {
-        "error": 506,
-        "message": "files could not be added to IPFS"
-    },
-    "IPFS_GET_FAILURE": {
-        "error": 507,
-        "message": "could not retrieve file from IPFS"
     },
     "RPC_TIMEOUT": {
         "error": 599,
