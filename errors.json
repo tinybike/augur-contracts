@@ -102,6 +102,14 @@
         "-4": "must buy at least .00000001 in value",
         "10": "insufficient balance"
     },
+    "INSUFFICIENT_LIQUIDITY": {
+        "error": 42,
+        "message": "insufficient liquidity to generate order book"
+    },
+    "INITIAL_PRICE_OUT_OF_BOUNDS": {
+        "error": 43,
+        "message": "one or more initial fair prices are out-of-bounds"
+    }, 
     "DB_DELETE_FAILED": {
         "error": 97,
         "message": "database delete failed"
