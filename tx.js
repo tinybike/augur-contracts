@@ -4,9 +4,9 @@
 
 "use strict";
 
-module.exports = function (network) {
+module.exports = function (network, contracts) {
 
-    var contracts = require("./contracts")[network || "2"];
+    contracts = contracts || require("./contracts")[network || "2"];
 
     return {
 
