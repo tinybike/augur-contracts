@@ -1045,7 +1045,7 @@ module.exports = function (network, contracts) {
 
         // createSingleEventMarket.se
         createSingleEventMarket: {
-            to: contracts.createSingleEventMarket,
+            to: contracts.createMarket,
             method: "createSingleEventMarket",
             signature: "isiiiisiiiiis",
             returns: "hash",
