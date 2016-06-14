@@ -1042,15 +1042,29 @@ module.exports = function (network, contracts) {
             signature: "isiaiiiis",
             send: true
         },
+        updateTradingFee: {
+            to: contracts.createMarket,
+            method: "updateTradingFee",
+            signature: "iii",
+            send: true,
+            returns: "number"
+        },
+        pushMarketForward: {
+            to: contracts.createMarket,
+            method: "pushMarketForward",
+            signature: "ii",
+            send: true,
+            returns: "number"
+        },
 
         // createSingleEventMarket.se
-        createSingleEventMarket: {
-            to: contracts.createMarket,
-            method: "createSingleEventMarket",
-            signature: "isiiiisiiiiis",
-            returns: "hash",
-            send: true
-        },
+        // createSingleEventMarket: {
+        //     to: contracts.createMarket,
+        //     method: "createSingleEventMarket",
+        //     signature: "isiiiisiiiiis",
+        //     returns: "hash",
+        //     send: true
+        // },
 
         // closeMarket.se
         closeMarket: {
