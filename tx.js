@@ -379,12 +379,6 @@ module.exports = function (network, contracts) {
         },
 
         // expiringEvents.se
-        getReportedPeriod: {
-            to: contracts.expiringEvents,
-            method: "getReportedPeriod",
-            signature: "iii",
-            returns: "number"
-        },
         getEventIndex: {
             to: contracts.expiringEvents,
             method: "getEventIndex",
@@ -690,7 +684,7 @@ module.exports = function (network, contracts) {
             to: contracts.reporting,
             method: "getReporterID",
             signature: "ii",
-            returns: "address"
+            returns: "hash"
         },
         getTotalRep: {
             to: contracts.reporting,
