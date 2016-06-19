@@ -151,7 +151,11 @@
     "INITIAL_PRICE_OUT_OF_BOUNDS": {
         "error": 43,
         "message": "one or more initial fair prices are out-of-bounds"
-    }, 
+    },
+    "PRICE_WIDTH_OUT_OF_BOUNDS": {
+        "error": 44,
+        "message": "price width is too large for one or more initial fair prices"
+    },
     "DB_DELETE_FAILED": {
         "error": 97,
         "message": "database delete failed"
