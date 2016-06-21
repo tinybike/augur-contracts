@@ -465,9 +465,27 @@ module.exports = function (network, contracts) {
         },
 
         // markets.se
+        getFees: {
+            to: contracts.markets,
+            method: "getFees",
+            signature: "i",
+            returns: "unfix"
+        },
         getMakerFees: {
             to: contracts.markets,
             method: "getMakerFees",
+            signature: "i",
+            returns: "unfix"
+        },
+        getgasSubsidy: {
+            to: contracts.markets,
+            method: "getgasSubsidy",
+            signature: "i",
+            returns: "int"
+        },
+        getSharesValue: {
+            to: contracts.markets,
+            method: "getSharesValue",
             signature: "i",
             returns: "unfix"
         },
