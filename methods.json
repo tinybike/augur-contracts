@@ -1,0 +1,991 @@
+{
+  "faucets": {
+    "reputationFaucet": {
+      "method": "reputationFaucet",
+      "signature": "i",
+      "returns": "number",
+      "send": true
+    },
+    "cashFaucet": {
+      "method": "cashFaucet",
+      "returns": "number",
+      "send": true
+    },
+    "fundNewAccount": {
+      "method": "fundNewAccount",
+      "signature": "i",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "cash": {
+    "addCash": {
+      "method": "addCash",
+      "signature": "ii",
+      "send": true,
+      "returns": "number"
+    },
+    "setCash": {
+      "method": "setCash",
+      "signature": "ii",
+      "send": true,
+      "returns": "number"
+    },
+    "initiateOwner": {
+      "method": "initiateOwner",
+      "signature": "i",
+      "send": true,
+      "returns": "number"
+    },
+    "getCashBalance": {
+      "method": "balance",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "balance": {
+      "method": "balance",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "send": {
+      "method": "send",
+      "send": true,
+      "signature": "ii",
+      "returns": "unfix"
+    },
+    "sendFrom": {
+      "method": "sendFrom",
+      "send": true,
+      "signature": "iii",
+      "returns": "unfix"
+    },
+    "depositEther": {
+      "method": "depositEther",
+      "send": true,
+      "returns": "number"
+    },
+    "withdrawEther": {
+      "method": "withdrawEther",
+      "signature": "ii",
+      "send": true,
+      "returns": "number"
+    }
+  },
+  "info": {
+    "getCreator": {
+      "method": "getCreator",
+      "signature": "i",
+      "returns": "address"
+    },
+    "getCreationFee": {
+      "method": "getCreationFee",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getDescription": {
+      "method": "getDescription",
+      "signature": "i",
+      "returns": "string"
+    },
+    "setInfo": {
+      "method": "setInfo",
+      "signature": "isii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "branches": {
+    "initDefaultBranch": {
+      "method": "initDefaultBranch",
+      "returns": "number",
+      "send": true
+    },
+    "getBranches": {
+      "method": "getBranches",
+      "returns": "hash[]"
+    },
+    "getMarketsInBranch": {
+      "method": "getMarketsInBranch",
+      "signature": "i",
+      "returns": "hash[]"
+    },
+    "getPeriodLength": {
+      "method": "getPeriodLength",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getVotePeriod": {
+      "method": "getVotePeriod",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getReportPeriod": {
+      "method": "getVotePeriod",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getNumMarkets": {
+      "method": "getNumMarketsBranch",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getNumMarketsBranch": {
+      "method": "getNumMarketsBranch",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getMinTradingFee": {
+      "method": "getMinTradingFee",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getNumBranches": {
+      "method": "getNumBranches",
+      "returns": "number"
+    },
+    "getBranchByNum": {
+      "method": "getBranchByNum",
+      "signature": "i",
+      "returns": "hash"
+    },
+    "incrementPeriod": {
+      "method": "incrementPeriod",
+      "signature": "i",
+      "send": true,
+      "returns": "number"
+    },
+    "addMarket": {
+      "method": "addMarket",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "consensus": {
+    "getFeesCollected": {
+      "method": "getFeesCollected",
+      "signature": "iii",
+      "returns": "number"
+    },
+    "setFeesCollected": {
+      "method": "setFeesCollected",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    },
+    "setNotEnoughPenalized": {
+      "method": "setNotEnoughPenalized",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    },
+    "getNotEnoughPenalized": {
+      "method": "getNotEnoughPenalized",
+      "signature": "iii",
+      "returns": "number"
+    },
+    "getBaseReportersLastPeriod": {
+      "method": "getBaseReportersLastPeriod",
+      "signature": "i",
+      "returns": "number"
+    },
+    "initialPenalizedSetting": {
+      "method": "initialPenalizedSetting",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    },
+    "proportionCorrect": {
+      "method": "proportionCorrect",
+      "signature": "iii",
+      "returns": "unfix"
+    },
+    "incrementPeriodAfterReporting": {
+      "method": "incrementPeriodAfterReporting",
+      "signature": "i",
+      "returns": "number",
+      "send": true
+    },
+    "penalizeWrong": {
+      "method": "penalizeWrong",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "penalizeNotEnoughReports": {
+    "proveReporterDidntReportEnough": {
+      "method": "proveReporterDidntReportEnough",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "collectFees": {
+    "collectFees": {
+      "method": "collectFees",
+      "signature": "i",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "slashRep": {
+    "slashRep": {
+      "method": "slashRep",
+      "signature": "iiiii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "events": {
+    "getmode": {
+      "method": "getmode",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getUncaughtOutcome": {
+      "method": "getUncaughtOutcome",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getMarkets": {
+      "method": "getMarkets",
+      "signature": "i",
+      "returns": "hash[]"
+    },
+    "getReportingThreshold": {
+      "method": "getReportingThreshold",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getEventInfo": {
+      "method": "getEventInfo",
+      "signature": "i",
+      "returns": "hash[]"
+    },
+    "getEventBranch": {
+      "method": "getEventBranch",
+      "signature": "i",
+      "returns": "hash"
+    },
+    "getExpiration": {
+      "method": "getExpiration",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getOutcome": {
+      "method": "getOutcome",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getMinValue": {
+      "method": "getMinValue",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getMaxValue": {
+      "method": "getMaxValue",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getNumOutcomes": {
+      "method": "getNumOutcomes",
+      "signature": "i",
+      "returns": "number"
+    },
+    "setOutcome": {
+      "method": "setOutcome",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "expiringEvents": {
+    "calculateReportingThreshold": {
+      "method": "calculateReportingThreshold",
+      "signature": "iiii",
+      "returns": "hash"
+    },
+    "getEventCanReportOn": {
+      "method": "getEventCanReportOn",
+      "signature": "iiii",
+      "returns": "number"
+    },
+    "getEventIndex": {
+      "method": "getEventIndex",
+      "signature": "ii",
+      "returns": "number"
+    },
+    "getEvents": {
+      "method": "getEvents",
+      "signature": "ii",
+      "returns": "hash[]"
+    },
+    "getNumberEvents": {
+      "method": "getNumberEvents",
+      "signature": "ii",
+      "returns": "number"
+    },
+    "getEvent": {
+      "method": "getEvent",
+      "signature": "iii",
+      "returns": "hash"
+    },
+    "getTotalRepReported": {
+      "method": "getTotalRepReported",
+      "signature": "ii",
+      "returns": "number"
+    },
+    "getReportHash": {
+      "method": "getReportHash",
+      "signature": "iiii",
+      "returns": "hash"
+    },
+    "moveEventsToCurrentPeriod": {
+      "method": "moveEventsToCurrentPeriod",
+      "signature": "iii",
+      "send": true
+    },
+    "addEvent": {
+      "method": "addEvent",
+      "signature": "iii",
+      "send": true
+    },
+    "setTotalRepReported": {
+      "method": "setTotalRepReported",
+      "signature": "iii",
+      "send": true
+    }
+  },
+  "compositeGetters": {
+    "getOrderBook": {
+      "method": "getOrderBook",
+      "signature": "i",
+      "returns": "hash[]",
+      "gas": "0x9184e729fff"
+    },
+    "getMarketInfo": {
+      "method": "getMarketInfo",
+      "signature": "i",
+      "returns": "hash[]",
+      "gas": "0x9184e729fff"
+    },
+    "batchGetMarketInfo": {
+      "method": "batchGetMarketInfo",
+      "signature": "a",
+      "returns": "hash[]",
+      "gas": "0x9184e729fff"
+    },
+    "getMarketsInfo": {
+      "method": "getMarketsInfo",
+      "signature": "iii",
+      "returns": "hash[]",
+      "gas": "0x9184e729fff"
+    }
+  },
+  "markets": {
+    "getFees": {
+      "method": "getFees",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getMakerFees": {
+      "method": "getMakerFees",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getgasSubsidy": {
+      "method": "getgasSubsidy",
+      "signature": "i",
+      "returns": "int"
+    },
+    "getSharesValue": {
+      "method": "getSharesValue",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "get_total_trades": {
+      "method": "get_total_trades",
+      "signature": "i",
+      "returns": "number"
+    },
+    "get_trade_ids": {
+      "method": "get_trade_ids",
+      "signature": "i",
+      "returns": "hash[]",
+      "gas": "0x9184e729fff"
+    },
+    "getMarketEvents": {
+      "method": "getMarketEvents",
+      "signature": "i",
+      "returns": "hash[]"
+    },
+    "getNumEvents": {
+      "method": "getNumEvents",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getBranchID": {
+      "method": "getBranchID",
+      "signature": "i",
+      "returns": "hash"
+    },
+    "getCurrentParticipantNumber": {
+      "method": "getCurrentParticipantNumber",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getMarketNumOutcomes": {
+      "method": "getMarketNumOutcomes",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getParticipantSharesPurchased": {
+      "method": "getParticipantSharesPurchased",
+      "signature": "iii",
+      "returns": "unfix"
+    },
+    "getSharesPurchased": {
+      "method": "getSharesPurchased",
+      "signature": "ii",
+      "returns": "unfix"
+    },
+    "getForkSelection": {
+      "method": "getForkSelection",
+      "signature": "i",
+      "returns": "hash"
+    },
+    "getLastExpDate": {
+      "method": "getLastExpDate",
+      "signature": "i",
+      "returns": "number"
+    },
+    "returnTags": {
+      "method": "returnTags",
+      "signature": "i",
+      "returns": "hash[]"
+    },
+    "getCreationTime": {
+      "method": "getCreationTime",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getVolume": {
+      "method": "getVolume",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getWinningOutcomes": {
+      "method": "getWinningOutcomes",
+      "signature": "i",
+      "returns": "number[]"
+    },
+    "getParticipantNumber": {
+      "method": "getParticipantNumber",
+      "signature": "ii",
+      "returns": "number"
+    },
+    "getParticipantID": {
+      "method": "getParticipantID",
+      "signature": "ii",
+      "returns": "address"
+    },
+    "getCumScale": {
+      "method": "getCumScale",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getTradingPeriod": {
+      "method": "getTradingPeriod",
+      "signature": "i",
+      "returns": "number"
+    },
+    "getTradingFee": {
+      "method": "getTradingFee",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "initialLiquidityAmount": {
+      "method": "initialLiquidityAmount",
+      "signature": "ii",
+      "returns": "unfix"
+    },
+    "modifyShares": {
+      "method": "modifyShares",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "reporting": {
+    "checkWhitelist": {
+      "method": "checkWhitelist",
+      "signature": "i"
+    },
+    "getActiveRep": {
+      "method": "getActiveRep",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "adjustActiveRep": {
+      "method": "adjustActiveRep",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    },
+    "setFork": {
+      "method": "setFork",
+      "signature": "i",
+      "returns": "number",
+      "send": true
+    },
+    "getFork": {
+      "method": "getFork",
+      "signature": "i",
+      "returns": "number"
+    },
+    "checkContractWhitelist": {
+      "method": "checkContractWhitelist",
+      "signature": "ii"
+    },
+    "setWhitelist": {
+      "method": "setWhitelist",
+      "signature": "ia",
+      "returns": "string",
+      "send": true
+    },
+    "getRepByIndex": {
+      "method": "getRepByIndex",
+      "signature": "ii",
+      "returns": "unfix"
+    },
+    "getRepBalance": {
+      "method": "getRepBalance",
+      "signature": "ii",
+      "returns": "unfix"
+    },
+    "getDormantRepByIndex": {
+      "method": "getDormantRepByIndex",
+      "signature": "ii",
+      "returns": "unfix"
+    },
+    "balanceOf": {
+      "method": "balanceOf",
+      "signature": "ii",
+      "returns": "unfix"
+    },
+    "totalSupply": {
+      "method": "totalSupply",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getReporterID": {
+      "method": "getReporterID",
+      "signature": "ii",
+      "returns": "hash"
+    },
+    "getTotalRep": {
+      "method": "getTotalRep",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "getReputation": {
+      "method": "getReputation",
+      "signature": "i",
+      "returns": "hash[]"
+    },
+    "getNumberReporters": {
+      "method": "getNumberReporters",
+      "signature": "i",
+      "returns": "number"
+    },
+    "repIDToIndex": {
+      "method": "repIDToIndex",
+      "signature": "ii",
+      "returns": "number"
+    },
+    "hashReport": {
+      "method": "hashReport",
+      "signature": "ai"
+    },
+    "setInitialReporters": {
+      "method": "setInitialReporters",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    },
+    "addReporter": {
+      "method": "addReporter",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    },
+    "addRep": {
+      "method": "addRep",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    },
+    "subtractRep": {
+      "method": "subtractRep",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    },
+    "setRep": {
+      "method": "setRep",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    },
+    "addDormantRep": {
+      "method": "addDormantRep",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    },
+    "subtractDormantRep": {
+      "method": "subtractDormantRep",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    },
+    "setSaleDistribution": {
+      "method": "setSaleDistribution",
+      "signature": "aai",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "trades": {
+    "makeTradeHash": {
+      "method": "makeTradeHash",
+      "signature": "iia",
+      "returns": "hash"
+    },
+    "commitTrade": {
+      "method": "commitTrade",
+      "signature": "i",
+      "returns": "number",
+      "send": true
+    },
+    "setInitialTrade": {
+      "method": "setInitialTrade",
+      "signature": "i",
+      "returns": "number",
+      "send": true
+    },
+    "getInitialTrade": {
+      "method": "getInitialTrade",
+      "signature": "i",
+      "returns": "hash"
+    },
+    "zeroHash": {
+      "method": "zeroHash",
+      "returns": "number",
+      "send": true
+    },
+    "checkHash": {
+      "method": "checkHash",
+      "signature": "ii",
+      "returns": "number"
+    },
+    "getID": {
+      "method": "getID",
+      "signature": "i",
+      "returns": "hash"
+    },
+    "saveTrade": {
+      "method": "saveTrade",
+      "signature": "iiiiiii",
+      "returns": "number",
+      "send": true
+    },
+    "get_trade": {
+      "method": "get_trade",
+      "signature": "i",
+      "returns": "hash[]"
+    },
+    "get_amount": {
+      "method": "get_amount",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "get_price": {
+      "method": "get_price",
+      "signature": "i",
+      "returns": "unfix"
+    },
+    "update_trade": {
+      "method": "update_trade",
+      "signature": "ii",
+      "send": true
+    },
+    "remove_trade": {
+      "method": "remove_trade",
+      "signature": "i",
+      "returns": "number",
+      "send": true
+    },
+    "fill_trade": {
+      "method": "fill_trade",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "buyAndSellShares": {
+    "cancel": {
+      "method": "cancel",
+      "signature": "i",
+      "returns": "number",
+      "send": true
+    },
+    "buy": {
+      "method": "buy",
+      "signature": "iiii",
+      "returns": "hash",
+      "send": true
+    },
+    "sell": {
+      "method": "sell",
+      "signature": "iiii",
+      "returns": "hash",
+      "send": true
+    }
+  },
+  "trade": {
+    "trade": {
+      "method": "trade",
+      "signature": "iia",
+      "returns": "hash[]",
+      "send": true
+    },
+    "short_sell": {
+      "method": "short_sell",
+      "signature": "ii",
+      "returns": "hash[]",
+      "send": true
+    }
+  },
+  "completeSets": {
+    "buyCompleteSets": {
+      "method": "buyCompleteSets",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    },
+    "sellCompleteSets": {
+      "method": "sellCompleteSets",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "createBranch": {
+    "createSubbranch": {
+      "method": "createSubbranch",
+      "signature": "siiii",
+      "returns": "hash",
+      "send": true
+    }
+  },
+  "sendReputation": {
+    "sendReputation": {
+      "method": "sendReputation",
+      "signature": "iii",
+      "send": true,
+      "returns": "unfix"
+    }
+  },
+  "makeReports": {
+    "getNumEventsToReport": {
+      "method": "getNumEventsToReport",
+      "signature": "ii",
+      "returns": "number"
+    },
+    "getNumReportsActual": {
+      "method": "getNumReportsActual",
+      "signature": "ii",
+      "returns": "number"
+    },
+    "getSubmittedHash": {
+      "method": "getSubmittedHash",
+      "signature": "iii",
+      "returns": "hash"
+    },
+    "getBeforeRep": {
+      "method": "getBeforeRep",
+      "signature": "ii",
+      "returns": "unfix"
+    },
+    "getAfterRep": {
+      "method": "getAfterRep",
+      "signature": "ii",
+      "returns": "unfix"
+    },
+    "getReport": {
+      "method": "getReport",
+      "signature": "iii",
+      "returns": "unfix"
+    },
+    "getRRUpToDate": {
+      "method": "getRRUpToDate",
+      "returns": "number"
+    },
+    "getNumReportsExpectedEvent": {
+      "method": "getNumReportsExpectedEvent",
+      "signature": "iii",
+      "returns": "hash"
+    },
+    "getNumReportsEvent": {
+      "method": "getNumReportsEvent",
+      "signature": "iii",
+      "returns": "hash"
+    },
+    "makeHash": {
+      "method": "makeHash",
+      "signature": "iiii",
+      "returns": "hash"
+    },
+    "submitReportHash": {
+      "method": "submitReportHash",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    },
+    "submitReport": {
+      "method": "submitReport",
+      "signature": "iiii",
+      "returns": "number",
+      "send": true
+    },
+    "validateReport": {
+      "method": "validateReport",
+      "signature": "iiiiiiii",
+      "returns": "number"
+    }
+  },
+  "createMarket": {
+    "createEvent": {
+      "method": "createEvent",
+      "signature": "isiiiis",
+      "send": true
+    },
+    "createMarket": {
+      "method": "createMarket",
+      "signature": "isiaiiiis",
+      "send": true
+    },
+    "updateTradingFee": {
+      "method": "updateTradingFee",
+      "signature": "iii",
+      "send": true,
+      "returns": "number"
+    },
+    "pushMarketForward": {
+      "method": "pushMarketForward",
+      "signature": "ii",
+      "send": true,
+      "returns": "number"
+    }
+  },
+  "closeMarket": {
+    "closeMarket": {
+      "method": "closeMarket",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    },
+    "claimProceeds": {
+      "method": "claimProceeds",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "roundTwo": {
+    "roundTwoPostBond": {
+      "method": "roundTwoPostBond",
+      "signature": "iiii",
+      "returns": "number",
+      "send": true
+    },
+    "roundTwoResolve": {
+      "method": "roundTwoResolve",
+      "signature": "iiii",
+      "returns": "number",
+      "send": true
+    },
+    "resolve": {
+      "method": "resolve",
+      "signature": "iii",
+      "returns": "number",
+      "send": true
+    }
+  },
+  "backstops": {
+    "getRoundTwo": {
+      "method": "getRoundTwo",
+      "signature": "i"
+    },
+    "setRoundTwo": {
+      "method": "setRoundTwo",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    },
+    "getBondPoster": {
+      "method": "getBondPoster",
+      "signature": "i",
+      "returns": "address"
+    },
+    "setBondPoster": {
+      "method": "setBondPoster",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    },
+    "getFinal": {
+      "method": "getFinal",
+      "signature": "i"
+    },
+    "setFinal": {
+      "method": "setFinal",
+      "signature": "i",
+      "returns": "number",
+      "send": true
+    },
+    "getOriginalOutcome": {
+      "method": "getOriginalOutcome",
+      "signature": "i"
+    },
+    "setOriginalOutcome": {
+      "method": "setOriginalOutcome",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    },
+    "getOriginalEthicality": {
+      "method": "getOriginalEthicality",
+      "signature": "i"
+    },
+    "setOriginalEthicality": {
+      "method": "setOriginalEthicality",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    },
+    "getOriginalVotePeriod": {
+      "method": "getOriginalVotePeriod",
+      "signature": "i",
+      "returns": "number"
+    },
+    "setOriginalVotePeriod": {
+      "method": "setOriginalVotePeriod",
+      "signature": "ii",
+      "returns": "number",
+      "send": true
+    }
+  }
+}
