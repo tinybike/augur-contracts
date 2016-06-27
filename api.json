@@ -596,7 +596,9 @@
         "int256", 
         "int256", 
         "int256"
-      ]
+      ],
+      "returns": "number",
+      "send": true
     }, 
     "cancel": {
       "inputs": [
@@ -605,7 +607,9 @@
       "method": "cancel", 
       "signature": [
         "int256"
-      ]
+      ],
+      "returns": "number",
+      "send": true
     }, 
     "sell": {
       "inputs": [
@@ -620,7 +624,9 @@
         "int256", 
         "int256", 
         "int256"
-      ]
+      ],
+      "returns": "number",
+      "send": true
     }
   }, 
   "Cash": {
