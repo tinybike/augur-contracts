@@ -4,19 +4,19 @@
 
 "use strict";
 
-var methods = require("./methods");
+var api = require("./api");
 
 module.exports = function (network, contracts) {
 
     contracts = contracts || require("./contracts")[network || "2"];
 
-    for (var contract in methods) {
-        if (!methods.hasOwnProperty(contract)) continue;
-        for (var method in methods[contract]) {
-            if (!methods[contract].hasOwnProperty(method)) continue;
-            methods[contract][method].to = contracts[contract];
+    for (var contract in api) {
+        if (!api.hasOwnProperty(contract)) continue;
+        for (var method in api[contract]) {
+            if (!api[contract].hasOwnProperty(method)) continue;
+            api[contract][method].to = contracts[contract];
         }
     }
 
-    return methods;
+    return api;
 };
