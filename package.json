@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/AugurProject/augur-contracts/issues"
   },
-  "homepage": "https://github.com/AugurProject/augur-contracts#readme"
+  "homepage": "https://github.com/AugurProject/augur-contracts#readme",
+  "dependencies": {
+    "clone": "^1.0.2"
+  }
 }
