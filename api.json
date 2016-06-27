@@ -582,7 +582,7 @@
       ]
     }
   }, 
-  "Buy&sellShares": {
+  "BuyAndSellShares": {
     "buy": {
       "inputs": [
         "amount", 
