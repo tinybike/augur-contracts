@@ -897,6 +897,7 @@
         "marketID"
       ], 
       "method": "getMarketInfoCache", 
+      "returns": "hash[]",
       "signature": [
         "int256"
       ]
