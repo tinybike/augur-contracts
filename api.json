@@ -331,6 +331,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "Branches": {
@@ -580,6 +583,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "BuyAndSellShares": {
@@ -591,25 +597,25 @@
         "outcome"
       ], 
       "method": "buy", 
+      "returns": "number", 
+      "send": true, 
       "signature": [
         "int256", 
         "int256", 
         "int256", 
         "int256"
-      ],
-      "returns": "number",
-      "send": true
+      ]
     }, 
     "cancel": {
       "inputs": [
         "trade_id"
       ], 
       "method": "cancel", 
+      "returns": "number", 
+      "send": true, 
       "signature": [
         "int256"
-      ],
-      "returns": "number",
-      "send": true
+      ]
     }, 
     "sell": {
       "inputs": [
@@ -619,14 +625,17 @@
         "outcome"
       ], 
       "method": "sell", 
+      "returns": "number", 
+      "send": true, 
       "signature": [
         "int256", 
         "int256", 
         "int256", 
         "int256"
-      ],
-      "returns": "number",
-      "send": true
+      ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "Cash": {
@@ -721,6 +730,9 @@
         "int256"
       ]
     }, 
+    "test_callstack": {
+      "method": "test_callstack"
+    }, 
     "withdrawEther": {
       "inputs": [
         "to", 
@@ -763,40 +775,9 @@
         "int256", 
         "int256"
       ]
-    }
-  }, 
-  "CloseMarketEight": {
-    "eightOutcomes": {
-      "inputs": [
-        "market", 
-        "winningOutcome", 
-        "events", 
-        "sender"
-      ], 
-      "method": "eightOutcomes", 
-      "signature": [
-        "int256", 
-        "int256[]", 
-        "int256[]", 
-        "int256"
-      ]
-    }
-  }, 
-  "CloseMarketFour": {
-    "fourOutcomes": {
-      "inputs": [
-        "market", 
-        "winningOutcome", 
-        "events", 
-        "sender"
-      ], 
-      "method": "fourOutcomes", 
-      "signature": [
-        "int256", 
-        "int256[]", 
-        "int256[]", 
-        "int256"
-      ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "CloseMarketOne": {
@@ -816,21 +797,27 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "CloseMarketTwo": {
+    "test_callstack": {
+      "method": "test_callstack"
+    }, 
     "twoOutcomes": {
       "inputs": [
         "market", 
         "winningOutcome", 
-        "events", 
+        "event", 
         "sender"
       ], 
       "method": "twoOutcomes", 
       "signature": [
         "int256", 
         "int256[]", 
-        "int256[]", 
+        "int256", 
         "int256"
       ]
     }
@@ -848,6 +835,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "CompleteSets": {
@@ -876,6 +866,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "CompositeGetters": {
@@ -922,6 +915,9 @@
       "signature": [
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "Consensus": {
@@ -949,15 +945,8 @@
         "int256"
       ]
     }, 
-    "proportionCorrect": {
-      "inputs": [
-        "event"
-      ], 
-      "method": "proportionCorrect", 
-      "returns": "unfix", 
-      "signature": [
-        "int256"
-      ]
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "ConsensusData": {
@@ -1079,13 +1068,26 @@
         "int256"
       ]
     }, 
-    "getRRDone": {
+    "getRepRedistributionDone": {
       "inputs": [
         "branch", 
         "reporter"
       ], 
-      "method": "getRRDone", 
+      "method": "getRepRedistributionDone", 
       "signature": [
+        "int256", 
+        "int256"
+      ]
+    }, 
+    "getSlashed": {
+      "inputs": [
+        "branch", 
+        "votePeriod", 
+        "reporter"
+      ], 
+      "method": "getSlashed", 
+      "signature": [
+        "int256", 
         "int256", 
         "int256"
       ]
@@ -1219,6 +1221,22 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "setSlashed": {
+      "inputs": [
+        "branch", 
+        "votePeriod", 
+        "reporter"
+      ], 
+      "method": "setSlashed", 
+      "signature": [
+        "int256", 
+        "int256", 
+        "int256"
+      ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "CreateBranch": {
@@ -1227,7 +1245,7 @@
         "description", 
         "periodLength", 
         "parent", 
-        "tradingFee", 
+        "mintradingFee", 
         "oracleOnly"
       ], 
       "method": "createSubbranch", 
@@ -1240,6 +1258,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "CreateMarket": {
@@ -1270,7 +1291,7 @@
         "branch", 
         "description", 
         "tradingFee", 
-        "events", 
+        "event", 
         "tag1", 
         "tag2", 
         "tag3", 
@@ -1283,7 +1304,7 @@
         "int256", 
         "bytes", 
         "int256", 
-        "int256[]", 
+        "int256", 
         "int256", 
         "int256", 
         "int256", 
@@ -1304,6 +1325,9 @@
         "int256"
       ]
     }, 
+    "test_callstack": {
+      "method": "test_callstack"
+    }, 
     "updateTradingFee": {
       "inputs": [
         "branch", 
@@ -1321,27 +1345,12 @@
     }
   }, 
   "EventResolution": {
-    "catch": {
-      "inputs": [
-        "x"
-      ], 
-      "method": "catch", 
-      "signature": [
-        "int256"
-      ]
-    }, 
     "determineWinningOutcomes": {
       "inputs": [
-        "events", 
-        "numberEvents", 
-        "branch", 
-        "market"
+        "event"
       ], 
       "method": "determineWinningOutcomes", 
       "signature": [
-        "int256[]", 
-        "int256", 
-        "int256", 
         "int256"
       ]
     }, 
@@ -1378,6 +1387,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "Events": {
@@ -1782,6 +1794,17 @@
         "int256"
       ]
     }, 
+    "setOriginalExpiration": {
+      "inputs": [
+        "event", 
+        "date"
+      ], 
+      "method": "setOriginalExpiration", 
+      "signature": [
+        "int256", 
+        "int256"
+      ]
+    }, 
     "setOutcome": {
       "inputs": [
         "ID", 
@@ -1838,6 +1861,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "ExpiringEvents": {
@@ -1867,19 +1893,6 @@
       "method": "addRepEvent", 
       "signature": [
         "int256", 
-        "int256", 
-        "int256", 
-        "int256"
-      ]
-    }, 
-    "addReportExpected": {
-      "inputs": [
-        "branch", 
-        "votePeriod", 
-        "eventID"
-      ], 
-      "method": "addReportExpected", 
-      "signature": [
         "int256", 
         "int256", 
         "int256"
@@ -1945,22 +1958,6 @@
       ], 
       "method": "adjustPeriodShareValueOutstanding", 
       "signature": [
-        "int256", 
-        "int256", 
-        "int256"
-      ]
-    }, 
-    "calculateReportingThreshold": {
-      "inputs": [
-        "branch", 
-        "eventID", 
-        "votePeriod", 
-        "sender"
-      ], 
-      "method": "calculateReportingThreshold", 
-      "returns": "hash", 
-      "signature": [
-        "int256", 
         "int256", 
         "int256", 
         "int256"
@@ -2056,22 +2053,6 @@
         "int256"
       ]
     }, 
-    "getEventCanReportOn": {
-      "inputs": [
-        "branch", 
-        "expDateIndex", 
-        "reporter", 
-        "event"
-      ], 
-      "method": "getEventCanReportOn", 
-      "returns": "number", 
-      "signature": [
-        "int256", 
-        "int256", 
-        "int256", 
-        "int256"
-      ]
-    }, 
     "getEventIndex": {
       "inputs": [
         "period", 
@@ -2106,19 +2087,6 @@
       "method": "getEventsRange", 
       "signature": [
         "int256", 
-        "int256", 
-        "int256", 
-        "int256"
-      ]
-    }, 
-    "getEventsToReportOn": {
-      "inputs": [
-        "branch", 
-        "expDateIndex", 
-        "sender"
-      ], 
-      "method": "getEventsToReportOn", 
-      "signature": [
         "int256", 
         "int256", 
         "int256"
@@ -2179,19 +2147,6 @@
         "eventID"
       ], 
       "method": "getNumReportsEvent", 
-      "signature": [
-        "int256", 
-        "int256", 
-        "int256"
-      ]
-    }, 
-    "getNumReportsExpectedEvent": {
-      "inputs": [
-        "branch", 
-        "votePeriod", 
-        "eventID"
-      ], 
-      "method": "getNumReportsExpectedEvent", 
       "signature": [
         "int256", 
         "int256", 
@@ -2319,6 +2274,21 @@
       ], 
       "method": "getRequired", 
       "signature": [
+        "int256"
+      ]
+    }, 
+    "getSaltyHash": {
+      "inputs": [
+        "branch", 
+        "expDateIndex", 
+        "reporter", 
+        "event"
+      ], 
+      "method": "getSaltyHash", 
+      "signature": [
+        "int256", 
+        "int256", 
+        "int256", 
         "int256"
       ]
     }, 
@@ -2517,21 +2487,6 @@
         "int256"
       ]
     }, 
-    "setNumReportsExpectedEvent": {
-      "inputs": [
-        "branch", 
-        "votePeriod", 
-        "eventID", 
-        "num"
-      ], 
-      "method": "setNumReportsExpectedEvent", 
-      "signature": [
-        "int256", 
-        "int256", 
-        "int256", 
-        "int256"
-      ]
-    }, 
     "setPeriodDormantRep": {
       "inputs": [
         "branch", 
@@ -2596,14 +2551,25 @@
         "int256"
       ]
     }, 
-    "setReportingThreshold": {
+    "setSaltyHash": {
       "inputs": [
+        "branch", 
+        "expDateIndex", 
+        "reporter", 
+        "saltyHash", 
         "event"
       ], 
-      "method": "setReportingThreshold", 
+      "method": "setSaltyHash", 
       "signature": [
+        "int256", 
+        "int256", 
+        "int256", 
+        "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "Faucets": {
@@ -2644,6 +2610,9 @@
       "signature": [
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "ForkPenalize": {
@@ -2666,6 +2635,9 @@
       "signature": [
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "Forking": {
@@ -2730,6 +2702,9 @@
       "signature": [
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "FxpFunctions": {
@@ -2759,6 +2734,9 @@
       "signature": [
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "Info": {
@@ -2817,6 +2795,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "MakeReports": {
@@ -2871,15 +2852,20 @@
     "submitReportHash": {
       "inputs": [
         "event", 
-        "reportHash"
+        "reportHash", 
+        "encryptedSaltyHash"
       ], 
       "method": "submitReportHash", 
       "returns": "number", 
       "send": true, 
       "signature": [
         "int256", 
+        "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }, 
     "validateReport": {
       "inputs": [
@@ -2913,17 +2899,6 @@
         "amount"
       ], 
       "method": "addFees", 
-      "signature": [
-        "int256", 
-        "int256"
-      ]
-    }, 
-    "addParticipant": {
-      "inputs": [
-        "market", 
-        "address"
-      ], 
-      "method": "addParticipant", 
       "signature": [
         "int256", 
         "int256"
@@ -2988,16 +2963,6 @@
       ], 
       "method": "getCumScale", 
       "returns": "unfix", 
-      "signature": [
-        "int256"
-      ]
-    }, 
-    "getCurrentParticipantNumber": {
-      "inputs": [
-        "market"
-      ], 
-      "method": "getCurrentParticipantNumber", 
-      "returns": "number", 
       "signature": [
         "int256"
       ]
@@ -3131,34 +3096,10 @@
         "int256"
       ]
     }, 
-    "getParticipantID": {
-      "inputs": [
-        "market", 
-        "participantNumber"
-      ], 
-      "method": "getParticipantID", 
-      "returns": "address", 
-      "signature": [
-        "int256", 
-        "int256"
-      ]
-    }, 
-    "getParticipantNumber": {
-      "inputs": [
-        "market", 
-        "address"
-      ], 
-      "method": "getParticipantNumber", 
-      "returns": "number", 
-      "signature": [
-        "int256", 
-        "int256"
-      ]
-    }, 
     "getParticipantSharesPurchased": {
       "inputs": [
         "market", 
-        "participantNumber", 
+        "trader", 
         "outcome"
       ], 
       "method": "getParticipantSharesPurchased", 
@@ -3322,15 +3263,13 @@
     "modifyParticipantShares": {
       "inputs": [
         "marketID", 
-        "participantNumber", 
+        "trader", 
         "outcome", 
         "amount", 
-        "cancel", 
-        "sets"
+        "cancel"
       ], 
       "method": "modifyParticipantShares", 
       "signature": [
-        "int256", 
         "int256", 
         "int256", 
         "int256", 
@@ -3366,7 +3305,7 @@
     }, 
     "refundClosing": {
       "inputs": [
-        "amount", 
+        "market", 
         "to"
       ], 
       "method": "refundClosing", 
@@ -3454,6 +3393,9 @@
         "int256", 
         "int256[]"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "PenalizationCatchup": {
@@ -3467,6 +3409,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "PenalizeNotEnoughReports": {
@@ -3484,6 +3429,23 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
+    }
+  }, 
+  "ProportionCorrect": {
+    "proportionCorrect": {
+      "inputs": [
+        "event"
+      ], 
+      "method": "proportionCorrect", 
+      "signature": [
+        "int256"
+      ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "Reporting": {
@@ -3679,17 +3641,6 @@
         "int256"
       ]
     }, 
-    "hashReport": {
-      "inputs": [
-        "report", 
-        "salt"
-      ], 
-      "method": "hashReport", 
-      "signature": [
-        "int256[]", 
-        "int256"
-      ]
-    }, 
     "repIDToIndex": {
       "inputs": [
         "branch", 
@@ -3799,6 +3750,9 @@
         "int256"
       ]
     }, 
+    "test_callstack": {
+      "method": "test_callstack"
+    }, 
     "totalSupply": {
       "inputs": [
         "branch"
@@ -3808,6 +3762,63 @@
       "signature": [
         "int256"
       ]
+    }
+  }, 
+  "ReportingThreshold": {
+    "calculateReportingThreshold": {
+      "inputs": [
+        "branch", 
+        "eventID", 
+        "votePeriod", 
+        "sender"
+      ], 
+      "method": "calculateReportingThreshold", 
+      "signature": [
+        "int256", 
+        "int256", 
+        "int256", 
+        "int256"
+      ]
+    }, 
+    "getEventCanReportOn": {
+      "inputs": [
+        "branch", 
+        "expDateIndex", 
+        "reporter", 
+        "event"
+      ], 
+      "method": "getEventCanReportOn", 
+      "signature": [
+        "int256", 
+        "int256", 
+        "int256", 
+        "int256"
+      ]
+    }, 
+    "getEventsToReportOn": {
+      "inputs": [
+        "branch", 
+        "expDateIndex", 
+        "sender"
+      ], 
+      "method": "getEventsToReportOn", 
+      "signature": [
+        "int256", 
+        "int256", 
+        "int256"
+      ]
+    }, 
+    "setReportingThreshold": {
+      "inputs": [
+        "event"
+      ], 
+      "method": "setReportingThreshold", 
+      "signature": [
+        "int256"
+      ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "RoundTwo": {
@@ -3857,6 +3868,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "RoundTwoPenalize": {
@@ -3871,14 +3885,8 @@
         "int256"
       ]
     }, 
-    "proportionCorrect": {
-      "inputs": [
-        "event"
-      ], 
-      "method": "proportionCorrect", 
-      "signature": [
-        "int256"
-      ]
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "SendReputation": {
@@ -3943,6 +3951,9 @@
         "int256"
       ]
     }, 
+    "test_callstack": {
+      "method": "test_callstack"
+    }, 
     "transfer": {
       "inputs": [
         "branch", 
@@ -3979,8 +3990,7 @@
         "salt", 
         "report", 
         "reporter", 
-        "eventID", 
-        "testing"
+        "eventID"
       ], 
       "method": "slashRep", 
       "returns": "number", 
@@ -3990,9 +4000,11 @@
         "int256", 
         "int256", 
         "int256", 
-        "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }
   }, 
   "Trade": {
@@ -4008,6 +4020,9 @@
         "int256", 
         "int256"
       ]
+    }, 
+    "test_callstack": {
+      "method": "test_callstack"
     }, 
     "trade": {
       "inputs": [
@@ -4067,16 +4082,6 @@
         "tradeID"
       ], 
       "method": "getID", 
-      "returns": "hash", 
-      "signature": [
-        "int256"
-      ]
-    }, 
-    "getInitialTrade": {
-      "inputs": [
-        "id"
-      ], 
-      "method": "getInitialTrade", 
       "returns": "hash", 
       "signature": [
         "int256"
@@ -4160,16 +4165,8 @@
         "int256"
       ]
     }, 
-    "setInitialTrade": {
-      "inputs": [
-        "id"
-      ], 
-      "method": "setInitialTrade", 
-      "returns": "number", 
-      "send": true, 
-      "signature": [
-        "int256"
-      ]
+    "test_callstack": {
+      "method": "test_callstack"
     }, 
     "update_trade": {
       "inputs": [
