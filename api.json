@@ -1300,6 +1300,8 @@
         "extraInfo"
       ], 
       "method": "createSingleEventMarket", 
+      "returns": "hash", 
+      "send": true, 
       "signature": [
         "int256", 
         "bytes", 
