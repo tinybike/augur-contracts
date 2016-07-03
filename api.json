@@ -1219,7 +1219,7 @@
         "description", 
         "periodLength", 
         "parent", 
-        "mintradingFee", 
+        "minTradingFee", 
         "oracleOnly"
       ], 
       "method": "createSubbranch", 
@@ -1275,6 +1275,39 @@
         "int256", 
         "bytes", 
         "int256", 
+        "int256", 
+        "int256", 
+        "int256", 
+        "int256", 
+        "int256", 
+        "bytes"
+      ]
+    }, 
+    "createSingleEventMarket": {
+      "inputs": [
+        "branch", 
+        "description", 
+        "expDate", 
+        "minValue", 
+        "maxValue", 
+        "numOutcomes", 
+        "resolution", 
+        "tradingFee", 
+        "tag1", 
+        "tag2", 
+        "tag3", 
+        "makerFees", 
+        "extraInfo"
+      ], 
+      "method": "createSingleEventMarket", 
+      "signature": [
+        "int256", 
+        "bytes", 
+        "int256", 
+        "int256", 
+        "int256", 
+        "int256", 
+        "bytes", 
         "int256", 
         "int256", 
         "int256", 
