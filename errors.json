@@ -130,7 +130,6 @@
         "-2": "reporter doesn't exist"
     },
     "submitReportHash": {
-        "0": "not caught up on rep redistributions",
         "-1": "invalid event",
         "-2": "not in first half of period (commit phase)"
     },

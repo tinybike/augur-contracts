@@ -3380,6 +3380,7 @@
         "sender"
       ], 
       "method": "penalizationCatchup", 
+      "send": true, 
       "signature": [
         "int256", 
         "int256"
