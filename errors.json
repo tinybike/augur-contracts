@@ -66,7 +66,9 @@
         "-2": "no money for creation fee or branch already exists"
     },
     "penalizationCatchup": {
-        "-2": "can only be called during the first half of the reporting period"
+        "-1": "not in first half of reporting period",
+        "-2": "doesn't need to be penalized/caught up",
+        "-3": "user isn't behind or reported in the last period (and should thus use the penalization functions in consensus.se)"
     },
     "penalizeOnForkedEvent": {
         "-2": "already past first half of new period and needed to penalize before then",

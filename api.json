@@ -1029,6 +1029,7 @@
         "sender"
       ], 
       "method": "getPenalizedUpTo", 
+      "returns": "int", 
       "signature": [
         "int256", 
         "int256"
@@ -1051,6 +1052,7 @@
         "reporter"
       ], 
       "method": "getRepRedistributionDone", 
+      "returns": "int", 
       "signature": [
         "int256", 
         "int256"
@@ -3380,6 +3382,7 @@
         "sender"
       ], 
       "method": "penalizationCatchup", 
+      "returns": "number", 
       "send": true, 
       "signature": [
         "int256", 
