@@ -495,7 +495,7 @@
         "branch"
       ], 
       "method": "getVotePeriod", 
-      "returns": "number", 
+      "returns": "int", 
       "signature": [
         "int256"
       ]
