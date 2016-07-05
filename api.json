@@ -1052,7 +1052,7 @@
         "reporter"
       ], 
       "method": "getRepRedistributionDone", 
-      "returns": "int", 
+      "returns": "number", 
       "signature": [
         "int256", 
         "int256"
