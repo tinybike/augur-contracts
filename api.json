@@ -918,7 +918,8 @@
         "event"
       ], 
       "method": "penalizeWrong", 
-      "returns": "number", 
+      "mutable": true, 
+      "returns": "hash[]", 
       "send": true, 
       "signature": [
         "int256", 
@@ -1272,6 +1273,7 @@
         "extraInfo"
       ], 
       "method": "createMarket", 
+      "mutable": true, 
       "send": true, 
       "signature": [
         "int256", 
@@ -1302,6 +1304,7 @@
         "extraInfo"
       ], 
       "method": "createSingleEventMarket", 
+      "mutable": true, 
       "returns": "hash", 
       "send": true, 
       "signature": [
@@ -2823,6 +2826,7 @@
         "ethics"
       ], 
       "method": "submitReport", 
+      "mutable": true, 
       "returns": "number", 
       "send": true, 
       "signature": [
