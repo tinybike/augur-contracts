@@ -918,8 +918,7 @@
         "event"
       ], 
       "method": "penalizeWrong", 
-      "mutable": true, 
-      "returns": "hash[]", 
+      "returns": "number", 
       "send": true, 
       "signature": [
         "int256", 
