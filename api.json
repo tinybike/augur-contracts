@@ -1487,6 +1487,7 @@
         "event"
       ], 
       "method": "getEventResolution", 
+      "returns": "string", 
       "signature": [
         "int256"
       ]
