@@ -354,7 +354,7 @@
           "event"
         ], 
         "method": "getBondPoster", 
-        "returns": "int256", 
+        "returns": "address", 
         "signature": [
           "int256"
         ]
@@ -454,7 +454,7 @@
           "event"
         ], 
         "method": "getOriginalVotePeriod", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -511,7 +511,8 @@
           "bondPoster"
         ], 
         "method": "setBondPoster", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -532,7 +533,8 @@
           "event"
         ], 
         "method": "setFinal", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -587,7 +589,8 @@
           "ethicality"
         ], 
         "method": "setOriginalEthicality", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -599,7 +602,8 @@
           "originalOutcome"
         ], 
         "method": "setOriginalOutcome", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -611,7 +615,8 @@
           "period"
         ], 
         "method": "setOriginalVotePeriod", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -637,7 +642,8 @@
           "roundTwo"
         ], 
         "method": "setRoundTwo", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -684,14 +690,14 @@
           "branchNumber"
         ], 
         "method": "getBranchByNum", 
-        "returns": "int256", 
+        "returns": "hash", 
         "signature": [
           "int256"
         ]
       }, 
       "getBranches": {
         "method": "getBranches", 
-        "returns": "int256[]"
+        "returns": "hash[]"
       }, 
       "getCreationDate": {
         "inputs": [
@@ -740,7 +746,7 @@
           "branch"
         ], 
         "method": "getMarketsInBranch", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -750,21 +756,21 @@
           "branch"
         ], 
         "method": "getMinTradingFee", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
       }, 
       "getNumBranches": {
         "method": "getNumBranches", 
-        "returns": "int256"
+        "returns": "number"
       }, 
       "getNumMarketsBranch": {
         "inputs": [
           "branch"
         ], 
         "method": "getNumMarketsBranch", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -804,7 +810,7 @@
           "branch"
         ], 
         "method": "getPeriodLength", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -828,7 +834,7 @@
           "branch"
         ], 
         "method": "getVotePeriod", 
-        "returns": "int256", 
+        "returns": "int", 
         "signature": [
           "int256"
         ]
@@ -838,14 +844,16 @@
           "branch"
         ], 
         "method": "incrementPeriod", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
       }, 
       "initDefaultBranch": {
         "method": "initDefaultBranch", 
-        "returns": "int256"
+        "returns": "number", 
+        "send": true
       }, 
       "initializeBranch": {
         "inputs": [
@@ -927,7 +935,8 @@
           "outcome"
         ], 
         "method": "buy", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -940,7 +949,8 @@
           "trade_id"
         ], 
         "method": "cancel", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -953,7 +963,8 @@
           "outcome"
         ], 
         "method": "sell", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -969,7 +980,8 @@
           "amount"
         ], 
         "method": "addCash", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -980,21 +992,23 @@
           "address"
         ], 
         "method": "balance", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
       }, 
       "depositEther": {
         "method": "depositEther", 
-        "returns": "int256"
+        "returns": "number", 
+        "send": true
       }, 
       "initiateOwner": {
         "inputs": [
           "account"
         ], 
         "method": "initiateOwner", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -1005,7 +1019,8 @@
           "value"
         ], 
         "method": "send", 
-        "returns": "int256", 
+        "returns": "unfix", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1018,7 +1033,8 @@
           "from"
         ], 
         "method": "sendFrom", 
-        "returns": "int256", 
+        "returns": "unfix", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -1031,7 +1047,8 @@
           "balance"
         ], 
         "method": "setCash", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1055,7 +1072,8 @@
           "value"
         ], 
         "method": "withdrawEther", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1069,7 +1087,8 @@
           "market"
         ], 
         "method": "claimProceeds", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1082,7 +1101,8 @@
           "sender"
         ], 
         "method": "closeMarket", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -1135,7 +1155,8 @@
           "sender"
         ], 
         "method": "collectFees", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1149,7 +1170,8 @@
           "amount"
         ], 
         "method": "buyCompleteSets", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1161,7 +1183,8 @@
           "amount"
         ], 
         "method": "sellCompleteSets", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1174,7 +1197,7 @@
           "marketIDs"
         ], 
         "method": "batchGetMarketInfo", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256[]"
         ]
@@ -1184,7 +1207,7 @@
           "marketID"
         ], 
         "method": "getMarketInfo", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -1194,7 +1217,7 @@
           "marketID"
         ], 
         "method": "getMarketInfoCache", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -1206,7 +1229,7 @@
           "numMarketsToLoad"
         ], 
         "method": "getMarketsInfo", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256", 
           "int256", 
@@ -1218,7 +1241,7 @@
           "marketID"
         ], 
         "method": "getOrderBook", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -1230,7 +1253,8 @@
           "branch"
         ], 
         "method": "incrementPeriodAfterReporting", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -1241,7 +1265,8 @@
           "event"
         ], 
         "method": "penalizeWrong", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1359,7 +1384,7 @@
           "sender"
         ], 
         "method": "getPenalizedUpTo", 
-        "returns": "int256", 
+        "returns": "int", 
         "signature": [
           "int256", 
           "int256"
@@ -1383,7 +1408,7 @@
           "reporter"
         ], 
         "method": "getRepRedistributionDone", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256"
@@ -1567,7 +1592,8 @@
           "oracleOnly"
         ], 
         "method": "createSubbranch", 
-        "returns": "int256", 
+        "returns": "hash", 
+        "send": true, 
         "signature": [
           "bytes", 
           "int256", 
@@ -1590,6 +1616,7 @@
         ], 
         "method": "createEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "bytes", 
@@ -1613,7 +1640,9 @@
           "extraInfo"
         ], 
         "method": "createMarket", 
+        "mutable": true, 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "bytes", 
@@ -1643,7 +1672,9 @@
           "extraInfo"
         ], 
         "method": "createSingleEventMarket", 
-        "returns": "int256", 
+        "mutable": true, 
+        "returns": "hash", 
+        "send": true, 
         "signature": [
           "int256", 
           "bytes", 
@@ -1666,7 +1697,8 @@
           "market"
         ], 
         "method": "pushMarketForward", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1679,7 +1711,8 @@
           "tradingFee"
         ], 
         "method": "updateTradingFee", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -1803,7 +1836,7 @@
           "event"
         ], 
         "method": "getEventBranch", 
-        "returns": "int256", 
+        "returns": "hash", 
         "signature": [
           "int256"
         ]
@@ -1813,7 +1846,7 @@
           "event"
         ], 
         "method": "getEventInfo", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -1843,7 +1876,7 @@
           "event"
         ], 
         "method": "getExpiration", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -1905,7 +1938,7 @@
           "event"
         ], 
         "method": "getMarkets", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -1915,7 +1948,7 @@
           "event"
         ], 
         "method": "getMaxValue", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -1925,7 +1958,7 @@
           "event"
         ], 
         "method": "getMinValue", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -1945,7 +1978,7 @@
           "event"
         ], 
         "method": "getNumOutcomes", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -1965,7 +1998,7 @@
           "event"
         ], 
         "method": "getOutcome", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -2005,7 +2038,7 @@
           "event"
         ], 
         "method": "getReportingThreshold", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -2025,7 +2058,7 @@
           "event"
         ], 
         "method": "getUncaughtOutcome", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -2035,7 +2068,7 @@
           "event"
         ], 
         "method": "getmode", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -2184,7 +2217,8 @@
           "outcome"
         ], 
         "method": "setOutcome", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2249,6 +2283,7 @@
         ], 
         "method": "addEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -2431,7 +2466,7 @@
           "eventIndex"
         ], 
         "method": "getEvent", 
-        "returns": "int256", 
+        "returns": "hash", 
         "signature": [
           "int256", 
           "int256", 
@@ -2444,7 +2479,7 @@
           "eventID"
         ], 
         "method": "getEventIndex", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256"
@@ -2456,7 +2491,7 @@
           "expDateIndex"
         ], 
         "method": "getEvents", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256", 
           "int256"
@@ -2574,7 +2609,7 @@
           "expDateIndex"
         ], 
         "method": "getNumberEvents", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256"
@@ -2646,7 +2681,7 @@
           "event"
         ], 
         "method": "getReportHash", 
-        "returns": "int256", 
+        "returns": "hash", 
         "signature": [
           "int256", 
           "int256", 
@@ -2992,7 +3027,8 @@
     "Faucets": {
       "cashFaucet": {
         "method": "cashFaucet", 
-        "returns": "int256"
+        "returns": "number", 
+        "send": true
       }, 
       "claimInitialRep": {
         "inputs": [
@@ -3011,7 +3047,8 @@
           "branch"
         ], 
         "method": "fundNewAccount", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -3021,7 +3058,8 @@
           "branch"
         ], 
         "method": "reputationFaucet", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -3159,7 +3197,7 @@
           "ID"
         ], 
         "method": "getCreationFee", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -3169,7 +3207,7 @@
           "ID"
         ], 
         "method": "getCreator", 
-        "returns": "int256", 
+        "returns": "address", 
         "signature": [
           "int256"
         ]
@@ -3202,7 +3240,8 @@
           "fee"
         ], 
         "method": "setInfo", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "bytes", 
@@ -3220,7 +3259,8 @@
           "sender"
         ], 
         "method": "calculateReportTargetForEvent", 
-        "returns": "int256", 
+        "returns": "unfix", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3236,7 +3276,7 @@
           "sender"
         ], 
         "method": "makeHash", 
-        "returns": "int256", 
+        "returns": "hash", 
         "signature": [
           "int256", 
           "int256", 
@@ -3252,6 +3292,9 @@
           "ethics"
         ], 
         "method": "submitReport", 
+        "mutable": true, 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3266,7 +3309,8 @@
           "encryptedSaltyHash"
         ], 
         "method": "submitReportHash", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3285,7 +3329,7 @@
           "balance"
         ], 
         "method": "validateReport", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256", 
@@ -3352,7 +3396,7 @@
           "market"
         ], 
         "method": "getBranchID", 
-        "returns": "int256", 
+        "returns": "hash", 
         "signature": [
           "int256"
         ]
@@ -3362,7 +3406,7 @@
           "market"
         ], 
         "method": "getCreationTime", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -3372,7 +3416,7 @@
           "market"
         ], 
         "method": "getCumScale", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -3392,7 +3436,7 @@
           "market"
         ], 
         "method": "getFees", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -3402,7 +3446,7 @@
           "market"
         ], 
         "method": "getLastExpDate", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -3434,7 +3478,7 @@
           "market"
         ], 
         "method": "getMakerFees", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -3456,7 +3500,7 @@
           "market"
         ], 
         "method": "getMarketEvents", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -3466,7 +3510,7 @@
           "market"
         ], 
         "method": "getMarketNumOutcomes", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -3486,7 +3530,7 @@
           "market"
         ], 
         "method": "getNumEvents", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -3520,7 +3564,7 @@
           "outcome"
         ], 
         "method": "getParticipantSharesPurchased", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
@@ -3547,7 +3591,7 @@
           "outcome"
         ], 
         "method": "getSharesPurchased", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256"
@@ -3558,7 +3602,7 @@
           "market"
         ], 
         "method": "getSharesValue", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -3578,7 +3622,7 @@
           "market"
         ], 
         "method": "getTradingFee", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -3588,7 +3632,7 @@
           "market"
         ], 
         "method": "getTradingPeriod", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -3598,7 +3642,7 @@
           "market"
         ], 
         "method": "getVolume", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -3608,7 +3652,7 @@
           "market"
         ], 
         "method": "getWinningOutcomes", 
-        "returns": "int256[]", 
+        "returns": "number[]", 
         "signature": [
           "int256"
         ]
@@ -3618,7 +3662,7 @@
           "market_id"
         ], 
         "method": "get_total_trades", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -3628,7 +3672,7 @@
           "market_id"
         ], 
         "method": "get_trade_ids", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -3638,7 +3682,7 @@
           "market"
         ], 
         "method": "getgasSubsidy", 
-        "returns": "int256", 
+        "returns": "int", 
         "signature": [
           "int256"
         ]
@@ -3706,7 +3750,8 @@
           "amount"
         ], 
         "method": "modifyShares", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3754,7 +3799,7 @@
           "market"
         ], 
         "method": "returnTags", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -3831,7 +3876,8 @@
           "sender"
         ], 
         "method": "penalizationCatchup", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3846,7 +3892,8 @@
           "eventExample"
         ], 
         "method": "proveReporterDidntReportEnough", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3874,7 +3921,8 @@
           "value"
         ], 
         "method": "addDormantRep", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3888,7 +3936,8 @@
           "value"
         ], 
         "method": "addRep", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3904,7 +3953,8 @@
           "repToBonderOrBranch"
         ], 
         "method": "addReporter", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3919,7 +3969,8 @@
           "amount"
         ], 
         "method": "adjustActiveRep", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3931,7 +3982,7 @@
           "address"
         ], 
         "method": "balanceOf", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256"
@@ -3964,7 +4015,7 @@
           "branch"
         ], 
         "method": "getActiveRep", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -3975,7 +4026,7 @@
           "repIndex"
         ], 
         "method": "getDormantRepByIndex", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256"
@@ -3986,7 +4037,7 @@
           "branch"
         ], 
         "method": "getFork", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -3996,7 +4047,7 @@
           "branch"
         ], 
         "method": "getNumberReporters", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -4007,7 +4058,7 @@
           "address"
         ], 
         "method": "getRepBalance", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256"
@@ -4019,7 +4070,7 @@
           "repIndex"
         ], 
         "method": "getRepByIndex", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256"
@@ -4031,7 +4082,7 @@
           "index"
         ], 
         "method": "getReporterID", 
-        "returns": "int256", 
+        "returns": "hash", 
         "signature": [
           "int256", 
           "int256"
@@ -4042,7 +4093,7 @@
           "address"
         ], 
         "method": "getReputation", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -4052,7 +4103,7 @@
           "branch"
         ], 
         "method": "getTotalRep", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -4063,7 +4114,7 @@
           "repID"
         ], 
         "method": "repIDToIndex", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256"
@@ -4074,7 +4125,8 @@
           "branch"
         ], 
         "method": "setFork", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -4085,7 +4137,8 @@
           "branchID"
         ], 
         "method": "setInitialReporters", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -4098,7 +4151,8 @@
           "newRep"
         ], 
         "method": "setRep", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4112,7 +4166,8 @@
           "branchID"
         ], 
         "method": "setSaleDistribution", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256[]", 
           "int256[]", 
@@ -4126,6 +4181,7 @@
         ], 
         "method": "setWhitelist", 
         "returns": "string", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256[]"
@@ -4138,7 +4194,8 @@
           "value"
         ], 
         "method": "subtractDormantRep", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4152,7 +4209,8 @@
           "value"
         ], 
         "method": "subtractRep", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4164,7 +4222,7 @@
           "branch"
         ], 
         "method": "totalSupply", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -4235,7 +4293,8 @@
           "event"
         ], 
         "method": "resolve", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -4249,7 +4308,8 @@
           "votePeriod"
         ], 
         "method": "roundTwoPostBond", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4265,7 +4325,8 @@
           "sender"
         ], 
         "method": "roundTwoResolve", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4346,7 +4407,8 @@
           "value"
         ], 
         "method": "sendReputation", 
-        "returns": "int256", 
+        "returns": "unfix", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4394,7 +4456,8 @@
           "eventID"
         ], 
         "method": "slashRep", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4411,7 +4474,8 @@
           "max_amount"
         ], 
         "method": "short_sell", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -4424,7 +4488,8 @@
           "trade_ids"
         ], 
         "method": "trade", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4439,7 +4504,7 @@
           "sender"
         ], 
         "method": "checkHash", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256"
@@ -4450,7 +4515,8 @@
           "hash"
         ], 
         "method": "commitTrade", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -4461,7 +4527,8 @@
           "fill"
         ], 
         "method": "fill_trade", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -4472,7 +4539,7 @@
           "tradeID"
         ], 
         "method": "getID", 
-        "returns": "int256", 
+        "returns": "hash", 
         "signature": [
           "int256"
         ]
@@ -4482,7 +4549,7 @@
           "id"
         ], 
         "method": "get_amount", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -4492,7 +4559,7 @@
           "id"
         ], 
         "method": "get_price", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -4502,7 +4569,7 @@
           "id"
         ], 
         "method": "get_trade", 
-        "returns": "int256[]", 
+        "returns": "hash[]", 
         "signature": [
           "int256"
         ]
@@ -4514,7 +4581,7 @@
           "trade_ids"
         ], 
         "method": "makeTradeHash", 
-        "returns": "int256", 
+        "returns": "hash", 
         "signature": [
           "int256", 
           "int256", 
@@ -4526,7 +4593,8 @@
           "id"
         ], 
         "method": "remove_trade", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -4542,7 +4610,8 @@
           "outcome"
         ], 
         "method": "saveTrade", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4559,6 +4628,7 @@
           "price"
         ], 
         "method": "update_trade", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -4566,7 +4636,8 @@
       }, 
       "zeroHash": {
         "method": "zeroHash", 
-        "returns": "int256"
+        "returns": "number", 
+        "send": true
       }
     }
   }
