@@ -18,12 +18,9 @@ module.exports = function (network, contracts) {
             api.functions[contract][method].to = contracts[contract];
         }
     }
-    for (var contract in api.events) {
-        if (!api.events.hasOwnProperty(contract)) continue;
-        for (var method in api.events[contract]) {
-            if (!api.events[contract].hasOwnProperty(method)) continue;
-            api.events[contract][method].address = contracts[contract];
-        }
+    for (var event in api.events) {
+        if (!api.events.hasOwnProperty(event)) continue;
+        api.events[event].address = contracts[api.events[event].contract];
     }
 
     return api;
