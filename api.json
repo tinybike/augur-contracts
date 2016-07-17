@@ -1325,7 +1325,7 @@
           "period"
         ], 
         "method": "getFeesCollected", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256", 
@@ -2518,7 +2518,7 @@
           "event"
         ], 
         "method": "getLesserReportNum", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
@@ -2634,7 +2634,7 @@
           "sender"
         ], 
         "method": "getPeriodRepConstant", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
@@ -2663,7 +2663,7 @@
           "sender"
         ], 
         "method": "getReport", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
@@ -2679,7 +2679,7 @@
           "event"
         ], 
         "method": "getReportHash", 
-        "returns": "hash", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
