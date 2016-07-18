@@ -1263,6 +1263,7 @@
           "event"
         ], 
         "method": "penalizeWrong", 
+        "mutable": true, 
         "returns": "number", 
         "send": true, 
         "signature": [
