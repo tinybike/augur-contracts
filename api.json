@@ -233,43 +233,13 @@
       "contract": "Consensus", 
       "inputs": [
         {
-          "indexed": true, 
-          "name": "user", 
-          "type": "int256"
-        }, 
-        {
           "indexed": false, 
-          "name": "outcome", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "oldrep", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "repchange", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "newafterrep", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "p", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "reportValue", 
+          "name": "x", 
           "type": "int256"
         }
       ], 
-      "name": "penalize(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x3253564cd022a8ec496277f26ccdaddf64e75973423eda45df329f60b2a0c6a7"
+      "name": "penalize(int256)", 
+      "signature": "0x47471d3c43bf6848bb5a5b5b607af9a50395288681419dd20aa0b89501cb476f"
     }, 
     "returnValue": {
       "contract": "MakeReports", 
