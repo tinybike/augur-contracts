@@ -30,7 +30,7 @@
         "-8": "market isn't in branch"
     },
     "collectFees": {
-        "-2": "needs to be second half of reporting period to claim rep (1st half is when redistribution is done)"
+        "-1": "rep redistribution/rewards/penalizations in consensus not done yet"
     },
     "createEvent": {
         "-1": "we're either already past that date, branch doesn't exist, or description is bad",

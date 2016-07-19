@@ -253,6 +253,30 @@
       "name": "returnValue(int256)", 
       "signature": "0x8bc92e9868f513a8fbcf983ca23f542d05ea98a0e6e3c107c013a07651f59383"
     }, 
+    "tradeArrayReturnValue": {
+      "contract": "Trade", 
+      "inputs": [
+        {
+          "indexed": false, 
+          "name": "returnArray", 
+          "type": "int256[]"
+        }
+      ], 
+      "name": "tradeArrayReturnValue(int256[])", 
+      "signature": "0xd7ce642fce46a6671b3eb36cf4beeb0d607384f3b8fe09ff9a2d8a0c5d9c0228"
+    }, 
+    "tradeReturnValue": {
+      "contract": "Trade", 
+      "inputs": [
+        {
+          "indexed": false, 
+          "name": "returnValue", 
+          "type": "int256"
+        }
+      ], 
+      "name": "tradeReturnValue(int256)", 
+      "signature": "0x34c6d329415f0bdc7259314b660b88f78542d86bd671077ccfba3deeceb4748b"
+    }, 
     "tradingFeeUpdated": {
       "contract": "CreateMarket", 
       "inputs": [
@@ -2367,7 +2391,7 @@
           "sender"
         ], 
         "method": "getAfterRep", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
@@ -2381,7 +2405,7 @@
           "sender"
         ], 
         "method": "getBeforeRep", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
@@ -3220,23 +3244,6 @@
       }
     }, 
     "MakeReports": {
-      "calculateReportTargetForEvent": {
-        "inputs": [
-          "branch", 
-          "eventID", 
-          "votePeriod", 
-          "sender"
-        ], 
-        "method": "calculateReportTargetForEvent", 
-        "returns": "unfix", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
       "makeHash": {
         "inputs": [
           "salt", 
@@ -4198,6 +4205,22 @@
       }
     }, 
     "ReportingThreshold": {
+      "calculateReportTargetForEvent": {
+        "inputs": [
+          "branch", 
+          "eventID", 
+          "votePeriod", 
+          "sender"
+        ], 
+        "method": "calculateReportTargetForEvent", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "calculateReportingThreshold": {
         "inputs": [
           "branch", 
@@ -4233,12 +4256,14 @@
       "getEventsToReportOn": {
         "inputs": [
           "branch", 
-          "expDateIndex", 
-          "sender"
+          "period", 
+          "sender", 
+          "start"
         ], 
         "method": "getEventsToReportOn", 
         "returns": "int256[]", 
         "signature": [
+          "int256", 
           "int256", 
           "int256", 
           "int256"
@@ -4443,6 +4468,7 @@
           "max_amount"
         ], 
         "method": "short_sell", 
+        "mutable": true, 
         "returns": "hash[]", 
         "send": true, 
         "signature": [
@@ -4457,6 +4483,7 @@
           "trade_ids"
         ], 
         "method": "trade", 
+        "mutable": true, 
         "returns": "hash[]", 
         "send": true, 
         "signature": [
