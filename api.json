@@ -1204,16 +1204,6 @@
           "int256"
         ]
       }, 
-      "getMarketInfoCache": {
-        "inputs": [
-          "marketID"
-        ], 
-        "method": "getMarketInfoCache", 
-        "returns": "hash[]", 
-        "signature": [
-          "int256"
-        ]
-      }, 
       "getMarketsInfo": {
         "inputs": [
           "branch", 
