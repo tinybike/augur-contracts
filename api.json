@@ -4487,23 +4487,27 @@
       "checkHash": {
         "inputs": [
           "tradeHash", 
-          "sender"
+          "sender", 
+          "id"
         ], 
         "method": "checkHash", 
         "returns": "number", 
         "signature": [
+          "int256", 
           "int256", 
           "int256"
         ]
       }, 
       "commitTrade": {
         "inputs": [
-          "hash"
+          "hash", 
+          "id"
         ], 
         "method": "commitTrade", 
         "returns": "number", 
         "send": true, 
         "signature": [
+          "int256", 
           "int256"
         ]
       }, 
@@ -4621,9 +4625,15 @@
         ]
       }, 
       "zeroHash": {
+        "inputs": [
+          "id"
+        ], 
         "method": "zeroHash", 
         "returns": "number", 
-        "send": true
+        "send": true, 
+        "signature": [
+          "int256"
+        ]
       }
     }
   }
