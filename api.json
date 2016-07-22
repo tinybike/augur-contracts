@@ -1844,16 +1844,6 @@
           "int256"
         ]
       }, 
-      "getEventResolution": {
-        "inputs": [
-          "event"
-        ], 
-        "method": "getEventResolution", 
-        "returns": "string", 
-        "signature": [
-          "int256"
-        ]
-      }, 
       "getExpiration": {
         "inputs": [
           "event"
@@ -2036,6 +2026,16 @@
           "int256"
         ]
       }, 
+      "getResolutionLength": {
+        "inputs": [
+          "event"
+        ], 
+        "method": "getResolutionLength", 
+        "returns": "int", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getUncaughtOutcome": {
         "inputs": [
           "event"
@@ -2068,6 +2068,7 @@
         ], 
         "method": "initializeEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3210,7 +3211,7 @@
           "ID"
         ], 
         "method": "getDescriptionLength", 
-        "returns": "int256", 
+        "returns": "int", 
         "signature": [
           "int256"
         ]
@@ -3393,6 +3394,16 @@
         ], 
         "method": "getExtraInfo", 
         "returns": "string", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getExtraInfoLength": {
+        "inputs": [
+          "market"
+        ], 
+        "method": "getExtraInfoLength", 
+        "returns": "int", 
         "signature": [
           "int256"
         ]
