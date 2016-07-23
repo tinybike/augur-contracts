@@ -44,6 +44,18 @@
       "name": "Transfer(int256,int256,int256)", 
       "signature": "0x66e05b8a99642b6a77335be485dc593f0217aee37e6180f32909449b16ed7eca"
     }, 
+    "closeMarketReturnValue": {
+      "contract": "CloseMarket", 
+      "inputs": [
+        {
+          "indexed": false, 
+          "name": "returnValue", 
+          "type": "int256"
+        }
+      ], 
+      "name": "closeMarketReturnValue(int256)", 
+      "signature": "0x12001df5d02ab705b944c0f9c4f14add3fab5b10a103f442b911f7a8b00eda7a"
+    }, 
     "log_add_tx": {
       "contract": "BuyAndSellShares", 
       "inputs": [
@@ -1093,6 +1105,7 @@
           "sender"
         ], 
         "method": "closeMarket", 
+        "mutable": true, 
         "returns": "number", 
         "send": true, 
         "signature": [
