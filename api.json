@@ -44,6 +44,18 @@
       "name": "Transfer(int256,int256,int256)", 
       "signature": "0x66e05b8a99642b6a77335be485dc593f0217aee37e6180f32909449b16ed7eca"
     }, 
+    "buyAndSellSharesReturnValue": {
+      "contract": "BuyAndSellShares", 
+      "inputs": [
+        {
+          "indexed": false, 
+          "name": "returnValue", 
+          "type": "int256"
+        }
+      ], 
+      "name": "buyAndSellSharesReturnValue(int256)", 
+      "signature": "0x4363ec7f4cdb74de22356b0fd0efd40de1583e0a6063d274ca13639255274f5b"
+    }, 
     "closeMarketReturnValue": {
       "contract": "CloseMarket", 
       "inputs": [
@@ -55,6 +67,18 @@
       ], 
       "name": "closeMarketReturnValue(int256)", 
       "signature": "0x12001df5d02ab705b944c0f9c4f14add3fab5b10a103f442b911f7a8b00eda7a"
+    }, 
+    "completeSetsReturnValue": {
+      "contract": "CompleteSets", 
+      "inputs": [
+        {
+          "indexed": false, 
+          "name": "returnValue", 
+          "type": "int256"
+        }
+      ], 
+      "name": "completeSetsReturnValue(int256)", 
+      "signature": "0x32348dd50bf89583815c8079ab320bd35e5c4d65691fbca91a16348a7f0cbfe2"
     }, 
     "log_add_tx": {
       "contract": "BuyAndSellShares", 
@@ -939,6 +963,7 @@
           "outcome"
         ], 
         "method": "buy", 
+        "mutable": true, 
         "returns": "number", 
         "send": true, 
         "signature": [
@@ -953,6 +978,7 @@
           "trade_id"
         ], 
         "method": "cancel", 
+        "mutable": true, 
         "returns": "number", 
         "send": true, 
         "signature": [
@@ -967,6 +993,7 @@
           "outcome"
         ], 
         "method": "sell", 
+        "mutable": true, 
         "returns": "number", 
         "send": true, 
         "signature": [
@@ -1175,6 +1202,7 @@
           "amount"
         ], 
         "method": "buyCompleteSets", 
+        "mutable": true, 
         "returns": "number", 
         "send": true, 
         "signature": [
@@ -1188,6 +1216,7 @@
           "amount"
         ], 
         "method": "sellCompleteSets", 
+        "mutable": true, 
         "returns": "number", 
         "send": true, 
         "signature": [
