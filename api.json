@@ -1733,12 +1733,14 @@
         "inputs": [
           "branch", 
           "market", 
-          "tradingFee"
+          "tradingFee", 
+          "makerFees"
         ], 
         "method": "updateTradingFee", 
         "returns": "number", 
         "send": true, 
         "signature": [
+          "int256", 
           "int256", 
           "int256", 
           "int256"
@@ -3820,6 +3822,18 @@
         "method": "returnTags", 
         "returns": "hash[]", 
         "signature": [
+          "int256"
+        ]
+      }, 
+      "setMakerFees": {
+        "inputs": [
+          "market", 
+          "makerFees"
+        ], 
+        "method": "setMakerFees", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
           "int256"
         ]
       }, 
