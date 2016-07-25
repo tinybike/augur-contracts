@@ -838,7 +838,7 @@
           "branch"
         ], 
         "method": "getPeriodLength", 
-        "returns": "number", 
+        "returns": "int", 
         "signature": [
           "int256"
         ]
