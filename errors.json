@@ -238,6 +238,10 @@
         "error": 412,
         "message": "transaction validation failed"
     },
+    "TRANSACTION_RETRY_MAX_EXCEEDED": {
+        "error": 413,
+        "message": "maximum number of transaction retry attempts exceeded"
+    },
     "HANDLE_TAKEN": {
         "error": 422,
         "message": "handle already taken"
