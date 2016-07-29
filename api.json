@@ -964,7 +964,7 @@
         ], 
         "method": "buy", 
         "mutable": true, 
-        "returns": "number", 
+        "returns": "int256", 
         "send": true, 
         "signature": [
           "int256", 
@@ -994,7 +994,7 @@
         ], 
         "method": "sell", 
         "mutable": true, 
-        "returns": "number", 
+        "returns": "int256", 
         "send": true, 
         "signature": [
           "int256", 
