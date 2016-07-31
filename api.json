@@ -2471,6 +2471,22 @@
           "int256"
         ]
       }, 
+      "getEncryptedReport": {
+        "inputs": [
+          "branch", 
+          "expDateIndex", 
+          "reporter", 
+          "event"
+        ], 
+        "method": "getEncryptedReport", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "getEthicReport": {
         "inputs": [
           "branch", 
@@ -2739,22 +2755,6 @@
           "int256"
         ]
       }, 
-      "getSaltyHash": {
-        "inputs": [
-          "branch", 
-          "expDateIndex", 
-          "reporter", 
-          "event"
-        ], 
-        "method": "getSaltyHash", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
       "getShareValue": {
         "inputs": [
           "branch", 
@@ -2886,6 +2886,26 @@
         "method": "setCurrentModeItems", 
         "returns": "int256", 
         "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setEncryptedReport": {
+        "inputs": [
+          "branch", 
+          "expDateIndex", 
+          "reporter", 
+          "report", 
+          "salt", 
+          "event"
+        ], 
+        "method": "setEncryptedReport", 
+        "returns": "number", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
           "int256", 
           "int256", 
           "int256"
@@ -3024,24 +3044,6 @@
           "event"
         ], 
         "method": "setReportHash", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "setSaltyHash": {
-        "inputs": [
-          "branch", 
-          "expDateIndex", 
-          "reporter", 
-          "saltyHash", 
-          "event"
-        ], 
-        "method": "setSaltyHash", 
         "returns": "int256", 
         "signature": [
           "int256", 
@@ -3317,12 +3319,14 @@
         "inputs": [
           "event", 
           "reportHash", 
-          "encryptedSaltyHash"
+          "encryptedReport", 
+          "encryptedSalt"
         ], 
         "method": "submitReportHash", 
         "returns": "number", 
         "send": true, 
         "signature": [
+          "int256", 
           "int256", 
           "int256", 
           "int256"
