@@ -44,7 +44,7 @@
       "name": "Transfer(int256,int256,int256)", 
       "signature": "0x66e05b8a99642b6a77335be485dc593f0217aee37e6180f32909449b16ed7eca"
     }, 
-    "buyAndSellSharesReturnValue": {
+    "buyAndSellShares_logReturn": {
       "contract": "BuyAndSellShares", 
       "inputs": [
         {
@@ -53,10 +53,10 @@
           "type": "int256"
         }
       ], 
-      "name": "buyAndSellSharesReturnValue(int256)", 
-      "signature": "0x4363ec7f4cdb74de22356b0fd0efd40de1583e0a6063d274ca13639255274f5b"
+      "name": "buyAndSellShares_logReturn(int256)", 
+      "signature": "0x9fbb0d8110bee15417200d9e638635c9436990b24f565fa2ce74f50f870171b6"
     }, 
-    "closeMarketReturnValue": {
+    "closeMarket_logReturn": {
       "contract": "CloseMarket", 
       "inputs": [
         {
@@ -65,10 +65,10 @@
           "type": "int256"
         }
       ], 
-      "name": "closeMarketReturnValue(int256)", 
-      "signature": "0x12001df5d02ab705b944c0f9c4f14add3fab5b10a103f442b911f7a8b00eda7a"
+      "name": "closeMarket_logReturn(int256)", 
+      "signature": "0x7111c90bbf79fe51a8f95606c2c44137f600abeb3b5631db7d06ed168c13eea7"
     }, 
-    "completeSetsReturnValue": {
+    "completeSets_logReturn": {
       "contract": "CompleteSets", 
       "inputs": [
         {
@@ -77,8 +77,20 @@
           "type": "int256"
         }
       ], 
-      "name": "completeSetsReturnValue(int256)", 
-      "signature": "0x32348dd50bf89583815c8079ab320bd35e5c4d65691fbca91a16348a7f0cbfe2"
+      "name": "completeSets_logReturn(int256)", 
+      "signature": "0x70a46893aa026bc51efe8d9b9c21c4d63fe015bb03feeb700d0d5bc537d980f8"
+    }, 
+    "consensus_logReturn": {
+      "contract": "Consensus", 
+      "inputs": [
+        {
+          "indexed": false, 
+          "name": "returnValue", 
+          "type": "int256"
+        }
+      ], 
+      "name": "consensus_logReturn(int256)", 
+      "signature": "0x2c8fae543971d12ce9baeaa8ac11b4873683653fdcb1a6104f6e0c9d5c3ecf02"
     }, 
     "log_add_tx": {
       "contract": "BuyAndSellShares", 
@@ -211,47 +223,17 @@
       "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256)", 
       "signature": "0x715b9a9cb6dfb4fa9cb1ebc2eba40d2a7bd66aa8cef75f87a77d1ff05d29a3b6"
     }, 
-    "log_price": {
-      "contract": "Trade", 
+    "makeReports_logReturn": {
+      "contract": "MakeReports", 
       "inputs": [
         {
-          "indexed": true, 
-          "name": "market", 
-          "type": "int256"
-        }, 
-        {
           "indexed": false, 
-          "name": "type", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "price", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "amount", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "outcome", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "trader", 
+          "name": "returnValue", 
           "type": "int256"
         }
       ], 
-      "name": "log_price(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xf448ecd2d0b1133184bb354020b9e90e2810dbc78102637d9a054ed06e8506d3"
+      "name": "makeReports_logReturn(int256)", 
+      "signature": "0xc63250021b81c42e43223a77f306159f705fa6e54b1fbeaeeadaaa8340a38760"
     }, 
     "marketCreated": {
       "contract": "CreateMarket", 
@@ -269,27 +251,45 @@
       "contract": "Consensus", 
       "inputs": [
         {
-          "indexed": false, 
-          "name": "x", 
+          "indexed": true, 
+          "name": "user", 
           "type": "int256"
-        }
-      ], 
-      "name": "penalize(int256)", 
-      "signature": "0x47471d3c43bf6848bb5a5b5b607af9a50395288681419dd20aa0b89501cb476f"
-    }, 
-    "returnValue": {
-      "contract": "MakeReports", 
-      "inputs": [
+        }, 
         {
           "indexed": false, 
-          "name": "x", 
+          "name": "outcome", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "oldrep", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "repchange", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "newafterrep", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "p", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "reportValue", 
           "type": "int256"
         }
       ], 
-      "name": "returnValue(int256)", 
-      "signature": "0x8bc92e9868f513a8fbcf983ca23f542d05ea98a0e6e3c107c013a07651f59383"
+      "name": "penalize(int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x3253564cd022a8ec496277f26ccdaddf64e75973423eda45df329f60b2a0c6a7"
     }, 
-    "tradeArrayReturnValue": {
+    "trade_logArrayReturn": {
       "contract": "Trade", 
       "inputs": [
         {
@@ -298,10 +298,10 @@
           "type": "int256[]"
         }
       ], 
-      "name": "tradeArrayReturnValue(int256[])", 
-      "signature": "0xd7ce642fce46a6671b3eb36cf4beeb0d607384f3b8fe09ff9a2d8a0c5d9c0228"
+      "name": "trade_logArrayReturn(int256[])", 
+      "signature": "0x6a5b12f51adb25f3461c7108a9f5f8c509d374df9530d7dac8dfdd310929e39d"
     }, 
-    "tradeReturnValue": {
+    "trade_logReturn": {
       "contract": "Trade", 
       "inputs": [
         {
@@ -310,8 +310,8 @@
           "type": "int256"
         }
       ], 
-      "name": "tradeReturnValue(int256)", 
-      "signature": "0x34c6d329415f0bdc7259314b660b88f78542d86bd671077ccfba3deeceb4748b"
+      "name": "trade_logReturn(int256)", 
+      "signature": "0x1bbf36d9a7b2814880015722ce46ca5df561edceee37844559cf4dd31ecd5dfa"
     }, 
     "tradingFeeUpdated": {
       "contract": "CreateMarket", 
@@ -3280,6 +3280,7 @@
         ]
       }
     }, 
+    "LogReturn": {}, 
     "MakeReports": {
       "makeHash": {
         "inputs": [
