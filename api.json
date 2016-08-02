@@ -223,6 +223,48 @@
       "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256)", 
       "signature": "0x715b9a9cb6dfb4fa9cb1ebc2eba40d2a7bd66aa8cef75f87a77d1ff05d29a3b6"
     }, 
+    "log_price": {
+      "contract": "Trade", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "market", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "type", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "price", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "amount", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "outcome", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "trader", 
+          "type": "int256"
+        }
+      ], 
+      "name": "log_price(int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xf448ecd2d0b1133184bb354020b9e90e2810dbc78102637d9a054ed06e8506d3"
+    }, 
     "makeReports_logReturn": {
       "contract": "MakeReports", 
       "inputs": [
