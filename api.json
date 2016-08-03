@@ -218,10 +218,15 @@
           "indexed": false, 
           "name": "outcome", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x715b9a9cb6dfb4fa9cb1ebc2eba40d2a7bd66aa8cef75f87a77d1ff05d29a3b6"
+      "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x4867c6b95984b4bd8fba5fa5e12c32c056c2fe64dd1b43dbcec7c6ada2aea9eb"
     }, 
     "log_price": {
       "contract": "Trade", 
@@ -3857,6 +3862,7 @@
         ], 
         "method": "remove_trade_from_market", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
