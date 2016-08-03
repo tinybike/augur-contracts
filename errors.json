@@ -270,6 +270,10 @@
         "error": 504,
         "message": "RLP encoding error"
     },
+    "TRANSACTION_RECEIPT_NOT_FOUND": {
+        "error": 505,
+        "message": "transaction receipt not found"
+    },
     "RPC_TIMEOUT": {
         "error": 599,
         "message": "timed out while waiting for Ethereum network response"
