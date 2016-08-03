@@ -1020,6 +1020,23 @@
           "int256"
         ]
       }, 
+      "buyCompleteSetsThenSell": {
+        "inputs": [
+          "amount", 
+          "price", 
+          "market", 
+          "outcome"
+        ], 
+        "method": "buyCompleteSetsThenSell", 
+        "mutable": true, 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "cancel": {
         "inputs": [
           "trade_id"
