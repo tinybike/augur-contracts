@@ -153,7 +153,7 @@
         "-1": "oracle only branch",
         "-2": "bad trade hash",
         "-3": "trader doesn't exist / own shares in this market",
-        "-4": "must buy at least .00000001 in value",
+        "-4": "must trade at least 0.00000001 in value",
         "-5": "can't pick up your own trade",
         "10": "insufficient balance",
         "22": "trade in same block prohibited"
