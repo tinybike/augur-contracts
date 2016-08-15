@@ -1270,6 +1270,38 @@
           "int256"
         ]
       }, 
+      "getEventsWithSubmittedHash": {
+        "inputs": [
+          "branch", 
+          "startPeriod", 
+          "stopPeriod", 
+          "reporter"
+        ], 
+        "method": "getEventsWithSubmittedHash", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getEventsWithSubmittedReport": {
+        "inputs": [
+          "branch", 
+          "startPeriod", 
+          "stopPeriod", 
+          "reporter"
+        ], 
+        "method": "getEventsWithSubmittedReport", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "getMarketInfo": {
         "inputs": [
           "marketID", 
