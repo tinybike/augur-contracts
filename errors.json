@@ -17,7 +17,8 @@
     },
     "claimProceeds": {
         "0": "reporting not done",
-        "-1": "trader doesn't exist"
+        "-1": "trader doesn't exist",
+        "-8": "invalid branch"
     },
     "closeMarket": {
         "0": "fail/trading not over yet/event not expired or closed already",

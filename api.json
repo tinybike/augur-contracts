@@ -1258,6 +1258,16 @@
           "int256[]"
         ]
       }, 
+      "getMarketCreatorFeesCollected": {
+        "inputs": [
+          "market"
+        ], 
+        "method": "getMarketCreatorFeesCollected", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getMarketInfo": {
         "inputs": [
           "marketID"
