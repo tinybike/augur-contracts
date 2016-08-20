@@ -1250,12 +1250,14 @@
     "CompositeGetters": {
       "batchGetMarketInfo": {
         "inputs": [
-          "marketIDs"
+          "marketIDs", 
+          "account"
         ], 
         "method": "batchGetMarketInfo", 
         "returns": "hash[]", 
         "signature": [
-          "int256[]"
+          "int256[]", 
+          "int256"
         ]
       }, 
       "getMarketCreatorFeesCollected": {
@@ -1263,18 +1265,20 @@
           "market"
         ], 
         "method": "getMarketCreatorFeesCollected", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
       }, 
       "getMarketInfo": {
         "inputs": [
-          "marketID"
+          "marketID", 
+          "account"
         ], 
         "method": "getMarketInfo", 
         "returns": "hash[]", 
         "signature": [
+          "int256", 
           "int256"
         ]
       }, 
