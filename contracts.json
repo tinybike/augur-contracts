@@ -46,7 +46,7 @@
         "CloseMarketTwo": "0x1aabbe7d72e67d40bee1ea01a11c47aafff44c27",
         "CollectFees": "0x51d136b60f8f0f0068e2a433c8305fa442bf9b18",
         "CompleteSets": "0x38fb24dd43e2fe26049f12e7f9d261313d2c705d",
-        "CompositeGetters": "0x0de78a5ae81ca0f8c59fed5e8ef014ce7060529c",
+        "CompositeGetters": "0x86bbcd3832828c98f81d6d7f3dda39097bb386bb",
         "Consensus": "0xb77b6a8f75e7654271bbbaf77ecab141702e8fc9",
         "ConsensusData": "0x2098e0e5ea5bdaf754eae0c5c2382a7331ef40da",
         "CreateBranch": "0x3a63feffeffd88247ff970acf361def6fcb3f84a",
@@ -73,5 +73,4 @@
         "Trade": "0x1eec0978ec705829fce7905cc8344d06309c82cf",
         "Trades": "0x2914d5d2822a5c0f89494194a632032fe2a3fc74"
     }
-
 }
