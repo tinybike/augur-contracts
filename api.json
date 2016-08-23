@@ -1260,13 +1260,17 @@
           "int256"
         ]
       }, 
-      "getMarketCreatorFeesCollected": {
+      "getEventsWithSubmittedReport": {
         "inputs": [
-          "market"
+          "branch", 
+          "period", 
+          "reporter"
         ], 
-        "method": "getMarketCreatorFeesCollected", 
-        "returns": "unfix", 
+        "method": "getEventsWithSubmittedReport", 
+        "returns": "int256[]", 
         "signature": [
+          "int256", 
+          "int256", 
           "int256"
         ]
       }, 
