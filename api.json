@@ -240,10 +240,20 @@
           "indexed": false, 
           "name": "timestamp", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "takerFee", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "makerFee", 
+          "type": "int256"
         }
       ], 
-      "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x4867c6b95984b4bd8fba5fa5e12c32c056c2fe64dd1b43dbcec7c6ada2aea9eb"
+      "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x89b5973534870b9ec3c4660bd3f3aaa475c70adc745b94e2bc1c6cfc1539e06c"
     }, 
     "makeReports_logReturn": {
       "contract": "MakeReports", 
@@ -1000,6 +1010,7 @@
     }, 
     "BuyAndSellShares": {
       "buy": {
+        "gas": 725202, 
         "inputs": [
           "amount", 
           "price", 
@@ -1017,24 +1028,8 @@
           "int256"
         ]
       }, 
-      "buyCompleteSetsThenSell": {
-        "inputs": [
-          "amount", 
-          "price", 
-          "market", 
-          "outcome"
-        ], 
-        "method": "buyCompleteSetsThenSell", 
-        "mutable": true, 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
       "cancel": {
+        "gas": 288060, 
         "inputs": [
           "trade_id"
         ], 
@@ -1047,6 +1042,7 @@
         ]
       }, 
       "sell": {
+        "gas": 696759, 
         "inputs": [
           "amount", 
           "price", 
@@ -1057,6 +1053,24 @@
         "mutable": true, 
         "returns": "int256", 
         "send": true, 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "shortAsk": {
+        "gas": 1500000, 
+        "inputs": [
+          "amount", 
+          "price", 
+          "market", 
+          "outcome"
+        ], 
+        "method": "shortAsk", 
+        "mutable": true, 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
@@ -1258,6 +1272,7 @@
     }, 
     "CompleteSets": {
       "buyCompleteSets": {
+        "gas": 698875, 
         "inputs": [
           "market", 
           "amount"
@@ -1272,6 +1287,7 @@
         ]
       }, 
       "sellCompleteSets": {
+        "gas": 535220, 
         "inputs": [
           "market", 
           "amount"
@@ -4619,6 +4635,7 @@
     }, 
     "Trade": {
       "short_sell": {
+        "gas": 1059796, 
         "inputs": [
           "buyer_trade_id", 
           "max_amount"
@@ -4633,6 +4650,7 @@
         ]
       }, 
       "trade": {
+        "gas": 787421, 
         "inputs": [
           "max_value", 
           "max_amount", 
@@ -4663,6 +4681,7 @@
         ]
       }, 
       "commitTrade": {
+        "gas": 147581, 
         "inputs": [
           "hash"
         ], 
