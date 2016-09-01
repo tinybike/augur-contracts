@@ -72,13 +72,33 @@
       "contract": "CompleteSets", 
       "inputs": [
         {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "market", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "type", 
+          "type": "int256"
+        }, 
+        {
           "indexed": false, 
           "name": "returnValue", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "numOutcomes", 
+          "type": "int256"
         }
       ], 
-      "name": "completeSets_logReturn(int256)", 
-      "signature": "0x70a46893aa026bc51efe8d9b9c21c4d63fe015bb03feeb700d0d5bc537d980f8"
+      "name": "completeSets_logReturn(int256,int256,int256,int256,int256)", 
+      "signature": "0x2e6b18139c987afb05efb85deddaa40262aa36c9ddebb9be215461cb22078175"
     }, 
     "consensus_logReturn": {
       "contract": "Consensus", 
@@ -1279,7 +1299,7 @@
         ], 
         "method": "buyCompleteSets", 
         "mutable": true, 
-        "returns": "number", 
+        "returns": "hash[]", 
         "send": true, 
         "signature": [
           "int256", 
@@ -1294,7 +1314,7 @@
         ], 
         "method": "sellCompleteSets", 
         "mutable": true, 
-        "returns": "number", 
+        "returns": "hash[]", 
         "send": true, 
         "signature": [
           "int256", 
