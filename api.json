@@ -1398,6 +1398,18 @@
         "signature": [
           "int256"
         ]
+      }, 
+      "getPositionInMarket": {
+        "inputs": [
+          "market", 
+          "account"
+        ], 
+        "method": "getPositionInMarket", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
       }
     }, 
     "Consensus": {
