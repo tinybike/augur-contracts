@@ -1391,11 +1391,15 @@
       }, 
       "getOrderBook": {
         "inputs": [
-          "marketID"
+          "marketID", 
+          "offset", 
+          "numTradesToLoad"
         ], 
         "method": "getOrderBook", 
         "returns": "hash[]", 
         "signature": [
+          "int256", 
+          "int256", 
           "int256"
         ]
       }, 
