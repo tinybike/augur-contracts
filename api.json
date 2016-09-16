@@ -275,6 +275,63 @@
       "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
       "signature": "0x89b5973534870b9ec3c4660bd3f3aaa475c70adc745b94e2bc1c6cfc1539e06c"
     }, 
+    "log_short_fill_tx": {
+      "contract": "Trade", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "market", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "owner", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "price", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "amount", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "tradeid", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "outcome", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "takerFee", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "makerFee", 
+          "type": "int256"
+        }
+      ], 
+      "name": "log_short_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x17c6c0dcf7960856660a58fdb9238dc76130b17e20b6511d08e811a3a92ca8c7"
+    }, 
     "makeReports_logReturn": {
       "contract": "MakeReports", 
       "inputs": [
@@ -340,6 +397,28 @@
       ], 
       "name": "penalize(int256,int256,int256,int256,int256,int256,int256)", 
       "signature": "0x3253564cd022a8ec496277f26ccdaddf64e75973423eda45df329f60b2a0c6a7"
+    }, 
+    "session": {
+      "contract": "Sessions", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "type", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
+        }
+      ], 
+      "name": "session(int256,int256,int256)", 
+      "signature": "0x19a49d2acfeb2c56bc742081b752ef527725fe0253f511d34d5364668b4475fe"
     }, 
     "trade_logArrayReturn": {
       "contract": "Trade", 
@@ -4646,6 +4725,23 @@
           "int256", 
           "int256"
         ]
+      }
+    }, 
+    "Sessions": {
+      "login": {
+        "method": "login", 
+        "returns": "number", 
+        "send": true
+      }, 
+      "logout": {
+        "method": "logout", 
+        "returns": "number", 
+        "send": true
+      }, 
+      "register": {
+        "method": "register", 
+        "returns": "number", 
+        "send": true
       }
     }, 
     "SlashRep": {
