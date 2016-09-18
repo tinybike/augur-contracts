@@ -327,10 +327,15 @@
           "indexed": false, 
           "name": "makerFee", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "numOutcomes", 
+          "type": "int256"
         }
       ], 
-      "name": "log_short_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x17c6c0dcf7960856660a58fdb9238dc76130b17e20b6511d08e811a3a92ca8c7"
+      "name": "log_short_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xb0f55c4ca782b084744311876a38f397e8e3ba3211c64c3d24cf92f217c35241"
     }, 
     "makeReports_logReturn": {
       "contract": "MakeReports", 
