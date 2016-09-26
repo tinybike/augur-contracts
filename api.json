@@ -208,10 +208,15 @@
           "indexed": false, 
           "name": "type", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "cashRefund", 
+          "type": "int256"
         }
       ], 
-      "name": "log_cancel(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x9ecf4903f3efaf1549dc51545bd945f94d51923f37ce198a3b838125a2f397d5"
+      "name": "log_cancel(int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xf573f1f8bc82665c8e269027671f8892cb92df05d64505b4f0090198a52edfbf"
     }, 
     "log_fill_tx": {
       "contract": "Trade", 
