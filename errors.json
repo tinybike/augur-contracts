@@ -118,7 +118,6 @@
         "-3": "not enough shares"
     },
     "sendReputation": {
-        "0": "not enough reputation",
         "-1": "Your reputation account was just created! Earn some reputation before you can send to others",
         "-2": "Receiving address doesn't exist"
     },

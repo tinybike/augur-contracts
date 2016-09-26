@@ -403,17 +403,12 @@
       "name": "penalize(int256,int256,int256,int256,int256,int256,int256)", 
       "signature": "0x3253564cd022a8ec496277f26ccdaddf64e75973423eda45df329f60b2a0c6a7"
     }, 
-    "session": {
-      "contract": "Sessions", 
+    "registration": {
+      "contract": "Register", 
       "inputs": [
         {
           "indexed": true, 
           "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "type", 
           "type": "int256"
         }, 
         {
@@ -422,8 +417,8 @@
           "type": "int256"
         }
       ], 
-      "name": "session(int256,int256,int256)", 
-      "signature": "0x19a49d2acfeb2c56bc742081b752ef527725fe0253f511d34d5364668b4475fe"
+      "name": "registration(int256,int256)", 
+      "signature": "0x44b6aeb7b38bb1ad04b4d0daf588cff086ff8829f0a34c30ddbb4d38695428de"
     }, 
     "trade_logArrayReturn": {
       "contract": "Trade", 
@@ -1416,6 +1411,18 @@
         "returns": "hash[]", 
         "signature": [
           "int256[]", 
+          "int256"
+        ]
+      }, 
+      "getAccountOrderBook": {
+        "inputs": [
+          "marketID", 
+          "account"
+        ], 
+        "method": "getAccountOrderBook", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
           "int256"
         ]
       }, 
@@ -4181,6 +4188,12 @@
         ]
       }
     }, 
+    "Register": {
+      "register": {
+        "method": "register", 
+        "returns": "int256"
+      }
+    }, 
     "Reporting": {
       "addDormantRep": {
         "inputs": [
@@ -4732,23 +4745,6 @@
         ]
       }
     }, 
-    "Sessions": {
-      "login": {
-        "method": "login", 
-        "returns": "number", 
-        "send": true
-      }, 
-      "logout": {
-        "method": "logout", 
-        "returns": "number", 
-        "send": true
-      }, 
-      "register": {
-        "method": "register", 
-        "returns": "number", 
-        "send": true
-      }
-    }, 
     "SlashRep": {
       "slashRep": {
         "inputs": [
@@ -4848,6 +4844,16 @@
         ], 
         "method": "getID", 
         "returns": "hash", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getTradeOwner": {
+        "inputs": [
+          "id"
+        ], 
+        "method": "getTradeOwner", 
+        "returns": "int256", 
         "signature": [
           "int256"
         ]
