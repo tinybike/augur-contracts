@@ -110,6 +110,7 @@
         "-2": "oracle only branch",
         "-3": "bad outcome to trade",
         "-4": "not enough shares",
+        "10": "insufficient balance",
         "21": "trade already exists"
     },
     "sellCompleteSets": {
