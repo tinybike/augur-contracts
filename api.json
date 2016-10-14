@@ -1477,6 +1477,22 @@
           "int256"
         ]
       }, 
+      "getMarketsCreatedByMarketCreator": {
+        "inputs": [
+          "branch", 
+          "creator", 
+          "initial", 
+          "last"
+        ], 
+        "method": "getMarketsCreatedByMarketCreator", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "getMarketsInfo": {
         "inputs": [
           "branch", 
