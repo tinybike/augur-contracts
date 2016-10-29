@@ -1195,6 +1195,7 @@
     }, 
     "Cash": {
       "addCash": {
+        "fixed": [1], 
         "inputs": [
           "ID", 
           "amount"
@@ -1234,6 +1235,7 @@
         ]
       }, 
       "send": {
+        "fixed": [1], 
         "inputs": [
           "recver", 
           "value"
@@ -1247,6 +1249,7 @@
         ]
       }, 
       "sendFrom": {
+        "fixed": [1], 
         "inputs": [
           "recver", 
           "value", 
@@ -1262,6 +1265,7 @@
         ]
       }, 
       "setCash": {
+        "fixed": [1], 
         "inputs": [
           "address", 
           "balance"
@@ -1287,6 +1291,7 @@
         ]
       }, 
       "withdrawEther": {
+        "fixed": [1],
         "inputs": [
           "to", 
           "value"
@@ -1386,6 +1391,7 @@
     }, 
     "CompleteSets": {
       "buyCompleteSets": {
+        "fixed": [1], 
         "gas": 698875, 
         "inputs": [
           "market", 
@@ -1401,6 +1407,7 @@
         ]
       }, 
       "sellCompleteSets": {
+        "fixed": [1], 
         "gas": 535220, 
         "inputs": [
           "market", 
@@ -1471,6 +1478,7 @@
           "account"
         ], 
         "method": "getMarketInfo", 
+        "parser": "validateMarketInfo", 
         "returns": "hash[]", 
         "signature": [
           "int256", 
@@ -1518,6 +1526,7 @@
           "numTradesToLoad"
         ], 
         "method": "getOrderBook", 
+        "parser": "parseOrderBook", 
         "returns": "hash[]", 
         "signature": [
           "int256", 
@@ -1531,6 +1540,7 @@
           "account"
         ], 
         "method": "getPositionInMarket", 
+        "parser": "parsePositionInMarket", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -2140,6 +2150,7 @@
           "event"
         ], 
         "method": "getEventInfo", 
+        "parser": "parseEventInfo", 
         "returns": "hash[]", 
         "signature": [
           "int256"
@@ -2211,6 +2222,7 @@
           "marketIndex"
         ], 
         "method": "getMarket", 
+        "parser": "parseMarket", 
         "returns": "int256", 
         "signature": [
           "int256", 
@@ -2222,6 +2234,7 @@
           "event"
         ], 
         "method": "getMarkets", 
+        "parser": "parseMarkets",
         "returns": "hash[]", 
         "signature": [
           "int256"
@@ -3566,6 +3579,7 @@
         ]
       }, 
       "submitReport": {
+        "fixed": [3], 
         "inputs": [
           "event", 
           "salt", 
@@ -3601,6 +3615,7 @@
         ]
       }, 
       "validateReport": {
+        "fixed": [3, 7], 
         "inputs": [
           "eventID", 
           "branch", 
@@ -4858,6 +4873,7 @@
         ]
       }, 
       "fill_trade": {
+        "fixed": [1], 
         "inputs": [
           "id", 
           "fill"
@@ -4915,6 +4931,7 @@
           "id"
         ], 
         "method": "get_trade", 
+        "parser": "parseTradeInfo", 
         "returns": "hash[]", 
         "signature": [
           "int256"
@@ -4946,6 +4963,7 @@
         ]
       }, 
       "saveTrade": {
+        "fixed": [3, 4], 
         "inputs": [
           "trade_id", 
           "type", 
@@ -4969,6 +4987,7 @@
         ]
       }, 
       "update_trade": {
+        "fixed": [1], 
         "inputs": [
           "id", 
           "price"
