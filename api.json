@@ -1195,7 +1195,9 @@
     }, 
     "Cash": {
       "addCash": {
-        "fixed": [1], 
+        "fixed": [
+          1
+        ], 
         "inputs": [
           "ID", 
           "amount"
@@ -1235,7 +1237,9 @@
         ]
       }, 
       "send": {
-        "fixed": [1], 
+        "fixed": [
+          1
+        ], 
         "inputs": [
           "recver", 
           "value"
@@ -1249,7 +1253,9 @@
         ]
       }, 
       "sendFrom": {
-        "fixed": [1], 
+        "fixed": [
+          1
+        ], 
         "inputs": [
           "recver", 
           "value", 
@@ -1265,7 +1271,9 @@
         ]
       }, 
       "setCash": {
-        "fixed": [1], 
+        "fixed": [
+          1
+        ], 
         "inputs": [
           "address", 
           "balance"
@@ -1291,7 +1299,9 @@
         ]
       }, 
       "withdrawEther": {
-        "fixed": [1],
+        "fixed": [
+          1
+        ], 
         "inputs": [
           "to", 
           "value"
@@ -1391,7 +1401,9 @@
     }, 
     "CompleteSets": {
       "buyCompleteSets": {
-        "fixed": [1], 
+        "fixed": [
+          1
+        ], 
         "gas": 698875, 
         "inputs": [
           "market", 
@@ -1407,7 +1419,9 @@
         ]
       }, 
       "sellCompleteSets": {
-        "fixed": [1], 
+        "fixed": [
+          1
+        ], 
         "gas": 535220, 
         "inputs": [
           "market", 
@@ -2234,7 +2248,7 @@
           "event"
         ], 
         "method": "getMarkets", 
-        "parser": "parseMarkets",
+        "parser": "parseMarkets", 
         "returns": "hash[]", 
         "signature": [
           "int256"
@@ -2775,7 +2789,7 @@
           "sender"
         ], 
         "method": "getEthicReport", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256", 
@@ -3178,11 +3192,13 @@
           "reporter", 
           "report", 
           "salt", 
+          "ethics", 
           "event"
         ], 
         "method": "setEncryptedReport", 
         "returns": "number", 
         "signature": [
+          "int256", 
           "int256", 
           "int256", 
           "int256", 
@@ -3579,7 +3595,9 @@
         ]
       }, 
       "submitReport": {
-        "fixed": [3], 
+        "fixed": [
+          3
+        ], 
         "inputs": [
           "event", 
           "salt", 
@@ -3588,7 +3606,7 @@
         ], 
         "method": "submitReport", 
         "mutable": true, 
-        "returns": "number", 
+        "returns": "int256", 
         "send": true, 
         "signature": [
           "int256", 
@@ -3602,7 +3620,8 @@
           "event", 
           "reportHash", 
           "encryptedReport", 
-          "encryptedSalt"
+          "encryptedSalt", 
+          "ethics"
         ], 
         "method": "submitReportHash", 
         "returns": "number", 
@@ -3611,11 +3630,15 @@
           "int256", 
           "int256", 
           "int256", 
+          "int256", 
           "int256"
         ]
       }, 
       "validateReport": {
-        "fixed": [3, 7], 
+        "fixed": [
+          3, 
+          7
+        ], 
         "inputs": [
           "eventID", 
           "branch", 
@@ -4873,7 +4896,9 @@
         ]
       }, 
       "fill_trade": {
-        "fixed": [1], 
+        "fixed": [
+          1
+        ], 
         "inputs": [
           "id", 
           "fill"
@@ -4963,7 +4988,10 @@
         ]
       }, 
       "saveTrade": {
-        "fixed": [3, 4], 
+        "fixed": [
+          3, 
+          4
+        ], 
         "inputs": [
           "trade_id", 
           "type", 
@@ -4987,7 +5015,9 @@
         ]
       }, 
       "update_trade": {
-        "fixed": [1], 
+        "fixed": [
+          1
+        ], 
         "inputs": [
           "id", 
           "price"
