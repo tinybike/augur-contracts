@@ -3606,7 +3606,7 @@
         ], 
         "method": "submitReport", 
         "mutable": true, 
-        "returns": "int256", 
+        "returns": "number", 
         "send": true, 
         "signature": [
           "int256", 
