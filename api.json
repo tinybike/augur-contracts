@@ -1851,7 +1851,8 @@
           "period"
         ], 
         "method": "setPenalizedUpTo", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
