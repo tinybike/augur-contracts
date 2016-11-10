@@ -570,7 +570,7 @@
           "event"
         ], 
         "method": "getFinal", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -672,7 +672,7 @@
           "event"
         ], 
         "method": "getRoundTwo", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -684,6 +684,7 @@
         ], 
         "method": "increaseBondPaid", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -696,6 +697,7 @@
         ], 
         "method": "setBondAmount", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -720,6 +722,7 @@
         ], 
         "method": "setBondReturned", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -742,6 +745,7 @@
         ], 
         "method": "setForkBondPoster", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -753,6 +757,7 @@
         ], 
         "method": "setForkedOverEthicality", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -763,6 +768,7 @@
         ], 
         "method": "setMoved", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -774,6 +780,7 @@
         ], 
         "method": "setOriginalBranch", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -826,6 +833,7 @@
         ], 
         "method": "setResolved", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -852,6 +860,7 @@
         ], 
         "method": "setRoundTwoRefund", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -866,6 +875,7 @@
         ], 
         "method": "addMarketToBranch", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1063,6 +1073,7 @@
         ], 
         "method": "initializeBranch", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -1080,6 +1091,7 @@
         ], 
         "method": "setBaseReporters", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1092,6 +1104,7 @@
         ], 
         "method": "setEventForkedOver", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1103,6 +1116,7 @@
         ], 
         "method": "setForkPeriod", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -1115,6 +1129,7 @@
         ], 
         "method": "setInitialBalance", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3410,7 +3425,7 @@
           "event"
         ], 
         "method": "proportionCorrectForkEvent", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -4252,7 +4267,7 @@
           "event"
         ], 
         "method": "proportionCorrect", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
