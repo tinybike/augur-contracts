@@ -307,5 +307,9 @@
     "TRADE_NOT_FOUND": {
         "error": 712,
         "message": "trade not found"
+    },
+    "REPORT_NOT_FOUND": {
+        "error": 812,
+        "message": "report not found"
     }
 }
