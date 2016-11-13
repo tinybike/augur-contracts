@@ -1796,6 +1796,7 @@
         ], 
         "method": "setBaseReportersLastPeriod", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1809,6 +1810,7 @@
         ], 
         "method": "setFeeFirst", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -1823,6 +1825,7 @@
         ], 
         "method": "setFeesCollected", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -1837,6 +1840,7 @@
         ], 
         "method": "setNotEnoughPenalized", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -1852,6 +1856,7 @@
         ], 
         "method": "setPenalized", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -1881,6 +1886,7 @@
           "balance"
         ], 
         "method": "setPeriodBalance", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -1894,6 +1900,7 @@
         ], 
         "method": "setRefund", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -1907,6 +1914,7 @@
         ], 
         "method": "setSlashed", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -2061,6 +2069,7 @@
         ], 
         "method": "determineWinningOutcomes", 
         "returns": "int256[]", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -2074,6 +2083,7 @@
         ], 
         "method": "resolveBinary", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -2092,6 +2102,7 @@
         ], 
         "method": "resolveCategoricalOrScalar", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -2110,6 +2121,7 @@
         ], 
         "method": "addMarket", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2121,6 +2133,7 @@
         ], 
         "method": "addPast24", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -2295,7 +2308,7 @@
           "event"
         ], 
         "method": "getNumMarkets", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -2440,6 +2453,7 @@
         ], 
         "method": "setBond", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2452,6 +2466,7 @@
         ], 
         "method": "setBranch", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2464,6 +2479,7 @@
         ], 
         "method": "setEthics", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2476,6 +2492,7 @@
         ], 
         "method": "setEventPushedUp", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2488,6 +2505,7 @@
         ], 
         "method": "setExpiration", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2499,6 +2517,7 @@
         ], 
         "method": "setForkDone", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -2510,6 +2529,7 @@
         ], 
         "method": "setForkEthicality", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2522,6 +2542,7 @@
         ], 
         "method": "setForkOutcome", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2533,6 +2554,7 @@
         ], 
         "method": "setForked", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -2544,6 +2566,7 @@
         ], 
         "method": "setOriginalExpiration", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2569,6 +2592,7 @@
         ], 
         "method": "setRejected", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2581,6 +2605,7 @@
         ], 
         "method": "setThreshold", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2593,6 +2618,7 @@
         ], 
         "method": "setUncaughtOutcome", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2605,6 +2631,7 @@
         ], 
         "method": "setmode", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2638,6 +2665,7 @@
         ], 
         "method": "addRepEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -2654,6 +2682,7 @@
         ], 
         "method": "addReportToEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -2668,6 +2697,7 @@
         ], 
         "method": "addReportersPaidSoFar", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2680,6 +2710,7 @@
         ], 
         "method": "addRoundTwo", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2694,6 +2725,7 @@
         ], 
         "method": "addToWeightOfReport", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -2709,6 +2741,7 @@
         ], 
         "method": "adjustPeriodShareValueOutstanding", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -2723,6 +2756,7 @@
         ], 
         "method": "deleteEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3112,6 +3146,7 @@
         ], 
         "method": "moveEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3124,6 +3159,7 @@
         ], 
         "method": "refundCost", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3136,6 +3172,7 @@
         ], 
         "method": "removeEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3150,6 +3187,7 @@
         ], 
         "method": "setAfterRep", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3166,6 +3204,7 @@
         ], 
         "method": "setBeforeRep", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3181,6 +3220,7 @@
         ], 
         "method": "setCurrentMode", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3195,6 +3235,7 @@
         ], 
         "method": "setCurrentModeItems", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3213,6 +3254,7 @@
         ], 
         "method": "setEncryptedReport", 
         "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3233,6 +3275,7 @@
         ], 
         "method": "setEthicReport", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3249,6 +3292,7 @@
         ], 
         "method": "setEventRequired", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3264,6 +3308,7 @@
         ], 
         "method": "setLesserReportNum", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3277,6 +3322,7 @@
         ], 
         "method": "setNumEventsToReportOn", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -3290,6 +3336,7 @@
         ], 
         "method": "setNumReportsEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3306,6 +3353,7 @@
         ], 
         "method": "setPeriodDormantRep", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3322,6 +3370,7 @@
         ], 
         "method": "setPeriodRepConstant", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3339,6 +3388,7 @@
         ], 
         "method": "setReport", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3357,6 +3407,7 @@
         ], 
         "method": "setReportHash", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3379,6 +3430,7 @@
         ], 
         "method": "claimInitialRep", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3415,6 +3467,7 @@
         ], 
         "method": "penalizeOnForkedEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3450,6 +3503,7 @@
         ], 
         "method": "fork", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3462,6 +3516,7 @@
         ], 
         "method": "move_event", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -3473,6 +3528,7 @@
         ], 
         "method": "resolveForkEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3485,6 +3541,7 @@
         ], 
         "method": "resolveForkedEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3496,6 +3553,7 @@
         ], 
         "method": "resolve_fork", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -3687,6 +3745,7 @@
         ], 
         "method": "addFees", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3699,6 +3758,7 @@
         ], 
         "method": "addToMarketsHash", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3712,6 +3772,7 @@
         ], 
         "method": "addTrade", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4054,6 +4115,7 @@
         ], 
         "method": "initializeMarket", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256[]", 
@@ -4159,6 +4221,7 @@
         ], 
         "method": "setMakerFees", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -4172,6 +4235,7 @@
         ], 
         "method": "setPrice", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4186,6 +4250,7 @@
         ], 
         "method": "setPushedForward", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4199,6 +4264,7 @@
         ], 
         "method": "setTradingFee", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -4211,6 +4277,7 @@
         ], 
         "method": "setTradingPeriod", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -4223,6 +4290,7 @@
         ], 
         "method": "setWinningOutcomes", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256[]"
@@ -4636,7 +4704,7 @@
           "event"
         ], 
         "method": "getEventCanReportOn", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256", 
@@ -4666,6 +4734,7 @@
         ], 
         "method": "setReportingThreshold", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
