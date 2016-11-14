@@ -2946,7 +2946,7 @@
           "sender"
         ], 
         "method": "getNumReportsActual", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256", 
