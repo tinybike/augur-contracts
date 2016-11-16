@@ -4996,6 +4996,30 @@
           "int256"
         ]
       }, 
+      "getBestAskID": {
+        "inputs": [
+          "market", 
+          "outcome"
+        ], 
+        "method": "getBestAskID", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getBestBidID": {
+        "inputs": [
+          "market", 
+          "outcome"
+        ], 
+        "method": "getBestBidID", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
       "getID": {
         "inputs": [
           "tradeID"
