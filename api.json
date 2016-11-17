@@ -5071,6 +5071,16 @@
           "int256"
         ]
       }, 
+      "get_trade_block": {
+        "inputs": [
+          "id"
+        ], 
+        "method": "get_trade_block", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "makeTradeHash": {
         "inputs": [
           "max_value", 
