@@ -920,6 +920,7 @@
           "branch"
         ], 
         "method": "getEventForkedOver", 
+        "parser": "parseMarket", 
         "returns": "int256", 
         "signature": [
           "int256"
@@ -952,6 +953,7 @@
           "branch"
         ], 
         "method": "getMarketsInBranch", 
+        "parser": "parseMarkets", 
         "returns": "hash[]", 
         "signature": [
           "int256"
@@ -1484,6 +1486,7 @@
           "reporter"
         ], 
         "method": "getEventsWithSubmittedReport", 
+        "parser": "parseMarkets", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -1522,6 +1525,7 @@
           "last"
         ], 
         "method": "getMarketsCreatedByMarketCreator", 
+        "parser": "parseMarkets", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -2854,6 +2858,7 @@
           "eventIndex"
         ], 
         "method": "getEvent", 
+        "parser": "parseMarket", 
         "returns": "hash", 
         "signature": [
           "int256", 
@@ -2879,6 +2884,7 @@
           "expDateIndex"
         ], 
         "method": "getEvents", 
+        "parser": "parseMarkets", 
         "returns": "hash[]", 
         "signature": [
           "int256", 
@@ -2893,6 +2899,7 @@
           "end"
         ], 
         "method": "getEventsRange", 
+        "parser": "parseMarkets", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -3897,6 +3904,7 @@
           "index"
         ], 
         "method": "getMarketEvent", 
+        "parser": "parseMarket", 
         "returns": "int256", 
         "signature": [
           "int256", 
@@ -3908,6 +3916,7 @@
           "market"
         ], 
         "method": "getMarketEvents", 
+        "parser": "parseMarkets", 
         "returns": "hash[]", 
         "signature": [
           "int256"
@@ -4720,6 +4729,7 @@
           "start"
         ], 
         "method": "getEventsToReportOn", 
+        "parser": "parseMarkets", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
