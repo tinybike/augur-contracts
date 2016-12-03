@@ -149,7 +149,8 @@
         "-2": "reporter doesn't exist"
     },
     "submitReportHash": {
-        "-1": "invalid event"
+        "-1": "invalid event",
+        "-3": "not eligible to report on this event"
     },
     "submitReport": {
         "0": "reporter doesn't exist or has <1 rep",

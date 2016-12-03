@@ -1406,7 +1406,6 @@
     }, 
     "CloseMarket": {
       "claimProceeds": {
-        "description": "Claim trading proceeds from closed market", 
         "inputs": [
           "branch", 
           "market"
@@ -3671,7 +3670,6 @@
         ]
       }, 
       "fundNewAccount": {
-        "description": "Request testnet Ether and Reputation", 
         "inputs": [
           "branch"
         ], 
