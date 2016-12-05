@@ -376,6 +376,33 @@
       "name": "marketCreated(int256)", 
       "signature": "0x63f140d7adcc464732c9379020aa9e5ce1b1e350796814d780ea3ca41d62a36b"
     }, 
+    "payout": {
+      "contract": "Payout", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "market", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "payoutValue", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "shares", 
+          "type": "int256"
+        }
+      ], 
+      "name": "payout(int256,int256,int256,int256)", 
+      "signature": "0xa2462be94780bd0b9f754c0a57d1174c8770114065de61be36b5e28953301a38"
+    }, 
     "penalize": {
       "contract": "Consensus", 
       "inputs": [
@@ -1437,46 +1464,6 @@
         ]
       }
     }, 
-    "CloseMarketOne": {
-      "oneOutcome": {
-        "inputs": [
-          "market", 
-          "winningOutcome", 
-          "sender", 
-          "categoricalPointFive", 
-          "numOutcomes"
-        ], 
-        "label": "One Outcome", 
-        "method": "oneOutcome", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }
-    }, 
-    "CloseMarketTwo": {
-      "twoOutcomes": {
-        "inputs": [
-          "market", 
-          "winningOutcome", 
-          "event", 
-          "sender"
-        ], 
-        "label": "Two Outcomes", 
-        "method": "twoOutcomes", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256[]", 
-          "int256", 
-          "int256"
-        ]
-      }
-    }, 
     "CollectFees": {
       "collectFees": {
         "description": "Collect Reporting fees for previous Reporting cycle", 
@@ -1685,12 +1672,11 @@
         ]
       }, 
       "penalizeWrong": {
-        "description": "Compare your report to the consensus outcome", 
         "inputs": [
           "branch", 
           "event"
         ], 
-        "label": "Check Report Against Consensus", 
+        "label": "Compare Report To Consensus", 
         "method": "penalizeWrong", 
         "mutable": true, 
         "returns": "number", 
@@ -4598,6 +4584,44 @@
         "signature": [
           "int256", 
           "int256[]"
+        ]
+      }
+    }, 
+    "Payout": {
+      "oneOutcome": {
+        "inputs": [
+          "market", 
+          "winningOutcome", 
+          "sender", 
+          "categoricalPointFive", 
+          "numOutcomes"
+        ], 
+        "label": "One Outcome", 
+        "method": "oneOutcome", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "twoOutcomes": {
+        "inputs": [
+          "market", 
+          "winningOutcome", 
+          "event", 
+          "sender"
+        ], 
+        "label": "Two Outcomes", 
+        "method": "twoOutcomes", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256[]", 
+          "int256", 
+          "int256"
         ]
       }
     }, 
