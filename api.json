@@ -95,10 +95,15 @@
           "indexed": false, 
           "name": "numOutcomes", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "completeSets_logReturn(int256,int256,int256,int256,int256)", 
-      "signature": "0x2e6b18139c987afb05efb85deddaa40262aa36c9ddebb9be215461cb22078175"
+      "name": "completeSets_logReturn(int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x59193f204bd4754cff0e765b9ee9157305fb373586ec5d680b49e6341ef922a6"
     }, 
     "consensus_logReturn": {
       "contract": "Consensus", 
@@ -166,10 +171,15 @@
           "indexed": false, 
           "name": "tradeid", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "log_add_tx(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x8dbed7bffe37a9907a92186110f23d8104f5967a71fb059f3b907ca9001fd160"
+      "name": "log_add_tx(int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x331abc0b32c392f5cdc23a50af9497ab6b82f29ec2274cc33a409e7ab3aedc6c"
     }, 
     "log_cancel": {
       "contract": "BuyAndSellShares", 
@@ -213,10 +223,15 @@
           "indexed": false, 
           "name": "cashRefund", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "log_cancel(int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xf573f1f8bc82665c8e269027671f8892cb92df05d64505b4f0090198a52edfbf"
+      "name": "log_cancel(int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x87540aa511444ce3628639499047bc199b924522a0dbfd241e849901db56c8db"
     }, 
     "log_fill_tx": {
       "contract": "Trade", 
