@@ -68,6 +68,68 @@
       "name": "closeMarket_logReturn(int256)", 
       "signature": "0x7111c90bbf79fe51a8f95606c2c44137f600abeb3b5631db7d06ed168c13eea7"
     }, 
+    "collectedFees": {
+      "contract": "CollectFees", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "branch", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "cashFeesCollected", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "newCashBalance", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "lastPeriodRepBalance", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "repGain", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "newRepBalance", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "totalReportingRep", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "notReportingBond", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "period", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
+        }
+      ], 
+      "name": "collectedFees(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xc81e036aceff1b9ec18111ca6754e12887ad248f60557e154c5ba9a383c24c69"
+    }, 
     "completeSets_logReturn": {
       "contract": "CompleteSets", 
       "inputs": [
@@ -129,10 +191,15 @@
           "indexed": false, 
           "name": "value", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "deposit(int256,int256)", 
-      "signature": "0x34a501c7333ea92b0cf92686a6a375317e717114a9850e9a10661c6e4b873971"
+      "name": "deposit(int256,int256,int256)", 
+      "signature": "0x26c0012e46d4069376ba870705277dc83bb702e2b282b4779a16fceec2479de0"
     }, 
     "log_add_tx": {
       "contract": "BuyAndSellShares", 
@@ -383,13 +450,33 @@
       "contract": "CreateMarket", 
       "inputs": [
         {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
           "indexed": false, 
           "name": "marketID", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "marketCreationFee", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "eventBond", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "marketCreated(int256)", 
-      "signature": "0x63f140d7adcc464732c9379020aa9e5ce1b1e350796814d780ea3ca41d62a36b"
+      "name": "marketCreated(int256,int256,int256,int256,int256)", 
+      "signature": "0x8f9d87fc01c4c1a9057249423e7e9c38c4f8899a494502d7aaa64c0b7c40cf9e"
     }, 
     "payout": {
       "contract": "Payout", 
@@ -406,24 +493,81 @@
         }, 
         {
           "indexed": false, 
-          "name": "payoutValue", 
+          "name": "cashPayout", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "cashBalance", 
           "type": "int256"
         }, 
         {
           "indexed": false, 
           "name": "shares", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "payout(int256,int256,int256,int256)", 
-      "signature": "0xa2462be94780bd0b9f754c0a57d1174c8770114065de61be36b5e28953301a38"
+      "name": "payout(int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xa2bf9dad859f137c8894b41a4e89182a27fa82c48ed42019e924af83fefc1f81"
+    }, 
+    "penalizationCaughtUp": {
+      "contract": "PenalizationCatchup", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "branch", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "penalizedFrom", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "penalizedUpTo", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "repLost", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "newRepBalance", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
+        }
+      ], 
+      "name": "penalizationCaughtUp(int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x31dc9507ffec8f6f69d9f2b7a9bd206108312323de6ba468056af9c269881ea0"
     }, 
     "penalize": {
       "contract": "Consensus", 
       "inputs": [
         {
           "indexed": true, 
-          "name": "user", 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "event", 
           "type": "int256"
         }, 
         {
@@ -455,10 +599,20 @@
           "indexed": false, 
           "name": "reportValue", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "penalizedUpTo", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "penalize(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x3253564cd022a8ec496277f26ccdaddf64e75973423eda45df329f60b2a0c6a7"
+      "name": "penalize(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xa865e521626cec7891279a54f112b20abe52888a42df585b51ca9ff03c4249b7"
     }, 
     "registration": {
       "contract": "Register", 
@@ -476,6 +630,85 @@
       ], 
       "name": "registration(int256,int256)", 
       "signature": "0x44b6aeb7b38bb1ad04b4d0daf588cff086ff8829f0a34c30ddbb4d38695428de"
+    }, 
+    "submittedReport": {
+      "contract": "MakeReports", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "event", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "salt", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "report", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "ethics", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
+        }
+      ], 
+      "name": "submittedReport(int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xa6947592b50b1143536435c37404960f6cd671bba88e5132eaab5e4b3b2c86eb"
+    }, 
+    "submittedReportHash": {
+      "contract": "MakeReports", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "event", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "reportHash", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "encryptedReport", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "encryptedSalt", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "ethics", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
+        }
+      ], 
+      "name": "submittedReportHash(int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xe8f8544e3319f0811318e4fe055fcfbda248abaea92c463457e881c872e0faa0"
     }, 
     "trade_logArrayReturn": {
       "contract": "Trade", 
@@ -505,7 +738,12 @@
       "contract": "CreateMarket", 
       "inputs": [
         {
-          "indexed": false, 
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
           "name": "marketID", 
           "type": "int256"
         }, 
@@ -513,10 +751,15 @@
           "indexed": false, 
           "name": "tradingFee", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "tradingFeeUpdated(int256,int256)", 
-      "signature": "0xb8c735cc6495f8dac2581d532413dea78d7e03e0ff0880c32b4648c2145fba41"
+      "name": "tradingFeeUpdated(int256,int256,int256,int256)", 
+      "signature": "0x00adcc8aa683a6eb4db9d3921b0f4290b7040da7493508cf549c69450f22b4b0"
     }, 
     "withdraw": {
       "contract": "Cash", 
@@ -535,10 +778,15 @@
           "indexed": false, 
           "name": "value", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "withdraw(int256,int256,int256)", 
-      "signature": "0x4fd09602a6b4d418a14ba8c67f52e6962860ff302879ec1a88a04a1a44aac03b"
+      "name": "withdraw(int256,int256,int256,int256)", 
+      "signature": "0xca93904ea92cb171dc196571984cacdf47206dfcde44e464b394de4cca42f7b7"
     }
   }, 
   "functions": {
@@ -4690,7 +4938,7 @@
     "Register": {
       "register": {
         "description": "Write registration timestamp to the blockchain", 
-        "label": "Save Registration Timestamp", 
+        "label": "Register New Account", 
         "method": "register", 
         "returns": "number", 
         "send": true
