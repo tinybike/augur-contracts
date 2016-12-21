@@ -641,6 +641,11 @@
         }, 
         {
           "indexed": true, 
+          "name": "branch", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
           "name": "event", 
           "type": "int256"
         }, 
@@ -665,8 +670,8 @@
           "type": "int256"
         }
       ], 
-      "name": "submittedReport(int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xa6947592b50b1143536435c37404960f6cd671bba88e5132eaab5e4b3b2c86eb"
+      "name": "submittedReport(int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x10a25c8f0d1e8e37576b43df8517b7a01ba412360118206afdc4bf19fe8a61ad"
     }, 
     "submittedReportHash": {
       "contract": "MakeReports", 
@@ -674,6 +679,11 @@
         {
           "indexed": true, 
           "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "branch", 
           "type": "int256"
         }, 
         {
@@ -707,8 +717,8 @@
           "type": "int256"
         }
       ], 
-      "name": "submittedReportHash(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xe8f8544e3319f0811318e4fe055fcfbda248abaea92c463457e881c872e0faa0"
+      "name": "submittedReportHash(int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x022363830a2ffb8853db587ab6c8995dc8cb6bb401abc22fa484d705c81881c6"
     }, 
     "trade_logArrayReturn": {
       "contract": "Trade", 
