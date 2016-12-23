@@ -455,6 +455,11 @@
           "type": "int256"
         }, 
         {
+          "indexed": true, 
+          "name": "branch", 
+          "type": "int256"
+        }, 
+        {
           "indexed": false, 
           "name": "marketID", 
           "type": "int256"
@@ -475,8 +480,8 @@
           "type": "int256"
         }
       ], 
-      "name": "marketCreated(int256,int256,int256,int256,int256)", 
-      "signature": "0x8f9d87fc01c4c1a9057249423e7e9c38c4f8899a494502d7aaa64c0b7c40cf9e"
+      "name": "marketCreated(int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x80dc2c0162323f3305cee66776c5a51c1475ee8c4d8c6798df60e80d8c8c907b"
     }, 
     "payout": {
       "contract": "Payout", 
@@ -567,6 +572,11 @@
         }, 
         {
           "indexed": true, 
+          "name": "branch", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
           "name": "event", 
           "type": "int256"
         }, 
@@ -611,8 +621,8 @@
           "type": "int256"
         }
       ], 
-      "name": "penalize(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xa865e521626cec7891279a54f112b20abe52888a42df585b51ca9ff03c4249b7"
+      "name": "penalize(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xc06628844b88265d7d67648aa987a952cb724513c59dcf14014706b266041de7"
     }, 
     "registration": {
       "contract": "Register", 
@@ -754,6 +764,11 @@
         }, 
         {
           "indexed": true, 
+          "name": "branch", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
           "name": "marketID", 
           "type": "int256"
         }, 
@@ -768,8 +783,8 @@
           "type": "int256"
         }
       ], 
-      "name": "tradingFeeUpdated(int256,int256,int256,int256)", 
-      "signature": "0x00adcc8aa683a6eb4db9d3921b0f4290b7040da7493508cf549c69450f22b4b0"
+      "name": "tradingFeeUpdated(int256,int256,int256,int256,int256)", 
+      "signature": "0xcd5a359787987cf4975171bed45d96e380d985598c913dc5a76c6aca1d1fccfb"
     }, 
     "withdraw": {
       "contract": "Cash", 
