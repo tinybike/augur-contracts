@@ -93,11 +93,6 @@
         }, 
         {
           "indexed": false, 
-          "name": "lastPeriodRepBalance", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
           "name": "repGain", 
           "type": "int256"
         }, 
@@ -127,8 +122,8 @@
           "type": "int256"
         }
       ], 
-      "name": "collectedFees(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xc81e036aceff1b9ec18111ca6754e12887ad248f60557e154c5ba9a383c24c69"
+      "name": "collectedFees(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xcde4a27ca173f91b1dd9076223820f857c157515fd27e19adfcd4f5f4af9ab48"
     }, 
     "completeSets_logReturn": {
       "contract": "CompleteSets", 
@@ -1760,12 +1755,11 @@
     }, 
     "CollectFees": {
       "collectFees": {
-        "description": "Collect Reporting fees for previous Reporting cycle", 
         "inputs": [
           "branch", 
           "sender"
         ], 
-        "label": "Collect Reporting Fees", 
+        "label": "Reporting Payment", 
         "method": "collectFees", 
         "returns": "number", 
         "send": true, 
