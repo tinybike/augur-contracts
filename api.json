@@ -218,6 +218,33 @@
       "name": "deposit(int256,int256,int256)", 
       "signature": "0x26c0012e46d4069376ba870705277dc83bb702e2b282b4779a16fceec2479de0"
     }, 
+    "fundedAccount": {
+      "contract": "Faucets", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "branch", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "cashBalance", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "repBalance", 
+          "type": "int256"
+        }
+      ], 
+      "name": "fundedAccount(int256,int256,int256,int256)", 
+      "signature": "0x2b655a1e1983fd18a039a0a1d52ed2a339435d3f1d024b9c99f1ab4804ddcc59"
+    }, 
     "log_add_tx": {
       "contract": "BuyAndSellShares", 
       "inputs": [
@@ -4013,6 +4040,9 @@
         ]
       }, 
       "fundNewAccount": {
+        "events": [
+          "fundedAccount"
+        ], 
         "inputs": [
           "branch"
         ], 
