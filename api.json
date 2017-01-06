@@ -240,10 +240,15 @@
           "indexed": false, 
           "name": "repBalance", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "fundedAccount(int256,int256,int256,int256)", 
-      "signature": "0x2b655a1e1983fd18a039a0a1d52ed2a339435d3f1d024b9c99f1ab4804ddcc59"
+      "name": "fundedAccount(int256,int256,int256,int256,int256)", 
+      "signature": "0xe86de3de21f900509377e1239ba6e244650b70db18f42d2cd7df914b395060b7"
     }, 
     "log_add_tx": {
       "contract": "BuyAndSellShares", 
@@ -406,10 +411,15 @@
           "indexed": false, 
           "name": "onChainPrice", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "tradeHash", 
+          "type": "int256"
         }
       ], 
-      "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x1a21ddb7264e8586c0581bcd71b256134b55b55bc25fd26441fd7db77c55ad27"
+      "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x458df6858b43ba351946c2ebb255e91a6ae5d642f0869c39d9ea146c551db43f"
     }, 
     "log_short_fill_tx": {
       "contract": "Trade", 
@@ -473,10 +483,15 @@
           "indexed": false, 
           "name": "onChainPrice", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "tradeHash", 
+          "type": "int256"
         }
       ], 
-      "name": "log_short_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x3a74f0bffaa1e0ba0e1fbbfe53846e4d33da8820d706ee0b02d169dc9a116aae"
+      "name": "log_short_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x6ddcee277b0bc8892c2a869d356c2ebb1f91c3400a95aa1a049d7f0f003249ad"
     }, 
     "makeReports_logReturn": {
       "contract": "MakeReports", 
