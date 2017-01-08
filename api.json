@@ -705,6 +705,28 @@
       "name": "registration(int256,int256)", 
       "signature": "0x44b6aeb7b38bb1ad04b4d0daf588cff086ff8829f0a34c30ddbb4d38695428de"
     }, 
+    "sentCash": {
+      "contract": "Cash", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "_from", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "_to", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "_value", 
+          "type": "int256"
+        }
+      ], 
+      "name": "sentCash(int256,int256,int256)", 
+      "signature": "0xae8ab9b13c08da596a84ac5e018517fd37ef5ff3f3883d4ce517f8c4f558efde"
+    }, 
     "submittedReport": {
       "contract": "MakeReports", 
       "inputs": [
@@ -1578,7 +1600,8 @@
     "BuyAndSellShares": {
       "buy": {
         "events": [
-          "log_add_tx"
+          "log_add_tx", 
+          "sentCash"
         ], 
         "gas": 725202, 
         "inputs": [
@@ -1620,7 +1643,8 @@
       }, 
       "sell": {
         "events": [
-          "log_add_tx"
+          "log_add_tx", 
+          "sentCash"
         ], 
         "gas": 696759, 
         "inputs": [
@@ -1648,6 +1672,7 @@
       "shortAsk": {
         "events": [
           "completeSets_logReturn", 
+          "sentCash", 
           "log_add_tx"
         ], 
         "gas": 1500000, 
@@ -1723,6 +1748,9 @@
         ]
       }, 
       "send": {
+        "events": [
+          "sentCash"
+        ], 
         "fixed": [
           1
         ], 
@@ -1740,6 +1768,9 @@
         ]
       }, 
       "sendFrom": {
+        "events": [
+          "sentCash"
+        ], 
         "fixed": [
           1
         ], 
@@ -1871,7 +1902,8 @@
     "CompleteSets": {
       "buyCompleteSets": {
         "events": [
-          "completeSets_logReturn"
+          "completeSets_logReturn", 
+          "sentCash"
         ], 
         "fixed": [
           1
@@ -2427,6 +2459,9 @@
     }, 
     "CreateBranch": {
       "createSubbranch": {
+        "events": [
+          "sentCash"
+        ], 
         "inputs": [
           "description", 
           "periodLength", 
@@ -2474,6 +2509,7 @@
       }, 
       "createMarket": {
         "events": [
+          "sentCash", 
           "marketCreated"
         ], 
         "inputs": [
@@ -2506,6 +2542,7 @@
       }, 
       "createSingleEventMarket": {
         "events": [
+          "sentCash", 
           "marketCreated"
         ], 
         "inputs": [
@@ -2545,6 +2582,9 @@
         ]
       }, 
       "pushMarketForward": {
+        "events": [
+          "sentCash"
+        ], 
         "inputs": [
           "branch", 
           "market"
@@ -2560,7 +2600,8 @@
       }, 
       "updateTradingFee": {
         "events": [
-          "tradingFeeUpdated"
+          "tradingFeeUpdated", 
+          "sentCash"
         ], 
         "inputs": [
           "branch", 
@@ -4063,6 +4104,7 @@
       }, 
       "fundNewAccount": {
         "events": [
+          "sentCash", 
           "fundedAccount"
         ], 
         "inputs": [
@@ -4131,6 +4173,7 @@
       "fork": {
         "events": [
           "penalizationCaughtUp", 
+          "sentCash", 
           "collectedFees"
         ], 
         "inputs": [
@@ -5760,7 +5803,8 @@
       "short_sell": {
         "events": [
           "log_short_fill_tx", 
-          "trade_logArrayReturn"
+          "trade_logArrayReturn", 
+          "sentCash"
         ], 
         "gas": 1059796, 
         "inputs": [
