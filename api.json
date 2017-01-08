@@ -290,12 +290,17 @@
         }, 
         {
           "indexed": false, 
+          "name": "isShortAsk", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
           "name": "timestamp", 
           "type": "int256"
         }
       ], 
-      "name": "log_add_tx(int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x331abc0b32c392f5cdc23a50af9497ab6b82f29ec2274cc33a409e7ab3aedc6c"
+      "name": "log_add_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xf6ebadeafdbe1f52fd45da6789b3f8fd7a39efd3b536a8c5ad1bfcf3914a1443"
     }, 
     "log_cancel": {
       "contract": "BuyAndSellShares", 
@@ -1623,7 +1628,8 @@
           "price", 
           "market", 
           "outcome", 
-          "minimumTradeSize"
+          "minimumTradeSize", 
+          "isShortAsk"
         ], 
         "label": "Ask", 
         "method": "sell", 
@@ -1631,6 +1637,7 @@
         "returns": "int256", 
         "send": true, 
         "signature": [
+          "int256", 
           "int256", 
           "int256", 
           "int256", 
