@@ -2958,7 +2958,7 @@
         ], 
         "label": "Get Outcome", 
         "method": "getOutcome", 
-        "returns": "unfix", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -3035,7 +3035,7 @@
         ], 
         "label": "Get Uncaught Outcome", 
         "method": "getUncaughtOutcome", 
-        "returns": "unfix", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
