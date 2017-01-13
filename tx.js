@@ -8,7 +8,7 @@ var clone = require("clone");
 
 module.exports = function (network, contracts) {
 
-  contracts = contracts || require("./contracts")[network || "2"];
+  contracts = contracts || require("./contracts")[network || "3"];
   var api = clone(require("./api"));
 
   for (var contract in api.functions) {
