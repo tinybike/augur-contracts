@@ -1,5 +1,6 @@
 var contracts = require("./contracts");
 contracts.errors = require("./errors");
-contracts.Tx = require("./tx");
+contracts.api = require("./api");
+contracts.Tx = require("./setup-api");
 
 module.exports = contracts;
