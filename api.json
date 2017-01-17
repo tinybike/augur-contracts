@@ -549,7 +549,7 @@
           "type": "int256"
         }, 
         {
-          "indexed": false, 
+          "indexed": true, 
           "name": "marketID", 
           "type": "int256"
         }, 
@@ -2561,7 +2561,6 @@
         ], 
         "label": "Create Market", 
         "method": "createMarket", 
-        "mutable": true, 
         "returns": "int256", 
         "send": true, 
         "signature": [
@@ -2598,7 +2597,6 @@
         ], 
         "label": "Create Market", 
         "method": "createSingleEventMarket", 
-        "mutable": true, 
         "returns": "hash", 
         "send": true, 
         "signature": [
