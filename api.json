@@ -1813,13 +1813,15 @@
         "inputs": [
           "recver", 
           "value", 
-          "from"
+          "from", 
+          "doNotLog"
         ], 
         "label": "Send Tokens", 
         "method": "sendFrom", 
         "returns": "unfix", 
         "send": true, 
         "signature": [
+          "int256", 
           "int256", 
           "int256", 
           "int256"
