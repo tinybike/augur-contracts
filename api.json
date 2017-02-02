@@ -784,10 +784,15 @@
           "indexed": false, 
           "name": "slasherBalance", 
           "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
         }
       ], 
-      "name": "slashedRep(int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xcc9436d20fc96bc634d12281b916903ab7c9d6bbdc5d1a73f1c60d7479c006ae"
+      "name": "slashedRep(int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x541c89e2231b7eaed003bb1405d8d57e081addbe7fb8e44d98605c5caddce42f"
     }, 
     "submittedReport": {
       "contract": "MakeReports", 
