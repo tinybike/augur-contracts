@@ -5809,7 +5809,6 @@
     }, 
     "SlashRep": {
       "slashRep": {
-        "description": "Punish Reporter for insufficient Reports submitted", 
         "events": [
           "slashedRep"
         ], 
@@ -5820,7 +5819,7 @@
           "reporter", 
           "eventID"
         ], 
-        "label": "Punish Reporter", 
+        "label": "Slash Rep", 
         "method": "slashRep", 
         "returns": "number", 
         "send": true, 
