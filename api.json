@@ -5844,7 +5844,7 @@
         ], 
         "label": "Get Num Tags In Branch", 
         "method": "getNumTagsInBranch", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -5885,6 +5885,7 @@
         ], 
         "label": "Get Tags Info", 
         "method": "getTagsInfo", 
+        "parser": "parseTagsInfo", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
