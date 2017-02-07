@@ -5837,39 +5837,39 @@
         ]
       }
     }, 
-    "Tags": {
-      "getNumTagsInBranch": {
+    "Topics": {
+      "getNumTopicsInBranch": {
         "inputs": [
           "branch"
         ], 
-        "label": "Get Num Tags In Branch", 
-        "method": "getNumTagsInBranch", 
-        "returns": "number", 
+        "label": "Get Num Topics In Branch", 
+        "method": "getNumTopicsInBranch", 
+        "returns": "int256", 
         "signature": [
           "int256"
         ]
       }, 
-      "getTagPopularity": {
+      "getTopicPopularity": {
         "inputs": [
           "branch", 
-          "tag"
+          "topic"
         ], 
-        "label": "Get Tag Popularity", 
-        "method": "getTagPopularity", 
+        "label": "Get Topic Popularity", 
+        "method": "getTopicPopularity", 
         "returns": "unfix", 
         "signature": [
           "int256", 
           "int256"
         ]
       }, 
-      "getTagsInBranch": {
+      "getTopicsInBranch": {
         "inputs": [
           "branch", 
           "offset", 
-          "numTagsToLoad"
+          "numTopicsToLoad"
         ], 
-        "label": "Get Tags In Branch", 
-        "method": "getTagsInBranch", 
+        "label": "Get Topics In Branch", 
+        "method": "getTopicsInBranch", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -5877,15 +5877,14 @@
           "int256"
         ]
       }, 
-      "getTagsInfo": {
+      "getTopicsInfo": {
         "inputs": [
           "branch", 
           "offset", 
-          "numTagsToLoad"
+          "numTopicsToLoad"
         ], 
-        "label": "Get Tags Info", 
-        "method": "getTagsInfo", 
-        "parser": "parseTagsInfo", 
+        "label": "Get Topics Info", 
+        "method": "getTopicsInfo", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -5893,17 +5892,17 @@
           "int256"
         ]
       }, 
-      "increaseTagPopularity": {
+      "increaseTopicPopularity": {
         "fixed": [
           2
         ], 
         "inputs": [
           "branch", 
-          "tag", 
+          "topic", 
           "fxpAmount"
         ], 
-        "label": "Increase Tag Popularity", 
-        "method": "increaseTagPopularity", 
+        "label": "Increase Topic Popularity", 
+        "method": "increaseTopicPopularity", 
         "returns": "int256", 
         "signature": [
           "int256", 
