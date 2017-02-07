@@ -5844,7 +5844,7 @@
         ], 
         "label": "Get Num Topics In Branch", 
         "method": "getNumTopicsInBranch", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256"
         ]
@@ -5885,6 +5885,7 @@
         ], 
         "label": "Get Topics Info", 
         "method": "getTopicsInfo", 
+        "parser": "parseTopicsInfo", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -5903,7 +5904,7 @@
         ], 
         "label": "Increase Topic Popularity", 
         "method": "increaseTopicPopularity", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256", 
