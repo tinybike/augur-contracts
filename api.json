@@ -545,12 +545,17 @@
         }, 
         {
           "indexed": true, 
-          "name": "branch", 
+          "name": "marketID", 
           "type": "int256"
         }, 
         {
           "indexed": true, 
-          "name": "marketID", 
+          "name": "topic", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "branch", 
           "type": "int256"
         }, 
         {
@@ -569,8 +574,8 @@
           "type": "int256"
         }
       ], 
-      "name": "marketCreated(int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x80dc2c0162323f3305cee66776c5a51c1475ee8c4d8c6798df60e80d8c8c907b"
+      "name": "marketCreated(int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x94f1481ac3fc8e968bca7279f7811a02ae1212aa3a25e0f643684f5da1ef3ad6"
     }, 
     "payout": {
       "contract": "Payout", 
