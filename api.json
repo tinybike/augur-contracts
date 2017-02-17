@@ -5907,7 +5907,8 @@
         ], 
         "label": "Update Topic Popularity", 
         "method": "updateTopicPopularity", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
