@@ -2581,7 +2581,6 @@
         ], 
         "inputs": [
           "branch", 
-          "description", 
           "tradingFee", 
           "event", 
           "tag1", 
@@ -2596,7 +2595,6 @@
         "send": true, 
         "signature": [
           "int256", 
-          "bytes", 
           "int256", 
           "int256", 
           "int256", 
