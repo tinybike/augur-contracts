@@ -5896,7 +5896,7 @@
           "int256"
         ]
       }, 
-      "increaseTopicPopularity": {
+      "updateTopicPopularity": {
         "fixed": [
           2
         ], 
@@ -5905,9 +5905,9 @@
           "topic", 
           "fxpAmount"
         ], 
-        "label": "Increase Topic Popularity", 
-        "method": "increaseTopicPopularity", 
-        "returns": "number", 
+        "label": "Update Topic Popularity", 
+        "method": "updateTopicPopularity", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
