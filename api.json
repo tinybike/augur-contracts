@@ -3652,7 +3652,7 @@
         ], 
         "label": "Get Num Reports Event", 
         "method": "getNumReportsEvent", 
-        "returns": "int256", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256", 
@@ -3851,7 +3851,7 @@
         ], 
         "label": "Move Event", 
         "method": "moveEvent", 
-        "returns": "int256", 
+        "returns": "number", 
         "send": true, 
         "signature": [
           "int256", 
