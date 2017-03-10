@@ -4553,6 +4553,17 @@
           "int256"
         ]
       }, 
+      "getCreationBlock": {
+        "inputs": [
+          "market"
+        ], 
+        "label": "Get Creation Block", 
+        "method": "getCreationBlock", 
+        "returns": "number", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getCreationTime": {
         "inputs": [
           "market"
@@ -4751,11 +4762,6 @@
         "signature": [
           "int256"
         ]
-      }, 
-      "getSender": {
-        "label": "Get Sender", 
-        "method": "getSender", 
-        "returns": "int256"
       }, 
       "getSharesPurchased": {
         "inputs": [
@@ -6044,6 +6050,11 @@
         "signature": [
           "int256"
         ]
+      }, 
+      "getSender": {
+        "label": "Get Sender", 
+        "method": "getSender", 
+        "returns": "int256"
       }, 
       "getTradeOwner": {
         "inputs": [
