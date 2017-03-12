@@ -1761,6 +1761,7 @@
         "method": "shortAsk", 
         "mutable": true, 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -1801,10 +1802,12 @@
         ]
       }, 
       "depositEther": {
-        "description": "Convert Ether to tradeable Ether token", 
         "events": [
           "deposit"
         ], 
+        "fixed": [
+          1
+        ],
         "label": "Deposit Ether", 
         "method": "depositEther", 
         "returns": "number", 
@@ -2307,7 +2310,7 @@
         ], 
         "label": "Get Penalized Up To", 
         "method": "getPenalizedUpTo", 
-        "returns": "int", 
+        "returns": "number", 
         "signature": [
           "int256", 
           "int256"
