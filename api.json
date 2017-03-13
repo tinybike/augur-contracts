@@ -1807,7 +1807,7 @@
         ], 
         "fixed": [
           1
-        ],
+        ], 
         "label": "Deposit Ether", 
         "method": "depositEther", 
         "returns": "number", 
