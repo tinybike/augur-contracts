@@ -2,13 +2,13 @@
   "name": "augur-contracts",
   "version": "2.11.0",
   "description": "Augur contract addresses, transactions, and error codes",
+  "author": "The Augur Developers <team@augur.net>",
+  "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AugurProject/augur-contracts.git"
   },
-  "author": "Jack Peterson <jack@tinybike.net>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/AugurProject/augur-contracts/issues"
   },
