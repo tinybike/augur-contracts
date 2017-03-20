@@ -4790,6 +4790,17 @@
           "int256"
         ]
       }, 
+      "getTopic": {
+        "inputs": [
+          "market"
+        ], 
+        "label": "Get Topic", 
+        "method": "getTopic", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getTotalSharesPurchased": {
         "inputs": [
           "market"
