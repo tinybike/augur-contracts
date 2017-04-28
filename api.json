@@ -1431,7 +1431,6 @@
         ], 
         "label": "Get Event Forked Over", 
         "method": "getEventForkedOver", 
-        "parser": "parseMarket", 
         "returns": "int256", 
         "signature": [
           "int256"
@@ -1467,8 +1466,7 @@
         ], 
         "label": "Get Markets In Branch", 
         "method": "getMarketsInBranch", 
-        "parser": "parseMarkets", 
-        "returns": "hash[]", 
+        "returns": "int256[]", 
         "signature": [
           "int256"
         ]
@@ -1990,7 +1988,7 @@
         "label": "Buy Complete Sets", 
         "method": "buyCompleteSets", 
         "mutable": true, 
-        "returns": "hash[]", 
+        "returns": "int256[]", 
         "send": true, 
         "signature": [
           "int256", 
@@ -2012,7 +2010,7 @@
         "label": "Sell Complete Sets", 
         "method": "sellCompleteSets", 
         "mutable": true, 
-        "returns": "hash[]", 
+        "returns": "int256[]", 
         "send": true, 
         "signature": [
           "int256", 
@@ -2028,6 +2026,7 @@
         ], 
         "label": "Batch Get Market Info", 
         "method": "batchGetMarketInfo", 
+        "parser": "parseBatchMarketInfo",
         "returns": "hash[]", 
         "signature": [
           "int256[]", 
@@ -2055,7 +2054,6 @@
         ], 
         "label": "Get Events With Submitted Report", 
         "method": "getEventsWithSubmittedReport", 
-        "parser": "parseMarkets", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -2081,7 +2079,7 @@
         ], 
         "label": "Get Market Info", 
         "method": "getMarketInfo", 
-        "parser": "validateMarketInfo", 
+        "parser": "parseMarketInfo", 
         "returns": "hash[]", 
         "signature": [
           "int256", 
@@ -2097,7 +2095,6 @@
         ], 
         "label": "Get Markets Created By Market Creator", 
         "method": "getMarketsCreatedByMarketCreator", 
-        "parser": "parseMarkets", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -2116,6 +2113,7 @@
         ], 
         "label": "Get Markets Info", 
         "method": "getMarketsInfo", 
+        "parser": "parseGetMarketsInfo", 
         "returns": "hash[]", 
         "signature": [
           "int256", 
@@ -2628,7 +2626,7 @@
         ], 
         "label": "Create Market", 
         "method": "createSingleEventMarket", 
-        "returns": "hash", 
+        "returns": "int256", 
         "send": true, 
         "signature": [
           "int256", 
@@ -2903,7 +2901,6 @@
         ], 
         "label": "Get Market", 
         "method": "getMarket", 
-        "parser": "parseMarket", 
         "returns": "int256", 
         "signature": [
           "int256", 
@@ -2916,8 +2913,7 @@
         ], 
         "label": "Get Markets", 
         "method": "getMarkets", 
-        "parser": "parseMarkets", 
-        "returns": "hash[]", 
+        "returns": "int256[]", 
         "signature": [
           "int256"
         ]
@@ -3538,8 +3534,7 @@
         ], 
         "label": "Get Event", 
         "method": "getEvent", 
-        "parser": "parseMarket", 
-        "returns": "hash", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
@@ -3566,8 +3561,7 @@
         ], 
         "label": "Get Events", 
         "method": "getEvents", 
-        "parser": "parseMarkets", 
-        "returns": "hash[]", 
+        "returns": "int256[]", 
         "signature": [
           "int256", 
           "int256"
@@ -3582,7 +3576,6 @@
         ], 
         "label": "Get Events Range", 
         "method": "getEventsRange", 
-        "parser": "parseMarkets", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -4415,7 +4408,7 @@
         ], 
         "label": "Make Hash", 
         "method": "makeHash", 
-        "returns": "hash", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
@@ -4675,7 +4668,6 @@
         ], 
         "label": "Get Market Event", 
         "method": "getMarketEvent", 
-        "parser": "parseMarket", 
         "returns": "int256", 
         "signature": [
           "int256", 
@@ -4688,8 +4680,7 @@
         ], 
         "label": "Get Market Events", 
         "method": "getMarketEvents", 
-        "parser": "parseMarkets", 
-        "returns": "hash[]", 
+        "returns": "int256[]", 
         "signature": [
           "int256"
         ]
@@ -4875,7 +4866,7 @@
         ], 
         "label": "Get trade ids", 
         "method": "get_trade_ids", 
-        "returns": "hash[]", 
+        "returns": "int256[]", 
         "signature": [
           "int256", 
           "int256", 
@@ -5397,7 +5388,7 @@
         ], 
         "label": "Get Reporter ID", 
         "method": "getReporterID", 
-        "returns": "hash", 
+        "returns": "address", 
         "signature": [
           "int256", 
           "int256"
@@ -5615,7 +5606,6 @@
         ], 
         "label": "Get Events To Report On", 
         "method": "getEventsToReportOn", 
-        "parser": "parseMarkets", 
         "returns": "int256[]", 
         "signature": [
           "int256", 
@@ -6060,7 +6050,7 @@
         ], 
         "label": "Get ID", 
         "method": "getID", 
-        "returns": "hash", 
+        "returns": "int256", 
         "signature": [
           "int256"
         ]
@@ -6110,7 +6100,7 @@
         "label": "Get trade", 
         "method": "get_trade", 
         "parser": "parseTradeInfo", 
-        "returns": "hash[]", 
+        "returns": "int256[]", 
         "signature": [
           "int256"
         ]
@@ -6134,7 +6124,7 @@
         ], 
         "label": "Make Trade Hash", 
         "method": "makeTradeHash", 
-        "returns": "hash", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
