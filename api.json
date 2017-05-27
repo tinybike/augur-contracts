@@ -1,85 +1,34 @@
 {
   "events": {
     "Approval": {
-      "contract": "SendReputation", 
+      "contract": "ConvertRep", 
       "inputs": [
         {
           "indexed": true, 
-          "name": "_owner", 
+          "name": "owner", 
           "type": "int256"
         }, 
         {
           "indexed": true, 
-          "name": "_spender", 
+          "name": "spender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "branch", 
           "type": "int256"
         }, 
         {
           "indexed": false, 
           "name": "value", 
           "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
         }
       ], 
       "name": "Approval(int256,int256,int256,int256)", 
-      "signature": "0xb3a0644aa1a804a19f7ab4bf836f497fe9864488c91b39df7e6e6dd8f8f08b61"
+      "signature": "0x844a26ab2838326c73b20040c15d8ec743025cbae630958deca3bcfd84b294c7"
     }, 
-    "Transfer": {
-      "contract": "SendReputation", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "_from", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "_to", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "_value", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "Transfer(int256,int256,int256,int256)", 
-      "signature": "0xa5c50eea168b70b2f404cc28da30eade9ed5ab2beb48debd7856878bde2e6096"
-    }, 
-    "buyAndSellShares_logReturn": {
-      "contract": "BuyAndSellShares", 
-      "inputs": [
-        {
-          "indexed": false, 
-          "name": "returnValue", 
-          "type": "int256"
-        }
-      ], 
-      "name": "buyAndSellShares_logReturn(int256)", 
-      "signature": "0x9fbb0d8110bee15417200d9e638635c9436990b24f565fa2ce74f50f870171b6"
-    }, 
-    "closeMarket_logReturn": {
-      "contract": "CloseMarket", 
-      "inputs": [
-        {
-          "indexed": false, 
-          "name": "returnValue", 
-          "type": "int256"
-        }
-      ], 
-      "name": "closeMarket_logReturn(int256)", 
-      "signature": "0x7111c90bbf79fe51a8f95606c2c44137f600abeb3b5631db7d06ed168c13eea7"
-    }, 
-    "closedMarket": {
-      "contract": "CloseMarket", 
+    "CancelOrder": {
+      "contract": "Orders", 
       "inputs": [
         {
           "indexed": true, 
@@ -88,64 +37,42 @@
         }, 
         {
           "indexed": true, 
-          "name": "branch", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }
-      ], 
-      "name": "closedMarket(int256,int256,int256)", 
-      "signature": "0x32c2330374d337682bae09f8332c0cc2ca58d413047a81c2282ad2c3641b4d92"
-    }, 
-    "collectedFees": {
-      "contract": "CollectFees", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "branch", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
           "name": "sender", 
           "type": "int256"
         }, 
         {
           "indexed": false, 
-          "name": "cashFeesCollected", 
+          "name": "fxpPrice", 
           "type": "int256"
         }, 
         {
           "indexed": false, 
-          "name": "newCashBalance", 
+          "name": "fxpAmount", 
           "type": "int256"
         }, 
         {
           "indexed": false, 
-          "name": "repGain", 
+          "name": "orderID", 
           "type": "int256"
         }, 
         {
           "indexed": false, 
-          "name": "newRepBalance", 
+          "name": "outcome", 
           "type": "int256"
         }, 
         {
           "indexed": false, 
-          "name": "totalReportingRep", 
+          "name": "type", 
           "type": "int256"
         }, 
         {
           "indexed": false, 
-          "name": "notReportingBond", 
+          "name": "cashRefund", 
           "type": "int256"
         }, 
         {
           "indexed": false, 
-          "name": "period", 
+          "name": "sharesRefund", 
           "type": "int256"
         }, 
         {
@@ -154,11 +81,11 @@
           "type": "int256"
         }
       ], 
-      "name": "collectedFees(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xcde4a27ca173f91b1dd9076223820f857c157515fd27e19adfcd4f5f4af9ab48"
+      "name": "CancelOrder(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xdf3127e20eda11f7a6797616b2793068dd0b81bdab4b90bd6dfa28f1aeebc167"
     }, 
-    "completeSets_logReturn": {
-      "contract": "CompleteSets", 
+    "CompleteSets": {
+      "contract": "Orders", 
       "inputs": [
         {
           "indexed": true, 
@@ -177,7 +104,7 @@
         }, 
         {
           "indexed": false, 
-          "name": "returnValue", 
+          "name": "fxpAmount", 
           "type": "int256"
         }, 
         {
@@ -187,14 +114,367 @@
         }, 
         {
           "indexed": false, 
+          "name": "fxpFee", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
           "name": "timestamp", 
           "type": "int256"
         }
       ], 
-      "name": "completeSets_logReturn(int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x59193f204bd4754cff0e765b9ee9157305fb373586ec5d680b49e6341ef922a6"
+      "name": "CompleteSets(int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x945db29610eb8098cf5a5e91661ae60f068296cfd6efb2d45f4913184025d79a"
     }, 
-    "consensus_logReturn": {
+    "DecreaseTradingFee": {
+      "contract": "DecreaseTradingFee", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "branch", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "marketID", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpTradingFee", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
+        }
+      ], 
+      "name": "DecreaseTradingFee(int256,int256,int256,int256,int256)", 
+      "signature": "0x46eea5a4826e795cf346d1a194e1972b3a864edca600dad62f4f4d6198e360b9"
+    }, 
+    "DepositEther": {
+      "contract": "Cash", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "address"
+        }, 
+        {
+          "indexed": false, 
+          "name": "value", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "balance", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "uint256"
+        }
+      ], 
+      "name": "DepositEther(address,uint256,uint256,uint256)", 
+      "signature": "0xf5bb9b68d45c1515ef5533fbb44eb07ba49a7ac722cd3362f1dfd3de4ed077bc"
+    }, 
+    "InitiateWithdrawEther": {
+      "contract": "Cash", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "address"
+        }, 
+        {
+          "indexed": false, 
+          "name": "value", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "balance", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "uint256"
+        }
+      ], 
+      "name": "InitiateWithdrawEther(address,uint256,uint256,uint256)", 
+      "signature": "0x0e385aa5ed1b972c3fa3b2b49900ac67638c6525baf513d0ba6542b58e0db332"
+    }, 
+    "MakeOrder": {
+      "contract": "Orders", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "market", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "type", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpPrice", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpAmount", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "outcome", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "orderID", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpMoneyEscrowed", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpSharesEscrowed", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "tradeGroupID", 
+          "type": "int256"
+        }
+      ], 
+      "name": "MakeOrder(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x5010789abe4a086a3c2036fe15a2c2c69e70639bdf136aafd37c403c0a2a0843"
+    }, 
+    "TakeAskOrder": {
+      "contract": "Orders", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "market", 
+          "type": "address"
+        }, 
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "address"
+        }, 
+        {
+          "indexed": true, 
+          "name": "owner", 
+          "type": "address"
+        }, 
+        {
+          "indexed": false, 
+          "name": "type", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpPrice", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpAmount", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "orderID", 
+          "type": "address"
+        }, 
+        {
+          "indexed": false, 
+          "name": "outcome", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpAskerSharesFilled", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpAskerMoneyFilled", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpBidderMoneyFilled", 
+          "type": "uint256"
+        }
+      ], 
+      "name": "TakeAskOrder(address,address,address,uint256,int256,uint256,uint256,address,uint256,uint256,uint256,uint256)", 
+      "signature": "0x2010f9b3a8f949972f92577110c41af4cd03d4d691d210296f54ff14fb66434c"
+    }, 
+    "TakeBidOrder": {
+      "contract": "Orders", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "market", 
+          "type": "address"
+        }, 
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "address"
+        }, 
+        {
+          "indexed": true, 
+          "name": "owner", 
+          "type": "address"
+        }, 
+        {
+          "indexed": false, 
+          "name": "type", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpPrice", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpAmount", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "orderID", 
+          "type": "address"
+        }, 
+        {
+          "indexed": false, 
+          "name": "outcome", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpAskerSharesFilled", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpAskerMoneyFilled", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpBidderSharesFilled", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "fxpBidderMoneyFilled", 
+          "type": "uint256"
+        }
+      ], 
+      "name": "TakeBidOrder(address,address,address,uint256,int256,uint256,uint256,address,uint256,uint256,uint256,uint256,uint256)", 
+      "signature": "0x26dcd240923faf78c4b874639419b00701f8d76fbd36e0a40a1790379b9f9efb"
+    }, 
+    "Transfer": {
+      "contract": "ConvertRep", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "from", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": true, 
+          "name": "to", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "value", 
+          "type": "int256"
+        }
+      ], 
+      "name": "Transfer(int256,int256,int256)", 
+      "signature": "0x5bdd5df26f7d33d24539edbbf5e44bf2601c0af9d82b0c250be38177dc9214ac"
+    }, 
+    "WithdrawEther": {
+      "contract": "Cash", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "address"
+        }, 
+        {
+          "indexed": false, 
+          "name": "value", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "balance", 
+          "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "uint256"
+        }
+      ], 
+      "name": "WithdrawEther(address,uint256,uint256,uint256)", 
+      "signature": "0xac4836aed5bf8aef8b1d757440371ca62b17940cfd5035ee639ddc0de08a7b60"
+    }, 
+    "closeMarketLogReturn": {
+      "contract": "CloseMarket", 
+      "inputs": [
+        {
+          "indexed": false, 
+          "name": "returnValue", 
+          "type": "int256"
+        }
+      ], 
+      "name": "closeMarketLogReturn(int256)", 
+      "signature": "0xe6a13f8c01cf0b57d59c7b99a6c035e45fc4e7bc132aacc0d1d0abd63c8acb2d"
+    }, 
+    "consensusLogReturn": {
       "contract": "Consensus", 
       "inputs": [
         {
@@ -203,33 +483,11 @@
           "type": "int256"
         }
       ], 
-      "name": "consensus_logReturn(int256)", 
-      "signature": "0x2c8fae543971d12ce9baeaa8ac11b4873683653fdcb1a6104f6e0c9d5c3ecf02"
-    }, 
-    "deposit": {
-      "contract": "Cash", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "value", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "deposit(int256,int256,int256)", 
-      "signature": "0x26c0012e46d4069376ba870705277dc83bb702e2b282b4779a16fceec2479de0"
+      "name": "consensusLogReturn(int256)", 
+      "signature": "0xdf8df177539ff33fe95181e4520f7ab1f73c5ade00e1a44bb39d23a8c6c8d1b4"
     }, 
     "fundedAccount": {
-      "contract": "Faucets", 
+      "contract": "ClaimInitialRep", 
       "inputs": [
         {
           "indexed": true, 
@@ -258,272 +516,26 @@
         }
       ], 
       "name": "fundedAccount(int256,int256,int256,int256,int256)", 
-      "signature": "0xe86de3de21f900509377e1239ba6e244650b70db18f42d2cd7df914b395060b7"
+      "signature": "0x07c5737424a500b7f375ea2f9cda4c334584aab65715af51cf56c5ec805e6d6c"
     }, 
-    "log_add_tx": {
-      "contract": "BuyAndSellShares", 
+    "logOutcome": {
+      "contract": "Events", 
       "inputs": [
         {
           "indexed": true, 
-          "name": "market", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "type", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "price", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "amount", 
+          "name": "event", 
           "type": "int256"
         }, 
         {
           "indexed": false, 
           "name": "outcome", 
           "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "tradeid", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "isShortAsk", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "tradeGroupID", 
-          "type": "int256"
         }
       ], 
-      "name": "log_add_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x3922406b6c1bc74fdedc2f7b5f84f64655e6a78d29229166b493c9b738a5e40e"
+      "name": "logOutcome(int256,int256)", 
+      "signature": "0x1374fde3ddd8b0d23ab6da9b59a3ce24d61d0415543f99514f6f83a9084788e9"
     }, 
-    "log_cancel": {
-      "contract": "BuyAndSellShares", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "market", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "price", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "amount", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "tradeid", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "outcome", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "type", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "cashRefund", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "log_cancel(int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x87540aa511444ce3628639499047bc199b924522a0dbfd241e849901db56c8db"
-    }, 
-    "log_fill_tx": {
-      "contract": "Trade", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "market", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "owner", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "type", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "price", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "amount", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "tradeid", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "outcome", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "takerFee", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "makerFee", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "onChainPrice", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "tradeHash", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "tradeGroupID", 
-          "type": "int256"
-        }
-      ], 
-      "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xe054ca76966cd4f17c6c6a8e55f1c6352cb2b58b760f658e013353f1613d32c7"
-    }, 
-    "log_short_fill_tx": {
-      "contract": "Trade", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "market", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "owner", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "price", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "amount", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "tradeid", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "outcome", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "takerFee", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "makerFee", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "numOutcomes", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "onChainPrice", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "tradeHash", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "tradeGroupID", 
-          "type": "int256"
-        }
-      ], 
-      "name": "log_short_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x3572c2b345009b4c449540a9d7fe10a7464ae662d6bb1bae9fea96ce21a8ebb1"
-    }, 
-    "makeReports_logReturn": {
+    "makeReportsLogReturn": {
       "contract": "MakeReports", 
       "inputs": [
         {
@@ -532,8 +544,8 @@
           "type": "int256"
         }
       ], 
-      "name": "makeReports_logReturn(int256)", 
-      "signature": "0xc63250021b81c42e43223a77f306159f705fa6e54b1fbeaeeadaaa8340a38760"
+      "name": "makeReportsLogReturn(int256)", 
+      "signature": "0x7c9b9fadbf53400f2d317941955e7bc9cfe45d78ce2b076b73aeef8036bb4ec1"
     }, 
     "marketCreated": {
       "contract": "CreateMarket", 
@@ -560,12 +572,7 @@
         }, 
         {
           "indexed": false, 
-          "name": "marketCreationFee", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "eventBond", 
+          "name": "fxpMarketCreationFee", 
           "type": "int256"
         }, 
         {
@@ -574,104 +581,15 @@
           "type": "int256"
         }
       ], 
-      "name": "marketCreated(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x94f1481ac3fc8e968bca7279f7811a02ae1212aa3a25e0f643684f5da1ef3ad6"
-    }, 
-    "payout": {
-      "contract": "Payout", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "market", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "cashPayout", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "cashBalance", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "shares", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "payout(int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xa2bf9dad859f137c8894b41a4e89182a27fa82c48ed42019e924af83fefc1f81"
-    }, 
-    "penalizationCaughtUp": {
-      "contract": "PenalizationCatchup", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "branch", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "penalizedFrom", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "penalizedUpTo", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "repLost", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "newRepBalance", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "penalizationCaughtUp(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x31dc9507ffec8f6f69d9f2b7a9bd206108312323de6ba468056af9c269881ea0"
+      "name": "marketCreated(int256,int256,int256,int256,int256,int256)", 
+      "signature": "0xf955703eba6620a1c715687505574e8646d92751b9c78652ea8281f4eba1e4f5"
     }, 
     "penalize": {
       "contract": "Consensus", 
       "inputs": [
         {
           "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "branch", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "event", 
+          "name": "user", 
           "type": "int256"
         }, 
         {
@@ -691,6 +609,11 @@
         }, 
         {
           "indexed": false, 
+          "name": "newafterrep", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
           "name": "p", 
           "type": "int256"
         }, 
@@ -698,278 +621,10 @@
           "indexed": false, 
           "name": "reportValue", 
           "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "penalizedUpTo", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
         }
       ], 
-      "name": "penalize(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xa865e521626cec7891279a54f112b20abe52888a42df585b51ca9ff03c4249b7"
-    }, 
-    "registration": {
-      "contract": "Register", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "registration(int256,int256)", 
-      "signature": "0x44b6aeb7b38bb1ad04b4d0daf588cff086ff8829f0a34c30ddbb4d38695428de"
-    }, 
-    "sentCash": {
-      "contract": "Cash", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "_from", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "_to", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "_value", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "sentCash(int256,int256,int256,int256)", 
-      "signature": "0x27fc4539f0a547270e2eb3d44c9889a9dd0d9fe116324eb14204ad6d54d6e047"
-    }, 
-    "slashedRep": {
-      "contract": "SlashRep", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "branch", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "reporter", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "event", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "repSlashed", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "slasherBalance", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "slashedRep(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x541c89e2231b7eaed003bb1405d8d57e081addbe7fb8e44d98605c5caddce42f"
-    }, 
-    "submittedReport": {
-      "contract": "MakeReports", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "branch", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "event", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "salt", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "report", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "ethics", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "submittedReport(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x10a25c8f0d1e8e37576b43df8517b7a01ba412360118206afdc4bf19fe8a61ad"
-    }, 
-    "submittedReportHash": {
-      "contract": "MakeReports", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "branch", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "event", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "reportHash", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "encryptedReport", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "encryptedSalt", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "ethics", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "submittedReportHash(int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x022363830a2ffb8853db587ab6c8995dc8cb6bb401abc22fa484d705c81881c6"
-    }, 
-    "trade_logArrayReturn": {
-      "contract": "Trade", 
-      "inputs": [
-        {
-          "indexed": false, 
-          "name": "returnArray", 
-          "type": "int256[]"
-        }
-      ], 
-      "name": "trade_logArrayReturn(int256[])", 
-      "signature": "0x6a5b12f51adb25f3461c7108a9f5f8c509d374df9530d7dac8dfdd310929e39d"
-    }, 
-    "trade_logReturn": {
-      "contract": "Trade", 
-      "inputs": [
-        {
-          "indexed": false, 
-          "name": "returnValue", 
-          "type": "int256"
-        }
-      ], 
-      "name": "trade_logReturn(int256)", 
-      "signature": "0x1bbf36d9a7b2814880015722ce46ca5df561edceee37844559cf4dd31ecd5dfa"
-    }, 
-    "tradingFeeUpdated": {
-      "contract": "CreateMarket", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "branch", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "marketID", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "tradingFee", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "tradingFeeUpdated(int256,int256,int256,int256,int256)", 
-      "signature": "0xcd5a359787987cf4975171bed45d96e380d985598c913dc5a76c6aca1d1fccfb"
-    }, 
-    "withdraw": {
-      "contract": "Cash", 
-      "inputs": [
-        {
-          "indexed": true, 
-          "name": "sender", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": true, 
-          "name": "to", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "value", 
-          "type": "int256"
-        }, 
-        {
-          "indexed": false, 
-          "name": "timestamp", 
-          "type": "int256"
-        }
-      ], 
-      "name": "withdraw(int256,int256,int256,int256)", 
-      "signature": "0xca93904ea92cb171dc196571984cacdf47206dfcde44e464b394de4cca42f7b7"
+      "name": "penalize(int256,int256,int256,int256,int256,int256,int256)", 
+      "signature": "0x6995f42d98799c0eb89e06640c75123c28e99a5c0762fa1b5c3f0264f87a24c9"
     }
   }, 
   "functions": {
@@ -1006,7 +661,7 @@
         ], 
         "label": "Get Bond Amount", 
         "method": "getBondAmount", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -1017,7 +672,7 @@
         ], 
         "label": "Get Bond Paid", 
         "method": "getBondPaid", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -1044,6 +699,17 @@
           "int256"
         ]
       }, 
+      "getDisputedOverEthics": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get Disputed Over Ethics", 
+        "method": "getDisputedOverEthics", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getFinal": {
         "inputs": [
           "event"
@@ -1061,7 +727,7 @@
         ], 
         "label": "Get Fork Bond Paid", 
         "method": "getForkBondPaid", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -1221,6 +887,28 @@
           "int256"
         ]
       }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "setDisputedOverEthics": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Set Disputed Over Ethics", 
+        "method": "setDisputedOverEthics", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "setFinal": {
         "inputs": [
           "event"
@@ -1360,7 +1048,7 @@
       "setRoundTwoRefund": {
         "inputs": [
           "event", 
-          "amt"
+          "amount"
         ], 
         "label": "Set Round Two Refund", 
         "method": "setRoundTwoRefund", 
@@ -1370,9 +1058,177 @@
           "int256", 
           "int256"
         ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "BinaryForkResolve": {
+      "binaryForkResolve": {
+        "inputs": [
+          "branch", 
+          "event", 
+          "bond", 
+          "periodLength", 
+          "votingPeriodEvent", 
+          "winner"
+        ], 
+        "label": "Binary Fork Resolve", 
+        "method": "binaryForkResolve", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "BinaryMarketResolve": {
+      "resolveBinary": {
+        "inputs": [
+          "event", 
+          "market", 
+          "branch", 
+          "votingPeriodEvent"
+        ], 
+        "label": "Resolve Binary", 
+        "method": "resolveBinary", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "BinaryOrCategoricalPayouts": {
+      "payoutBinaryOrCategoricalMarket": {
+        "inputs": [
+          "sender", 
+          "market", 
+          "event", 
+          "numOutcomes"
+        ], 
+        "label": "Payout Binary Or Categorical Market", 
+        "method": "payoutBinaryOrCategoricalMarket", 
+        "returns": "uint256", 
+        "signature": [
+          "address", 
+          "address", 
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "payoutIndeterminateBinaryOrCategoricalMarket": {
+        "inputs": [
+          "sender", 
+          "market", 
+          "event", 
+          "numOutcomes"
+        ], 
+        "label": "Payout Indeterminate Binary Or Categorical Market", 
+        "method": "payoutIndeterminateBinaryOrCategoricalMarket", 
+        "returns": "uint256", 
+        "signature": [
+          "address", 
+          "address", 
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
       }
     }, 
     "Branches": {
+      "addCurrency": {
+        "inputs": [
+          "branch", 
+          "currency", 
+          "rate", 
+          "rateContract"
+        ], 
+        "label": "Add Currency", 
+        "method": "addCurrency", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "addMarketToBranch": {
         "inputs": [
           "branch", 
@@ -1382,6 +1238,32 @@
         "method": "addMarketToBranch", 
         "returns": "int256", 
         "send": true, 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "addNewETHContract": {
+        "inputs": [
+          "branch", 
+          "currency"
+        ], 
+        "label": "Add New ETH Contract", 
+        "method": "addNewETHContract", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "disableCurrency": {
+        "inputs": [
+          "branch", 
+          "currency"
+        ], 
+        "label": "Disable Currency", 
+        "method": "disableCurrency", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256"
@@ -1409,10 +1291,47 @@
           "int256"
         ]
       }, 
+      "getBranchCurrency": {
+        "inputs": [
+          "branch", 
+          "index"
+        ], 
+        "label": "Get Branch Currency", 
+        "method": "getBranchCurrency", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getBranchWallet": {
+        "inputs": [
+          "branch", 
+          "currency"
+        ], 
+        "label": "Get Branch Wallet", 
+        "method": "getBranchWallet", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
       "getBranches": {
         "label": "Get Branches", 
         "method": "getBranches", 
         "returns": "hash[]"
+      }, 
+      "getBranchesStartingAt": {
+        "inputs": [
+          "index"
+        ], 
+        "label": "Get Branches Starting At", 
+        "method": "getBranchesStartingAt", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256"
+        ]
       }, 
       "getCreationDate": {
         "inputs": [
@@ -1420,6 +1339,56 @@
         ], 
         "label": "Get Creation Date", 
         "method": "getCreationDate", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getCurrencyActive": {
+        "inputs": [
+          "branch", 
+          "currency"
+        ], 
+        "label": "Get Currency Active", 
+        "method": "getCurrencyActive", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getCurrencyByContract": {
+        "inputs": [
+          "branch", 
+          "currency"
+        ], 
+        "label": "Get Currency By Contract", 
+        "method": "getCurrencyByContract", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getCurrencyRate": {
+        "inputs": [
+          "branch", 
+          "currency"
+        ], 
+        "label": "Get Currency Rate", 
+        "method": "getCurrencyRate", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getCurrentETHWrapper": {
+        "inputs": [
+          "branch"
+        ], 
+        "label": "Get Current ETH Wrapper", 
+        "method": "getCurrentETHWrapper", 
         "returns": "int256", 
         "signature": [
           "int256"
@@ -1447,27 +1416,44 @@
           "int256"
         ]
       }, 
+      "getForkTime": {
+        "inputs": [
+          "branch"
+        ], 
+        "label": "Get Fork Time", 
+        "method": "getForkTime", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getInitialBalance": {
         "inputs": [
           "branch", 
-          "period"
+          "period", 
+          "currency"
         ], 
         "label": "Get Initial Balance", 
         "method": "getInitialBalance", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
+          "int256", 
           "int256", 
           "int256"
         ]
       }, 
-      "getMarketsInBranch": {
+      "getMarketIDsInBranch": {
         "inputs": [
-          "branch"
+          "branch", 
+          "initial", 
+          "last"
         ], 
-        "label": "Get Markets In Branch", 
-        "method": "getMarketsInBranch", 
+        "label": "Get Market I Ds In Branch", 
+        "method": "getMarketIDsInBranch", 
         "returns": "int256[]", 
         "signature": [
+          "int256", 
+          "int256", 
           "int256"
         ]
       }, 
@@ -1482,10 +1468,32 @@
           "int256"
         ]
       }, 
+      "getMostRecentChild": {
+        "inputs": [
+          "ID"
+        ], 
+        "label": "Get Most Recent Child", 
+        "method": "getMostRecentChild", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getNumBranches": {
         "label": "Get Num Branches", 
         "method": "getNumBranches", 
         "returns": "number"
+      }, 
+      "getNumCurrencies": {
+        "inputs": [
+          "branch"
+        ], 
+        "label": "Get Num Currencies", 
+        "method": "getNumCurrencies", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
       }, 
       "getNumMarketsBranch": {
         "inputs": [
@@ -1494,17 +1502,6 @@
         "label": "Get Num Markets Branch", 
         "method": "getNumMarketsBranch", 
         "returns": "number", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "getOracleOnly": {
-        "inputs": [
-          "branch"
-        ], 
-        "label": "Get Oracle Only", 
-        "method": "getOracleOnly", 
-        "returns": "int256", 
         "signature": [
           "int256"
         ]
@@ -1542,21 +1539,6 @@
           "int256"
         ]
       }, 
-      "getSomeMarketsInBranch": {
-        "inputs": [
-          "branch", 
-          "initial", 
-          "last"
-        ], 
-        "label": "Get Some Markets In Branch", 
-        "method": "getSomeMarketsInBranch", 
-        "returns": "int256[]", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
       "getVotePeriod": {
         "inputs": [
           "branch"
@@ -1580,21 +1562,19 @@
           "int256"
         ]
       }, 
-      "initDefaultBranch": {
-        "label": "Init Default Branch", 
-        "method": "initDefaultBranch", 
-        "returns": "number", 
-        "send": true
-      }, 
       "initializeBranch": {
+        "fixed": [
+          3
+        ], 
         "inputs": [
           "ID", 
           "currentVotePeriod", 
           "periodLength", 
-          "minTradingFee", 
-          "oracleOnly", 
+          "fxpMinTradingFee", 
           "parentPeriod", 
-          "parent"
+          "parent", 
+          "ethContract", 
+          "mostRecentChild"
         ], 
         "label": "Initialize Branch", 
         "method": "initializeBranch", 
@@ -1603,6 +1583,50 @@
         "signature": [
           "int256", 
           "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "reactivateCurrency": {
+        "inputs": [
+          "branch", 
+          "currency"
+        ], 
+        "label": "Reactivate Currency", 
+        "method": "reactivateCurrency", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "removeLastCurrency": {
+        "inputs": [
+          "branch"
+        ], 
+        "label": "Remove Last Currency", 
+        "method": "removeLastCurrency", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "replaceCurrency": {
+        "inputs": [
+          "branch", 
+          "oldCurrencyIndex", 
+          "newCurrency", 
+          "newRate", 
+          "newRateContract"
+        ], 
+        "label": "Replace Currency", 
+        "method": "replaceCurrency", 
+        "returns": "int256", 
+        "signature": [
           "int256", 
           "int256", 
           "int256", 
@@ -1622,6 +1646,17 @@
         "signature": [
           "int256", 
           "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
         ]
       }, 
       "setEventForkedOver": {
@@ -1654,253 +1689,301 @@
         "inputs": [
           "branch", 
           "period", 
-          "balance"
+          "balance", 
+          "currency"
         ], 
         "label": "Set Initial Balance", 
         "method": "setInitialBalance", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "send": true, 
         "signature": [
           "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setMostRecentChild": {
+        "inputs": [
+          "parent", 
+          "child"
+        ], 
+        "label": "Set Most Recent Child", 
+        "method": "setMostRecentChild", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "updateCurrencyRate": {
+        "inputs": [
+          "branch", 
+          "currency", 
+          "rate", 
+          "rateContract"
+        ], 
+        "label": "Update Currency Rate", 
+        "method": "updateCurrencyRate", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "updateNumCurrencies": {
+        "inputs": [
+          "branch", 
+          "num"
+        ], 
+        "label": "Update Num Currencies", 
+        "method": "updateNumCurrencies", 
+        "returns": "int256", 
+        "signature": [
           "int256", 
           "int256"
         ]
       }
     }, 
-    "BuyAndSellShares": {
-      "buy": {
-        "events": [
-          "log_add_tx"
-        ], 
-        "gas": 725202, 
+    "CancelOrder": {
+      "cancelOrder": {
         "inputs": [
-          "amount", 
-          "price", 
-          "market", 
-          "outcome", 
-          "minimumTradeSize", 
-          "tradeGroupID"
+          "sender", 
+          "orderID"
         ], 
-        "label": "Bid", 
-        "method": "buy", 
-        "mutable": true, 
+        "label": "Cancel Order", 
+        "method": "cancelOrder", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
+          "address", 
           "int256"
         ]
       }, 
-      "cancel": {
-        "events": [
-          "log_cancel"
-        ], 
-        "gas": 288060, 
+      "publicCancelOrder": {
         "inputs": [
-          "trade_id"
+          "orderID"
         ], 
-        "label": "Cancel", 
-        "method": "cancel", 
-        "mutable": true, 
-        "returns": "number", 
-        "send": true, 
+        "label": "Public Cancel Order", 
+        "method": "publicCancelOrder", 
+        "returns": "int256", 
         "signature": [
           "int256"
         ]
       }, 
-      "sell": {
-        "events": [
-          "log_add_tx"
+      "refundOrder": {
+        "fixed": [
+          2, 
+          3
         ], 
-        "gas": 696759, 
         "inputs": [
-          "amount", 
-          "price", 
+          "sender", 
+          "type", 
+          "fxpSharesEscrowed", 
+          "fxpMoneyEscrowed", 
           "market", 
-          "outcome", 
-          "minimumTradeSize", 
-          "isShortAsk", 
-          "tradeGroupID"
+          "outcome"
         ], 
-        "label": "Ask", 
-        "method": "sell", 
-        "mutable": true, 
+        "label": "Refund Order", 
+        "method": "refundOrder", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
+          "address", 
+          "uint256", 
+          "uint256", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
-      "shortAsk": {
-        "events": [
-          "completeSets_logReturn", 
-          "log_add_tx"
-        ], 
-        "gas": 1500000, 
+      "setController": {
         "inputs": [
-          "amount", 
-          "price", 
-          "market", 
-          "outcome", 
-          "minimumTradeSize", 
-          "tradeGroupID"
+          "newController"
         ], 
-        "label": "Short Ask", 
-        "method": "shortAsk", 
-        "mutable": true, 
+        "label": "Set Controller", 
+        "method": "setController", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
         ]
       }
     }, 
     "Cash": {
-      "addCash": {
-        "fixed": [
-          1
-        ], 
+      "allowance": {
         "inputs": [
-          "ID", 
-          "amount"
+          "owner", 
+          "spender"
         ], 
-        "label": "Add Cash", 
-        "method": "addCash", 
-        "returns": "number", 
-        "send": true, 
+        "label": "Allowance", 
+        "method": "allowance", 
+        "returns": "unfix", 
         "signature": [
-          "int256", 
-          "int256"
+          "address", 
+          "address"
         ]
       }, 
-      "balance": {
+      "approve": {
+        "events": [
+          "Approval"
+        ], 
+        "inputs": [
+          "spender", 
+          "value"
+        ], 
+        "label": "Approve", 
+        "method": "approve", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "balanceOf": {
         "inputs": [
           "address"
         ], 
-        "label": "Balance", 
-        "method": "balance", 
-        "returns": "unfix", 
+        "label": "Balance Of", 
+        "method": "balanceOf", 
+        "returns": "int256", 
         "signature": [
-          "int256"
+          "address"
         ]
       }, 
       "depositEther": {
-        "events": [
-          "deposit"
-        ], 
         "fixed": [
           1
+        ], 
+        "inputs": [
+          "sender"
         ], 
         "label": "Deposit Ether", 
         "method": "depositEther", 
         "returns": "number", 
-        "send": true
-      }, 
-      "initiateOwner": {
-        "inputs": [
-          "account"
-        ], 
-        "label": "Initiate Owner", 
-        "method": "initiateOwner", 
-        "returns": "number", 
         "send": true, 
         "signature": [
-          "int256"
+          "address"
         ]
       }, 
-      "send": {
-        "events": [
-          "sentCash"
-        ], 
-        "fixed": [
-          1
-        ], 
+      "getDecimals": {
+        "label": "Get Decimals", 
+        "method": "getDecimals", 
+        "returns": "int256"
+      }, 
+      "getInitiated": {
+        "label": "Get Initiated", 
+        "method": "getInitiated", 
+        "returns": "int256"
+      }, 
+      "getName": {
+        "label": "Get Name", 
+        "method": "getName", 
+        "returns": "int256"
+      }, 
+      "getSymbol": {
+        "label": "Get Symbol", 
+        "method": "getSymbol", 
+        "returns": "int256"
+      }, 
+      "publicDepositEther": {
+        "label": "Public Deposit Ether", 
+        "method": "publicDepositEther", 
+        "returns": "int256"
+      }, 
+      "publicWithdrawEther": {
         "inputs": [
-          "recver", 
+          "to", 
           "value"
         ], 
-        "label": "Send Tokens", 
-        "method": "send", 
-        "returns": "unfix", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "sendFrom": {
-        "fixed": [
-          1
-        ], 
-        "inputs": [
-          "recver", 
-          "value", 
-          "from"
-        ], 
-        "label": "Send Tokens", 
-        "method": "sendFrom", 
-        "returns": "unfix", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "setCash": {
-        "fixed": [
-          1
-        ], 
-        "inputs": [
-          "address", 
-          "balance"
-        ], 
-        "label": "Set Cash", 
-        "method": "setCash", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "subtractCash": {
-        "inputs": [
-          "ID", 
-          "amount"
-        ], 
-        "label": "Subtract Cash", 
-        "method": "subtractCash", 
+        "label": "Public Withdraw Ether", 
+        "method": "publicWithdrawEther", 
         "returns": "int256", 
         "signature": [
-          "int256", 
-          "int256"
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "totalSupply": {
+        "label": "Total Supply", 
+        "method": "totalSupply", 
+        "returns": "unfix"
+      }, 
+      "transfer": {
+        "inputs": [
+          "to", 
+          "value"
+        ], 
+        "label": "Transfer", 
+        "method": "transfer", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "transferFrom": {
+        "inputs": [
+          "from", 
+          "to", 
+          "value"
+        ], 
+        "label": "Transfer From", 
+        "method": "transferFrom", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "address", 
+          "uint256"
         ]
       }, 
       "withdrawEther": {
         "description": "Convert tradeable Ether token to Ether", 
-        "events": [
-          "withdraw"
-        ], 
         "fixed": [
           1
         ], 
         "inputs": [
+          "sender", 
           "to", 
           "value"
         ], 
@@ -1909,81 +1992,233 @@
         "returns": "number", 
         "send": true, 
         "signature": [
-          "int256", 
-          "int256"
+          "address", 
+          "address", 
+          "uint256"
         ]
       }
     }, 
-    "CloseMarket": {
-      "claimProceeds": {
-        "events": [
-          "payout"
-        ], 
+    "ClaimInitialRep": {
+      "claimInitialRep": {
         "inputs": [
-          "branch", 
-          "market"
+          "parent", 
+          "branch"
         ], 
-        "label": "Claim Trading Payout", 
-        "method": "claimProceeds", 
-        "returns": "number", 
-        "send": true, 
+        "label": "Claim Initial Rep", 
+        "method": "claimInitialRep", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256"
         ]
       }, 
-      "closeMarket": {
-        "events": [
-          "closedMarket"
-        ], 
+      "setController": {
         "inputs": [
-          "branch", 
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "ClaimProceeds": {
+      "claimProceeds": {
+        "inputs": [
+          "sender", 
+          "market"
+        ], 
+        "label": "Claim Proceeds", 
+        "method": "claimProceeds", 
+        "returns": "uint256", 
+        "signature": [
+          "address", 
+          "address"
+        ]
+      }, 
+      "publicClaimProceeds": {
+        "inputs": [
+          "market"
+        ], 
+        "label": "Public Claim Proceeds", 
+        "method": "publicClaimProceeds", 
+        "returns": "uint256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "CloseMarket": {
+      "internalCloseMarket": {
+        "inputs": [
           "market", 
           "sender"
         ], 
-        "label": "Close Market", 
-        "method": "closeMarket", 
-        "mutable": true, 
-        "returns": "number", 
-        "send": true, 
+        "label": "Internal Close Market", 
+        "method": "internalCloseMarket", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicCloseMarket": {
+        "inputs": [
+          "market", 
+          "sender"
+        ], 
+        "label": "Public Close Market", 
+        "method": "publicCloseMarket", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "CollectFees": {
+      "internalCollectFees": {
+        "inputs": [
+          "branch", 
+          "sender", 
+          "currency"
+        ], 
+        "label": "Internal Collect Fees", 
+        "method": "internalCollectFees", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
           "int256"
         ]
-      }
-    }, 
-    "CollectFees": {
-      "collectFees": {
-        "events": [
-          "collectedFees"
-        ], 
+      }, 
+      "internalCollectRep": {
         "inputs": [
           "branch", 
           "sender"
         ], 
-        "label": "Reporting Payment", 
-        "method": "collectFees", 
-        "returns": "number", 
-        "send": true, 
+        "label": "Internal Collect Rep", 
+        "method": "internalCollectRep", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256"
+        ]
+      }, 
+      "publicCollectFees": {
+        "inputs": [
+          "branch", 
+          "sender", 
+          "currency"
+        ], 
+        "label": "Public Collect Fees", 
+        "method": "publicCollectFees", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicCollectRep": {
+        "inputs": [
+          "branch", 
+          "sender"
+        ], 
+        "label": "Public Collect Rep", 
+        "method": "publicCollectRep", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
         ]
       }
     }, 
     "CompleteSets": {
       "buyCompleteSets": {
-        "events": [
-          "completeSets_logReturn"
-        ], 
         "fixed": [
           1
         ], 
         "gas": 698875, 
         "inputs": [
+          "sender", 
           "market", 
-          "amount"
+          "fxpAmount"
         ], 
         "label": "Buy Complete Sets", 
         "method": "buyCompleteSets", 
@@ -1991,21 +2226,52 @@
         "returns": "int256[]", 
         "send": true, 
         "signature": [
-          "int256", 
-          "int256"
+          "address", 
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "publicBuyCompleteSets": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "market", 
+          "fxpAmount"
+        ], 
+        "label": "Public Buy Complete Sets", 
+        "method": "publicBuyCompleteSets", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "publicSellCompleteSets": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "market", 
+          "fxpAmount"
+        ], 
+        "label": "Public Sell Complete Sets", 
+        "method": "publicSellCompleteSets", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "uint256"
         ]
       }, 
       "sellCompleteSets": {
-        "events": [
-          "completeSets_logReturn"
-        ], 
         "fixed": [
           1
         ], 
         "gas": 535220, 
         "inputs": [
+          "sender", 
           "market", 
-          "amount"
+          "fxpAmount"
         ], 
         "label": "Sell Complete Sets", 
         "method": "sellCompleteSets", 
@@ -2013,166 +2279,35 @@
         "returns": "int256[]", 
         "send": true, 
         "signature": [
-          "int256", 
-          "int256"
-        ]
-      }
-    }, 
-    "CompositeGetters": {
-      "batchGetMarketInfo": {
-        "inputs": [
-          "marketIDs", 
-          "account"
-        ], 
-        "label": "Batch Get Market Info", 
-        "method": "batchGetMarketInfo", 
-        "parser": "parseBatchMarketInfo",
-        "returns": "hash[]", 
-        "signature": [
-          "int256[]", 
-          "int256"
+          "address", 
+          "address", 
+          "uint256"
         ]
       }, 
-      "getAccountOrderBook": {
+      "setController": {
         "inputs": [
-          "marketID", 
-          "account"
+          "newController"
         ], 
-        "label": "Get Account Order Book", 
-        "method": "getAccountOrderBook", 
-        "returns": "int256[]", 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
         "signature": [
-          "int256", 
-          "int256"
+          "address"
         ]
       }, 
-      "getEventsWithSubmittedReport": {
+      "suicideFunds": {
         "inputs": [
-          "branch", 
-          "period", 
-          "reporter"
+          "to"
         ], 
-        "label": "Get Events With Submitted Report", 
-        "method": "getEventsWithSubmittedReport", 
-        "returns": "int256[]", 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getMarketCreatorFeesCollected": {
-        "inputs": [
-          "market"
-        ], 
-        "label": "Get Market Creator Fees Collected", 
-        "method": "getMarketCreatorFeesCollected", 
-        "returns": "unfix", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "getMarketInfo": {
-        "inputs": [
-          "marketID", 
-          "account"
-        ], 
-        "label": "Get Market Info", 
-        "method": "getMarketInfo", 
-        "parser": "parseMarketInfo", 
-        "returns": "hash[]", 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getMarketsCreatedByMarketCreator": {
-        "inputs": [
-          "branch", 
-          "creator", 
-          "initial", 
-          "last"
-        ], 
-        "label": "Get Markets Created By Market Creator", 
-        "method": "getMarketsCreatedByMarketCreator", 
-        "returns": "int256[]", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getMarketsInfo": {
-        "inputs": [
-          "branch", 
-          "offset", 
-          "numMarketsToLoad", 
-          "volumeMin", 
-          "volumeMax"
-        ], 
-        "label": "Get Markets Info", 
-        "method": "getMarketsInfo", 
-        "parser": "parseGetMarketsInfo", 
-        "returns": "hash[]", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getOrderBook": {
-        "inputs": [
-          "marketID", 
-          "offset", 
-          "numTradesToLoad"
-        ], 
-        "label": "Get Order Book", 
-        "method": "getOrderBook", 
-        "parser": "parseOrderBook", 
-        "returns": "hash[]", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getPositionInMarket": {
-        "inputs": [
-          "market", 
-          "account"
-        ], 
-        "label": "Get Position In Market", 
-        "method": "getPositionInMarket", 
-        "parser": "parsePositionInMarket", 
-        "returns": "int256[]", 
-        "signature": [
-          "int256", 
-          "int256"
+          "address"
         ]
       }
     }, 
     "Consensus": {
-      "incrementPeriodAfterReporting": {
-        "description": "Advance to the next Reporting cycle", 
-        "inputs": [
-          "branch"
-        ], 
-        "label": "Next Reporting Cycle", 
-        "method": "incrementPeriodAfterReporting", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
-          "int256"
-        ]
-      }, 
       "penalizeWrong": {
-        "events": [
-          "penalize", 
-          "closedMarket"
-        ], 
         "inputs": [
           "branch", 
           "event"
@@ -2186,9 +2321,45 @@
           "int256", 
           "int256"
         ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
       }
     }, 
     "ConsensusData": {
+      "decreaseDenominator": {
+        "inputs": [
+          "branch", 
+          "period", 
+          "amount"
+        ], 
+        "label": "Decrease Denominator", 
+        "method": "decreaseDenominator", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "doRefund": {
         "inputs": [
           "sender", 
@@ -2220,7 +2391,7 @@
         ], 
         "label": "Get Denominator", 
         "method": "getDenominator", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256"
@@ -2243,12 +2414,14 @@
         "inputs": [
           "branch", 
           "address", 
-          "period"
+          "period", 
+          "currency"
         ], 
         "label": "Get Fees Collected", 
         "method": "getFeesCollected", 
-        "returns": "number", 
+        "returns": "unfix", 
         "signature": [
+          "int256", 
           "int256", 
           "int256", 
           "int256"
@@ -2327,6 +2500,21 @@
           "int256"
         ]
       }, 
+      "getRepCollected": {
+        "inputs": [
+          "branch", 
+          "address", 
+          "period"
+        ], 
+        "label": "Get Rep Collected", 
+        "method": "getRepCollected", 
+        "returns": "unfix", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "getRepRedistributionDone": {
         "inputs": [
           "branch", 
@@ -2401,6 +2589,17 @@
           "int256"
         ]
       }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
       "setFeeFirst": {
         "inputs": [
           "branch", 
@@ -2421,13 +2620,15 @@
         "inputs": [
           "branch", 
           "address", 
-          "period"
+          "period", 
+          "currency"
         ], 
         "label": "Set Fees Collected", 
         "method": "setFeesCollected", 
         "returns": "int256", 
         "send": true, 
         "signature": [
+          "int256", 
           "int256", 
           "int256", 
           "int256"
@@ -2491,6 +2692,7 @@
         ], 
         "label": "Set Period Balance", 
         "method": "setPeriodBalance", 
+        "returns": "int256", 
         "send": true, 
         "signature": [
           "int256", 
@@ -2501,13 +2703,28 @@
       "setRefund": {
         "inputs": [
           "refunder", 
-          "amt"
+          "amount"
         ], 
         "label": "Set Refund", 
         "method": "setRefund", 
         "returns": "int256", 
         "send": true, 
         "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setRepCollected": {
+        "inputs": [
+          "branch", 
+          "address", 
+          "period"
+        ], 
+        "label": "Set Rep Collected", 
+        "method": "setRepCollected", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
           "int256", 
           "int256"
         ]
@@ -2527,21 +2744,173 @@
           "int256", 
           "int256"
         ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "Controller": {
+      "addToWhitelist": {
+        "inputs": [
+          "address"
+        ], 
+        "label": "Add To Whitelist", 
+        "method": "addToWhitelist", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "assertIsWhitelisted": {
+        "inputs": [
+          "address"
+        ], 
+        "label": "Assert Is Whitelisted", 
+        "method": "assertIsWhitelisted", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "lookup": {
+        "inputs": [
+          "key"
+        ], 
+        "label": "Lookup", 
+        "method": "lookup", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "ok": {
+        "label": "Ok", 
+        "method": "ok", 
+        "returns": "int256"
+      }, 
+      "setValue": {
+        "inputs": [
+          "key", 
+          "newValue"
+        ], 
+        "label": "Set Value", 
+        "method": "setValue", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }
+    }, 
+    "ConvertRep": {
+      "internalConvertToActiveRep": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "branch", 
+          "fxpValue"
+        ], 
+        "label": "Internal Convert To Active Rep", 
+        "method": "internalConvertToActiveRep", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "internalConvertToDormantRep": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "branch", 
+          "fxpValue"
+        ], 
+        "label": "Internal Convert To Dormant Rep", 
+        "method": "internalConvertToDormantRep", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicConvertToActiveRep": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "branch", 
+          "fxpValue"
+        ], 
+        "label": "Public Convert To Active Rep", 
+        "method": "publicConvertToActiveRep", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicConvertToDormantRep": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "branch", 
+          "fxpValue"
+        ], 
+        "label": "Public Convert To Dormant Rep", 
+        "method": "publicConvertToDormantRep", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
       }
     }, 
     "CreateBranch": {
-      "createSubbranch": {
+      "internalCreateSubbranch": {
+        "fixed": [
+          3
+        ], 
         "inputs": [
           "description", 
           "periodLength", 
           "parent", 
-          "minTradingFee", 
-          "oracleOnly"
+          "fxpMinTradingFee", 
+          "mostRecentChildBranch"
         ], 
-        "label": "Fork Reputation", 
-        "method": "createSubbranch", 
-        "returns": "hash", 
-        "send": true, 
+        "label": "Internal Create Subbranch", 
+        "method": "internalCreateSubbranch", 
+        "returns": "int256", 
         "signature": [
           "bytes", 
           "int256", 
@@ -2549,23 +2918,141 @@
           "int256", 
           "int256"
         ]
+      }, 
+      "publicCreateSubbranch": {
+        "fixed": [
+          3
+        ], 
+        "inputs": [
+          "description", 
+          "periodLength", 
+          "parent", 
+          "fxpMinTradingFee", 
+          "mostRecentChildBranch"
+        ], 
+        "label": "Public Create Subbranch", 
+        "method": "publicCreateSubbranch", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
       }
     }, 
-    "CreateMarket": {
-      "createEvent": {
+    "CreateEvent": {
+      "checkEventCreationPreconditions": {
+        "fixed": [
+          4, 
+          5
+        ], 
         "inputs": [
+          "branch", 
+          "periodLength", 
+          "description", 
+          "expDate", 
+          "fxpMinValue", 
+          "fxpMaxValue", 
+          "numOutcomes", 
+          "resolution", 
+          "resolutionAddress", 
+          "currency", 
+          "forkResolveAddress"
+        ], 
+        "label": "Check Event Creation Preconditions", 
+        "method": "checkEventCreationPreconditions", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "bytes", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "bytes", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "createEvent": {
+        "fixed": [
+          4, 
+          5
+        ], 
+        "inputs": [
+          "sender", 
           "branch", 
           "description", 
           "expDate", 
-          "minValue", 
-          "maxValue", 
+          "fxpMinValue", 
+          "fxpMaxValue", 
           "numOutcomes", 
-          "resolution"
+          "resolution", 
+          "resolutionAddress", 
+          "currency", 
+          "forkResolveAddress"
         ], 
         "label": "Create Event", 
         "method": "createEvent", 
         "returns": "int256", 
-        "send": true, 
+        "signature": [
+          "address", 
+          "int256", 
+          "bytes", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "bytes", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicCreateEvent": {
+        "fixed": [
+          3, 
+          4
+        ], 
+        "inputs": [
+          "branch", 
+          "description", 
+          "expDate", 
+          "fxpMinValue", 
+          "fxpMaxValue", 
+          "numOutcomes", 
+          "resolution", 
+          "resolutionAddress", 
+          "currency", 
+          "forkResolveAddress"
+        ], 
+        "label": "Public Create Event", 
+        "method": "publicCreateEvent", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "bytes", 
@@ -2573,164 +3060,295 @@
           "int256", 
           "int256", 
           "int256", 
-          "bytes"
+          "bytes", 
+          "int256", 
+          "int256", 
+          "int256"
         ]
       }, 
-      "createMarket": {
-        "events": [
-          "marketCreated"
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "CreateMarket": {
+      "checkMarketCreationPreconditions": {
+        "fixed": [
+          2
         ], 
         "inputs": [
           "branch", 
-          "tradingFee", 
+          "periodLength", 
+          "fxpTradingFee", 
+          "event", 
+          "expirationDate", 
+          "currency"
+        ], 
+        "label": "Check Market Creation Preconditions", 
+        "method": "checkMarketCreationPreconditions", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "createMarket": {
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "sender", 
+          "branch", 
+          "fxpTradingFee", 
           "event", 
           "tag1", 
           "tag2", 
           "tag3", 
-          "makerFees", 
-          "extraInfo"
+          "extraInfo", 
+          "currency", 
+          "marketDenominatedIn", 
+          "outcomeDenominatedIn"
         ], 
         "label": "Create Market", 
         "method": "createMarket", 
         "returns": "int256", 
         "send": true, 
         "signature": [
+          "address", 
           "int256", 
           "int256", 
           "int256", 
           "int256", 
           "int256", 
           "int256", 
+          "bytes", 
           "int256", 
-          "bytes"
+          "int256", 
+          "int256"
         ]
       }, 
-      "createSingleEventMarket": {
-        "events": [
-          "marketCreated"
+      "makeMarket": {
+        "fixed": [
+          2, 
+          8
         ], 
         "inputs": [
+          "sender", 
           "branch", 
-          "description", 
-          "expDate", 
-          "minValue", 
-          "maxValue", 
-          "numOutcomes", 
-          "resolution", 
-          "tradingFee", 
+          "fxpCreationFee", 
+          "market", 
+          "currency", 
+          "wallet", 
+          "event", 
+          "futurePeriod", 
+          "fxpTradingFee", 
           "tag1", 
           "tag2", 
           "tag3", 
-          "makerFees", 
-          "extraInfo"
+          "cumulativeScale", 
+          "numOutcomes", 
+          "extraInfo", 
+          "expirationDate", 
+          "shareContracts", 
+          "shareWallets", 
+          "marketDenominatedIn", 
+          "outcomeDenominatedIn"
         ], 
-        "label": "Create Market", 
-        "method": "createSingleEventMarket", 
+        "label": "Make Market", 
+        "method": "makeMarket", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
+          "address", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
           "int256", 
           "bytes", 
           "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "bytes", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "bytes"
-        ]
-      }, 
-      "pushMarketForward": {
-        "inputs": [
-          "branch", 
-          "market"
-        ], 
-        "label": "Push Market Forward", 
-        "method": "pushMarketForward", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
+          "int256[]", 
+          "int256[]", 
           "int256", 
           "int256"
         ]
       }, 
-      "updateTradingFee": {
-        "events": [
-          "tradingFeeUpdated"
+      "publicCreateMarket": {
+        "fixed": [
+          1
         ], 
         "inputs": [
           "branch", 
-          "market", 
-          "tradingFee", 
-          "makerFees"
+          "fxpTradingFee", 
+          "event", 
+          "tag1", 
+          "tag2", 
+          "tag3", 
+          "extraInfo", 
+          "currency", 
+          "marketDenominatedIn", 
+          "outcomeDenominatedIn"
         ], 
-        "label": "Update Trading Fee", 
-        "method": "updateTradingFee", 
-        "returns": "number", 
-        "send": true, 
+        "label": "Public Create Market", 
+        "method": "publicCreateMarket", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
           "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "bytes", 
+          "int256", 
+          "int256", 
           "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
         ]
       }
     }, 
-    "EventResolution": {
-      "determineWinningOutcomes": {
+    "DecreaseTradingFee": {
+      "decreaseTradingFee": {
+        "events": [
+          "DecreaseTradingFee"
+        ], 
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "sender", 
+          "market", 
+          "fxpTradingFee"
+        ], 
+        "label": "Decrease Trading Fee", 
+        "method": "decreaseTradingFee", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "publicDecreaseTradingFee": {
+        "events": [
+          "DecreaseTradingFee"
+        ], 
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "market", 
+          "fxpTradingFee"
+        ], 
+        "label": "Public Decrease Trading Fee", 
+        "method": "publicDecreaseTradingFee", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "EventBondResolution": {
+      "resolveEvent": {
         "inputs": [
           "event"
         ], 
-        "label": "Determine Winning Outcomes", 
-        "method": "determineWinningOutcomes", 
-        "returns": "int256[]", 
-        "send": true, 
+        "label": "Resolve Event", 
+        "method": "resolveEvent", 
+        "returns": "int256", 
         "signature": [
           "int256"
         ]
       }, 
-      "resolveBinary": {
+      "setController": {
         "inputs": [
-          "event", 
-          "market", 
-          "branch", 
-          "votingPeriodEvent"
+          "newController"
         ], 
-        "label": "Resolve Binary", 
-        "method": "resolveBinary", 
+        "label": "Set Controller", 
+        "method": "setController", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
+          "address"
         ]
       }, 
-      "resolveCategoricalOrScalar": {
+      "suicideFunds": {
         "inputs": [
-          "scaled_min", 
-          "scaled_max", 
-          "event", 
-          "market", 
-          "branch", 
-          "votingPeriodEvent"
+          "to"
         ], 
-        "label": "Resolve Categorical Or Scalar", 
-        "method": "resolveCategoricalOrScalar", 
-        "returns": "int256", 
-        "send": true, 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
+          "address"
         ]
       }
     }, 
@@ -2738,7 +3356,7 @@
       "addMarket": {
         "inputs": [
           "event", 
-          "marketID"
+          "market"
         ], 
         "label": "Add Market", 
         "method": "addMarket", 
@@ -2761,34 +3379,56 @@
           "int256"
         ]
       }, 
+      "addReportersPaidSoFar": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Add Reporters Paid So Far", 
+        "method": "addReportersPaidSoFar", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getBond": {
         "inputs": [
           "event"
         ], 
         "label": "Get Bond", 
         "method": "getBond", 
+        "returns": "unfix", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getChallenged": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get Challenged", 
+        "method": "getChallenged", 
         "returns": "int256", 
         "signature": [
           "int256"
         ]
       }, 
-      "getBranch": {
+      "getCreationTime": {
         "inputs": [
           "event"
         ], 
-        "label": "Get Branch", 
-        "method": "getBranch", 
+        "label": "Get Creation Time", 
+        "method": "getCreationTime", 
         "returns": "int256", 
         "signature": [
           "int256"
         ]
       }, 
-      "getEthical": {
+      "getEarlyResolutionBond": {
         "inputs": [
           "event"
         ], 
-        "label": "Get Ethical", 
-        "method": "getEthical", 
+        "label": "Get Early Resolution Bond", 
+        "method": "getEarlyResolutionBond", 
         "returns": "int256", 
         "signature": [
           "int256"
@@ -2800,7 +3440,7 @@
         ], 
         "label": "Get Ethics", 
         "method": "getEthics", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -2839,6 +3479,28 @@
           "int256"
         ]
       }, 
+      "getEventResolution": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get Event Resolution", 
+        "method": "getEventResolution", 
+        "returns": "string", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getEventType": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get Event Type", 
+        "method": "getEventType", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getExpiration": {
         "inputs": [
           "event"
@@ -2850,13 +3512,46 @@
           "int256"
         ]
       }, 
+      "getExtraBond": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get Extra Bond", 
+        "method": "getExtraBond", 
+        "returns": "unfix", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getExtraBondPoster": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get Extra Bond Poster", 
+        "method": "getExtraBondPoster", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getFirstPreliminaryOutcome": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get First Preliminary Outcome", 
+        "method": "getFirstPreliminaryOutcome", 
+        "returns": "unfix", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getForkEthicality": {
         "inputs": [
           "event"
         ], 
         "label": "Get Fork Ethicality", 
         "method": "getForkEthicality", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -2867,6 +3562,17 @@
         ], 
         "label": "Get Fork Outcome", 
         "method": "getForkOutcome", 
+        "returns": "unfix", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getForkResolveAddress": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get Fork Resolve Address", 
+        "method": "getForkResolveAddress", 
         "returns": "int256", 
         "signature": [
           "int256"
@@ -2940,6 +3646,17 @@
           "int256"
         ]
       }, 
+      "getMode": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get Mode", 
+        "method": "getMode", 
+        "returns": "unfix", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getNumMarkets": {
         "inputs": [
           "event"
@@ -2979,7 +3696,7 @@
         ], 
         "label": "Get Outcome", 
         "method": "getOutcome", 
-        "returns": "number", 
+        "returns": "unfix", 
         "signature": [
           "int256"
         ]
@@ -3017,6 +3734,17 @@
           "int256"
         ]
       }, 
+      "getReportersPaidSoFar": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get Reporters Paid So Far", 
+        "method": "getReportersPaidSoFar", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getReportingThreshold": {
         "inputs": [
           "event"
@@ -3028,13 +3756,13 @@
           "int256"
         ]
       }, 
-      "getResolution": {
+      "getResolutionAddress": {
         "inputs": [
           "event"
         ], 
-        "label": "Get Resolution", 
-        "method": "getResolution", 
-        "returns": "string", 
+        "label": "Get Resolution Address", 
+        "method": "getResolutionAddress", 
+        "returns": "int256", 
         "signature": [
           "int256"
         ]
@@ -3050,37 +3778,44 @@
           "int256"
         ]
       }, 
+      "getResolveBondPoster": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Get Resolve Bond Poster", 
+        "method": "getResolveBondPoster", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getUncaughtOutcome": {
         "inputs": [
           "event"
         ], 
         "label": "Get Uncaught Outcome", 
         "method": "getUncaughtOutcome", 
-        "returns": "number", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "getmode": {
-        "inputs": [
-          "event"
-        ], 
-        "label": "Getmode", 
-        "method": "getmode", 
         "returns": "unfix", 
         "signature": [
           "int256"
         ]
       }, 
       "initializeEvent": {
+        "fixed": [
+          3, 
+          4
+        ], 
         "inputs": [
-          "ID", 
+          "id", 
           "branch", 
           "expirationDate", 
-          "minValue", 
-          "maxValue", 
+          "fxpMinValue", 
+          "fxpMaxValue", 
           "numOutcomes", 
-          "resolution"
+          "resolution", 
+          "resolutionAddress", 
+          "resolveBondPoster", 
+          "forkResolveAddress"
         ], 
         "label": "Initialize Event", 
         "method": "initializeEvent", 
@@ -3093,7 +3828,10 @@
           "int256", 
           "int256", 
           "int256", 
-          "bytes"
+          "bytes", 
+          "int256", 
+          "int256", 
+          "int256"
         ]
       }, 
       "setBond": {
@@ -3119,6 +3857,52 @@
         "method": "setBranch", 
         "returns": "int256", 
         "send": true, 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setChallenged": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Set Challenged", 
+        "method": "setChallenged", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "setCreationTime": {
+        "inputs": [
+          "event"
+        ], 
+        "label": "Set Creation Time", 
+        "method": "setCreationTime", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "setEarlyResolutionBond": {
+        "inputs": [
+          "event", 
+          "bond"
+        ], 
+        "label": "Set Early Resolution Bond", 
+        "method": "setEarlyResolutionBond", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256"
@@ -3161,6 +3945,45 @@
         "method": "setExpiration", 
         "returns": "int256", 
         "send": true, 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setExtraBond": {
+        "inputs": [
+          "event", 
+          "extraBond"
+        ], 
+        "label": "Set Extra Bond", 
+        "method": "setExtraBond", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setExtraBondPoster": {
+        "inputs": [
+          "event", 
+          "poster"
+        ], 
+        "label": "Set Extra Bond Poster", 
+        "method": "setExtraBondPoster", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setFirstPreliminaryOutcome": {
+        "inputs": [
+          "event", 
+          "outcome"
+        ], 
+        "label": "Set First Preliminary Outcome", 
+        "method": "setFirstPreliminaryOutcome", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256"
@@ -3215,6 +4038,19 @@
         "returns": "int256", 
         "send": true, 
         "signature": [
+          "int256"
+        ]
+      }, 
+      "setMode": {
+        "inputs": [
+          "event", 
+          "mode"
+        ], 
+        "label": "Set Mode", 
+        "method": "setMode", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
           "int256"
         ]
       }, 
@@ -3288,18 +4124,14 @@
           "int256"
         ]
       }, 
-      "setmode": {
+      "suicideFunds": {
         "inputs": [
-          "event", 
-          "mode"
+          "to"
         ], 
-        "label": "Setmode", 
-        "method": "setmode", 
-        "returns": "int256", 
-        "send": true, 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
         "signature": [
-          "int256", 
-          "int256"
+          "address"
         ]
       }
     }, 
@@ -3308,8 +4140,11 @@
         "inputs": [
           "branch", 
           "futurePeriod", 
-          "eventID", 
-          "subsidy"
+          "event", 
+          "subsidy", 
+          "currency", 
+          "wallet", 
+          "afterFork"
         ], 
         "label": "Add Event", 
         "method": "addEvent", 
@@ -3319,55 +4154,23 @@
           "int256", 
           "int256", 
           "int256", 
-          "int256"
-        ]
-      }, 
-      "addRepEvent": {
-        "inputs": [
-          "branch", 
-          "votePeriod", 
-          "event", 
-          "amount"
-        ], 
-        "label": "Add Rep Event", 
-        "method": "addRepEvent", 
-        "returns": "int256", 
-        "send": true, 
-        "signature": [
           "int256", 
           "int256", 
           "int256", 
           "int256"
         ]
       }, 
-      "addReportToEvent": {
+      "addReportToReportsSubmitted": {
         "inputs": [
           "branch", 
-          "votePeriod", 
-          "eventID", 
-          "sender"
+          "period", 
+          "user"
         ], 
-        "label": "Add Report To Event", 
-        "method": "addReportToEvent", 
+        "label": "Add Report To Reports Submitted", 
+        "method": "addReportToReportsSubmitted", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
           "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "addReportersPaidSoFar": {
-        "inputs": [
-          "branch", 
-          "event"
-        ], 
-        "label": "Add Reporters Paid So Far", 
-        "method": "addReportersPaidSoFar", 
-        "returns": "int256", 
-        "send": true, 
-        "signature": [
           "int256", 
           "int256"
         ]
@@ -3404,17 +4207,35 @@
           "int256"
         ]
       }, 
-      "adjustPeriodShareValueOutstanding": {
+      "adjustPeriodFeeValue": {
         "inputs": [
           "branch", 
           "expIndex", 
           "amount"
         ], 
-        "label": "Adjust Period Share Value Outstanding", 
-        "method": "adjustPeriodShareValueOutstanding", 
+        "label": "Adjust Period Fee Value", 
+        "method": "adjustPeriodFeeValue", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "countReportAsSubmitted": {
+        "inputs": [
+          "branch", 
+          "votePeriod", 
+          "event", 
+          "sender", 
+          "weight"
+        ], 
+        "label": "Count Report As Submitted", 
+        "method": "countReportAsSubmitted", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
           "int256", 
           "int256", 
           "int256"
@@ -3432,6 +4253,36 @@
         "send": true, 
         "signature": [
           "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getActiveReporters": {
+        "inputs": [
+          "branch", 
+          "period", 
+          "from", 
+          "to"
+        ], 
+        "label": "Get Active Reporters", 
+        "method": "getActiveReporters", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getAfterFork": {
+        "inputs": [
+          "branch", 
+          "votePeriod"
+        ], 
+        "label": "Get After Fork", 
+        "method": "getAfterFork", 
+        "returns": "int256", 
+        "signature": [
           "int256", 
           "int256"
         ]
@@ -3473,7 +4324,7 @@
         ], 
         "label": "Get Current Mode", 
         "method": "getCurrentMode", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256"
@@ -3488,23 +4339,6 @@
         "method": "getCurrentModeItems", 
         "returns": "int256", 
         "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getEncryptedReport": {
-        "inputs": [
-          "branch", 
-          "expDateIndex", 
-          "reporter", 
-          "event"
-        ], 
-        "label": "Get Encrypted Report", 
-        "method": "getEncryptedReport", 
-        "returns": "int256[]", 
-        "signature": [
-          "int256", 
-          "int256", 
           "int256", 
           "int256"
         ]
@@ -3529,7 +4363,7 @@
       "getEvent": {
         "inputs": [
           "branch", 
-          "expDateIndex", 
+          "period", 
           "eventIndex"
         ], 
         "label": "Get Event", 
@@ -3543,13 +4377,30 @@
       }, 
       "getEventIndex": {
         "inputs": [
+          "branch", 
           "period", 
-          "eventID"
+          "event"
         ], 
         "label": "Get Event Index", 
         "method": "getEventIndex", 
         "returns": "number", 
         "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getEventWeight": {
+        "inputs": [
+          "branch", 
+          "votePeriod", 
+          "event"
+        ], 
+        "label": "Get Event Weight", 
+        "method": "getEventWeight", 
+        "returns": "unfix", 
+        "signature": [
+          "int256", 
           "int256", 
           "int256"
         ]
@@ -3557,7 +4408,7 @@
       "getEvents": {
         "inputs": [
           "branch", 
-          "expDateIndex"
+          "period"
         ], 
         "label": "Get Events", 
         "method": "getEvents", 
@@ -3570,7 +4421,7 @@
       "getEventsRange": {
         "inputs": [
           "branch", 
-          "expDateIndex", 
+          "period", 
           "start", 
           "end"
         ], 
@@ -3580,6 +4431,19 @@
         "signature": [
           "int256", 
           "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getFeeValue": {
+        "inputs": [
+          "branch", 
+          "expIndex"
+        ], 
+        "label": "Get Fee Value", 
+        "method": "getFeeValue", 
+        "returns": "int256", 
+        "signature": [
           "int256", 
           "int256"
         ]
@@ -3599,10 +4463,23 @@
           "int256"
         ]
       }, 
+      "getNumActiveReporters": {
+        "inputs": [
+          "branch", 
+          "period"
+        ], 
+        "label": "Get Num Active Reporters", 
+        "method": "getNumActiveReporters", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
       "getNumEventsToReportOn": {
         "inputs": [
           "branch", 
-          "expDateIndex"
+          "period"
         ], 
         "label": "Get Num Events To Report On", 
         "method": "getNumEventsToReportOn", 
@@ -3625,30 +4502,15 @@
           "int256"
         ]
       }, 
-      "getNumReportsActual": {
+      "getNumReportsSubmitted": {
         "inputs": [
           "branch", 
           "votePeriod", 
           "sender"
         ], 
-        "label": "Get Num Reports Actual", 
-        "method": "getNumReportsActual", 
-        "returns": "number", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getNumReportsEvent": {
-        "inputs": [
-          "branch", 
-          "votePeriod", 
-          "eventID"
-        ], 
-        "label": "Get Num Reports Event", 
-        "method": "getNumReportsEvent", 
-        "returns": "number", 
+        "label": "Get Num Reports Submitted", 
+        "method": "getNumReportsSubmitted", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
@@ -3684,7 +4546,7 @@
       "getNumberEvents": {
         "inputs": [
           "branch", 
-          "expDateIndex"
+          "period"
         ], 
         "label": "Get Number Events", 
         "method": "getNumberEvents", 
@@ -3702,21 +4564,6 @@
         ], 
         "label": "Get Period Dormant Rep", 
         "method": "getPeriodDormantRep", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getPeriodRepConstant": {
-        "inputs": [
-          "branch", 
-          "votePeriod", 
-          "sender"
-        ], 
-        "label": "Get Period Rep Constant", 
-        "method": "getPeriodRepConstant", 
         "returns": "unfix", 
         "signature": [
           "int256", 
@@ -3724,15 +4571,15 @@
           "int256"
         ]
       }, 
-      "getRepEvent": {
+      "getPeriodRepWeight": {
         "inputs": [
           "branch", 
           "votePeriod", 
-          "event"
+          "sender"
         ], 
-        "label": "Get Rep Event", 
-        "method": "getRepEvent", 
-        "returns": "int256", 
+        "label": "Get Period Rep Weight", 
+        "method": "getPeriodRepWeight", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
@@ -3748,64 +4595,25 @@
         ], 
         "label": "Get Report", 
         "method": "getReport", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getReportHash": {
-        "inputs": [
-          "branch", 
-          "expDateIndex", 
-          "reporter", 
-          "event"
-        ], 
-        "label": "Get Report Hash", 
-        "method": "getReportHash", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getReportersPaidSoFar": {
-        "inputs": [
-          "branch", 
-          "event"
-        ], 
-        "label": "Get Reporters Paid So Far", 
-        "method": "getReportersPaidSoFar", 
-        "returns": "int256", 
-        "signature": [
           "int256", 
           "int256"
         ]
       }, 
       "getRequired": {
         "inputs": [
-          "event"
+          "event", 
+          "period", 
+          "branch"
         ], 
         "label": "Get Required", 
         "method": "getRequired", 
         "returns": "int256", 
         "signature": [
-          "int256"
-        ]
-      }, 
-      "getShareValue": {
-        "inputs": [
-          "branch", 
-          "expIndex"
-        ], 
-        "label": "Get Share Value", 
-        "method": "getShareValue", 
-        "returns": "int256", 
-        "signature": [
+          "int256", 
           "int256", 
           "int256"
         ]
@@ -3818,7 +4626,7 @@
         ], 
         "label": "Get Subsidy", 
         "method": "getSubsidy", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
@@ -3833,7 +4641,7 @@
         ], 
         "label": "Get Weight Of Report", 
         "method": "getWeightOfReport", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
@@ -3857,13 +4665,17 @@
       "refundCost": {
         "inputs": [
           "to", 
-          "value"
+          "branch", 
+          "period", 
+          "event"
         ], 
         "label": "Refund Cost", 
         "method": "refundCost", 
         "returns": "int256", 
         "send": true, 
         "signature": [
+          "int256", 
+          "int256", 
           "int256", 
           "int256"
         ]
@@ -3891,7 +4703,7 @@
         ], 
         "label": "Set After Rep", 
         "method": "setAfterRep", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "send": true, 
         "signature": [
           "int256", 
@@ -3909,13 +4721,24 @@
         ], 
         "label": "Set Before Rep", 
         "method": "setBeforeRep", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "send": true, 
         "signature": [
           "int256", 
           "int256", 
           "int256", 
           "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
         ]
       }, 
       "setCurrentMode": {
@@ -3945,30 +4768,6 @@
         "returns": "int256", 
         "send": true, 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "setEncryptedReport": {
-        "inputs": [
-          "branch", 
-          "expDateIndex", 
-          "reporter", 
-          "report", 
-          "salt", 
-          "ethics", 
-          "event"
-        ], 
-        "label": "Set Encrypted Report", 
-        "method": "setEncryptedReport", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
           "int256", 
           "int256", 
           "int256"
@@ -4010,6 +4809,23 @@
           "int256"
         ]
       }, 
+      "setEventWeight": {
+        "inputs": [
+          "branch", 
+          "votePeriod", 
+          "event", 
+          "num"
+        ], 
+        "label": "Set Event Weight", 
+        "method": "setEventWeight", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "setLesserReportNum": {
         "inputs": [
           "branch", 
@@ -4040,24 +4856,6 @@
           "int256"
         ]
       }, 
-      "setNumReportsEvent": {
-        "inputs": [
-          "branch", 
-          "votePeriod", 
-          "eventID", 
-          "num"
-        ], 
-        "label": "Set Num Reports Event", 
-        "method": "setNumReportsEvent", 
-        "returns": "int256", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
       "setPeriodDormantRep": {
         "inputs": [
           "branch", 
@@ -4067,7 +4865,7 @@
         ], 
         "label": "Set Period Dormant Rep", 
         "method": "setPeriodDormantRep", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "send": true, 
         "signature": [
           "int256", 
@@ -4076,17 +4874,16 @@
           "int256"
         ]
       }, 
-      "setPeriodRepConstant": {
+      "setPeriodRepWeight": {
         "inputs": [
           "branch", 
           "votePeriod", 
           "sender", 
           "value"
         ], 
-        "label": "Set Period Rep Constant", 
-        "method": "setPeriodRepConstant", 
+        "label": "Set Period Rep Weight", 
+        "method": "setPeriodRepWeight", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -4114,74 +4911,14 @@
           "int256"
         ]
       }, 
-      "setReportHash": {
+      "suicideFunds": {
         "inputs": [
-          "branch", 
-          "expDateIndex", 
-          "reporter", 
-          "reportHash", 
-          "event"
+          "to"
         ], 
-        "label": "Set Report Hash", 
-        "method": "setReportHash", 
-        "returns": "int256", 
-        "send": true, 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }
-    }, 
-    "Faucets": {
-      "cashFaucet": {
-        "label": "Cash Faucet", 
-        "method": "cashFaucet", 
-        "returns": "number", 
-        "send": true
-      }, 
-      "claimInitialRep": {
-        "inputs": [
-          "parent", 
-          "branch"
-        ], 
-        "label": "Claim Initial Rep", 
-        "method": "claimInitialRep", 
-        "returns": "int256", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "fundNewAccount": {
-        "events": [
-          "sentCash", 
-          "fundedAccount"
-        ], 
-        "inputs": [
-          "branch"
-        ], 
-        "label": "Fund Account", 
-        "method": "fundNewAccount", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "reputationFaucet": {
-        "inputs": [
-          "branch"
-        ], 
-        "label": "Reputation Faucet", 
-        "method": "reputationFaucet", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
-          "int256"
+          "address"
         ]
       }
     }, 
@@ -4200,19 +4937,29 @@
           "int256"
         ]
       }, 
-      "proportionCorrectForkEvent": {
+      "setController": {
         "inputs": [
-          "event"
+          "newController"
         ], 
-        "label": "Proportion Correct Fork Event", 
-        "method": "proportionCorrectForkEvent", 
-        "returns": "unfix", 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
         "signature": [
-          "int256"
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
         ]
       }
     }, 
-    "Forking": {
+    "ForkResolution": {
       "exchangeRate": {
         "inputs": [
           "branch"
@@ -4224,12 +4971,52 @@
           "int256"
         ]
       }, 
-      "fork": {
-        "events": [
-          "Transfer", 
-          "penalizationCaughtUp", 
-          "collectedFees"
+      "internalResolveFork": {
+        "inputs": [
+          "branch"
         ], 
+        "label": "Internal Resolve Fork", 
+        "method": "internalResolveFork", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "publicResolveFork": {
+        "inputs": [
+          "branch"
+        ], 
+        "label": "Public Resolve Fork", 
+        "method": "publicResolveFork", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "Forking": {
+      "fork": {
         "inputs": [
           "event", 
           "branch", 
@@ -4245,91 +5032,115 @@
           "int256"
         ]
       }, 
-      "move_event": {
+      "setController": {
         "inputs": [
-          "event"
+          "newController"
         ], 
-        "label": "Move event", 
-        "method": "move_event", 
+        "label": "Set Controller", 
+        "method": "setController", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
-          "int256"
+          "address"
         ]
       }, 
-      "resolveForkEvent": {
+      "suicideFunds": {
         "inputs": [
-          "branch", 
-          "event"
+          "to"
         ], 
-        "label": "Resolve Fork Event", 
-        "method": "resolveForkEvent", 
-        "returns": "int256", 
-        "send": true, 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
         "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "resolveForkedEvent": {
-        "inputs": [
-          "branch", 
-          "event"
-        ], 
-        "label": "Resolve Forked Event", 
-        "method": "resolveForkedEvent", 
-        "returns": "int256", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "resolve_fork": {
-        "inputs": [
-          "branch"
-        ], 
-        "label": "Resolve fork", 
-        "method": "resolve_fork", 
-        "returns": "int256", 
-        "send": true, 
-        "signature": [
-          "int256"
+          "address"
         ]
       }
     }, 
     "FxpFunctions": {
-      "fx_exp": {
+      "fxExp": {
         "inputs": [
           "x"
         ], 
-        "label": "Fx exp", 
-        "method": "fx_exp", 
+        "label": "Fx Exp", 
+        "method": "fxExp", 
         "returns": "int256", 
         "signature": [
           "int256"
         ]
       }, 
-      "fx_log": {
+      "fxLog": {
         "inputs": [
           "x"
         ], 
-        "label": "Fx log", 
-        "method": "fx_log", 
+        "label": "Fx Log", 
+        "method": "fxLog", 
         "returns": "int256", 
         "signature": [
           "int256"
         ]
       }, 
-      "sqrt": {
+      "setController": {
         "inputs": [
-          "n"
+          "newController"
         ], 
-        "label": "Sqrt", 
-        "method": "sqrt", 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "IncrementPeriod": {
+      "internalIncrementPeriodAfterReporting": {
+        "inputs": [
+          "branch"
+        ], 
+        "label": "Internal Increment Period After Reporting", 
+        "method": "internalIncrementPeriodAfterReporting", 
         "returns": "int256", 
         "signature": [
           "int256"
+        ]
+      }, 
+      "publicIncrementPeriodAfterReporting": {
+        "inputs": [
+          "branch"
+        ], 
+        "label": "Public Increment Period After Reporting", 
+        "method": "publicIncrementPeriodAfterReporting", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
         ]
       }
     }, 
@@ -4356,6 +5167,17 @@
           "int256"
         ]
       }, 
+      "getCurrency": {
+        "inputs": [
+          "ID"
+        ], 
+        "label": "Get Currency", 
+        "method": "getCurrency", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getDescription": {
         "inputs": [
           "ID"
@@ -4378,12 +5200,54 @@
           "int256"
         ]
       }, 
+      "getWallet": {
+        "inputs": [
+          "ID"
+        ], 
+        "label": "Get Wallet", 
+        "method": "getWallet", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "setCurrencyAndWallet": {
+        "inputs": [
+          "ID", 
+          "currency", 
+          "wallet"
+        ], 
+        "label": "Set Currency And Wallet", 
+        "method": "setCurrencyAndWallet", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "setInfo": {
+        "fixed": [
+          3
+        ], 
         "inputs": [
           "ID", 
           "description", 
           "creator", 
-          "fee"
+          "fxpFee", 
+          "currency", 
+          "wallet"
         ], 
         "label": "Set Info", 
         "method": "setInfo", 
@@ -4393,42 +5257,163 @@
           "int256", 
           "bytes", 
           "int256", 
-          "int256"
-        ]
-      }
-    }, 
-    "LogReturn": {}, 
-    "MakeReports": {
-      "makeHash": {
-        "inputs": [
-          "salt", 
-          "report", 
-          "eventID", 
-          "sender"
-        ], 
-        "label": "Make Hash", 
-        "method": "makeHash", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
           "int256", 
           "int256", 
           "int256"
         ]
       }, 
-      "submitReport": {
-        "events": [
-          "penalizationCaughtUp", 
-          "submittedReportHash"
+      "suicideFunds": {
+        "inputs": [
+          "to"
         ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "MakeOrder": {
+      "makeOrder": {
+        "fixed": [
+          2, 
+          3
+        ], 
+        "inputs": [
+          "sender", 
+          "type", 
+          "fxpAmount", 
+          "fxpPrice", 
+          "market", 
+          "outcome", 
+          "tradeGroupID"
+        ], 
+        "label": "Make Order", 
+        "method": "makeOrder", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "uint256", 
+          "uint256", 
+          "int256", 
+          "address", 
+          "uint256", 
+          "int256"
+        ]
+      }, 
+      "placeAsk": {
+        "fixed": [
+          1, 
+          2
+        ], 
+        "inputs": [
+          "sender", 
+          "fxpAmount", 
+          "fxpPrice", 
+          "market", 
+          "outcome"
+        ], 
+        "label": "Place Ask", 
+        "method": "placeAsk", 
+        "returns": "int256[]", 
+        "signature": [
+          "address", 
+          "uint256", 
+          "int256", 
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "placeBid": {
+        "fixed": [
+          1, 
+          2
+        ], 
+        "inputs": [
+          "sender", 
+          "fxpAmount", 
+          "fxpPrice", 
+          "market", 
+          "outcome"
+        ], 
+        "label": "Place Bid", 
+        "method": "placeBid", 
+        "returns": "int256[]", 
+        "signature": [
+          "address", 
+          "uint256", 
+          "int256", 
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "publicMakeOrder": {
+        "fixed": [
+          1, 
+          2
+        ], 
+        "inputs": [
+          "type", 
+          "fxpAmount", 
+          "fxpPrice", 
+          "market", 
+          "outcome", 
+          "tradeGroupID"
+        ], 
+        "label": "Public Make Order", 
+        "method": "publicMakeOrder", 
+        "returns": "int256", 
+        "signature": [
+          "uint256", 
+          "uint256", 
+          "int256", 
+          "address", 
+          "uint256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "MakeReports": {
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "submitReport": {
         "fixed": [
           3
         ], 
         "inputs": [
           "event", 
-          "salt", 
-          "report", 
-          "ethics"
+          "fxpReport", 
+          "fxpEthics"
         ], 
         "label": "Reveal Report", 
         "method": "submitReport", 
@@ -4438,69 +5423,28 @@
         "signature": [
           "int256", 
           "int256", 
-          "int256", 
           "int256"
         ]
       }, 
-      "submitReportHash": {
-        "events": [
-          "penalizationCaughtUp", 
-          "submittedReportHash"
-        ], 
+      "suicideFunds": {
         "inputs": [
-          "event", 
-          "reportHash", 
-          "encryptedReport", 
-          "encryptedSalt", 
-          "ethics"
+          "to"
         ], 
-        "label": "Commit Report", 
-        "method": "submitReportHash", 
-        "returns": "number", 
-        "send": true, 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "validateReport": {
-        "fixed": [
-          3, 
-          7
-        ], 
-        "inputs": [
-          "eventID", 
-          "branch", 
-          "votePeriod", 
-          "report", 
-          "forkedOverEthicality", 
-          "forkedOverThisEvent", 
-          "roundTwo", 
-          "balance"
-        ], 
-        "label": "Validate Report", 
-        "method": "validateReport", 
-        "returns": "number", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
+          "address"
         ]
       }
     }, 
     "Markets": {
       "addFees": {
+        "fixed": [
+          1
+        ], 
         "inputs": [
           "market", 
-          "amount"
+          "fxpAmount"
         ], 
         "label": "Add Fees", 
         "method": "addFees", 
@@ -4511,18 +5455,15 @@
           "int256"
         ]
       }, 
-      "addTrade": {
+      "addToMarketsHash": {
         "inputs": [
-          "market", 
-          "trade_id", 
-          "last_id"
+          "branch", 
+          "newHash"
         ], 
-        "label": "Add Trade", 
-        "method": "addTrade", 
+        "label": "Add To Markets Hash", 
+        "method": "addToMarketsHash", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
-          "int256", 
           "int256", 
           "int256"
         ]
@@ -4538,45 +5479,23 @@
           "int256"
         ]
       }, 
-      "getBranchID": {
+      "getBranch": {
         "inputs": [
           "market"
         ], 
-        "label": "Get Branch ID", 
-        "method": "getBranchID", 
-        "returns": "hash", 
+        "label": "Get Branch", 
+        "method": "getBranch", 
+        "returns": "int256", 
         "signature": [
           "int256"
         ]
       }, 
-      "getCreationBlock": {
+      "getCumulativeScale": {
         "inputs": [
           "market"
         ], 
-        "label": "Get Creation Block", 
-        "method": "getCreationBlock", 
-        "returns": "number", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "getCreationTime": {
-        "inputs": [
-          "market"
-        ], 
-        "label": "Get Creation Time", 
-        "method": "getCreationTime", 
-        "returns": "number", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "getCumScale": {
-        "inputs": [
-          "market"
-        ], 
-        "label": "Get Cum Scale", 
-        "method": "getCumScale", 
+        "label": "Get Cumulative Scale", 
+        "method": "getCumulativeScale", 
         "returns": "unfix", 
         "signature": [
           "int256"
@@ -4615,6 +5534,17 @@
           "int256"
         ]
       }, 
+      "getGasSubsidy": {
+        "inputs": [
+          "market"
+        ], 
+        "label": "Get Gas Subsidy", 
+        "method": "getGasSubsidy", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getLastExpDate": {
         "inputs": [
           "market"
@@ -4626,61 +5556,13 @@
           "int256"
         ]
       }, 
-      "getLastOutcomePrice": {
-        "inputs": [
-          "market", 
-          "outcome"
-        ], 
-        "label": "Get Last Outcome Price", 
-        "method": "getLastOutcomePrice", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getLastTrade": {
-        "inputs": [
-          "market"
-        ], 
-        "label": "Get Last Trade", 
-        "method": "getLastTrade", 
-        "returns": "int256", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "getMakerFees": {
-        "inputs": [
-          "market"
-        ], 
-        "label": "Get Maker Fees", 
-        "method": "getMakerFees", 
-        "returns": "unfix", 
-        "signature": [
-          "int256"
-        ]
-      }, 
       "getMarketEvent": {
         "inputs": [
-          "market", 
-          "index"
+          "market"
         ], 
         "label": "Get Market Event", 
         "method": "getMarketEvent", 
         "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getMarketEvents": {
-        "inputs": [
-          "market"
-        ], 
-        "label": "Get Market Events", 
-        "method": "getMarketEvents", 
-        "returns": "int256[]", 
         "signature": [
           "int256"
         ]
@@ -4696,27 +5578,36 @@
           "int256"
         ]
       }, 
-      "getNumEvents": {
+      "getMarketResolved": {
         "inputs": [
           "market"
         ], 
-        "label": "Get Num Events", 
-        "method": "getNumEvents", 
-        "returns": "number", 
+        "label": "Get Market Resolved", 
+        "method": "getMarketResolved", 
+        "returns": "int256", 
         "signature": [
           "int256"
         ]
       }, 
-      "getOneWinningOutcome": {
+      "getMarketShareContracts": {
         "inputs": [
-          "market", 
-          "num"
+          "market"
         ], 
-        "label": "Get One Winning Outcome", 
-        "method": "getOneWinningOutcome", 
+        "label": "Get Market Share Contracts", 
+        "method": "getMarketShareContracts", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getMarketsHash": {
+        "inputs": [
+          "branch"
+        ], 
+        "label": "Get Markets Hash", 
+        "method": "getMarketsHash", 
         "returns": "int256", 
         "signature": [
-          "int256", 
           "int256"
         ]
       }, 
@@ -4728,6 +5619,32 @@
         "method": "getOriginalTradingPeriod", 
         "returns": "int256", 
         "signature": [
+          "int256"
+        ]
+      }, 
+      "getOutcomeShareContract": {
+        "inputs": [
+          "market", 
+          "outcome"
+        ], 
+        "label": "Get Outcome Share Contract", 
+        "method": "getOutcomeShareContract", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getOutcomeShareWallet": {
+        "inputs": [
+          "market", 
+          "outcome"
+        ], 
+        "label": "Get Outcome Share Wallet", 
+        "method": "getOutcomeShareWallet", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
           "int256"
         ]
       }, 
@@ -4781,6 +5698,17 @@
           "int256"
         ]
       }, 
+      "getTags": {
+        "inputs": [
+          "market"
+        ], 
+        "label": "Get Tags", 
+        "method": "getTags", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256"
+        ]
+      }, 
       "getTopic": {
         "inputs": [
           "market"
@@ -4825,82 +5753,29 @@
           "int256"
         ]
       }, 
-      "getVolume": {
-        "inputs": [
-          "market"
-        ], 
-        "label": "Get Volume", 
-        "method": "getVolume", 
-        "returns": "unfix", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "getWinningOutcomes": {
-        "inputs": [
-          "market"
-        ], 
-        "label": "Get Winning Outcomes", 
-        "method": "getWinningOutcomes", 
-        "returns": "number[]", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "get_total_trades": {
-        "inputs": [
-          "market_id"
-        ], 
-        "label": "Get total trades", 
-        "method": "get_total_trades", 
-        "returns": "number", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "get_trade_ids": {
-        "inputs": [
-          "market_id", 
-          "offset", 
-          "numTradesToLoad"
-        ], 
-        "label": "Get trade ids", 
-        "method": "get_trade_ids", 
-        "returns": "int256[]", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getgasSubsidy": {
-        "inputs": [
-          "market"
-        ], 
-        "label": "Getgas Subsidy", 
-        "method": "getgasSubsidy", 
-        "returns": "int", 
-        "signature": [
-          "int256"
-        ]
-      }, 
       "initializeMarket": {
+        "fixed": [
+          3, 
+          8, 
+          12
+        ], 
         "inputs": [
-          "marketID", 
-          "events", 
+          "market", 
+          "event", 
           "tradingPeriod", 
-          "tradingFee", 
+          "fxpTradingFee", 
           "branch", 
           "tag1", 
           "tag2", 
           "tag3", 
-          "makerFees", 
-          "cumScale", 
+          "fxpCumulativeScale", 
           "numOutcomes", 
           "extraInfo", 
           "gasSubsidy", 
-          "creationFee", 
-          "lastExpDate"
+          "fxpCreationFee", 
+          "lastExpDate", 
+          "shareContracts", 
+          "shareWallets"
         ], 
         "label": "Initialize Market", 
         "method": "initializeMarket", 
@@ -4908,7 +5783,6 @@
         "send": true, 
         "signature": [
           "int256", 
-          "int256[]", 
           "int256", 
           "int256", 
           "int256", 
@@ -4921,48 +5795,18 @@
           "bytes", 
           "int256", 
           "int256", 
-          "int256"
-        ]
-      }, 
-      "modifyParticipantShares": {
-        "inputs": [
-          "marketID", 
-          "trader", 
-          "outcome", 
-          "amount", 
-          "cancel"
-        ], 
-        "label": "Modify Participant Shares", 
-        "method": "modifyParticipantShares", 
-        "returns": "int256", 
-        "signature": [
           "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "modifyShares": {
-        "inputs": [
-          "marketID", 
-          "outcome", 
-          "amount"
-        ], 
-        "label": "Modify Shares", 
-        "method": "modifyShares", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256"
+          "int256[]", 
+          "int256[]"
         ]
       }, 
       "modifySharesValue": {
+        "fixed": [
+          1
+        ], 
         "inputs": [
-          "marketID", 
-          "amount"
+          "market", 
+          "fxpAmount"
         ], 
         "label": "Modify Shares Value", 
         "method": "modifySharesValue", 
@@ -4985,58 +5829,25 @@
           "int256"
         ]
       }, 
-      "remove_trade_from_market": {
+      "setController": {
         "inputs": [
-          "market_id", 
-          "trade_id"
+          "newController"
         ], 
-        "label": "Remove trade from market", 
-        "method": "remove_trade_from_market", 
+        "label": "Set Controller", 
+        "method": "setController", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
-          "int256", 
-          "int256"
+          "address"
         ]
       }, 
-      "returnTags": {
+      "setMarketResolved": {
         "inputs": [
           "market"
         ], 
-        "label": "Return Tags", 
-        "method": "returnTags", 
-        "returns": "hash[]", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "setMakerFees": {
-        "inputs": [
-          "market", 
-          "makerFees"
-        ], 
-        "label": "Set Maker Fees", 
-        "method": "setMakerFees", 
+        "label": "Set Market Resolved", 
+        "method": "setMarketResolved", 
         "returns": "int256", 
-        "send": true, 
         "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "setPrice": {
-        "inputs": [
-          "market", 
-          "outcome", 
-          "price"
-        ], 
-        "label": "Set Price", 
-        "method": "setPrice", 
-        "returns": "int256", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256", 
           "int256"
         ]
       }, 
@@ -5084,37 +5895,99 @@
           "int256"
         ]
       }, 
-      "setWinningOutcomes": {
+      "suicideFunds": {
         "inputs": [
-          "market", 
-          "outcomes"
+          "to"
         ], 
-        "label": "Set Winning Outcomes", 
-        "method": "setWinningOutcomes", 
-        "returns": "int256", 
-        "send": true, 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
         "signature": [
-          "int256", 
-          "int256[]"
+          "address"
         ]
       }
     }, 
-    "Payout": {
-      "oneOutcome": {
-        "events": [
-          "payout"
-        ], 
+    "MoveEventAfterFork": {
+      "moveEvent": {
         "inputs": [
-          "market", 
-          "winningOutcome", 
-          "sender", 
-          "categoricalPointFive", 
-          "numOutcomes"
+          "event"
         ], 
-        "label": "One Outcome", 
-        "method": "oneOutcome", 
+        "label": "Move Event", 
+        "method": "moveEvent", 
         "returns": "int256", 
         "signature": [
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "Mutex": {
+      "acquire": {
+        "label": "Acquire", 
+        "method": "acquire", 
+        "returns": "int256"
+      }, 
+      "release": {
+        "label": "Release", 
+        "method": "release", 
+        "returns": "int256"
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "NonBinaryForkResolve": {
+      "scalarOrCategoricalForkResolve": {
+        "inputs": [
+          "branch", 
+          "event", 
+          "bond", 
+          "periodLength", 
+          "votingPeriodEvent", 
+          "winner"
+        ], 
+        "label": "Scalar Or Categorical Fork Resolve", 
+        "method": "scalarOrCategoricalForkResolve", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
           "int256", 
           "int256", 
           "int256", 
@@ -5122,43 +5995,581 @@
           "int256"
         ]
       }, 
-      "twoOutcomes": {
-        "events": [
-          "payout"
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "NonBinaryMarketResolve": {
+      "resolveCategoricalOrScalar": {
+        "fixed": [
+          0, 
+          1
         ], 
         "inputs": [
-          "market", 
-          "winningOutcome", 
+          "fxpScaledMin", 
+          "fxpScaledMax", 
           "event", 
-          "sender"
+          "market", 
+          "branch", 
+          "votingPeriodEvent"
         ], 
-        "label": "Two Outcomes", 
-        "method": "twoOutcomes", 
+        "label": "Resolve Categorical Or Scalar", 
+        "method": "resolveCategoricalOrScalar", 
         "returns": "int256", 
         "signature": [
           "int256", 
-          "int256[]", 
+          "int256", 
+          "int256", 
+          "int256", 
           "int256", 
           "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "Orders": {
+      "addOrder": {
+        "inputs": [
+          "market", 
+          "orderID"
+        ], 
+        "label": "Add Order", 
+        "method": "addOrder", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "cancelOrderLog": {
+        "fixed": [
+          2, 
+          3, 
+          7, 
+          8
+        ], 
+        "inputs": [
+          "market", 
+          "sender", 
+          "fxpPrice", 
+          "fxpAmount", 
+          "orderID", 
+          "outcome", 
+          "type", 
+          "fxpMoneyEscrowed", 
+          "fxpSharesEscrowed"
+        ], 
+        "label": "Cancel Order Log", 
+        "method": "cancelOrderLog", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "checkHash": {
+        "inputs": [
+          "orderHash", 
+          "sender"
+        ], 
+        "label": "Check Hash", 
+        "method": "checkHash", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "commitOrder": {
+        "inputs": [
+          "hash"
+        ], 
+        "label": "Commit Order", 
+        "method": "commitOrder", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "completeSetsLog": {
+        "fixed": [
+          3
+        ], 
+        "inputs": [
+          "sender", 
+          "market", 
+          "type", 
+          "fxpAmount", 
+          "numOutcomes", 
+          "fee"
+        ], 
+        "label": "Complete Sets Log", 
+        "method": "completeSetsLog", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "fillOrder": {
+        "inputs": [
+          "orderID", 
+          "fill", 
+          "money", 
+          "shares"
+        ], 
+        "label": "Fill Order", 
+        "method": "fillOrder", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getAmount": {
+        "inputs": [
+          "id"
+        ], 
+        "label": "Get Amount", 
+        "method": "getAmount", 
+        "returns": "unfix", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getID": {
+        "inputs": [
+          "orderID"
+        ], 
+        "label": "Get ID", 
+        "method": "getID", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getLastOrder": {
+        "inputs": [
+          "market"
+        ], 
+        "label": "Get Last Order", 
+        "method": "getLastOrder", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getLastOutcomePrice": {
+        "inputs": [
+          "market", 
+          "outcome"
+        ], 
+        "label": "Get Last Outcome Price", 
+        "method": "getLastOutcomePrice", 
+        "returns": "unfix", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getOrder": {
+        "inputs": [
+          "id"
+        ], 
+        "label": "Get Order", 
+        "method": "getOrder", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getOrderIDs": {
+        "inputs": [
+          "marketID"
+        ], 
+        "label": "Get Order I Ds", 
+        "method": "getOrderIDs", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getOrderOwner": {
+        "inputs": [
+          "id"
+        ], 
+        "label": "Get Order Owner", 
+        "method": "getOrderOwner", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getPrevID": {
+        "inputs": [
+          "market", 
+          "order"
+        ], 
+        "label": "Get Prev ID", 
+        "method": "getPrevID", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getPrice": {
+        "inputs": [
+          "id"
+        ], 
+        "label": "Get Price", 
+        "method": "getPrice", 
+        "returns": "unfix", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getTotalOrders": {
+        "inputs": [
+          "marketID"
+        ], 
+        "label": "Get Total Orders", 
+        "method": "getTotalOrders", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getType": {
+        "inputs": [
+          "id"
+        ], 
+        "label": "Get Type", 
+        "method": "getType", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getVolume": {
+        "inputs": [
+          "market"
+        ], 
+        "label": "Get Volume", 
+        "method": "getVolume", 
+        "returns": "unfix", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "makeOrderHash": {
+        "inputs": [
+          "market", 
+          "outcome", 
+          "direction"
+        ], 
+        "label": "Make Order Hash", 
+        "method": "makeOrderHash", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "modifyMarketVolume": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "market", 
+          "fxpAmount"
+        ], 
+        "label": "Modify Market Volume", 
+        "method": "modifyMarketVolume", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "removeOrder": {
+        "inputs": [
+          "id"
+        ], 
+        "label": "Remove Order", 
+        "method": "removeOrder", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "removeOrderFromMarket": {
+        "inputs": [
+          "marketID", 
+          "orderID"
+        ], 
+        "label": "Remove Order From Market", 
+        "method": "removeOrderFromMarket", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "saveOrder": {
+        "fixed": [
+          3, 
+          4, 
+          7, 
+          8
+        ], 
+        "inputs": [
+          "orderID", 
+          "type", 
+          "market", 
+          "fxpAmount", 
+          "fxpPrice", 
+          "sender", 
+          "outcome", 
+          "fxpMoneyEscrowed", 
+          "fxpSharesEscrowed", 
+          "tradeGroupID"
+        ], 
+        "label": "Save Order", 
+        "method": "saveOrder", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "setPrice": {
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "market", 
+          "outcome", 
+          "fxpPrice"
+        ], 
+        "label": "Set Price", 
+        "method": "setPrice", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "takeAskOrderLog": {
+        "events": [
+          "TakeAskOrder"
+        ], 
+        "fixed": [
+          3, 
+          4, 
+          7, 
+          8, 
+          9
+        ], 
+        "inputs": [
+          "market", 
+          "sender", 
+          "owner", 
+          "fxpPrice", 
+          "fxpSumOfFills", 
+          "orderID", 
+          "outcome", 
+          "fxpAskerSharesFilled", 
+          "fxpAskerMoneyFilled", 
+          "fxpBidderMoneyFilled"
+        ], 
+        "label": "Take Ask Order Log", 
+        "method": "takeAskOrderLog", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "address", 
+          "address", 
+          "int256", 
+          "uint256", 
+          "address", 
+          "uint256", 
+          "uint256", 
+          "uint256", 
+          "uint256"
+        ]
+      }, 
+      "takeBidOrderLog": {
+        "events": [
+          "TakeBidOrder"
+        ], 
+        "fixed": [
+          3, 
+          4, 
+          7, 
+          8, 
+          9, 
+          10
+        ], 
+        "inputs": [
+          "market", 
+          "sender", 
+          "owner", 
+          "fxpPrice", 
+          "fxpSumOfFills", 
+          "orderID", 
+          "outcome", 
+          "fxpAskerSharesFilled", 
+          "fxpAskerMoneyFilled", 
+          "fxpBidderSharesFilled", 
+          "fxpBidderMoneyFilled"
+        ], 
+        "label": "Take Bid Order Log", 
+        "method": "takeBidOrderLog", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "address", 
+          "address", 
+          "int256", 
+          "uint256", 
+          "address", 
+          "uint256", 
+          "uint256", 
+          "uint256", 
+          "uint256", 
+          "uint256"
         ]
       }
     }, 
     "PenalizationCatchup": {
-      "penalizationCatchup": {
-        "events": [
-          "penalizationCaughtUp"
-        ], 
+      "internalPenalizationCatchup": {
         "inputs": [
           "branch", 
           "sender"
         ], 
-        "label": "Reporting Cycle Catch-Up", 
-        "method": "penalizationCatchup", 
-        "returns": "number", 
-        "send": true, 
+        "label": "Internal Penalization Catchup", 
+        "method": "internalPenalizationCatchup", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256"
+        ]
+      }, 
+      "publicPenalizationCatchup": {
+        "inputs": [
+          "branch", 
+          "sender"
+        ], 
+        "label": "Public Penalization Catchup", 
+        "method": "publicPenalizationCatchup", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
         ]
       }
     }, 
@@ -5178,39 +6589,84 @@
           "int256", 
           "int256"
         ]
-      }
-    }, 
-    "ProportionCorrect": {
-      "proportionCorrect": {
+      }, 
+      "setController": {
         "inputs": [
-          "event"
+          "newController"
         ], 
-        "label": "Proportion Correct", 
-        "method": "proportionCorrect", 
-        "returns": "unfix", 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
         "signature": [
-          "int256"
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
         ]
       }
     }, 
-    "Register": {
-      "register": {
-        "description": "Write registration timestamp to the blockchain", 
-        "events": [
-          "registration"
+    "RepChangeLib": {
+      "calculateRepChange": {
+        "inputs": [
+          "report", 
+          "maxPenalty", 
+          "oldRep", 
+          "p", 
+          "event", 
+          "outcome", 
+          "numReportedOn"
         ], 
-        "label": "Register New Account", 
-        "method": "register", 
-        "returns": "number", 
-        "send": true
+        "label": "Calculate Rep Change", 
+        "method": "calculateRepChange", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
       }
     }, 
     "Reporting": {
       "addDormantRep": {
+        "fixed": [
+          2
+        ], 
         "inputs": [
           "branch", 
           "index", 
-          "value"
+          "fxpValue"
         ], 
         "label": "Add Dormant Rep", 
         "method": "addDormantRep", 
@@ -5223,10 +6679,13 @@
         ]
       }, 
       "addRep": {
+        "fixed": [
+          2
+        ], 
         "inputs": [
           "branch", 
           "index", 
-          "value"
+          "fxpValue"
         ], 
         "label": "Add Rep", 
         "method": "addRep", 
@@ -5239,12 +6698,17 @@
         ]
       }, 
       "addReporter": {
+        "fixed": [
+          2, 
+          3, 
+          4
+        ], 
         "inputs": [
           "branch", 
           "sender", 
-          "amount", 
-          "dormant", 
-          "repToBonderOrBranch"
+          "fxpAmount", 
+          "fxpDormant", 
+          "fxpRepToBonderOrBranch"
         ], 
         "label": "Add Reporter", 
         "method": "addReporter", 
@@ -5259,9 +6723,12 @@
         ]
       }, 
       "adjustActiveRep": {
+        "fixed": [
+          1
+        ], 
         "inputs": [
           "branch", 
-          "amount"
+          "fxpAmount"
         ], 
         "label": "Adjust Active Rep", 
         "method": "adjustActiveRep", 
@@ -5272,42 +6739,23 @@
           "int256"
         ]
       }, 
-      "balanceOf": {
+      "balanceOfReporter": {
         "inputs": [
           "branch", 
           "address"
         ], 
-        "label": "Balance Of", 
-        "method": "balanceOf", 
+        "label": "Balance Of Reporter", 
+        "method": "balanceOfReporter", 
         "returns": "unfix", 
         "signature": [
           "int256", 
           "int256"
         ]
       }, 
-      "checkContractWhitelist": {
-        "inputs": [
-          "contract", 
-          "address"
-        ], 
-        "label": "Check Contract Whitelist", 
-        "method": "checkContractWhitelist", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "checkWhitelist": {
-        "inputs": [
-          "address"
-        ], 
-        "label": "Check Whitelist", 
-        "method": "checkWhitelist", 
-        "returns": "int256", 
-        "signature": [
-          "int256"
-        ]
+      "claimInitialRepFromRepContract": {
+        "label": "Claim Initial Rep From Rep Contract", 
+        "method": "claimInitialRepFromRepContract", 
+        "returns": "int256"
       }, 
       "getActiveRep": {
         "inputs": [
@@ -5330,17 +6778,6 @@
         "returns": "unfix", 
         "signature": [
           "int256", 
-          "int256"
-        ]
-      }, 
-      "getFork": {
-        "inputs": [
-          "branch"
-        ], 
-        "label": "Get Fork", 
-        "method": "getFork", 
-        "returns": "number", 
-        "signature": [
           "int256"
         ]
       }, 
@@ -5376,6 +6813,19 @@
         "label": "Get Rep By Index", 
         "method": "getRepByIndex", 
         "returns": "unfix", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getReportedOnNonFinalRoundTwoEvent": {
+        "inputs": [
+          "branch", 
+          "reporter"
+        ], 
+        "label": "Get Reported On Non Final Round Two Event", 
+        "method": "getReportedOnNonFinalRoundTwoEvent", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256"
@@ -5429,37 +6879,37 @@
           "int256"
         ]
       }, 
-      "setFork": {
+      "setController": {
         "inputs": [
-          "branch"
+          "newController"
         ], 
-        "label": "Set Fork", 
-        "method": "setFork", 
-        "returns": "number", 
-        "send": true, 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
         "signature": [
-          "int256"
+          "address"
         ]
       }, 
       "setInitialReporters": {
         "inputs": [
-          "parent", 
-          "branchID"
+          "branch"
         ], 
         "label": "Set Initial Reporters", 
         "method": "setInitialReporters", 
         "returns": "number", 
         "send": true, 
         "signature": [
-          "int256", 
           "int256"
         ]
       }, 
       "setRep": {
+        "fixed": [
+          2
+        ], 
         "inputs": [
           "branch", 
           "index", 
-          "newRep"
+          "fxpNewRep"
         ], 
         "label": "Set Rep", 
         "method": "setRep", 
@@ -5471,41 +6921,29 @@
           "int256"
         ]
       }, 
-      "setSaleDistribution": {
+      "setReportedOnNonFinalRoundTwoEvent": {
         "inputs": [
-          "addresses", 
-          "balances", 
-          "branchID"
+          "branch", 
+          "event", 
+          "reporter"
         ], 
-        "label": "Set Sale Distribution", 
-        "method": "setSaleDistribution", 
-        "returns": "number", 
-        "send": true, 
+        "label": "Set Reported On Non Final Round Two Event", 
+        "method": "setReportedOnNonFinalRoundTwoEvent", 
+        "returns": "int256", 
         "signature": [
-          "int256[]", 
-          "int256[]", 
+          "int256", 
+          "int256", 
           "int256"
         ]
       }, 
-      "setWhitelist": {
-        "inputs": [
-          "contract", 
-          "addresses"
-        ], 
-        "label": "Set Whitelist", 
-        "method": "setWhitelist", 
-        "returns": "string", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256[]"
-        ]
-      }, 
       "subtractDormantRep": {
+        "fixed": [
+          2
+        ], 
         "inputs": [
           "branch", 
           "index", 
-          "value"
+          "fxpValue"
         ], 
         "label": "Subtract Dormant Rep", 
         "method": "subtractDormantRep", 
@@ -5518,10 +6956,13 @@
         ]
       }, 
       "subtractRep": {
+        "fixed": [
+          2
+        ], 
         "inputs": [
           "branch", 
           "index", 
-          "value"
+          "fxpValue"
         ], 
         "label": "Subtract Rep", 
         "method": "subtractRep", 
@@ -5531,6 +6972,16 @@
           "int256", 
           "int256", 
           "int256"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
         ]
       }, 
       "totalSupply": {
@@ -5546,16 +6997,31 @@
       }
     }, 
     "ReportingThreshold": {
+      "calculateNumberOfEventsAReporterHasToReportOnAtMinimum": {
+        "inputs": [
+          "branch", 
+          "reporter", 
+          "period"
+        ], 
+        "label": "Calculate Number Of Events A Reporter Has To Report On At Minimum", 
+        "method": "calculateNumberOfEventsAReporterHasToReportOnAtMinimum", 
+        "returns": "unfix", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
       "calculateReportTargetForEvent": {
         "inputs": [
           "branch", 
-          "eventID", 
+          "event", 
           "votePeriod", 
           "sender"
         ], 
         "label": "Calculate Report Target For Event", 
         "method": "calculateReportTargetForEvent", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "int256", 
           "int256", 
@@ -5566,8 +7032,8 @@
       "calculateReportingThreshold": {
         "inputs": [
           "branch", 
-          "eventID", 
-          "votePeriod", 
+          "event", 
+          "period", 
           "sender"
         ], 
         "label": "Calculate Reporting Threshold", 
@@ -5580,16 +7046,37 @@
           "int256"
         ]
       }, 
-      "getEventCanReportOn": {
+      "findLazyReportersAndLeechers": {
         "inputs": [
           "branch", 
-          "expDateIndex", 
+          "votePeriod", 
+          "reporterStart", 
+          "reporterEnd", 
+          "eventStart", 
+          "eventEnd"
+        ], 
+        "label": "Find Lazy Reporters And Leechers", 
+        "method": "findLazyReportersAndLeechers", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "getEventCouldveReportedOn": {
+        "inputs": [
+          "branch", 
+          "period", 
           "reporter", 
           "event"
         ], 
-        "label": "Get Event Can Report On", 
-        "method": "getEventCanReportOn", 
-        "returns": "number", 
+        "label": "Get Event Couldve Reported On", 
+        "method": "getEventCouldveReportedOn", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
@@ -5602,7 +7089,8 @@
           "branch", 
           "period", 
           "sender", 
-          "start"
+          "start", 
+          "end"
         ], 
         "label": "Get Events To Report On", 
         "method": "getEventsToReportOn", 
@@ -5611,7 +7099,19 @@
           "int256", 
           "int256", 
           "int256", 
+          "int256", 
           "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
         ]
       }, 
       "setReportingThreshold": {
@@ -5624,6 +7124,65 @@
         "send": true, 
         "signature": [
           "int256"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "ResolveForkEvent": {
+      "resolveForkEvent": {
+        "inputs": [
+          "branch", 
+          "event"
+        ], 
+        "label": "Resolve Fork Event", 
+        "method": "resolveForkEvent", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "resolveForkedEvent": {
+        "inputs": [
+          "branch", 
+          "event"
+        ], 
+        "label": "Resolve Forked Event", 
+        "method": "resolveForkedEvent", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
         ]
       }
     }, 
@@ -5643,16 +7202,11 @@
         ]
       }, 
       "roundTwoPostBond": {
-        "events": [
-          "Transfer", 
-          "penalizationCaughtUp", 
-          "collectedFees"
-        ], 
         "inputs": [
           "branch", 
           "event", 
           "eventIndex", 
-          "votePeriod"
+          "overEthicality"
         ], 
         "label": "Round Two Post Bond", 
         "method": "roundTwoPostBond", 
@@ -5682,6 +7236,27 @@
           "int256", 
           "int256"
         ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
       }
     }, 
     "RoundTwoPenalize": {
@@ -5697,9 +7272,306 @@
           "int256", 
           "int256"
         ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "RoundTwoPenalizeLibrary": {
+      "handleEthicsAndBondRepRedistribution": {
+        "inputs": [
+          "maxPenalty", 
+          "ethics", 
+          "numReportedOn", 
+          "ethical", 
+          "repChange", 
+          "event", 
+          "repBalance", 
+          "newAfterRep", 
+          "bond", 
+          "forkEvent", 
+          "branch", 
+          "lastPeriodVotedOn"
+        ], 
+        "label": "Handle Ethics And Bond Rep Redistribution", 
+        "method": "handleEthicsAndBondRepRedistribution", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "ScalarPayouts": {
+      "payoutScalarMarket": {
+        "inputs": [
+          "sender", 
+          "market", 
+          "event"
+        ], 
+        "label": "Payout Scalar Market", 
+        "method": "payoutScalarMarket", 
+        "returns": "uint256", 
+        "signature": [
+          "address", 
+          "address", 
+          "address"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
       }
     }, 
     "SendReputation": {
+      "allowance": {
+        "inputs": [
+          "branch", 
+          "owner", 
+          "spender"
+        ], 
+        "label": "Allowance", 
+        "method": "allowance", 
+        "returns": "unfix", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "internalApprove": {
+        "fixed": [
+          3
+        ], 
+        "inputs": [
+          "branch", 
+          "caller", 
+          "spender", 
+          "fxpValue"
+        ], 
+        "label": "Internal Approve", 
+        "method": "internalApprove", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "internalClaimRep": {
+        "inputs": [
+          "caller"
+        ], 
+        "label": "Internal Claim Rep", 
+        "method": "internalClaimRep", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "internalSendRepFrom": {
+        "fixed": [
+          4
+        ], 
+        "inputs": [
+          "branch", 
+          "caller", 
+          "from", 
+          "receiver", 
+          "fxpValue"
+        ], 
+        "label": "Internal Send Rep From", 
+        "method": "internalSendRepFrom", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "internalTransferFrom": {
+        "events": [
+          "Transfer"
+        ], 
+        "fixed": [
+          4
+        ], 
+        "inputs": [
+          "branch", 
+          "caller", 
+          "from", 
+          "receiver", 
+          "fxpValue"
+        ], 
+        "label": "Internal Transfer From", 
+        "method": "internalTransferFrom", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicApprove": {
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "branch", 
+          "spender", 
+          "fxpValue"
+        ], 
+        "label": "Public Approve", 
+        "method": "publicApprove", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicClaimRep": {
+        "label": "Public Claim Rep", 
+        "method": "publicClaimRep", 
+        "returns": "int256"
+      }, 
+      "publicSendRepFrom": {
+        "fixed": [
+          3
+        ], 
+        "inputs": [
+          "branch", 
+          "from", 
+          "receiver", 
+          "fxpValue"
+        ], 
+        "label": "Public Send Rep From", 
+        "method": "publicSendRepFrom", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicTransferFrom": {
+        "events": [
+          "Transfer"
+        ], 
+        "fixed": [
+          3
+        ], 
+        "inputs": [
+          "branch", 
+          "from", 
+          "receiver", 
+          "fxpValue"
+        ], 
+        "label": "Public Transfer From", 
+        "method": "publicTransferFrom", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "ShareTokens": {
       "allowance": {
         "inputs": [
           "owner", 
@@ -5707,10 +7579,10 @@
         ], 
         "label": "Allowance", 
         "method": "allowance", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
-          "int256", 
-          "int256"
+          "address", 
+          "address"
         ]
       }, 
       "approve": {
@@ -5718,7 +7590,6 @@
           "Approval"
         ], 
         "inputs": [
-          "branch", 
           "spender", 
           "value"
         ], 
@@ -5726,127 +7597,273 @@
         "method": "approve", 
         "returns": "int256", 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256"
+          "address", 
+          "uint256"
         ]
       }, 
-      "convertToActiveRep": {
-        "events": [
-          "penalizationCaughtUp", 
-          "collectedFees"
-        ], 
+      "balanceOf": {
         "inputs": [
-          "branch", 
-          "value"
+          "address"
         ], 
-        "label": "Convert To Active Rep", 
-        "method": "convertToActiveRep", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "convertToDormantRep": {
-        "events": [
-          "penalizationCaughtUp", 
-          "collectedFees"
-        ], 
-        "inputs": [
-          "branch", 
-          "value"
-        ], 
-        "label": "Convert To Dormant Rep", 
-        "method": "convertToDormantRep", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "sendReputation": {
-        "events": [
-          "Transfer", 
-          "collectedFees", 
-          "penalizationCaughtUp"
-        ], 
-        "inputs": [
-          "branch", 
-          "recver", 
-          "value"
-        ], 
-        "label": "Send Reputation", 
-        "method": "sendReputation", 
+        "label": "Balance Of", 
+        "method": "balanceOf", 
         "returns": "unfix", 
-        "send": true, 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256"
+          "address"
         ]
+      }, 
+      "createShares": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "owner", 
+          "fxpValue"
+        ], 
+        "label": "Create Shares", 
+        "method": "createShares", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "destroyShares": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "owner", 
+          "fxpValue"
+        ], 
+        "label": "Destroy Shares", 
+        "method": "destroyShares", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "getDecimals": {
+        "label": "Get Decimals", 
+        "method": "getDecimals", 
+        "returns": "int256"
+      }, 
+      "getName": {
+        "label": "Get Name", 
+        "method": "getName", 
+        "returns": "int256"
+      }, 
+      "getSymbol": {
+        "label": "Get Symbol", 
+        "method": "getSymbol", 
+        "returns": "int256"
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "totalSupply": {
+        "label": "Total Supply", 
+        "method": "totalSupply", 
+        "returns": "unfix"
       }, 
       "transfer": {
-        "events": [
-          "Transfer"
-        ], 
         "inputs": [
-          "branch", 
-          "recver", 
+          "to", 
           "value"
         ], 
         "label": "Transfer", 
         "method": "transfer", 
         "returns": "int256", 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256"
+          "address", 
+          "uint256"
         ]
       }, 
       "transferFrom": {
-        "events": [
-          "Transfer"
-        ], 
         "inputs": [
-          "branch", 
           "from", 
-          "recver", 
+          "to", 
           "value"
         ], 
         "label": "Transfer From", 
         "method": "transferFrom", 
         "returns": "int256", 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
+          "address", 
+          "address", 
+          "uint256"
         ]
       }
     }, 
-    "SlashRep": {
-      "slashRep": {
+    "TakeAskOrder": {
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "takeAskOrder": {
         "events": [
-          "slashedRep"
+          "TakeAskOrder"
+        ], 
+        "fixed": [
+          2
         ], 
         "inputs": [
-          "branch", 
-          "salt", 
-          "report", 
-          "reporter", 
-          "eventID"
+          "sender", 
+          "orderID", 
+          "fxpAmountTakerWants"
         ], 
-        "label": "Slash Rep", 
-        "method": "slashRep", 
-        "returns": "number", 
-        "send": true, 
+        "label": "Take Ask Order", 
+        "method": "takeAskOrder", 
+        "returns": "uint256", 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
+          "address", 
+          "address", 
+          "uint256"
+        ]
+      }
+    }, 
+    "TakeBidOrder": {
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "takeBidOrder": {
+        "events": [
+          "TakeBidOrder"
+        ], 
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "sender", 
+          "orderID", 
+          "fxpAmountTakerWants"
+        ], 
+        "label": "Take Bid Order", 
+        "method": "takeBidOrder", 
+        "returns": "uint256", 
+        "signature": [
+          "address", 
+          "address", 
+          "uint256"
+        ]
+      }
+    }, 
+    "TakeOrder": {
+      "publicTakeOrder": {
+        "events": [
+          "TakeAskOrder", 
+          "TakeBidOrder"
+        ], 
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "orderID", 
+          "fxpAmountTakerWants"
+        ], 
+        "label": "Public Take Order", 
+        "method": "publicTakeOrder", 
+        "returns": "uint256", 
+        "signature": [
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "takeOrder": {
+        "events": [
+          "TakeAskOrder", 
+          "TakeBidOrder"
+        ], 
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "sender", 
+          "orderID", 
+          "fxpAmountTakerWants"
+        ], 
+        "label": "Take Order", 
+        "method": "takeOrder", 
+        "returns": "uint256", 
+        "signature": [
+          "address", 
+          "address", 
+          "uint256"
         ]
       }
     }, 
@@ -5906,6 +7923,27 @@
           "int256"
         ]
       }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }, 
       "updateTopicPopularity": {
         "fixed": [
           2
@@ -5926,272 +7964,100 @@
         ]
       }
     }, 
-    "Trade": {
-      "short_sell": {
-        "events": [
-          "log_short_fill_tx", 
-          "trade_logArrayReturn"
-        ], 
-        "gas": 1059796, 
+    "ValidateReport": {
+      "setController": {
         "inputs": [
-          "buyer_trade_id", 
-          "max_amount", 
-          "tradeGroupID"
+          "newController"
         ], 
-        "label": "Short sell", 
-        "method": "short_sell", 
-        "mutable": true, 
-        "returns": "hash[]", 
-        "send": true, 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
         "signature": [
-          "int256", 
-          "int256", 
-          "int256"
+          "address"
         ]
       }, 
-      "trade": {
-        "events": [
-          "trade_logArrayReturn", 
-          "log_fill_tx"
-        ], 
-        "gas": 787421, 
+      "suicideFunds": {
         "inputs": [
-          "max_value", 
-          "max_amount", 
-          "trade_ids", 
-          "tradeGroupID"
+          "to"
         ], 
-        "label": "Trade", 
-        "method": "trade", 
-        "mutable": true, 
-        "returns": "hash[]", 
-        "send": true, 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "validateReport": {
+        "fixed": [
+          3
+        ], 
+        "inputs": [
+          "event", 
+          "branch", 
+          "votePeriod", 
+          "fxpReport", 
+          "forkedOverEthicality", 
+          "forkedOverThisEvent", 
+          "weight"
+        ], 
+        "label": "Validate Report", 
+        "method": "validateReport", 
+        "returns": "int256", 
         "signature": [
           "int256", 
           "int256", 
-          "int256[]", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
           "int256"
         ]
       }
     }, 
-    "Trades": {
-      "checkHash": {
+    "Wallet": {
+      "initialize": {
         "inputs": [
-          "tradeHash", 
-          "sender"
+          "currency"
         ], 
-        "label": "Check Hash", 
-        "method": "checkHash", 
-        "returns": "number", 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "commitTrade": {
-        "gas": 147581, 
-        "inputs": [
-          "hash"
-        ], 
-        "label": "Commit Trade", 
-        "method": "commitTrade", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "fill_trade": {
-        "fixed": [
-          1
-        ], 
-        "inputs": [
-          "id", 
-          "fill"
-        ], 
-        "label": "Fill trade", 
-        "method": "fill_trade", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getBestAskID": {
-        "inputs": [
-          "market", 
-          "outcome"
-        ], 
-        "label": "Get Best Ask ID", 
-        "method": "getBestAskID", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getBestBidID": {
-        "inputs": [
-          "market", 
-          "outcome"
-        ], 
-        "label": "Get Best Bid ID", 
-        "method": "getBestBidID", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "getID": {
-        "inputs": [
-          "tradeID"
-        ], 
-        "label": "Get ID", 
-        "method": "getID", 
+        "label": "Initialize", 
+        "method": "initialize", 
         "returns": "int256", 
         "signature": [
           "int256"
         ]
       }, 
-      "getSender": {
-        "label": "Get Sender", 
-        "method": "getSender", 
-        "returns": "int256"
-      }, 
-      "getTradeOwner": {
+      "setController": {
         "inputs": [
-          "id"
+          "newController"
         ], 
-        "label": "Get Trade Owner", 
-        "method": "getTradeOwner", 
+        "label": "Set Controller", 
+        "method": "setController", 
         "returns": "int256", 
         "signature": [
-          "int256"
+          "address"
         ]
       }, 
-      "get_amount": {
+      "suicideFunds": {
         "inputs": [
-          "id"
+          "to"
         ], 
-        "label": "Get amount", 
-        "method": "get_amount", 
-        "returns": "unfix", 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
         "signature": [
-          "int256"
+          "address"
         ]
       }, 
-      "get_price": {
+      "transfer": {
         "inputs": [
-          "id"
+          "receiver", 
+          "value"
         ], 
-        "label": "Get price", 
-        "method": "get_price", 
-        "returns": "unfix", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "get_trade": {
-        "inputs": [
-          "id"
-        ], 
-        "label": "Get trade", 
-        "method": "get_trade", 
-        "parser": "parseTradeInfo", 
-        "returns": "int256[]", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "get_trade_block": {
-        "inputs": [
-          "id"
-        ], 
-        "label": "Get trade block", 
-        "method": "get_trade_block", 
+        "label": "Transfer", 
+        "method": "transfer", 
         "returns": "int256", 
         "signature": [
-          "int256"
+          "address", 
+          "uint256"
         ]
-      }, 
-      "makeTradeHash": {
-        "inputs": [
-          "max_value", 
-          "max_amount", 
-          "trade_ids"
-        ], 
-        "label": "Make Trade Hash", 
-        "method": "makeTradeHash", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256[]"
-        ]
-      }, 
-      "remove_trade": {
-        "inputs": [
-          "id"
-        ], 
-        "label": "Remove trade", 
-        "method": "remove_trade", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "saveTrade": {
-        "fixed": [
-          3, 
-          4
-        ], 
-        "inputs": [
-          "trade_id", 
-          "type", 
-          "market", 
-          "amount", 
-          "price", 
-          "sender", 
-          "outcome"
-        ], 
-        "label": "Save Trade", 
-        "method": "saveTrade", 
-        "returns": "number", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "update_trade": {
-        "fixed": [
-          1
-        ], 
-        "inputs": [
-          "id", 
-          "price"
-        ], 
-        "label": "Update trade", 
-        "method": "update_trade", 
-        "send": true, 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "zeroHash": {
-        "label": "Zero Hash", 
-        "method": "zeroHash", 
-        "returns": "number", 
-        "send": true
       }
     }
   }
