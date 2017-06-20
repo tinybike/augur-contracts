@@ -625,6 +625,23 @@
       ], 
       "name": "penalize(int256,int256,int256,int256,int256,int256,int256)", 
       "signature": "0x6995f42d98799c0eb89e06640c75123c28e99a5c0762fa1b5c3f0264f87a24c9"
+    }, 
+    "registration": {
+      "contract": "Register", 
+      "inputs": [
+        {
+          "indexed": true, 
+          "name": "sender", 
+          "type": "int256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "timestamp", 
+          "type": "int256"
+        }
+      ], 
+      "name": "registration(int256,int256)", 
+      "signature": "0x31e3e4f99e5fc8a326d15b01b056f9f5b70a531faa5f94914ed66b156df47211"
     }
   }, 
   "functions": {
@@ -1759,27 +1776,45 @@
     }, 
     "CancelOrder": {
       "cancelOrder": {
+        "events": [
+          "CancelOrder"
+        ], 
         "inputs": [
           "sender", 
-          "orderID"
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
         ], 
         "label": "Cancel Order", 
         "method": "cancelOrder", 
         "returns": "int256", 
         "signature": [
           "address", 
-          "int256"
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
       "publicCancelOrder": {
+        "events": [
+          "CancelOrder"
+        ], 
         "inputs": [
-          "orderID"
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
         ], 
         "label": "Public Cancel Order", 
         "method": "publicCancelOrder", 
         "returns": "int256", 
         "signature": [
-          "int256"
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
       "refundOrder": {
@@ -2211,6 +2246,9 @@
     }, 
     "CompleteSets": {
       "buyCompleteSets": {
+        "events": [
+          "CompleteSets"
+        ], 
         "fixed": [
           1
         ], 
@@ -2232,6 +2270,9 @@
         ]
       }, 
       "publicBuyCompleteSets": {
+        "events": [
+          "CompleteSets"
+        ], 
         "fixed": [
           1
         ], 
@@ -2248,6 +2289,9 @@
         ]
       }, 
       "publicSellCompleteSets": {
+        "events": [
+          "CompleteSets"
+        ], 
         "fixed": [
           1
         ], 
@@ -2264,6 +2308,9 @@
         ]
       }, 
       "sellCompleteSets": {
+        "events": [
+          "CompleteSets"
+        ], 
         "fixed": [
           1
         ], 
@@ -2779,6 +2826,29 @@
           "int256"
         ]
       }, 
+      "assertOnlySpecifiedCaller": {
+        "inputs": [
+          "callerAddress", 
+          "allowedCallerContractName"
+        ], 
+        "label": "Assert Only Specified Caller", 
+        "method": "assertOnlySpecifiedCaller", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "emergencyStop": {
+        "label": "Emergency Stop", 
+        "method": "emergencyStop", 
+        "returns": "int256"
+      }, 
+      "getOwner": {
+        "label": "Get Owner", 
+        "method": "getOwner", 
+        "returns": "int256"
+      }, 
       "lookup": {
         "inputs": [
           "key"
@@ -2790,10 +2860,25 @@
           "int256"
         ]
       }, 
-      "ok": {
-        "label": "Ok", 
-        "method": "ok", 
+      "onlyInEmergency": {
+        "label": "Only In Emergency", 
+        "method": "onlyInEmergency"
+      }, 
+      "release": {
+        "label": "Release", 
+        "method": "release", 
         "returns": "int256"
+      }, 
+      "removeFromWhitelist": {
+        "inputs": [
+          "address"
+        ], 
+        "label": "Remove From Whitelist", 
+        "method": "removeFromWhitelist", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
       }, 
       "setValue": {
         "inputs": [
@@ -2802,6 +2887,52 @@
         ], 
         "label": "Set Value", 
         "method": "setValue", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "stopInEmergency": {
+        "label": "Stop In Emergency", 
+        "method": "stopInEmergency"
+      }, 
+      "suicide": {
+        "inputs": [
+          "address", 
+          "to"
+        ], 
+        "label": "Suicide", 
+        "method": "suicide", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "switchModeSoOnlyEmergencyStopsAndEscapeHatchesCanBeUsed": {
+        "label": "Switch Mode So Only Emergency Stops And Escape Hatches Can Be Used", 
+        "method": "switchModeSoOnlyEmergencyStopsAndEscapeHatchesCanBeUsed", 
+        "returns": "int256"
+      }, 
+      "transferOwnership": {
+        "inputs": [
+          "newOwner"
+        ], 
+        "label": "Transfer Ownership", 
+        "method": "transferOwnership", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "updateController": {
+        "inputs": [
+          "address", 
+          "newController"
+        ], 
+        "label": "Update Controller", 
+        "method": "updateController", 
         "returns": "int256", 
         "signature": [
           "int256", 
@@ -3231,6 +3362,113 @@
           "int256", 
           "int256", 
           "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "CreateSingleEventMarket": {
+      "createSingleEventMarket": {
+        "fixed": [
+          4, 
+          5, 
+          8, 
+          12
+        ], 
+        "inputs": [
+          "sender", 
+          "branch", 
+          "description", 
+          "expDate", 
+          "fxpMinValue", 
+          "fxpMaxValue", 
+          "numOutcomes", 
+          "resolution", 
+          "fxpTradingFee", 
+          "tag1", 
+          "tag2", 
+          "tag3", 
+          "fxpMakerFees", 
+          "extraInfo"
+        ], 
+        "label": "Create Single Event Market", 
+        "method": "createSingleEventMarket", 
+        "returns": "int256", 
+        "signature": [
+          "address", 
+          "int256", 
+          "bytes", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "bytes", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "bytes"
+        ]
+      }, 
+      "publicCreateSingleEventMarket": {
+        "fixed": [
+          3, 
+          4, 
+          7, 
+          11
+        ], 
+        "inputs": [
+          "branch", 
+          "description", 
+          "expDate", 
+          "fxpMinValue", 
+          "fxpMaxValue", 
+          "numOutcomes", 
+          "resolution", 
+          "fxpTradingFee", 
+          "tag1", 
+          "tag2", 
+          "tag3", 
+          "fxpMakerFees", 
+          "extraInfo"
+        ], 
+        "label": "Public Create Single Event Market", 
+        "method": "publicCreateSingleEventMarket", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "bytes", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "bytes", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "bytes"
         ]
       }, 
       "setController": {
@@ -4135,6 +4373,44 @@
         ]
       }
     }, 
+    "EventsWithSubmittedReport": {
+      "getEventsWithSubmittedReport": {
+        "inputs": [
+          "branch", 
+          "period", 
+          "reporter"
+        ], 
+        "label": "Get Events With Submitted Report", 
+        "method": "getEventsWithSubmittedReport", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
     "ExpiringEvents": {
       "addEvent": {
         "inputs": [
@@ -5015,6 +5291,32 @@
         ]
       }
     }, 
+    "ForkResolverContractExample": {
+      "getForkResolution": {
+        "inputs": [
+          "branch"
+        ], 
+        "label": "Get Fork Resolution", 
+        "method": "getForkResolution", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "resolveFork": {
+        "inputs": [
+          "branch", 
+          "winner"
+        ], 
+        "label": "Resolve Fork", 
+        "method": "resolveFork", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }
+    }, 
     "Forking": {
       "fork": {
         "inputs": [
@@ -5275,6 +5577,9 @@
     }, 
     "MakeOrder": {
       "makeOrder": {
+        "events": [
+          "MakeOrder"
+        ], 
         "fixed": [
           2, 
           3
@@ -5286,6 +5591,8 @@
           "fxpPrice", 
           "market", 
           "outcome", 
+          "betterOrderID", 
+          "worseOrderID", 
           "tradeGroupID"
         ], 
         "label": "Make Order", 
@@ -5298,6 +5605,8 @@
           "int256", 
           "address", 
           "uint256", 
+          "address", 
+          "address", 
           "int256"
         ]
       }, 
@@ -5348,6 +5657,9 @@
         ]
       }, 
       "publicMakeOrder": {
+        "events": [
+          "MakeOrder"
+        ], 
         "fixed": [
           1, 
           2
@@ -5358,6 +5670,8 @@
           "fxpPrice", 
           "market", 
           "outcome", 
+          "betterOrderID", 
+          "worseOrderID", 
           "tradeGroupID"
         ], 
         "label": "Public Make Order", 
@@ -5369,6 +5683,8 @@
           "int256", 
           "address", 
           "uint256", 
+          "address", 
+          "address", 
           "int256"
         ]
       }, 
@@ -5424,6 +5740,106 @@
           "int256", 
           "int256", 
           "int256"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "MarketCreator": {
+      "getMarketCreatorFeesCollected": {
+        "inputs": [
+          "market"
+        ], 
+        "label": "Get Market Creator Fees Collected", 
+        "method": "getMarketCreatorFeesCollected", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "getMarketsCreatedByMarketCreator": {
+        "inputs": [
+          "branch", 
+          "creator", 
+          "initial", 
+          "last"
+        ], 
+        "label": "Get Markets Created By Market Creator", 
+        "method": "getMarketsCreatedByMarketCreator", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "MarketInfo": {
+      "batchGetMarketInfo": {
+        "inputs": [
+          "marketIDs", 
+          "account"
+        ], 
+        "label": "Batch Get Market Info", 
+        "method": "batchGetMarketInfo", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256[]", 
+          "int256"
+        ]
+      }, 
+      "getMarketInfo": {
+        "inputs": [
+          "marketID", 
+          "account"
+        ], 
+        "label": "Get Market Info", 
+        "method": "getMarketInfo", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
         ]
       }, 
       "suicideFunds": {
@@ -5906,6 +6322,48 @@
         ]
       }
     }, 
+    "MarketsInfo": {
+      "getMarketsInfo": {
+        "inputs": [
+          "branch", 
+          "offset", 
+          "numMarketsToLoad", 
+          "volumeMin", 
+          "volumeMax"
+        ], 
+        "label": "Get Markets Info", 
+        "method": "getMarketsInfo", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
     "MoveEventAfterFork": {
       "moveEvent": {
         "inputs": [
@@ -6065,21 +6523,119 @@
         ]
       }
     }, 
-    "Orders": {
-      "addOrder": {
+    "OrderBook": {
+      "getOrderBook": {
         "inputs": [
-          "market", 
-          "orderID"
+          "type", 
+          "marketID", 
+          "outcomeID", 
+          "offset", 
+          "numOrdersToLoad"
         ], 
-        "label": "Add Order", 
-        "method": "addOrder", 
+        "label": "Get Order Book", 
+        "method": "getOrderBook", 
+        "returns": "int256[]", 
+        "signature": [
+          "uint256", 
+          "address", 
+          "uint256", 
+          "uint256", 
+          "uint256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
         "returns": "int256", 
         "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "Orders": {
+      "ascendOrderList": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "type", 
+          "market", 
+          "outcome", 
+          "fxpPrice", 
+          "lowestOrderID"
+        ], 
+        "label": "Ascend Order List", 
+        "method": "ascendOrderList", 
+        "returns": "int256[]", 
+        "signature": [
+          "uint256", 
+          "address", 
+          "uint256", 
           "int256", 
-          "int256"
+          "address"
+        ]
+      }, 
+      "assertIsNotBetterPrice": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "type", 
+          "market", 
+          "outcome", 
+          "fxpPrice", 
+          "betterOrderID"
+        ], 
+        "label": "Assert Is Not Better Price", 
+        "method": "assertIsNotBetterPrice", 
+        "returns": "uint256", 
+        "signature": [
+          "uint256", 
+          "address", 
+          "uint256", 
+          "int256", 
+          "address"
+        ]
+      }, 
+      "assertIsNotWorsePrice": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "type", 
+          "market", 
+          "outcome", 
+          "fxpPrice", 
+          "worseOrderID"
+        ], 
+        "label": "Assert Is Not Worse Price", 
+        "method": "assertIsNotWorsePrice", 
+        "returns": "uint256", 
+        "signature": [
+          "uint256", 
+          "address", 
+          "uint256", 
+          "int256", 
+          "address"
         ]
       }, 
       "cancelOrderLog": {
+        "events": [
+          "CancelOrder"
+        ], 
         "fixed": [
           2, 
           3, 
@@ -6112,31 +6668,10 @@
           "int256"
         ]
       }, 
-      "checkHash": {
-        "inputs": [
-          "orderHash", 
-          "sender"
-        ], 
-        "label": "Check Hash", 
-        "method": "checkHash", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256"
-        ]
-      }, 
-      "commitOrder": {
-        "inputs": [
-          "hash"
-        ], 
-        "label": "Commit Order", 
-        "method": "commitOrder", 
-        "returns": "int256", 
-        "signature": [
-          "int256"
-        ]
-      }, 
       "completeSetsLog": {
+        "events": [
+          "CompleteSets"
+        ], 
         "fixed": [
           3
         ], 
@@ -6160,9 +6695,34 @@
           "int256"
         ]
       }, 
+      "descendOrderList": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "type", 
+          "market", 
+          "outcome", 
+          "fxpPrice", 
+          "highestOrderID"
+        ], 
+        "label": "Descend Order List", 
+        "method": "descendOrderList", 
+        "returns": "int256[]", 
+        "signature": [
+          "uint256", 
+          "address", 
+          "uint256", 
+          "int256", 
+          "address"
+        ]
+      }, 
       "fillOrder": {
         "inputs": [
           "orderID", 
+          "type", 
+          "market", 
+          "outcome", 
           "fill", 
           "money", 
           "shares"
@@ -6171,43 +6731,107 @@
         "method": "fillOrder", 
         "returns": "int256", 
         "signature": [
-          "int256", 
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256", 
           "int256", 
           "int256", 
           "int256"
         ]
       }, 
+      "findBoundingOrders": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "type", 
+          "market", 
+          "outcome", 
+          "fxpPrice", 
+          "bestOrderID", 
+          "worstOrderID", 
+          "betterOrderID", 
+          "worseOrderID"
+        ], 
+        "label": "Find Bounding Orders", 
+        "method": "findBoundingOrders", 
+        "returns": "int256[]", 
+        "signature": [
+          "uint256", 
+          "address", 
+          "uint256", 
+          "int256", 
+          "address", 
+          "address", 
+          "address", 
+          "address"
+        ]
+      }, 
       "getAmount": {
         "inputs": [
-          "id"
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
         ], 
         "label": "Get Amount", 
         "method": "getAmount", 
         "returns": "unfix", 
         "signature": [
-          "int256"
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
-      "getID": {
+      "getBestOrderID": {
         "inputs": [
-          "orderID"
+          "type", 
+          "market", 
+          "outcome"
         ], 
-        "label": "Get ID", 
-        "method": "getID", 
-        "returns": "int256", 
+        "label": "Get Best Order ID", 
+        "method": "getBestOrderID", 
+        "returns": "address", 
         "signature": [
-          "int256"
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
-      "getLastOrder": {
+      "getBetterOrderID": {
         "inputs": [
-          "market"
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
         ], 
-        "label": "Get Last Order", 
-        "method": "getLastOrder", 
-        "returns": "int256", 
+        "label": "Get Better Order ID", 
+        "method": "getBetterOrderID", 
+        "returns": "address", 
         "signature": [
-          "int256"
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "getGasPrice": {
+        "inputs": [
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
+        ], 
+        "label": "Get Gas Price", 
+        "method": "getGasPrice", 
+        "returns": "uint256", 
+        "signature": [
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
       "getLastOutcomePrice": {
@@ -6219,87 +6843,78 @@
         "method": "getLastOutcomePrice", 
         "returns": "unfix", 
         "signature": [
-          "int256", 
-          "int256"
+          "address", 
+          "uint256"
         ]
       }, 
       "getOrder": {
         "inputs": [
-          "id"
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
         ], 
         "label": "Get Order", 
         "method": "getOrder", 
         "returns": "int256[]", 
         "signature": [
-          "int256"
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
       "getOrderIDs": {
         "inputs": [
-          "marketID"
+          "type", 
+          "market", 
+          "outcome", 
+          "startingOrderID", 
+          "numOrdersToLoad"
         ], 
         "label": "Get Order I Ds", 
         "method": "getOrderIDs", 
         "returns": "int256[]", 
         "signature": [
-          "int256"
+          "uint256", 
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
       "getOrderOwner": {
         "inputs": [
-          "id"
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
         ], 
         "label": "Get Order Owner", 
         "method": "getOrderOwner", 
         "returns": "int256", 
         "signature": [
-          "int256"
-        ]
-      }, 
-      "getPrevID": {
-        "inputs": [
-          "market", 
-          "order"
-        ], 
-        "label": "Get Prev ID", 
-        "method": "getPrevID", 
-        "returns": "int256", 
-        "signature": [
-          "int256", 
-          "int256"
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
       "getPrice": {
         "inputs": [
-          "id"
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
         ], 
         "label": "Get Price", 
         "method": "getPrice", 
         "returns": "unfix", 
         "signature": [
-          "int256"
-        ]
-      }, 
-      "getTotalOrders": {
-        "inputs": [
-          "marketID"
-        ], 
-        "label": "Get Total Orders", 
-        "method": "getTotalOrders", 
-        "returns": "int256", 
-        "signature": [
-          "int256"
-        ]
-      }, 
-      "getType": {
-        "inputs": [
-          "id"
-        ], 
-        "label": "Get Type", 
-        "method": "getType", 
-        "returns": "int256", 
-        "signature": [
-          "int256"
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
       "getVolume": {
@@ -6310,22 +6925,109 @@
         "method": "getVolume", 
         "returns": "unfix", 
         "signature": [
-          "int256"
+          "address"
         ]
       }, 
-      "makeOrderHash": {
+      "getWorseOrderID": {
         "inputs": [
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
+        ], 
+        "label": "Get Worse Order ID", 
+        "method": "getWorseOrderID", 
+        "returns": "address", 
+        "signature": [
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "getWorstOrderID": {
+        "inputs": [
+          "type", 
+          "market", 
+          "outcome"
+        ], 
+        "label": "Get Worst Order ID", 
+        "method": "getWorstOrderID", 
+        "returns": "address", 
+        "signature": [
+          "uint256", 
+          "address", 
+          "uint256"
+        ]
+      }, 
+      "insertOrderIntoList": {
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "orderID", 
+          "type", 
           "market", 
           "outcome", 
-          "direction"
+          "fxpPrice", 
+          "betterOrderID", 
+          "worseOrderID"
         ], 
-        "label": "Make Order Hash", 
-        "method": "makeOrderHash", 
-        "returns": "int256", 
+        "label": "Insert Order Into List", 
+        "method": "insertOrderIntoList", 
+        "returns": "uint256", 
         "signature": [
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256", 
           "int256", 
+          "address", 
+          "address"
+        ]
+      }, 
+      "isBetterPrice": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "type", 
+          "market", 
+          "outcome", 
+          "fxpPrice", 
+          "orderID"
+        ], 
+        "label": "Is Better Price", 
+        "method": "isBetterPrice", 
+        "returns": "uint256", 
+        "signature": [
+          "uint256", 
+          "address", 
+          "uint256", 
           "int256", 
-          "int256"
+          "address"
+        ]
+      }, 
+      "isWorsePrice": {
+        "fixed": [
+          1
+        ], 
+        "inputs": [
+          "type", 
+          "market", 
+          "outcome", 
+          "fxpPrice", 
+          "orderID"
+        ], 
+        "label": "Is Worse Price", 
+        "method": "isWorsePrice", 
+        "returns": "uint256", 
+        "signature": [
+          "uint256", 
+          "address", 
+          "uint256", 
+          "int256", 
+          "address"
         ]
       }, 
       "modifyMarketVolume": {
@@ -6340,35 +7042,48 @@
         "method": "modifyMarketVolume", 
         "returns": "int256", 
         "signature": [
-          "int256", 
+          "address", 
           "int256"
         ]
       }, 
       "removeOrder": {
         "inputs": [
-          "id"
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
         ], 
         "label": "Remove Order", 
         "method": "removeOrder", 
         "returns": "int256", 
         "signature": [
-          "int256"
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
-      "removeOrderFromMarket": {
+      "removeOrderFromList": {
         "inputs": [
-          "marketID", 
-          "orderID"
+          "orderID", 
+          "type", 
+          "market", 
+          "outcome"
         ], 
-        "label": "Remove Order From Market", 
-        "method": "removeOrderFromMarket", 
-        "returns": "int256", 
+        "label": "Remove Order From List", 
+        "method": "removeOrderFromList", 
+        "returns": "uint256", 
         "signature": [
-          "int256", 
-          "int256"
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256"
         ]
       }, 
       "saveOrder": {
+        "events": [
+          "MakeOrder"
+        ], 
         "fixed": [
           3, 
           4, 
@@ -6385,22 +7100,28 @@
           "outcome", 
           "fxpMoneyEscrowed", 
           "fxpSharesEscrowed", 
-          "tradeGroupID"
+          "betterOrderID", 
+          "worseOrderID", 
+          "tradeGroupID", 
+          "gasPrice"
         ], 
         "label": "Save Order", 
         "method": "saveOrder", 
         "returns": "int256", 
         "signature": [
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256", 
           "int256", 
+          "address", 
+          "uint256", 
+          "uint256", 
+          "uint256", 
+          "address", 
+          "address", 
           "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256", 
-          "int256"
+          "uint256"
         ]
       }, 
       "setController": {
@@ -6427,8 +7148,8 @@
         "method": "setPrice", 
         "returns": "int256", 
         "signature": [
-          "int256", 
-          "int256", 
+          "address", 
+          "uint256", 
           "int256"
         ]
       }, 
@@ -6522,6 +7243,94 @@
           "uint256", 
           "uint256"
         ]
+      }, 
+      "updateBestAskOrder": {
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "orderID", 
+          "market", 
+          "fxpPrice", 
+          "outcome", 
+          "betterOrderID"
+        ], 
+        "label": "Update Best Ask Order", 
+        "method": "updateBestAskOrder", 
+        "returns": "address", 
+        "signature": [
+          "address", 
+          "address", 
+          "int256", 
+          "uint256", 
+          "uint256"
+        ]
+      }, 
+      "updateBestBidOrder": {
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "orderID", 
+          "market", 
+          "fxpPrice", 
+          "outcome", 
+          "betterOrderID"
+        ], 
+        "label": "Update Best Bid Order", 
+        "method": "updateBestBidOrder", 
+        "returns": "address", 
+        "signature": [
+          "address", 
+          "address", 
+          "int256", 
+          "uint256", 
+          "uint256"
+        ]
+      }, 
+      "updateWorstAskOrder": {
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "orderID", 
+          "market", 
+          "fxpPrice", 
+          "outcome", 
+          "worseOrderID"
+        ], 
+        "label": "Update Worst Ask Order", 
+        "method": "updateWorstAskOrder", 
+        "returns": "address", 
+        "signature": [
+          "address", 
+          "address", 
+          "int256", 
+          "uint256", 
+          "uint256"
+        ]
+      }, 
+      "updateWorstBidOrder": {
+        "fixed": [
+          2
+        ], 
+        "inputs": [
+          "orderID", 
+          "market", 
+          "fxpPrice", 
+          "outcome", 
+          "worseOrderID"
+        ], 
+        "label": "Update Worst Bid Order", 
+        "method": "updateWorstBidOrder", 
+        "returns": "address", 
+        "signature": [
+          "address", 
+          "address", 
+          "int256", 
+          "uint256", 
+          "uint256"
+        ]
       }
     }, 
     "PenalizationCatchup": {
@@ -6612,6 +7421,96 @@
         ]
       }
     }, 
+    "PositionInMarket": {
+      "getPositionInMarket": {
+        "inputs": [
+          "market", 
+          "account"
+        ], 
+        "label": "Get Position In Market", 
+        "method": "getPositionInMarket", 
+        "returns": "int256[]", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "RateContractExample": {
+      "getCurrency": {
+        "label": "Get Currency", 
+        "method": "getCurrency", 
+        "returns": "int256"
+      }, 
+      "rateFunction": {
+        "label": "Rate Function", 
+        "method": "rateFunction", 
+        "returns": "int256"
+      }, 
+      "setRate": {
+        "inputs": [
+          "rate"
+        ], 
+        "label": "Set Rate", 
+        "method": "setRate", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }
+    }, 
+    "Register": {
+      "register": {
+        "events": [
+          "registration"
+        ], 
+        "label": "Register", 
+        "method": "register", 
+        "returns": "int256"
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
     "RepChangeLib": {
       "calculateRepChange": {
         "inputs": [
@@ -6656,6 +7555,13 @@
         "signature": [
           "address"
         ]
+      }
+    }, 
+    "RepEscapeHatch": {
+      "test": {
+        "label": "Test", 
+        "method": "test", 
+        "returns": "int256"
       }
     }, 
     "Reporting": {
@@ -7124,6 +8030,43 @@
         "send": true, 
         "signature": [
           "int256"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }
+    }, 
+    "ReputationFaucet": {
+      "reputationFaucet": {
+        "events": [
+          "fundedAccount"
+        ], 
+        "inputs": [
+          "branch"
+        ], 
+        "label": "Reputation Faucet", 
+        "method": "reputationFaucet", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
         ]
       }, 
       "suicideFunds": {
@@ -7714,6 +8657,55 @@
         ]
       }
     }, 
+    "Stack": {
+      "isEmpty": {
+        "inputs": [
+          "key"
+        ], 
+        "label": "Is Empty", 
+        "method": "isEmpty", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "peek": {
+        "inputs": [
+          "key"
+        ], 
+        "label": "Peek", 
+        "method": "peek", 
+        "returns": "int256", 
+        "signature": [
+          "int256"
+        ]
+      }, 
+      "pop": {
+        "inputs": [
+          "key", 
+          "item"
+        ], 
+        "label": "Pop", 
+        "method": "pop", 
+        "returns": "int256", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "push": {
+        "inputs": [
+          "key", 
+          "item"
+        ], 
+        "label": "Push", 
+        "method": "push", 
+        "signature": [
+          "int256", 
+          "int256"
+        ]
+      }
+    }, 
     "TakeAskOrder": {
       "setController": {
         "inputs": [
@@ -7738,7 +8730,8 @@
       }, 
       "takeAskOrder": {
         "events": [
-          "TakeAskOrder"
+          "TakeAskOrder", 
+          "CompleteSets"
         ], 
         "fixed": [
           2
@@ -7746,14 +8739,18 @@
         "inputs": [
           "sender", 
           "orderID", 
+          "market", 
+          "outcome", 
           "fxpAmountTakerWants"
         ], 
         "label": "Take Ask Order", 
         "method": "takeAskOrder", 
-        "returns": "uint256", 
+        "returns": "unfix", 
         "signature": [
           "address", 
           "address", 
+          "address", 
+          "uint256", 
           "uint256"
         ]
       }
@@ -7782,6 +8779,7 @@
       }, 
       "takeBidOrder": {
         "events": [
+          "CompleteSets", 
           "TakeBidOrder"
         ], 
         "fixed": [
@@ -7790,14 +8788,18 @@
         "inputs": [
           "sender", 
           "orderID", 
+          "market", 
+          "outcome", 
           "fxpAmountTakerWants"
         ], 
         "label": "Take Bid Order", 
         "method": "takeBidOrder", 
-        "returns": "uint256", 
+        "returns": "unfix", 
         "signature": [
           "address", 
           "address", 
+          "address", 
+          "uint256", 
           "uint256"
         ]
       }
@@ -7806,6 +8808,7 @@
       "publicTakeOrder": {
         "events": [
           "TakeAskOrder", 
+          "CompleteSets", 
           "TakeBidOrder"
         ], 
         "fixed": [
@@ -7813,13 +8816,19 @@
         ], 
         "inputs": [
           "orderID", 
+          "type", 
+          "market", 
+          "outcome", 
           "fxpAmountTakerWants"
         ], 
         "label": "Public Take Order", 
         "method": "publicTakeOrder", 
-        "returns": "uint256", 
+        "returns": "unfix", 
         "signature": [
           "address", 
+          "uint256", 
+          "address", 
+          "uint256", 
           "uint256"
         ]
       }, 
@@ -7847,6 +8856,7 @@
       "takeOrder": {
         "events": [
           "TakeAskOrder", 
+          "CompleteSets", 
           "TakeBidOrder"
         ], 
         "fixed": [
@@ -7855,14 +8865,20 @@
         "inputs": [
           "sender", 
           "orderID", 
+          "type", 
+          "market", 
+          "outcome", 
           "fxpAmountTakerWants"
         ], 
         "label": "Take Order", 
         "method": "takeOrder", 
-        "returns": "uint256", 
+        "returns": "unfix", 
         "signature": [
           "address", 
           "address", 
+          "uint256", 
+          "address", 
+          "uint256", 
           "uint256"
         ]
       }
@@ -7960,6 +8976,253 @@
         "signature": [
           "int256", 
           "int256", 
+          "int256"
+        ]
+      }
+    }, 
+    "Trade": {
+      "buy": {
+        "events": [
+          "TakeAskOrder", 
+          "CompleteSets", 
+          "TakeBidOrder", 
+          "MakeOrder"
+        ], 
+        "fixed": [
+          3, 
+          4
+        ], 
+        "inputs": [
+          "sender", 
+          "market", 
+          "outcome", 
+          "fxpAmount", 
+          "fxpPrice", 
+          "tradeGroupID"
+        ], 
+        "label": "Buy", 
+        "method": "buy", 
+        "returns": "unfix", 
+        "signature": [
+          "address", 
+          "address", 
+          "uint256", 
+          "uint256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicBuy": {
+        "events": [
+          "TakeAskOrder", 
+          "CompleteSets", 
+          "TakeBidOrder", 
+          "MakeOrder"
+        ], 
+        "fixed": [
+          2, 
+          3
+        ], 
+        "inputs": [
+          "market", 
+          "outcome", 
+          "fxpAmount", 
+          "fxpPrice", 
+          "tradeGroupID"
+        ], 
+        "label": "Public Buy", 
+        "method": "publicBuy", 
+        "returns": "unfix", 
+        "signature": [
+          "address", 
+          "uint256", 
+          "uint256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicSell": {
+        "events": [
+          "TakeAskOrder", 
+          "CompleteSets", 
+          "TakeBidOrder", 
+          "MakeOrder"
+        ], 
+        "fixed": [
+          2, 
+          3
+        ], 
+        "inputs": [
+          "market", 
+          "outcome", 
+          "fxpAmount", 
+          "fxpPrice", 
+          "tradeGroupID"
+        ], 
+        "label": "Public Sell", 
+        "method": "publicSell", 
+        "returns": "unfix", 
+        "signature": [
+          "address", 
+          "uint256", 
+          "uint256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "publicTakeBestOrder": {
+        "events": [
+          "TakeAskOrder", 
+          "CompleteSets", 
+          "TakeBidOrder"
+        ], 
+        "fixed": [
+          3, 
+          4
+        ], 
+        "inputs": [
+          "type", 
+          "market", 
+          "outcome", 
+          "fxpAmount", 
+          "fxpPrice"
+        ], 
+        "label": "Public Take Best Order", 
+        "method": "publicTakeBestOrder", 
+        "returns": "unfix", 
+        "signature": [
+          "uint256", 
+          "address", 
+          "uint256", 
+          "uint256", 
+          "int256"
+        ]
+      }, 
+      "sell": {
+        "events": [
+          "TakeAskOrder", 
+          "CompleteSets", 
+          "TakeBidOrder", 
+          "MakeOrder"
+        ], 
+        "fixed": [
+          3, 
+          4
+        ], 
+        "inputs": [
+          "sender", 
+          "market", 
+          "outcome", 
+          "fxpAmount", 
+          "fxpPrice", 
+          "tradeGroupID"
+        ], 
+        "label": "Sell", 
+        "method": "sell", 
+        "returns": "unfix", 
+        "signature": [
+          "address", 
+          "address", 
+          "uint256", 
+          "uint256", 
+          "int256", 
+          "int256"
+        ]
+      }, 
+      "setController": {
+        "inputs": [
+          "newController"
+        ], 
+        "label": "Set Controller", 
+        "method": "setController", 
+        "returns": "int256", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "suicideFunds": {
+        "inputs": [
+          "to"
+        ], 
+        "label": "Suicide Funds", 
+        "method": "suicideFunds", 
+        "signature": [
+          "address"
+        ]
+      }, 
+      "takeBestOrder": {
+        "events": [
+          "TakeAskOrder", 
+          "CompleteSets", 
+          "TakeBidOrder"
+        ], 
+        "fixed": [
+          4, 
+          5
+        ], 
+        "inputs": [
+          "sender", 
+          "type", 
+          "market", 
+          "outcome", 
+          "fxpAmount", 
+          "fxpPrice"
+        ], 
+        "label": "Take Best Order", 
+        "method": "takeBestOrder", 
+        "returns": "unfix", 
+        "signature": [
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256", 
+          "uint256", 
+          "int256"
+        ]
+      }, 
+      "trade": {
+        "events": [
+          "TakeAskOrder", 
+          "CompleteSets", 
+          "TakeBidOrder", 
+          "MakeOrder"
+        ], 
+        "fixed": [
+          4, 
+          5
+        ], 
+        "inputs": [
+          "sender", 
+          "type", 
+          "market", 
+          "outcome", 
+          "fxpAmount", 
+          "fxpPrice", 
+          "tradeGroupID"
+        ], 
+        "label": "Trade", 
+        "method": "trade", 
+        "returns": "unfix", 
+        "signature": [
+          "address", 
+          "uint256", 
+          "address", 
+          "uint256", 
+          "uint256", 
+          "int256", 
+          "int256"
+        ]
+      }
+    }, 
+    "TradingEscapeHatch": {
+      "claimSharesInUpdate": {
+        "inputs": [
+          "market"
+        ], 
+        "label": "Claim Shares In Update", 
+        "method": "claimSharesInUpdate", 
+        "returns": "int256", 
+        "signature": [
           "int256"
         ]
       }
