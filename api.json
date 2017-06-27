@@ -1810,6 +1810,7 @@
         "label": "Public Cancel Order", 
         "method": "publicCancelOrder", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "address", 
           "uint256", 
@@ -1900,15 +1901,12 @@
         ], 
         "label": "Balance Of", 
         "method": "balanceOf", 
-        "returns": "int256", 
+        "returns": "unfix", 
         "signature": [
           "address"
         ]
       }, 
       "depositEther": {
-        "fixed": [
-          1
-        ], 
         "inputs": [
           "sender"
         ], 
@@ -1943,7 +1941,8 @@
       "publicDepositEther": {
         "label": "Public Deposit Ether", 
         "method": "publicDepositEther", 
-        "returns": "int256"
+        "send": true, 
+        "returns": "number"
       }, 
       "publicWithdrawEther": {
         "inputs": [
@@ -1952,6 +1951,7 @@
         ], 
         "label": "Public Withdraw Ether", 
         "method": "publicWithdrawEther", 
+        "send": true, 
         "returns": "int256", 
         "signature": [
           "address", 
@@ -2090,6 +2090,7 @@
         "label": "Public Claim Proceeds", 
         "method": "publicClaimProceeds", 
         "returns": "uint256", 
+        "send": true, 
         "signature": [
           "address"
         ]
@@ -2138,6 +2139,7 @@
         "label": "Public Close Market", 
         "method": "publicCloseMarket", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2203,6 +2205,7 @@
         "label": "Public Collect Fees", 
         "method": "publicCollectFees", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -2217,6 +2220,7 @@
         "label": "Public Collect Rep", 
         "method": "publicCollectRep", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -2283,6 +2287,7 @@
         "label": "Public Buy Complete Sets", 
         "method": "publicBuyCompleteSets", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "address", 
           "uint256"
@@ -2302,6 +2307,7 @@
         "label": "Public Sell Complete Sets", 
         "method": "publicSellCompleteSets", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "address", 
           "uint256"
@@ -2984,6 +2990,7 @@
         "label": "Public Convert To Active Rep", 
         "method": "publicConvertToActiveRep", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3000,6 +3007,7 @@
         "label": "Public Convert To Dormant Rep", 
         "method": "publicConvertToDormantRep", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -3064,6 +3072,7 @@
         "label": "Public Create Subbranch", 
         "method": "publicCreateSubbranch", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3184,6 +3193,7 @@
         "label": "Public Create Event", 
         "method": "publicCreateEvent", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "bytes", 
@@ -3351,6 +3361,7 @@
         "label": "Public Create Market", 
         "method": "publicCreateMarket", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -3455,6 +3466,7 @@
         "label": "Public Create Single Event Market", 
         "method": "publicCreateSingleEventMarket", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "bytes", 
@@ -3529,6 +3541,7 @@
         "label": "Public Decrease Trading Fee", 
         "method": "publicDecreaseTradingFee", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "address", 
           "uint256"
@@ -5265,6 +5278,7 @@
         "label": "Public Resolve Fork", 
         "method": "publicResolveFork", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -5420,6 +5434,7 @@
         "label": "Public Increment Period After Reporting", 
         "method": "publicIncrementPeriodAfterReporting", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -5677,6 +5692,7 @@
         "label": "Public Make Order", 
         "method": "publicMakeOrder", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "uint256", 
           "uint256", 
@@ -7355,6 +7371,7 @@
         "label": "Public Penalization Catchup", 
         "method": "publicPenalizationCatchup", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256"
@@ -8053,7 +8070,8 @@
         ], 
         "label": "Reputation Faucet", 
         "method": "reputationFaucet", 
-        "returns": "int256", 
+        "returns": "number", 
+        "send": true, 
         "signature": [
           "int256"
         ]
@@ -8438,6 +8456,7 @@
         "label": "Public Approve", 
         "method": "publicApprove", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -8447,7 +8466,8 @@
       "publicClaimRep": {
         "label": "Public Claim Rep", 
         "method": "publicClaimRep", 
-        "returns": "int256"
+        "returns": "int256", 
+        "send": true
       }, 
       "publicSendRepFrom": {
         "fixed": [
@@ -8462,6 +8482,7 @@
         "label": "Public Send Rep From", 
         "method": "publicSendRepFrom", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -8485,6 +8506,7 @@
         "label": "Public Transfer From", 
         "method": "publicTransferFrom", 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "int256", 
           "int256", 
@@ -8824,6 +8846,7 @@
         "label": "Public Take Order", 
         "method": "publicTakeOrder", 
         "returns": "unfix", 
+        "send": true, 
         "signature": [
           "address", 
           "uint256", 
@@ -9033,6 +9056,7 @@
         "label": "Public Buy", 
         "method": "publicBuy", 
         "returns": "unfix", 
+        "send": true, 
         "signature": [
           "address", 
           "uint256", 
@@ -9062,6 +9086,7 @@
         "label": "Public Sell", 
         "method": "publicSell", 
         "returns": "unfix", 
+        "send": true, 
         "signature": [
           "address", 
           "uint256", 
@@ -9090,6 +9115,7 @@
         "label": "Public Take Best Order", 
         "method": "publicTakeBestOrder", 
         "returns": "unfix", 
+        "send": true, 
         "signature": [
           "uint256", 
           "address", 
