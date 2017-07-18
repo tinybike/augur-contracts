@@ -336,10 +336,15 @@
           "indexed": false, 
           "name": "fxpBidderMoneyFilled", 
           "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "tradeGroupID", 
+          "type": "int256"
         }
       ], 
-      "name": "TakeAskOrder(address,address,address,uint256,int256,uint256,uint256,address,uint256,uint256,uint256,uint256)", 
-      "signature": "0x2010f9b3a8f949972f92577110c41af4cd03d4d691d210296f54ff14fb66434c"
+      "name": "TakeAskOrder(address,address,address,uint256,int256,uint256,uint256,address,uint256,uint256,uint256,uint256,int256)", 
+      "signature": "0xc44cc35373f23ec79daff6d0c78e3eb5d29be96c6f33721deae3380e4e618da0"
     }, 
     "TakeBidOrder": {
       "contract": "Orders", 
@@ -408,10 +413,27 @@
           "indexed": false, 
           "name": "fxpBidderMoneyFilled", 
           "type": "uint256"
+        }, 
+        {
+          "indexed": false, 
+          "name": "tradeGroupID", 
+          "type": "int256"
         }
       ], 
-      "name": "TakeBidOrder(address,address,address,uint256,int256,uint256,uint256,address,uint256,uint256,uint256,uint256,uint256)", 
-      "signature": "0x26dcd240923faf78c4b874639419b00701f8d76fbd36e0a40a1790379b9f9efb"
+      "name": "TakeBidOrder(address,address,address,uint256,int256,uint256,uint256,address,uint256,uint256,uint256,uint256,uint256,int256)", 
+      "signature": "0xc1d21982370eefc118bbfb8fcbd4651abcb0de42b724be8e76af49149deabf74"
+    }, 
+    "TradeAmountRemaining": {
+      "contract": "Trade", 
+      "inputs": [
+        {
+          "indexed": false, 
+          "name": "fxpAmountRemaining", 
+          "type": "int256"
+        }
+      ], 
+      "name": "TradeAmountRemaining(int256)", 
+      "signature": "0x51dcbf6e1d259b385ff6b1b19df7f8178baaa7ddbf98148f59cede127b410707"
     }, 
     "Transfer": {
       "contract": "ConvertRep", 
@@ -1941,8 +1963,8 @@
       "publicDepositEther": {
         "label": "Public Deposit Ether", 
         "method": "publicDepositEther", 
-        "send": true, 
-        "returns": "number"
+        "returns": "number", 
+        "send": true
       }, 
       "publicWithdrawEther": {
         "inputs": [
@@ -1951,8 +1973,8 @@
         ], 
         "label": "Public Withdraw Ether", 
         "method": "publicWithdrawEther", 
-        "send": true, 
         "returns": "int256", 
+        "send": true, 
         "signature": [
           "address", 
           "uint256"
@@ -7200,7 +7222,8 @@
           "outcome", 
           "fxpAskerSharesFilled", 
           "fxpAskerMoneyFilled", 
-          "fxpBidderMoneyFilled"
+          "fxpBidderMoneyFilled", 
+          "tradeGroupID"
         ], 
         "label": "Take Ask Order Log", 
         "method": "takeAskOrderLog", 
@@ -7215,7 +7238,8 @@
           "uint256", 
           "uint256", 
           "uint256", 
-          "uint256"
+          "uint256", 
+          "int256"
         ]
       }, 
       "takeBidOrderLog": {
@@ -7241,7 +7265,8 @@
           "fxpAskerSharesFilled", 
           "fxpAskerMoneyFilled", 
           "fxpBidderSharesFilled", 
-          "fxpBidderMoneyFilled"
+          "fxpBidderMoneyFilled", 
+          "tradeGroupID"
         ], 
         "label": "Take Bid Order Log", 
         "method": "takeBidOrderLog", 
@@ -7257,7 +7282,8 @@
           "uint256", 
           "uint256", 
           "uint256", 
-          "uint256"
+          "uint256", 
+          "int256"
         ]
       }, 
       "updateBestAskOrder": {
@@ -8763,7 +8789,8 @@
           "orderID", 
           "market", 
           "outcome", 
-          "fxpAmountTakerWants"
+          "fxpAmountTakerWants", 
+          "tradeGroupID"
         ], 
         "label": "Take Ask Order", 
         "method": "takeAskOrder", 
@@ -8773,7 +8800,8 @@
           "address", 
           "address", 
           "uint256", 
-          "uint256"
+          "uint256", 
+          "int256"
         ]
       }
     }, 
@@ -8812,7 +8840,8 @@
           "orderID", 
           "market", 
           "outcome", 
-          "fxpAmountTakerWants"
+          "fxpAmountTakerWants", 
+          "tradeGroupID"
         ], 
         "label": "Take Bid Order", 
         "method": "takeBidOrder", 
@@ -8822,7 +8851,8 @@
           "address", 
           "address", 
           "uint256", 
-          "uint256"
+          "uint256", 
+          "int256"
         ]
       }
     }, 
@@ -8841,7 +8871,8 @@
           "type", 
           "market", 
           "outcome", 
-          "fxpAmountTakerWants"
+          "fxpAmountTakerWants", 
+          "tradeGroupID"
         ], 
         "label": "Public Take Order", 
         "method": "publicTakeOrder", 
@@ -8852,7 +8883,8 @@
           "uint256", 
           "address", 
           "uint256", 
-          "uint256"
+          "uint256", 
+          "int256"
         ]
       }, 
       "setController": {
@@ -8891,7 +8923,8 @@
           "type", 
           "market", 
           "outcome", 
-          "fxpAmountTakerWants"
+          "fxpAmountTakerWants", 
+          "tradeGroupID"
         ], 
         "label": "Take Order", 
         "method": "takeOrder", 
@@ -8902,7 +8935,8 @@
           "uint256", 
           "address", 
           "uint256", 
-          "uint256"
+          "uint256", 
+          "int256"
         ]
       }
     }, 
@@ -9004,37 +9038,6 @@
       }
     }, 
     "Trade": {
-      "buy": {
-        "events": [
-          "TakeAskOrder", 
-          "CompleteSets", 
-          "TakeBidOrder", 
-          "MakeOrder"
-        ], 
-        "fixed": [
-          3, 
-          4
-        ], 
-        "inputs": [
-          "sender", 
-          "market", 
-          "outcome", 
-          "fxpAmount", 
-          "fxpPrice", 
-          "tradeGroupID"
-        ], 
-        "label": "Buy", 
-        "method": "buy", 
-        "returns": "unfix", 
-        "signature": [
-          "address", 
-          "address", 
-          "uint256", 
-          "uint256", 
-          "int256", 
-          "int256"
-        ]
-      }, 
       "publicBuy": {
         "events": [
           "TakeAskOrder", 
@@ -9098,6 +9101,7 @@
       "publicTakeBestOrder": {
         "events": [
           "TakeAskOrder", 
+          "TradeAmountRemaining", 
           "CompleteSets", 
           "TakeBidOrder"
         ], 
@@ -9124,9 +9128,10 @@
           "int256"
         ]
       }, 
-      "sell": {
+      "publicTrade": {
         "events": [
           "TakeAskOrder", 
+          "TradeAmountRemaining", 
           "CompleteSets", 
           "TakeBidOrder", 
           "MakeOrder"
@@ -9136,18 +9141,18 @@
           4
         ], 
         "inputs": [
-          "sender", 
+          "direction", 
           "market", 
           "outcome", 
           "fxpAmount", 
           "fxpPrice", 
           "tradeGroupID"
         ], 
-        "label": "Sell", 
-        "method": "sell", 
+        "label": "Public Trade", 
+        "method": "publicTrade", 
         "returns": "unfix", 
         "signature": [
-          "address", 
+          "int256", 
           "address", 
           "uint256", 
           "uint256", 
@@ -9192,7 +9197,8 @@
           "market", 
           "outcome", 
           "fxpAmount", 
-          "fxpPrice"
+          "fxpPrice", 
+          "tradeGroupID"
         ], 
         "label": "Take Best Order", 
         "method": "takeBestOrder", 
@@ -9203,6 +9209,7 @@
           "address", 
           "uint256", 
           "uint256", 
+          "int256", 
           "int256"
         ]
       }, 
