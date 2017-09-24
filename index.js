@@ -1,5 +1,4 @@
 var contracts = require("./contracts");
-contracts.api = require("./api");
-contracts.Tx = require("./setup-api");
+contracts.abi = require("./abi");
 
 module.exports = contracts;
