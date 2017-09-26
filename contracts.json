@@ -1,4 +1,10 @@
 {
+  "1": {
+    "LegacyRepContract": "0xe94327d07fc17907b4db788e5adf2ed424addff6"
+  },
+  "3": {
+    "LegacyRepContract": "0x7a305d9b681fb164dc5ad628b5992177dc66aec8"
+  },
   "4": {
     "Controller": "0x96a8238db7ad03e505840bd361dc2f521a72adbc",
     "Mutex": "0xc31b4c9210a6949353a50350deb5a54b03b89f87",

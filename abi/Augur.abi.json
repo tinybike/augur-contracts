@@ -1,0 +1,101 @@
+[{
+  "inputs": [{
+    "name": "token",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "from",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "to",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "value",
+    "type": "uint256",
+    "indexed": false
+  }],
+  "type": "event",
+  "name": "TokensTransferred(address,address,address,uint256)"
+}, {
+  "inputs": [{
+    "name": "universe",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "market",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "marketCreator",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "marketCreationFee",
+    "type": "uint256",
+    "indexed": false
+  }, {
+    "name": "extraInfo",
+    "type": "string",
+    "indexed": false
+  }],
+  "type": "event",
+  "name": "MarketCreated(address,address,address,uint256,string)"
+}, {
+  "inputs": [{
+    "name": "reporter",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "market",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "universe",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "amountRedeemed",
+    "type": "uint256",
+    "indexed": false
+  }, {
+    "name": "reportingFeesReceived",
+    "type": "uint256",
+    "indexed": false
+  }, {
+    "name": "payoutNumerators",
+    "type": "uint256[]",
+    "indexed": false
+  }],
+  "type": "event",
+  "name": "WinningTokensRedeemed(address,address,address,uint256,uint256,uint256[])"
+}, {
+  "inputs": [{
+    "name": "reporter",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "market",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "universe",
+    "type": "address",
+    "indexed": true
+  }, {
+    "name": "amountStaked",
+    "type": "uint256",
+    "indexed": false
+  }, {
+    "name": "reportingToken",
+    "type": "address",
+    "indexed": false
+  }, {
+    "name": "payoutNumerators",
+    "type": "uint256[]",
+    "indexed": false
+  }],
+  "type": "event",
+  "name": "ReportSubmitted(address,address,address,uint256,address,uint256[])"
+}]
