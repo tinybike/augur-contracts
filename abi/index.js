@@ -1,6 +1,7 @@
 "use strict";
 
 module.exports = {
+  Augur: require("./Augur.abi"),
   LegacyRepContract: require("./LegacyRepContract.abi"),
   MarketCreation: require("./extensions/MarketCreation.abi"),
   MarketFeeCalculator: require("./extensions/MarketFeeCalculator.abi"),
