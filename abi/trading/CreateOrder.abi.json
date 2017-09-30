@@ -97,7 +97,7 @@
 }, {
   "constant": false,
   "type": "function",
-  "name": "publicMakeOrder(int256,int256,int256,address,uint256,address,address,int256)",
+  "name": "publicCreateOrder(int256,int256,int256,address,uint256,address,address,int256)",
   "outputs": [{
     "type": "int256",
     "name": "out"

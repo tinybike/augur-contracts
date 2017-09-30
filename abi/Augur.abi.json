@@ -1,101 +1,306 @@
 [{
+  "anonymous": false,
   "inputs": [{
+    "indexed": true,
     "name": "token",
-    "type": "address",
-    "indexed": true
+    "type": "address"
   }, {
+    "indexed": true,
     "name": "from",
-    "type": "address",
-    "indexed": true
+    "type": "address"
   }, {
+    "indexed": true,
     "name": "to",
-    "type": "address",
-    "indexed": true
+    "type": "address"
   }, {
+    "indexed": false,
     "name": "value",
-    "type": "uint256",
-    "indexed": false
+    "type": "uint256"
   }],
-  "type": "event",
-  "name": "TokensTransferred(address,address,address,uint256)"
+  "name": "TokensTransferred",
+  "type": "event"
 }, {
+  "anonymous": false,
   "inputs": [{
-    "name": "universe",
-    "type": "address",
-    "indexed": true
-  }, {
+    "indexed": true,
     "name": "market",
-    "type": "address",
-    "indexed": true
+    "type": "address"
   }, {
+    "indexed": true,
     "name": "marketCreator",
-    "type": "address",
-    "indexed": true
+    "type": "address"
   }, {
+    "indexed": false,
     "name": "marketCreationFee",
-    "type": "uint256",
-    "indexed": false
+    "type": "uint256"
   }, {
+    "indexed": false,
     "name": "extraInfo",
-    "type": "string",
-    "indexed": false
+    "type": "string"
   }],
-  "type": "event",
-  "name": "MarketCreated(address,address,address,uint256,string)"
+  "name": "MarketCreated",
+  "type": "event"
 }, {
+  "anonymous": false,
   "inputs": [{
+    "indexed": true,
     "name": "reporter",
-    "type": "address",
-    "indexed": true
+    "type": "address"
   }, {
+    "indexed": true,
+    "name": "reportingWindow",
+    "type": "address"
+  }],
+  "name": "ReporterRegistered",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "name": "designatedReporter",
+    "type": "address"
+  }, {
+    "indexed": true,
     "name": "market",
-    "type": "address",
-    "indexed": true
+    "type": "address"
   }, {
-    "name": "universe",
-    "type": "address",
-    "indexed": true
-  }, {
-    "name": "amountRedeemed",
-    "type": "uint256",
-    "indexed": false
-  }, {
-    "name": "reportingFeesReceived",
-    "type": "uint256",
-    "indexed": false
-  }, {
+    "indexed": false,
     "name": "payoutNumerators",
-    "type": "uint256[]",
-    "indexed": false
+    "type": "uint256[]"
   }],
-  "type": "event",
-  "name": "WinningTokensRedeemed(address,address,address,uint256,uint256,uint256[])"
+  "name": "DesignatedReportSubmitted",
+  "type": "event"
 }, {
+  "anonymous": false,
   "inputs": [{
+    "indexed": true,
     "name": "reporter",
-    "type": "address",
-    "indexed": true
+    "type": "address"
   }, {
+    "indexed": true,
     "name": "market",
-    "type": "address",
-    "indexed": true
+    "type": "address"
   }, {
-    "name": "universe",
-    "type": "address",
-    "indexed": true
-  }, {
-    "name": "amountStaked",
-    "type": "uint256",
-    "indexed": false
-  }, {
+    "indexed": false,
     "name": "reportingToken",
-    "type": "address",
-    "indexed": false
+    "type": "address"
   }, {
+    "indexed": false,
+    "name": "amountStaked",
+    "type": "uint256"
+  }, {
+    "indexed": false,
     "name": "payoutNumerators",
-    "type": "uint256[]",
-    "indexed": false
+    "type": "uint256[]"
   }],
-  "type": "event",
-  "name": "ReportSubmitted(address,address,address,uint256,address,uint256[])"
+  "name": "ReportSubmitted",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "name": "reporter",
+    "type": "address"
+  }, {
+    "indexed": true,
+    "name": "market",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "name": "reportingToken",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "name": "amountRedeemed",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "reportingFeesReceived",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "name": "payoutNumerators",
+    "type": "uint256[]"
+  }],
+  "name": "WinningTokensRedeemed",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "name": "disputer",
+    "type": "address"
+  }, {
+    "indexed": true,
+    "name": "market",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "name": "reportingPhase",
+    "type": "uint8"
+  }, {
+    "indexed": false,
+    "name": "disputeBondAmount",
+    "type": "uint256"
+  }],
+  "name": "ReportsDisputed",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "name": "market",
+    "type": "address"
+  }],
+  "name": "MarketFinalized",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "name": "universe",
+    "type": "address"
+  }],
+  "name": "UniverseForked",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "name": "market",
+    "type": "address"
+  }, {
+    "indexed": true,
+    "name": "sender",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "name": "outcome",
+    "type": "uint8"
+  }, {
+    "indexed": false,
+    "name": "orderId",
+    "type": "bytes32"
+  }, {
+    "indexed": false,
+    "name": "orderType",
+    "type": "uint8"
+  }, {
+    "indexed": false,
+    "name": "tokenRefund",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "sharesRefund",
+    "type": "uint256"
+  }],
+  "name": "OrderCanceled",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "name": "shareToken",
+    "type": "address"
+  }, {
+    "indexed": true,
+    "name": "creator",
+    "type": "address"
+  }, {
+    "indexed": true,
+    "name": "orderId",
+    "type": "bytes32"
+  }, {
+    "indexed": false,
+    "name": "price",
+    "type": "int256"
+  }, {
+    "indexed": false,
+    "name": "amount",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "numTokensEscrowed",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "numSharesEscrowed",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "tradeGroupId",
+    "type": "bytes32"
+  }],
+  "name": "OrderCreated",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "name": "shareToken",
+    "type": "address"
+  }, {
+    "indexed": true,
+    "name": "creator",
+    "type": "address"
+  }, {
+    "indexed": true,
+    "name": "filler",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "name": "price",
+    "type": "int256"
+  }, {
+    "indexed": false,
+    "name": "numCreatorShares",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "numCreatorTokens",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "numFillerShares",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "numFillerTokens",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "settlementFees",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "tradeGroupId",
+    "type": "bytes32"
+  }],
+  "name": "OrderFilled",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "name": "sender",
+    "type": "address"
+  }, {
+    "indexed": true,
+    "name": "market",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "name": "numShares",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "numPayoutTokens",
+    "type": "uint256"
+  }, {
+    "indexed": false,
+    "name": "finalTokenBalance",
+    "type": "uint256"
+  }],
+  "name": "ProceedsClaimed",
+  "type": "event"
 }]
