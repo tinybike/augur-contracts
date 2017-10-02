@@ -1,4 +1,6 @@
-var contracts = require("./contracts");
-contracts.abi = require("./abi");
+"use strict";
 
-module.exports = contracts;
+module.exports = {
+  addresses: require("./addresses"),
+  abi: require("./abi")
+};
