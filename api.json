@@ -25,7 +25,7 @@
         }
       ], 
       "name": "Approval(int256,int256,int256,int256)", 
-      "signature": "0x844a26ab2838326c73b20040c15d8ec743025cbae630958deca3bcfd84b294c7"
+      "signature": "0xb3a0644aa1a804a19f7ab4bf836f497fe9864488c91b39df7e6e6dd8f8f08b61"
     }, 
     "Transfer": {
       "contract": "SendReputation", 
@@ -52,7 +52,7 @@
         }
       ], 
       "name": "Transfer(int256,int256,int256,int256)", 
-      "signature": "0xa1b127451a6829f3215734e83de19e5a931b51d60e10d5f2380ba32b4774196e"
+      "signature": "0xa5c50eea168b70b2f404cc28da30eade9ed5ab2beb48debd7856878bde2e6096"
     }, 
     "buyAndSellShares_logReturn": {
       "contract": "BuyAndSellShares", 
@@ -64,7 +64,7 @@
         }
       ], 
       "name": "buyAndSellShares_logReturn(int256)", 
-      "signature": "0xedd1f3d3e05d6ed7bf1ab17b49ed6e1172a96643ab4c04495c73291fb88976f6"
+      "signature": "0x9fbb0d8110bee15417200d9e638635c9436990b24f565fa2ce74f50f870171b6"
     }, 
     "closeMarket_logReturn": {
       "contract": "CloseMarket", 
@@ -76,7 +76,7 @@
         }
       ], 
       "name": "closeMarket_logReturn(int256)", 
-      "signature": "0x86f58151732f486111d98d9da63330be30a7783e3115fabf28c5fe7bd2c75dc5"
+      "signature": "0x7111c90bbf79fe51a8f95606c2c44137f600abeb3b5631db7d06ed168c13eea7"
     }, 
     "closedMarket": {
       "contract": "CloseMarket", 
@@ -98,7 +98,7 @@
         }
       ], 
       "name": "closedMarket(int256,int256,int256)", 
-      "signature": "0xabde783bc0f3ae387330ba473fc69966c802d0f0a33f445913289c56d802528a"
+      "signature": "0x32c2330374d337682bae09f8332c0cc2ca58d413047a81c2282ad2c3641b4d92"
     }, 
     "collectedFees": {
       "contract": "CollectFees", 
@@ -155,7 +155,7 @@
         }
       ], 
       "name": "collectedFees(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x1e074f388f23e8eb57f6a2cb09388baef069c5338959bade3a4a28c3ff346c6b"
+      "signature": "0xcde4a27ca173f91b1dd9076223820f857c157515fd27e19adfcd4f5f4af9ab48"
     }, 
     "completeSets_logReturn": {
       "contract": "CompleteSets", 
@@ -192,7 +192,7 @@
         }
       ], 
       "name": "completeSets_logReturn(int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xa7a1b31d37cc65af1f549a604352fede108c6cc2e0eeb1d8a647367319980c1b"
+      "signature": "0x59193f204bd4754cff0e765b9ee9157305fb373586ec5d680b49e6341ef922a6"
     }, 
     "consensus_logReturn": {
       "contract": "Consensus", 
@@ -204,7 +204,7 @@
         }
       ], 
       "name": "consensus_logReturn(int256)", 
-      "signature": "0x3f11df8a48c06afd8dcc71fcdb0ccb8934a779eb3666c12e906773e368937715"
+      "signature": "0x2c8fae543971d12ce9baeaa8ac11b4873683653fdcb1a6104f6e0c9d5c3ecf02"
     }, 
     "deposit": {
       "contract": "Cash", 
@@ -226,7 +226,7 @@
         }
       ], 
       "name": "deposit(int256,int256,int256)", 
-      "signature": "0x91dc0fb99e013277bb3d347e28189e75160e4f1e0328d8231b4cacc88856ebfd"
+      "signature": "0x26c0012e46d4069376ba870705277dc83bb702e2b282b4779a16fceec2479de0"
     }, 
     "fundedAccount": {
       "contract": "Faucets", 
@@ -258,7 +258,7 @@
         }
       ], 
       "name": "fundedAccount(int256,int256,int256,int256,int256)", 
-      "signature": "0x07c5737424a500b7f375ea2f9cda4c334584aab65715af51cf56c5ec805e6d6c"
+      "signature": "0xe86de3de21f900509377e1239ba6e244650b70db18f42d2cd7df914b395060b7"
     }, 
     "log_add_tx": {
       "contract": "BuyAndSellShares", 
@@ -315,7 +315,7 @@
         }
       ], 
       "name": "log_add_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x66b15c09bf03de80676cbc998a75752d5da55648c035f7e4c6e1ee2f0ef5cef9"
+      "signature": "0x3922406b6c1bc74fdedc2f7b5f84f64655e6a78d29229166b493c9b738a5e40e"
     }, 
     "log_cancel": {
       "contract": "BuyAndSellShares", 
@@ -367,7 +367,7 @@
         }
       ], 
       "name": "log_cancel(int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xab5c4a5e6566504cf12ea60a860a30cfc96f5e4d3541beee3e8d0557094ff98b"
+      "signature": "0x87540aa511444ce3628639499047bc199b924522a0dbfd241e849901db56c8db"
     }, 
     "log_fill_tx": {
       "contract": "Trade", 
@@ -444,7 +444,7 @@
         }
       ], 
       "name": "log_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x81af2f904293617a7f116fecc78677f5ac607d9bb739563f6cc7a961b7332d78"
+      "signature": "0xe054ca76966cd4f17c6c6a8e55f1c6352cb2b58b760f658e013353f1613d32c7"
     }, 
     "log_short_fill_tx": {
       "contract": "Trade", 
@@ -521,7 +521,7 @@
         }
       ], 
       "name": "log_short_fill_tx(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x2b0988f7c2eb70acda6b3ebf7fdafdb3d039049e6d47443d84f2013afa5f8d22"
+      "signature": "0x3572c2b345009b4c449540a9d7fe10a7464ae662d6bb1bae9fea96ce21a8ebb1"
     }, 
     "makeReports_logReturn": {
       "contract": "MakeReports", 
@@ -533,7 +533,7 @@
         }
       ], 
       "name": "makeReports_logReturn(int256)", 
-      "signature": "0x1340f349d131ec02e3a20dd65dcdac3dbd67d77a45c0116c80681cf4735ff914"
+      "signature": "0xc63250021b81c42e43223a77f306159f705fa6e54b1fbeaeeadaaa8340a38760"
     }, 
     "marketCreated": {
       "contract": "CreateMarket", 
@@ -575,7 +575,7 @@
         }
       ], 
       "name": "marketCreated(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xd29fe95997383803fac3f50d0f4c7555ea239d3a15f5403025012a241d63240e"
+      "signature": "0x94f1481ac3fc8e968bca7279f7811a02ae1212aa3a25e0f643684f5da1ef3ad6"
     }, 
     "payout": {
       "contract": "Payout", 
@@ -612,7 +612,7 @@
         }
       ], 
       "name": "payout(int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x844a18c9a1b69b6adaa35b32aa286e36e4620afa5aaf0fdd5ab317b5d74e4360"
+      "signature": "0xa2bf9dad859f137c8894b41a4e89182a27fa82c48ed42019e924af83fefc1f81"
     }, 
     "penalizationCaughtUp": {
       "contract": "PenalizationCatchup", 
@@ -654,7 +654,7 @@
         }
       ], 
       "name": "penalizationCaughtUp(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x2a1e5111b1f2f9f0edf3784d4caf3f8149f9a751e7e51cd66b484e5be13d6bd5"
+      "signature": "0x31dc9507ffec8f6f69d9f2b7a9bd206108312323de6ba468056af9c269881ea0"
     }, 
     "penalize": {
       "contract": "Consensus", 
@@ -711,7 +711,7 @@
         }
       ], 
       "name": "penalize(int256,int256,int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x52e0279bd62ecc4c2767fc5f35148c502b119ba57e01a85690f935be4d22f2c9"
+      "signature": "0xa865e521626cec7891279a54f112b20abe52888a42df585b51ca9ff03c4249b7"
     }, 
     "registration": {
       "contract": "Register", 
@@ -728,7 +728,7 @@
         }
       ], 
       "name": "registration(int256,int256)", 
-      "signature": "0x31e3e4f99e5fc8a326d15b01b056f9f5b70a531faa5f94914ed66b156df47211"
+      "signature": "0x44b6aeb7b38bb1ad04b4d0daf588cff086ff8829f0a34c30ddbb4d38695428de"
     }, 
     "sentCash": {
       "contract": "Cash", 
@@ -755,7 +755,7 @@
         }
       ], 
       "name": "sentCash(int256,int256,int256,int256)", 
-      "signature": "0xb5c6ceb9a48897108cadce42b49ad421a40b25eb490431cc0793a99fd46bde69"
+      "signature": "0x27fc4539f0a547270e2eb3d44c9889a9dd0d9fe116324eb14204ad6d54d6e047"
     }, 
     "slashedRep": {
       "contract": "SlashRep", 
@@ -797,7 +797,7 @@
         }
       ], 
       "name": "slashedRep(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0xb885c872f3057619420b13305e726532963af4d183a854cea1e4ebf83cd88b04"
+      "signature": "0x541c89e2231b7eaed003bb1405d8d57e081addbe7fb8e44d98605c5caddce42f"
     }, 
     "submittedReport": {
       "contract": "MakeReports", 
@@ -839,7 +839,7 @@
         }
       ], 
       "name": "submittedReport(int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x2240c63549b48a534ff91f9955b7cf9f630d1c3ba9617ae9a3ed8e38610f09dd"
+      "signature": "0x10a25c8f0d1e8e37576b43df8517b7a01ba412360118206afdc4bf19fe8a61ad"
     }, 
     "submittedReportHash": {
       "contract": "MakeReports", 
@@ -886,7 +886,7 @@
         }
       ], 
       "name": "submittedReportHash(int256,int256,int256,int256,int256,int256,int256,int256)", 
-      "signature": "0x747a3e8476a5ace438bef602827e2670ef53f0139b6ec610a2f1d961ec81eeb7"
+      "signature": "0x022363830a2ffb8853db587ab6c8995dc8cb6bb401abc22fa484d705c81881c6"
     }, 
     "trade_logArrayReturn": {
       "contract": "Trade", 
@@ -898,7 +898,7 @@
         }
       ], 
       "name": "trade_logArrayReturn(int256[])", 
-      "signature": "0xbc618a2495b4c7ea3efa3c64e58ce7b34e5d58ab244759016b2b2a786e985bdf"
+      "signature": "0x6a5b12f51adb25f3461c7108a9f5f8c509d374df9530d7dac8dfdd310929e39d"
     }, 
     "trade_logReturn": {
       "contract": "Trade", 
@@ -910,7 +910,7 @@
         }
       ], 
       "name": "trade_logReturn(int256)", 
-      "signature": "0xa28c087e3f64b72b507582f29af6a017da350eebffe94bf7bebf6b65027f7ded"
+      "signature": "0x1bbf36d9a7b2814880015722ce46ca5df561edceee37844559cf4dd31ecd5dfa"
     }, 
     "tradingFeeUpdated": {
       "contract": "CreateMarket", 
@@ -942,7 +942,7 @@
         }
       ], 
       "name": "tradingFeeUpdated(int256,int256,int256,int256,int256)", 
-      "signature": "0xec228013c8c8d5c5a59e8c188e47fa7ea18b5dc39c89f502a6586a7d23de0532"
+      "signature": "0xcd5a359787987cf4975171bed45d96e380d985598c913dc5a76c6aca1d1fccfb"
     }, 
     "withdraw": {
       "contract": "Cash", 
@@ -969,7 +969,7 @@
         }
       ], 
       "name": "withdraw(int256,int256,int256,int256)", 
-      "signature": "0x78b8cbaad6abb7530031cab608dc2e77df77fd7605f2738186f9f4edd1f03a8c"
+      "signature": "0xca93904ea92cb171dc196571984cacdf47206dfcde44e464b394de4cca42f7b7"
     }
   }, 
   "functions": {
