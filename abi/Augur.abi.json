@@ -167,16 +167,12 @@
   "anonymous": false,
   "inputs": [{
     "indexed": true,
-    "name": "market",
+    "name": "shareToken",
     "type": "address"
   }, {
     "indexed": true,
     "name": "sender",
     "type": "address"
-  }, {
-    "indexed": false,
-    "name": "outcome",
-    "type": "uint8"
   }, {
     "indexed": false,
     "name": "orderId",
