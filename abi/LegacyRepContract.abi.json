@@ -157,7 +157,7 @@
     "name": "fxpValue"
   }],
   "type": "event",
-  "name": "Approval(address,address,uint256)"
+  "name": "Approval"
 }, {
   "inputs": [{
     "indexed": true,
@@ -173,5 +173,5 @@
     "name": "value"
   }],
   "type": "event",
-  "name": "Transfer(address,address,uint256)"
+  "name": "Transfer"
 }]
