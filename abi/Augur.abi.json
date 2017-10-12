@@ -44,19 +44,6 @@
   "anonymous": false,
   "inputs": [{
     "indexed": true,
-    "name": "reporter",
-    "type": "address"
-  }, {
-    "indexed": true,
-    "name": "reportingWindow",
-    "type": "address"
-  }],
-  "name": "ReporterRegistered",
-  "type": "event"
-}, {
-  "anonymous": false,
-  "inputs": [{
-    "indexed": true,
     "name": "designatedReporter",
     "type": "address"
   }, {
