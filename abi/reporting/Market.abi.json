@@ -110,178 +110,178 @@
     "name": "bondAmount"
   }]
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getAllReportersDisputeBondToken()",
+  "name": "getAllReportersDisputeBondToken",
   "outputs": [{
     "type": "address",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getAutomatedReportDisputeDueTimestamp()",
+  "name": "getAutomatedReportDisputeDueTimestamp",
   "outputs": [{
     "type": "int256",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getAutomatedReportDueTimestamp()",
+  "name": "getAutomatedReportDueTimestamp",
   "outputs": [{
     "type": "int256",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getAutomatedReporterDisputeBondToken()",
+  "name": "getAutomatedReporterDisputeBondToken",
   "outputs": [{
     "type": "address",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getBranch()",
+  "name": "getBranch",
   "outputs": [{
     "type": "address",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getCompleteSetCostInAttotokens()",
+  "name": "getCompleteSetCostInAttotokens",
   "outputs": [{
     "type": "int256",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getCreator()",
+  "name": "getCreator",
   "outputs": [{
     "type": "address",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getDenominationToken()",
+  "name": "getDenominationToken",
   "outputs": [{
     "type": "address",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getEndTime()",
+  "name": "getEndTime",
   "outputs": [{
     "type": "int256",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getFinalPayoutDistributionHash()",
+  "name": "getFinalPayoutDistributionHash",
   "outputs": [{
     "type": "bytes32",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getFinalWinningReportingToken()",
+  "name": "getFinalWinningReportingToken",
   "outputs": [{
     "type": "address",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getFinalizationTime()",
+  "name": "getFinalizationTime",
   "outputs": [{
     "type": "int256",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getLimitedReportersDisputeBondToken()",
+  "name": "getLimitedReportersDisputeBondToken",
   "outputs": [{
     "type": "address",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getMarketCreatorSettlementFeeInAttoethPerEth()",
+  "name": "getMarketCreatorSettlementFeeInAttoethPerEth",
   "outputs": [{
     "type": "int256",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getMaxDisplayPrice()",
+  "name": "getMaxDisplayPrice",
   "outputs": [{
     "type": "int256",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getMinDisplayPrice()",
+  "name": "getMinDisplayPrice",
   "outputs": [{
     "type": "int256",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getNumberOfOutcomes()",
+  "name": "getNumberOfOutcomes",
   "outputs": [{
     "type": "int256",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getPayoutDenominator()",
+  "name": "getPayoutDenominator",
   "outputs": [{
     "type": "int256",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getRegistrationToken()",
+  "name": "getRegistrationToken",
   "outputs": [{
     "type": "address",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
   "name": "getReportingToken(int256[])",
   "outputs": [{
@@ -293,7 +293,7 @@
     "name": "payoutNumerators"
   }]
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
   "name": "getReportingTokenOrZeroByPayoutDistributionHash(bytes32)",
   "outputs": [{
@@ -305,27 +305,27 @@
     "name": "payoutDistributionHash"
   }]
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getReportingWindow()",
+  "name": "getReportingWindow",
   "outputs": [{
     "type": "address",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getReputationToken()",
+  "name": "getReputationToken",
   "outputs": [{
     "type": "address",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getShareToken(int256)",
+  "name": "getShareToken",
   "outputs": [{
     "type": "address",
     "name": "out"
@@ -335,18 +335,27 @@
     "name": "outcome"
   }]
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getTentativeWinningPayoutDistributionHash()",
+  "name": "getTentativeWinningPayoutDistributionHash",
   "outputs": [{
     "type": "bytes32",
     "name": "out"
   }],
   "inputs": []
 }, {
-  "constant": false,
+  "constant": true,
   "type": "function",
-  "name": "getTopic()",
+  "name": "getTopic",
+  "outputs": [{
+    "type": "int256",
+    "name": "out"
+  }],
+  "inputs": []
+}, {
+  "constant": true,
+  "type": "function",
+  "name": "getTypeName",
   "outputs": [{
     "type": "int256",
     "name": "out"
@@ -355,16 +364,7 @@
 }, {
   "constant": false,
   "type": "function",
-  "name": "getTypeName()",
-  "outputs": [{
-    "type": "int256",
-    "name": "out"
-  }],
-  "inputs": []
-}, {
-  "constant": false,
-  "type": "function",
-  "name": "initialize(address,uint256,uint256,uint256,int256,address,address,int256,int256,address,int256)",
+  "name": "initialize",
   "outputs": [{
     "type": "int256",
     "name": "out"

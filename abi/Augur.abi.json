@@ -195,22 +195,6 @@
     "type": "bytes32"
   }, {
     "indexed": false,
-    "name": "price",
-    "type": "int256"
-  }, {
-    "indexed": false,
-    "name": "amount",
-    "type": "uint256"
-  }, {
-    "indexed": false,
-    "name": "numTokensEscrowed",
-    "type": "uint256"
-  }, {
-    "indexed": false,
-    "name": "numSharesEscrowed",
-    "type": "uint256"
-  }, {
-    "indexed": false,
     "name": "tradeGroupId",
     "type": "bytes32"
   }],
@@ -224,16 +208,12 @@
     "type": "address"
   }, {
     "indexed": true,
-    "name": "creator",
-    "type": "address"
-  }, {
-    "indexed": true,
     "name": "filler",
     "type": "address"
   }, {
     "indexed": false,
-    "name": "price",
-    "type": "int256"
+    "name": "orderId",
+    "type": "bytes32"
   }, {
     "indexed": false,
     "name": "numCreatorShares",
