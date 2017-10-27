@@ -3,39 +3,11 @@
     "constant": false,
     "inputs": [
       {
-        "name": "market",
-        "type": "address"
-      }
-    ],
-    "name": "marketFinalized",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "reporter",
+        "name": "universe",
         "type": "address"
       },
       {
-        "name": "reportingWindow",
-        "type": "address"
-      }
-    ],
-    "name": "reporterRegistered",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "sender",
+        "name": "disputer",
         "type": "address"
       },
       {
@@ -43,19 +15,15 @@
         "type": "address"
       },
       {
-        "name": "numShares",
-        "type": "uint256"
+        "name": "reportingPhase",
+        "type": "uint8"
       },
       {
-        "name": "numPayoutTokens",
-        "type": "uint256"
-      },
-      {
-        "name": "finalTokenBalance",
+        "name": "disputeBondAmount",
         "type": "uint256"
       }
     ],
-    "name": "proceedsClaimed",
+    "name": "reportsDisputed",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -64,6 +32,10 @@
   {
     "constant": false,
     "inputs": [
+      {
+        "name": "universe",
+        "type": "address"
+      },
       {
         "name": "reporter",
         "type": "address"
@@ -73,7 +45,7 @@
         "type": "address"
       },
       {
-        "name": "reportingToken",
+        "name": "stakeToken",
         "type": "address"
       },
       {
@@ -82,7 +54,7 @@
       },
       {
         "name": "reportingFeesReceived",
-        "type": "address"
+        "type": "uint256"
       },
       {
         "name": "payoutNumerators",
@@ -98,6 +70,62 @@
   {
     "constant": false,
     "inputs": [
+      {
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "name": "reporter",
+        "type": "address"
+      },
+      {
+        "name": "market",
+        "type": "address"
+      },
+      {
+        "name": "stakeToken",
+        "type": "address"
+      },
+      {
+        "name": "amountStaked",
+        "type": "uint256"
+      },
+      {
+        "name": "payoutNumerators",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "designatedReportSubmitted",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "name": "market",
+        "type": "address"
+      }
+    ],
+    "name": "marketFinalized",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "universe",
+        "type": "address"
+      },
       {
         "name": "market",
         "type": "address"
@@ -125,19 +153,15 @@
     "constant": false,
     "inputs": [
       {
-        "name": "designatedReporter",
+        "name": "parentUniverse",
         "type": "address"
       },
       {
-        "name": "market",
+        "name": "childUniverse",
         "type": "address"
-      },
-      {
-        "name": "payoutNumerators",
-        "type": "uint256[]"
       }
     ],
-    "name": "designatedReportSubmitted",
+    "name": "universeCreated",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -160,6 +184,120 @@
   {
     "constant": false,
     "inputs": [
+      {
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "name": "shareToken",
+        "type": "address"
+      },
+      {
+        "name": "filler",
+        "type": "address"
+      },
+      {
+        "name": "orderId",
+        "type": "bytes32"
+      },
+      {
+        "name": "numCreatorShares",
+        "type": "uint256"
+      },
+      {
+        "name": "numCreatorTokens",
+        "type": "uint256"
+      },
+      {
+        "name": "numFillerShares",
+        "type": "uint256"
+      },
+      {
+        "name": "numFillerTokens",
+        "type": "uint256"
+      },
+      {
+        "name": "settlementFees",
+        "type": "uint256"
+      },
+      {
+        "name": "tradeGroupId",
+        "type": "uint256"
+      }
+    ],
+    "name": "orderFilled",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "name": "shareToken",
+        "type": "address"
+      },
+      {
+        "name": "creator",
+        "type": "address"
+      },
+      {
+        "name": "orderId",
+        "type": "bytes32"
+      },
+      {
+        "name": "tradeGroupId",
+        "type": "uint256"
+      }
+    ],
+    "name": "orderCreated",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "tokensTransferred",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "universe",
+        "type": "address"
+      },
       {
         "name": "shareToken",
         "type": "address"
@@ -195,6 +333,48 @@
     "constant": false,
     "inputs": [
       {
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "name": "shareToken",
+        "type": "address"
+      },
+      {
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "name": "market",
+        "type": "address"
+      },
+      {
+        "name": "numShares",
+        "type": "uint256"
+      },
+      {
+        "name": "numPayoutTokens",
+        "type": "uint256"
+      },
+      {
+        "name": "finalTokenBalance",
+        "type": "uint256"
+      }
+    ],
+    "name": "proceedsClaimed",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "universe",
+        "type": "address"
+      },
+      {
         "name": "reporter",
         "type": "address"
       },
@@ -203,7 +383,7 @@
         "type": "address"
       },
       {
-        "name": "reportingToken",
+        "name": "stakeToken",
         "type": "address"
       },
       {
@@ -222,179 +402,13 @@
     "type": "function"
   },
   {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "shareToken",
-        "type": "address"
-      },
-      {
-        "name": "filler",
-        "type": "address"
-      },
-      {
-        "name": "orderId",
-        "type": "bytes32"
-      },
-      {
-        "name": "numCreatorShares",
-        "type": "uint256"
-      },
-      {
-        "name": "numCreatorTokens",
-        "type": "uint256"
-      },
-      {
-        "name": "numFillerShares",
-        "type": "uint256"
-      },
-      {
-        "name": "numFillerTokens",
-        "type": "uint256"
-      },
-      {
-        "name": "settlementFees",
-        "type": "uint256"
-      },
-      {
-        "name": "tradeGroupId",
-        "type": "bytes32"
-      }
-    ],
-    "name": "orderCreated",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "token",
-        "type": "address"
-      },
-      {
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "tokensTransferred",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "shareToken",
-        "type": "address"
-      },
-      {
-        "name": "filler",
-        "type": "address"
-      },
-      {
-        "name": "orderId",
-        "type": "bytes32"
-      },
-      {
-        "name": "numCreatorShares",
-        "type": "uint256"
-      },
-      {
-        "name": "numCreatorTokens",
-        "type": "uint256"
-      },
-      {
-        "name": "numFillerShares",
-        "type": "uint256"
-      },
-      {
-        "name": "numFillerTokens",
-        "type": "uint256"
-      },
-      {
-        "name": "settlementFees",
-        "type": "uint256"
-      },
-      {
-        "name": "tradeGroupId",
-        "type": "bytes32"
-      }
-    ],
-    "name": "orderFilled",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "disputer",
-        "type": "address"
-      },
-      {
-        "name": "market",
-        "type": "address"
-      },
-      {
-        "name": "reportingPhase",
-        "type": "uint8"
-      },
-      {
-        "name": "disputeBondAmount",
-        "type": "uint256"
-      }
-    ],
-    "name": "reportsDisputed",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
         "indexed": true,
-        "name": "token",
+        "name": "universe",
         "type": "address"
       },
-      {
-        "indexed": true,
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "TokensTransferred",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
       {
         "indexed": true,
         "name": "market",
@@ -424,30 +438,28 @@
     "inputs": [
       {
         "indexed": true,
-        "name": "reporter",
+        "name": "universe",
         "type": "address"
       },
       {
         "indexed": true,
-        "name": "reportingWindow",
-        "type": "address"
-      }
-    ],
-    "name": "ReporterRegistered",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "name": "designatedReporter",
+        "name": "reporter",
         "type": "address"
       },
       {
         "indexed": true,
         "name": "market",
         "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "stakeToken",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "amountStaked",
+        "type": "uint256"
       },
       {
         "indexed": false,
@@ -463,6 +475,11 @@
     "inputs": [
       {
         "indexed": true,
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "indexed": true,
         "name": "reporter",
         "type": "address"
       },
@@ -473,7 +490,7 @@
       },
       {
         "indexed": false,
-        "name": "reportingToken",
+        "name": "stakeToken",
         "type": "address"
       },
       {
@@ -495,6 +512,11 @@
     "inputs": [
       {
         "indexed": true,
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "indexed": true,
         "name": "reporter",
         "type": "address"
       },
@@ -505,7 +527,7 @@
       },
       {
         "indexed": false,
-        "name": "reportingToken",
+        "name": "stakeToken",
         "type": "address"
       },
       {
@@ -516,7 +538,7 @@
       {
         "indexed": false,
         "name": "reportingFeesReceived",
-        "type": "address"
+        "type": "uint256"
       },
       {
         "indexed": false,
@@ -530,6 +552,11 @@
   {
     "anonymous": false,
     "inputs": [
+      {
+        "indexed": true,
+        "name": "universe",
+        "type": "address"
+      },
       {
         "indexed": true,
         "name": "disputer",
@@ -559,6 +586,11 @@
     "inputs": [
       {
         "indexed": true,
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "indexed": true,
         "name": "market",
         "type": "address"
       }
@@ -581,6 +613,11 @@
   {
     "anonymous": false,
     "inputs": [
+      {
+        "indexed": true,
+        "name": "universe",
+        "type": "address"
+      },
       {
         "indexed": true,
         "name": "shareToken",
@@ -620,12 +657,17 @@
     "inputs": [
       {
         "indexed": true,
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "indexed": true,
         "name": "shareToken",
         "type": "address"
       },
       {
         "indexed": true,
-        "name": "filler",
+        "name": "creator",
         "type": "address"
       },
       {
@@ -635,33 +677,8 @@
       },
       {
         "indexed": false,
-        "name": "numCreatorShares",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "numCreatorTokens",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "numFillerShares",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "numFillerTokens",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "settlementFees",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
         "name": "tradeGroupId",
-        "type": "bytes32"
+        "type": "uint256"
       }
     ],
     "name": "OrderCreated",
@@ -672,11 +689,16 @@
     "inputs": [
       {
         "indexed": true,
-        "name": "shareToken",
+        "name": "universe",
         "type": "address"
       },
       {
         "indexed": true,
+        "name": "shareToken",
+        "type": "address"
+      },
+      {
+        "indexed": false,
         "name": "filler",
         "type": "address"
       },
@@ -713,7 +735,7 @@
       {
         "indexed": false,
         "name": "tradeGroupId",
-        "type": "bytes32"
+        "type": "uint256"
       }
     ],
     "name": "OrderFilled",
@@ -724,11 +746,21 @@
     "inputs": [
       {
         "indexed": true,
-        "name": "sender",
+        "name": "universe",
         "type": "address"
       },
       {
         "indexed": true,
+        "name": "shareToken",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "indexed": false,
         "name": "market",
         "type": "address"
       },
@@ -749,6 +781,55 @@
       }
     ],
     "name": "ProceedsClaimed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "parentUniverse",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "childUniverse",
+        "type": "address"
+      }
+    ],
+    "name": "UniverseCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "universe",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "TokensTransferred",
     "type": "event"
   }
 ]
