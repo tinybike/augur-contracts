@@ -1,6 +1,6 @@
 "use strict";
 
-var contracts = require("./Augur.abi");
+var contracts = require("Contracts.abi");
 
 module.exports = {
   Augur: contracts["Augur.sol"].Augur,
