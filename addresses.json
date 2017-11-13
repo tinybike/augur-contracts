@@ -1,11 +1,11 @@
 {
   "1": {
     "Augur": "0x96a8238db7ad03e505840bd361dc2f521a72adbc",
-    "LegacyRepContract": "0xe94327d07fc17907b4db788e5adf2ed424addff6"
+    "LegacyReputationToken": "0xe94327d07fc17907b4db788e5adf2ed424addff6"
   },
   "3": {
     "Augur": "0x8d7c8b6dbb38e34c08459695bf2d7c72b1a8f5c0",
-    "LegacyRepContract": "0x7a305d9b681fb164dc5ad628b5992177dc66aec8"
+    "LegacyReputationToken": "0x7a305d9b681fb164dc5ad628b5992177dc66aec8"
   },
   "4": {
 		"Controller": "0xa76ecf40e366d3462a857cbb4695158e4601a8f6",
@@ -17,6 +17,7 @@
 		"CompleteSets": "0x1aad3a3db2355f21263293530e229dc5c78a7062",
 		"CreateOrder": "0x06e4b6f6f6925651ca13d20e3880ee021a248252",
 		"FillOrder": "0x92375385e1231ed2078705fed715e5a949a40181",
+		"LegacyReputationToken": "0x6ab9eb132bc0e890282387f756ce98e9b9d30c31",
 		"Order": "0xf2fa4d4a11fd994b804970ed66d8755be0351106",
 		"Orders": "0xd05ae92b813d8c2a8dc86743076d27be27f63c6f",
 		"OrdersFetcher": "0xc0aef14df39aa9ee8cc243e7fc08e140d8a9a580",
