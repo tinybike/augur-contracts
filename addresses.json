@@ -1,11 +1,11 @@
 {
   "1": {
     "Augur": "0x96a8238db7ad03e505840bd361dc2f521a72adbc",
-    "LegacyRepContract": "0xe94327d07fc17907b4db788e5adf2ed424addff6"
+    "LegacyReputationToken": "0xe94327d07fc17907b4db788e5adf2ed424addff6"
   },
   "3": {
     "Augur": "0x8d7c8b6dbb38e34c08459695bf2d7c72b1a8f5c0",
-    "LegacyRepContract": "0x7a305d9b681fb164dc5ad628b5992177dc66aec8"
+    "LegacyReputationToken": "0x7a305d9b681fb164dc5ad628b5992177dc66aec8"
   },
   "4": {
 		"Controller": "0xa76ecf40e366d3462a857cbb4695158e4601a8f6",
