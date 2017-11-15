@@ -6,7 +6,7 @@ cat $SOURCE/contracts.json | npx jqn --color=false -j "at('contracts') | map(val
 git add addresses.json abi.json
 git commit -m "Auto-updating from push to augur-core#${BRANCH} (${COMMIT})"
 
-case $BRANCH
+case $BRANCH in
   "master")
     echo "Update master of augur-contracts, manual NPM release needed"
     git push
