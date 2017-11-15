@@ -1,7 +1,7 @@
 #!/bin/bash
 
-npx dotsunited-merge-json $1/addresses.json addresses.json > ./addresses.json
-cat $1/contracts.json | npx jqn --color=false -j "at('contracts') | map(values) | flatten | map(mapValues(get('abi'))) | reduce(merge, {})" > ./abi.json
+npx dotsunited-merge-json $SOURCE/addresses.json addresses.json > ./addresses.json
+cat $SOURCE/contracts.json | npx jqn --color=false -j "at('contracts') | map(values) | flatten | map(mapValues(get('abi'))) | reduce(merge, {})" > ./abi.json
 
 git add addresses.json abi.json
 git commit -m "Auto-updating from push to augur-core#${BRANCH} (${COMMIT})"
