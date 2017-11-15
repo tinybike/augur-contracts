@@ -1,6 +1,6 @@
 #!/bin/bash
 
-npx dotsunited-merge-json $SOURCE/addresses.json addresses.json > ./updated.json
+npx dotsunited-merge-json $SOURCE/addresses.json addresses.json | npx jq.node --color=false --json > ./updated.json
 mv updated.json addresses.json
 
 cat $SOURCE/contracts.json | npx jqn --color=false -j "at('contracts') | map(values) | flatten | map(mapValues(get('abi'))) | reduce(merge, {})" > ./abi.json
