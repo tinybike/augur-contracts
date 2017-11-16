@@ -233,25 +233,6 @@
       "constant": false,
       "inputs": [
         {
-          "name": "_destination",
-          "type": "address"
-        }
-      ],
-      "name": "extractEther",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
           "name": "_universe",
           "type": "address"
         },
@@ -284,7 +265,11 @@
           "type": "uint256"
         },
         {
-          "name": "_settlementFees",
+          "name": "_marketCreatorFees",
+          "type": "uint256"
+        },
+        {
+          "name": "_reporterFees",
           "type": "uint256"
         },
         {
@@ -293,6 +278,25 @@
         }
       ],
       "name": "logOrderFilled",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_destination",
+          "type": "address"
+        }
+      ],
+      "name": "extractEther",
       "outputs": [
         {
           "name": "",
@@ -437,41 +441,6 @@
         }
       ],
       "name": "logReputationTokenMinted",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_universe",
-          "type": "address"
-        },
-        {
-          "name": "_market",
-          "type": "address"
-        },
-        {
-          "name": "_marketCreator",
-          "type": "address"
-        },
-        {
-          "name": "_marketCreationFee",
-          "type": "uint256"
-        },
-        {
-          "name": "_extraInfo",
-          "type": "string"
-        }
-      ],
-      "name": "logMarketCreated",
       "outputs": [
         {
           "name": "",
@@ -749,6 +718,45 @@
       "constant": false,
       "inputs": [
         {
+          "name": "_universe",
+          "type": "address"
+        },
+        {
+          "name": "_market",
+          "type": "address"
+        },
+        {
+          "name": "_marketCreator",
+          "type": "address"
+        },
+        {
+          "name": "_marketCreationFee",
+          "type": "uint256"
+        },
+        {
+          "name": "_topic",
+          "type": "string"
+        },
+        {
+          "name": "_extraInfo",
+          "type": "string"
+        }
+      ],
+      "name": "logMarketCreated",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
           "name": "_token",
           "type": "address"
         },
@@ -902,12 +910,17 @@
         },
         {
           "indexed": true,
-          "name": "market",
-          "type": "address"
+          "name": "topic",
+          "type": "string"
         },
         {
           "indexed": true,
           "name": "marketCreator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "market",
           "type": "address"
         },
         {
@@ -1220,7 +1233,12 @@
         },
         {
           "indexed": false,
-          "name": "settlementFees",
+          "name": "marketCreatorFees",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "reporterFees",
           "type": "uint256"
         },
         {
@@ -4704,49 +4722,6 @@
       "type": "function"
     },
     {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_endTime",
-          "type": "uint256"
-        },
-        {
-          "name": "_numOutcomes",
-          "type": "uint8"
-        },
-        {
-          "name": "_numTicks",
-          "type": "uint256"
-        },
-        {
-          "name": "_feePerEthInWei",
-          "type": "uint256"
-        },
-        {
-          "name": "_denominationToken",
-          "type": "address"
-        },
-        {
-          "name": "_designatedReporterAddress",
-          "type": "address"
-        },
-        {
-          "name": "_extraInfo",
-          "type": "string"
-        }
-      ],
-      "name": "createMarket",
-      "outputs": [
-        {
-          "name": "_newMarket",
-          "type": "address"
-        }
-      ],
-      "payable": true,
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
       "constant": true,
       "inputs": [],
       "name": "getMarketsCount",
@@ -5528,6 +5503,53 @@
       ],
       "payable": false,
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_endTime",
+          "type": "uint256"
+        },
+        {
+          "name": "_numOutcomes",
+          "type": "uint8"
+        },
+        {
+          "name": "_numTicks",
+          "type": "uint256"
+        },
+        {
+          "name": "_feePerEthInWei",
+          "type": "uint256"
+        },
+        {
+          "name": "_denominationToken",
+          "type": "address"
+        },
+        {
+          "name": "_designatedReporterAddress",
+          "type": "address"
+        },
+        {
+          "name": "_topic",
+          "type": "string"
+        },
+        {
+          "name": "_extraInfo",
+          "type": "string"
+        }
+      ],
+      "name": "createMarket",
+      "outputs": [
+        {
+          "name": "_newMarket",
+          "type": "address"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
       "type": "function"
     }
   ],
@@ -8811,7 +8833,11 @@
       "name": "sellCompleteSets",
       "outputs": [
         {
-          "name": "",
+          "name": "_creatorFee",
+          "type": "uint256"
+        },
+        {
+          "name": "_reportingFee",
           "type": "uint256"
         }
       ],
