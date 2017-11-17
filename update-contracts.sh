@@ -24,7 +24,7 @@ else
     *)
       echo "Making new branch on augur-contracts to match ${BRANCH}"
       git checkout -b core_branch_$BRANCH
-      git push --force-with-lease
+      git push origin $BRANCH --force-with-lease
       ;;
   esac
 fi
