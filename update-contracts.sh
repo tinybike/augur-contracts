@@ -28,22 +28,22 @@ if [[ "$AUTOCOMMIT" == "true" ]]; then
         echo "Update master of augur-contracts, and publishning new NPM version"
         git version patch
         git tag augur-core-$TAG # create a tag to match the augur-core tag
-        git push && push --tags && npm publish
+        #git push && push --tags && npm publish
       fi
       ;;
     master)
       echo "Update master of augur-contracts, manual NPM release needed"
-      git push
+      #git push
       ;;
     develop)
       echo "Updating develop branch of augur-contracts with force push"
       git checkout -b $BRANCH origin/$BRANCH
-      git push --force-with-lease
+      #git push --force-with-lease
       ;;
     *)
       echo "Making new branch (augur-core/${BRANCH} on augur-contracts to match ${BRANCH}"
       git checkout -b augur-core/$BRANCH
-      git push origin augur-core/$BRANCH --force-with-lease
+      #git push origin augur-core/$BRANCH --force-with-lease
       ;;
   esac
 else
