@@ -21,7 +21,7 @@ if [[ "$AUTOCOMMIT" == "true" ]]; then
   git commit -m "Auto-updating from push to augur-core#${BRANCH} (${COMMIT})"
 
   case $BRANCH in
-    v+([:digit:]).+([:digit:]).+([:digit:]))
+    v+([0-9]).+([0-9]).+([0-9]))
       if [[ "$BRANCH" == "$TAG" ]]; then
         # Commit on a tag, this will do all the work of commiting and pushing
         # a new release
