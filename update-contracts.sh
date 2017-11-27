@@ -28,7 +28,7 @@ if [[ "$AUTOCOMMIT" == "true" ]]; then
         echo "Update master of augur-contracts, and publishing new NPM version"
         npm version prerelease
         git tag augur-core/$TAG # create a tag to match the augur-core tag
-        git push && git push --tags && npm publish
+        git push && git push --tags && npm publish --tag dev
       fi
       ;;
     master)
