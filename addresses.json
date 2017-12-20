@@ -42,5 +42,23 @@
     "ShareToken": "0x2ebd326b3830297fd4cfb6b8b2c1d967a51dfdc6",
     "Trade": "0x0680f8580de983cd204aa909a4b1b366b29f58b6",
     "TradingEscapeHatch": "0x6cfc125df7ba27b26138cdbcd5804137dc3ba1a6"
+  },
+  "12346": {
+    "Controller": "0xf25a9928d8cb4f72a7801e2935bad1db5086c307",
+    "Universe": "0x51eb0db2c4a7bcfe18f83f3bdbfaec604056cb03",
+    "Augur": "0x2213d09a6663186660a00e7dcf47e22ee76f8692",
+    "LegacyReputationToken": "0x72a9d663fbf8b202c4413f676f683f53998aaac8",
+    "CancelOrder": "0x79b9b0c7e4a28b8cd7ef5d276660ab5b77b3b91c",
+    "Cash": "0x4408d686d46cde5d4e069ff2a809ac8821d32338",
+    "ClaimTradingProceeds": "0x23726755f28863a36d7cb7d54a0748ca89df690b",
+    "CompleteSets": "0xa2e5a241ff013eeb1f7bb5f0b366cab6e8436dac",
+    "CreateOrder": "0x98f52533e38d9434a605054414aeaf7fac50aaad",
+    "FillOrder": "0x3709b3eb52b2084eca69ba6977111d2e1162e3dd",
+    "Order": "0x461c865061a37f1c6256e552de94279a97150572",
+    "Orders": "0x8fb632da59e73450e097847c0c75608f79770182",
+    "OrdersFetcher": "0x3105a8e101af6dc7526c5c0ea6fcd2465e05d341",
+    "ShareToken": "0xad295ed7f7cdd2f9669c7ab886bbecfa95ad4af8",
+    "Trade": "0x1f531c52b01d303e254d17f6689fc7999e935b93",
+    "TradingEscapeHatch": "0x5f0264664471dee3269ccd670b747dd5fd7436f6"
   }
 }
