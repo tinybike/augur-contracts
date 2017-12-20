@@ -1,6 +1,6 @@
 {
   "name": "augur-contracts",
-  "version": "3.4.0-11",
+  "version": "3.4.0-12",
   "description": "Augur contract addresses, transactions, and error codes",
   "author": "The Augur Developers <team@augur.net>",
   "license": "MIT",
