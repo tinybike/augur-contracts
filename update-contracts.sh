@@ -26,7 +26,7 @@ if [[ "$AUTOCOMMIT" == "true" ]]; then
         # Commit on a tag, this will do all the work of commiting and pushing
         # a new release
         echo "Update master of augur-contracts, and publishing new NPM version"
-        npm version prerelease
+        npm version --force prerelease
         git tag augur-core/$TAG # create a tag to match the augur-core tag
         git push && git push --tags && npm publish --tag dev
       fi
