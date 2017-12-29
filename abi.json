@@ -398,6 +398,25 @@
       "constant": false,
       "inputs": [
         {
+          "name": "_addition",
+          "type": "address"
+        }
+      ],
+      "name": "logContractAddedToWhitelist",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
           "name": "_universe",
           "type": "address"
         },
@@ -1013,6 +1032,37 @@
         }
       ],
       "name": "logMarketFinalized",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_key",
+          "type": "bytes32"
+        },
+        {
+          "name": "_address",
+          "type": "address"
+        },
+        {
+          "name": "_commitHash",
+          "type": "bytes20"
+        },
+        {
+          "name": "_bytecodeHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "logContractAddedToRegistry",
       "outputs": [
         {
           "name": "",
@@ -1762,6 +1812,45 @@
         }
       ],
       "name": "FeeWindowCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "addition",
+          "type": "address"
+        }
+      ],
+      "name": "WhitelistAddition",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "addition",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "commitHash",
+          "type": "bytes20"
+        },
+        {
+          "indexed": false,
+          "name": "bytecodeHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RegistryAddition",
       "type": "event"
     }
   ],
@@ -9168,25 +9257,6 @@
       "type": "function"
     },
     {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_market",
-          "type": "address"
-        }
-      ],
-      "name": "claimTradingProceeds",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "constant": true,
       "inputs": [],
       "name": "getController",
@@ -9251,6 +9321,29 @@
         }
       ],
       "name": "setController",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_market",
+          "type": "address"
+        },
+        {
+          "name": "_shareHolder",
+          "type": "address"
+        }
+      ],
+      "name": "claimTradingProceeds",
       "outputs": [
         {
           "name": "",
