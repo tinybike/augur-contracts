@@ -44,21 +44,21 @@
     "TradingEscapeHatch": "0xb4d7f6747cefbdca11bddd92a16134dc95b0dd9b"
   },
   "12346": {
-    "Controller": "0x47250c6d99d5de376535baa1bccaafd96a74c4ec",
-    "Universe": "0xdedb6066b099fd027e24d945b16c897b968f6ec2",
-    "Augur": "0x3980cb5850574ebc65202490d3d48142ad122f06",
-    "LegacyReputationToken": "0x23726755f28863a36d7cb7d54a0748ca89df690b",
-    "CancelOrder": "0x2213d09a6663186660a00e7dcf47e22ee76f8692",
-    "Cash": "0xe28ade973a1a95849872f38ef53d4d3da32ddf8b",
-    "ClaimTradingProceeds": "0xdf4428869f907d6de4d8ef44a5169e123dcd61e7",
-    "CompleteSets": "0x1f682deaf55ee9879c3b248e2cbab6b0f9f4ea65",
-    "CreateOrder": "0x9d1952501cfa90295b240735ec279ae162b71adc",
-    "FillOrder": "0xed8868370dca10927bca18faecc05a49e6304fac",
-    "Order": "0xd8a8356f0c3f2c1df4f7d68b40758c4955157a8e",
-    "Orders": "0xcc270ac66fdde50ea78c6e6a4a334739a2e3f59d",
-    "OrdersFetcher": "0xef3cfc4a8dc7e007539e4869449c8510633e94b9",
-    "ShareToken": "0xdbc95acb120044e0e83a2c381c42892757b65e82",
-    "Trade": "0xc54c8150c30322c10b4e0232c9ed7399afed392d",
-    "TradingEscapeHatch": "0x78a906aae881330446845a3063171c738c210701"
+    "Controller": "0x799c12667e5e4e94e4710ea1ea7809feb46cbc87",
+    "Universe": "0x2c8369ed6ece5f8bf0655353679aac7fb68d29ba",
+    "Augur": "0x2f8f57dbd52ee20f9258c5232cfbbab0f8d478f1",
+    "LegacyReputationToken": "0xa00a7f098dde7e5ffb66c30305e287a6e86ca499",
+    "CancelOrder": "0xf81ace9c7808d2b187f6ef44f7c3d7aae859d8c1",
+    "Cash": "0x3c53f7e8d07e689205b4758d7f32c11b1ed0b382",
+    "ClaimTradingProceeds": "0xdca9bef5199984ece425abe150f50b46fe9cf397",
+    "CompleteSets": "0x62f92754305be6f4a0c46f48d29f3e513ca83b27",
+    "CreateOrder": "0xa706f7c0cb090b5eceb10ab49162bdff67fb179a",
+    "FillOrder": "0x6ec11f087a874d491e6c051ff829e0fb61bd950a",
+    "Order": "0xf1a864e6bc75bbc9128f16b247351530b16d2ea8",
+    "Orders": "0x22ae18bb9e70380e6303a7fbd470dcd8f4ce9bb5",
+    "OrdersFetcher": "0xa09da42ed05c80bbabddda8bbda9fd44bce53d6b",
+    "ShareToken": "0xb15d4981b977706dcd7350075a12354f2f18f6bc",
+    "Trade": "0x9a32a8c4c0a3b3203206c61d360b9b8cdaa0f169",
+    "TradingEscapeHatch": "0x55a5b2bc1f915a09f0ad5b34a81bf01fc9637309"
   }
 }
