@@ -5272,20 +5272,6 @@
       "type": "function"
     },
     {
-      "constant": false,
-      "inputs": [],
-      "name": "depositGasBond",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": true,
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
       "constant": true,
       "inputs": [
         {
