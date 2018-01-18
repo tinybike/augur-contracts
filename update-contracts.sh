@@ -21,7 +21,7 @@ cat $SOURCE/contracts.json | npx jqn --color=false -j "at('contracts') | map(val
 [[ $? == 0 ]] || exit 1
 
 if [[ "$AUTOCOMMIT" == "true" ]]; then
-  git add addresses.json abi.json
+  git add addresses.json abi.json upload-block-numbers.json
   git commit -m "Auto-updating from push to augur-core#${BRANCH} (${COMMIT})"
 
   case $BRANCH in
