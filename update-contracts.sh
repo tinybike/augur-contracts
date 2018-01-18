@@ -10,14 +10,17 @@ fi
 
 npx dotsunited-merge-json addresses.json $SOURCE/addresses.json | npx jq.node --color=false --json > ./updated.json
 [[ $? == 0 ]] || exit 1
-
 mv updated.json addresses.json
+
+npx dotsunited-merge-json upload-block-numbers.json $SOURCE/upload-block-numbers.json | npx jq.node --color=false --json > ./updated.json
+[[ $? == 0 ]] || exit 1
+mv updated.json upload-block-numbers.json
 
 cat $SOURCE/contracts.json | npx jqn --color=false -j "at('contracts') | map(values) | flatten | map(mapValues(get('abi'))) | reduce(merge, {})" > ./abi.json
 [[ $? == 0 ]] || exit 1
 
 if [[ "$AUTOCOMMIT" == "true" ]]; then
-  git add addresses.json abi.json
+  git add addresses.json abi.json upload-block-numbers.json
   git commit -m "Auto-updating from push to augur-core#${BRANCH} (${COMMIT})"
 
   case $BRANCH in
