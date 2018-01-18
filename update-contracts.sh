@@ -16,8 +16,6 @@ npx dotsunited-merge-json upload-block-numbers.json $SOURCE/upload-block-numbers
 mv updated.json upload-block-numbers.json
 
 cat $SOURCE/contracts.json | npx jqn --color=false -j "at('contracts') | map(values) | flatten | map(mapValues(get('abi'))) | reduce(merge, {})" > ./abi.json
-
-
 [[ $? == 0 ]] || exit 1
 
 if [[ "$AUTOCOMMIT" == "true" ]]; then
